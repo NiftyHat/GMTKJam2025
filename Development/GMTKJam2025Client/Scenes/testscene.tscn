@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bewbicgsy3ro" path="res://Levels/level_test.tscn" id="1_nes3m"]
 [ext_resource type="Texture2D" uid="uid://2h3qmpnq0584" path="res://Texture/7a3584298ef470fe0aafc146c23d34523b045606.png" id="1_r2sr7"]
 [ext_resource type="Script" uid="uid://dnlgcp0rpf2mg" path="res://Script/CarController.cs" id="2_wni78"]
+[ext_resource type="Script" uid="uid://3klfn8jegsue" path="res://Script/GameCamera.cs" id="3_0pdfm"]
 [ext_resource type="PackedScene" uid="uid://bpmfitw8wc80d" path="res://3D/Cars/car_player.tscn" id="4_vy56e"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_wni78"]
@@ -14,15 +15,15 @@ uv1_scale = Vector3(32, 32, 32)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vy56e"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0pdfm"]
+bounce = 0.1
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_r2sr7"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_0pdfm"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0pdfm"]
+albedo_texture = ExtResource("1_r2sr7")
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_wni78"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_wni78"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_nes3m"]
+[sub_resource type="SphereMesh" id="SphereMesh_ggkdx"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -44,98 +45,63 @@ shape = SubResource("WorldBoundaryShape3D_vy56e")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.16329, 0.734871, -0.658256, 0, 0.667211, 0.744869, 0.986578, -0.12163, 0.108949, -8.68963, 9.91288, 1.39199)
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("LookAtTarget", "CameraPositionTarget", "CameraFocusTarget", "CarController")]
 transform = Transform3D(-0.999889, -0.000312992, 0.0148878, 0, 0.999779, 0.0210188, -0.0148911, 0.0210164, -0.999668, -0.000763688, 1.59773, -3.21964)
+script = ExtResource("3_0pdfm")
+LookAtTarget = NodePath("../CameraTarget")
+CameraPositionTarget = NodePath("../Car/IdealCameraLocation")
+CameraFocusTarget = NodePath("../Car/Lookat")
+SnapPositionSpeed = 0.3
+FOVAtMaxSpeed = 90.0
+CarController = NodePath("../Car")
 
 [node name="Physics" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.651827, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.539886, 0.651827, -7.84318)
 collision_mask = 3
 mass = 5.0
-linear_damp = 1.0
-angular_damp = 4.0
+physics_material_override = SubResource("PhysicsMaterial_0pdfm")
+gravity_scale = 2.0
+continuous_cd = true
+linear_damp = 0.5
+angular_damp = 3.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Physics"]
 shape = SubResource("SphereShape3D_r2sr7")
 debug_color = Color(0.0823529, 0.462745, 0, 1)
 
-[node name="Car" type="Node3D" parent="." node_paths=PackedStringArray("_rb", "_camera3D", "CameraLookTarget", "CameraPositionTarget", "GroundCheckNode")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0143547, 0.626256, -0.00205231)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Physics"]
+visible = false
+material_override = SubResource("StandardMaterial3D_0pdfm")
+mesh = SubResource("SphereMesh_ggkdx")
+
+[node name="Car" type="Node3D" parent="." node_paths=PackedStringArray("_rb", "_camera3D")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.514817, 0.803603, -7.93579)
 script = ExtResource("2_wni78")
 _rb = NodePath("../Physics")
 _camera3D = NodePath("../Camera3D")
-CameraLookTarget = NodePath("Lookat")
-CameraPositionTarget = NodePath("IdealLocation")
-GroundCheckNode = NodePath("GroundCheck")
-Acceleration = 0.5
-BrakeStrength = 0.1
+Acceleration = 0.2
+BrakeStrength = 0.08
 reverseAcceleration = 0.1
-maxSpeed = 30.0
-turnStrength = 1.5
+MaxSpeed = 20.0
+maxReverseSpeed = -5.0
+steering = 11.0
+turnSpeed = 10.0
+minimumTurnSpeed = 1.0
 GroundDistance = 0.5
-Downforce = 0.2
 
 [node name="GroundCheck" type="Node3D" parent="Car"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.440059, 0)
 
-[node name="IdealLocation" type="Node3D" parent="Car"]
+[node name="IdealCameraLocation" type="Node3D" parent="Car"]
 transform = Transform3D(-0.999889, -0.000312992, 0.0148878, 0, 0.999779, 0.0210188, -0.0148911, 0.0210164, -0.999668, -0.000763688, 1.09773, -3.21964)
 
 [node name="Lookat" type="Node3D" parent="Car"]
 transform = Transform3D(-0.999326, 0.00258939, 0.0366111, 0, 0.997508, -0.0705508, -0.0367025, -0.0705033, -0.996836, 0, 0.0906405, 33.927)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Car"]
-transform = Transform3D(1, 0, 0, 0, 0.605845, 0, 0, 0, 1.8673, 0, 0, 0)
-visible = false
-mesh = SubResource("BoxMesh_0pdfm")
-skeleton = NodePath("../..")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Car"]
-transform = Transform3D(0.788089, 0, 0, 0, 0.477459, 0, 0, 0, 1.4716, 0, 0.366056, -0.146974)
-visible = false
-mesh = SubResource("BoxMesh_0pdfm")
-skeleton = NodePath("../..")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Car"]
-transform = Transform3D(-1.74846e-08, 0.064, 0, -0.4, -2.79753e-09, 0, 0, 0, 0.4, 0.47852, -0.294407, 0.662393)
-visible = false
-mesh = SubResource("CylinderMesh_wni78")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="Car"]
-transform = Transform3D(-1.74846e-08, 0.064, 0, -0.4, -2.79753e-09, 0, 0, 0, 0.4, 0.47852, -0.294407, -0.591764)
-visible = false
-mesh = SubResource("CylinderMesh_wni78")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="Car"]
-transform = Transform3D(-1.74846e-08, 0.064, 0, -0.4, -2.79753e-09, 0, 0, 0, 0.4, -0.479, -0.294407, 0.662393)
-visible = false
-mesh = SubResource("CylinderMesh_wni78")
-
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="Car"]
-transform = Transform3D(-1.74846e-08, 0.064, 0, -0.4, -2.79753e-09, 0, 0, 0, 0.4, -0.479, -0.294407, -0.591764)
-visible = false
-mesh = SubResource("CylinderMesh_wni78")
-
 [node name="player_car" parent="Car" instance=ExtResource("4_vy56e")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.0222094, -0.469636, -0.100361)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.540508, 0)
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="."]
-transform = Transform3D(2.706, 0, 0, 0, 3.7996, 1.98094, 0, -1.2502, 6.02047, 0, -0.939279, 12.9006)
+[node name="GroundCheckRaycast" type="RayCast3D" parent="Car"]
+target_position = Vector3(0, -0.75, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, -2.98023e-08, 0, 0, 1, 0, 0, 0)
-mesh = SubResource("BoxMesh_wni78")
-skeleton = NodePath("../..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
-shape = SubResource("BoxShape3D_nes3m")
-
-[node name="StaticBody3D3" type="StaticBody3D" parent="."]
-transform = Transform3D(-2.706, -1.09296e-07, 5.26327e-07, 0, 3.7996, 1.98094, -2.36566e-07, 1.2502, -6.02047, 0, -0.939279, 26.2572)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D3"]
-transform = Transform3D(1, 0, 0, 0, 1, -2.98023e-08, 0, 0, 1, 0, 0, 0)
-mesh = SubResource("BoxMesh_wni78")
-skeleton = NodePath("../..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3"]
-shape = SubResource("BoxShape3D_nes3m")
+[node name="CameraTarget" type="Node3D" parent="."]

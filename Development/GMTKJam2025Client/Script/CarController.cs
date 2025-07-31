@@ -24,24 +24,44 @@ public partial class CarController : Node3D
 	[Export] private RigidBody3D _rb;
 	[Export] private Camera3D _camera3D;
 	
-	[Export] private Node3D CameraLookTarget;
-	[Export] private Node3D CameraPositionTarget;
-	[Export] private Node3D GroundCheckNode;
-	
+	private Node3D CameraLookTarget;
+	private Node3D CameraPositionTarget;
+	private RayCast3D GroundCheckRaycast;
+
 	[Export] private float Acceleration;
 	[Export] private float BrakeStrength;
 	[Export] private float reverseAcceleration;
-	[Export] private float maxSpeed;
-	[Export] private float turnStrength;
+	[Export] public float MaxSpeed { get; private set; }
+	[Export] private float maxReverseSpeed;
+	[Export] private float steering;
+	[Export] private float turnSpeed;
+	[Export] private float minimumTurnSpeed;
 	[Export] private float GroundDistance;
-	[Export] private float Downforce;
 	
 	private const float M = 1000f;
-	
+
+	public override void _Ready()
+	{
+		CameraPositionTarget = GetNode<Node3D>("IdealCameraLocation");
+		CameraLookTarget = GetNode<Node3D>("Lookat");
+		GroundCheckRaycast = GetNode<RayCast3D>("GroundCheckRaycast");
+		GroundCheckRaycast.AddException(_rb);
+
+		Transform = _rb.Transform;
+		base._Ready();
+	}
+
 	public override void _Process(double delta)
 	{
 		base._Process(delta);
-		Position = _rb.Position;
+		var p = Position;
+		p.X = float.Lerp(Position.X, _rb.Position.X, 0.9f);
+		p.Y = float.Lerp(Position.Y, _rb.Position.Y, 0.4f);
+		p.Z = float.Lerp(Position.Z, _rb.Position.Z, 0.9f);
+		Position = p;
+
+
+		// Player Input
 		
 		
 		// Acceleration, Braking, and Reversing vroom
@@ -77,28 +97,15 @@ public partial class CarController : Node3D
 		}
 
 		// Turning; capped by velocity
-		turnInput = Input.GetAxis("SteerLeft", "SteerRight");
-		Rotate(Vector3.Up, -turnInput * turnStrength * (float)delta * float.Clamp(Velocity * 0.5f, -1, 1));
+		turnInput = Mathf.DegToRad(Input.GetAxis("SteerLeft", "SteerRight") * steering);
 		
 		
-		
-		// Camera
-		var lookatraycast = PhysicsRayQueryParameters3D.Create(CameraLookTarget.GlobalPosition, CameraLookTarget.GlobalPosition + Vector3.Down * 1000);
-		var result = GetWorld3D().DirectSpaceState.IntersectRay(lookatraycast);
-		
-		
-		_camera3D.Position = _camera3D.Position.Lerp(CameraPositionTarget.GlobalPosition, .15f);
-		_camera3D.LookAt(CameraLookTarget.GlobalPosition);
 	}
 
 	public override void _PhysicsProcess(double delta)
 	{
 		// check groundedness
-		isGrounded = false;
-		var raycast = PhysicsRayQueryParameters3D.Create(GroundCheckNode.GlobalPosition, GroundCheckNode.GlobalPosition + Vector3.Down * GroundDistance);
-		var result = GetWorld3D().DirectSpaceState.IntersectRay(raycast);
-
-		isGrounded = result.Count > 0;
+		isGrounded = GroundCheckRaycast.IsColliding();
 		
 		base._PhysicsProcess(delta);
 		if (isGrounded)
@@ -106,20 +113,35 @@ public partial class CarController : Node3D
 			// Allow Drive
 			if (Math.Abs(speedInput) > 0)
 			{
-				_rb.ApplyForce(Transform.Basis * new Vector3(0, 0, speedInput));
+				_rb.ApplyCentralForce(Transform.Basis * new Vector3(0, 0, speedInput));
 			}
 
 			// Control Drive Speed if > Max Speed
 			// Check it works with gravity?
-			if (Speed > maxSpeed)
+			if (Speed > MaxSpeed)
 			{
-				_rb.LinearVelocity *= maxSpeed / Speed;
+				_rb.LinearVelocity *= MaxSpeed / Speed;
+			} else if (Speed < maxReverseSpeed)
+			{
+				_rb.LinearVelocity *= maxReverseSpeed / Speed;
 			}
+
+			if (_rb.LinearVelocity.Length() > minimumTurnSpeed)
+			{
+				Rotate(Vector3.Up, -turnInput * turnSpeed * (float)delta);
+			}
+
+
+			var t = AlignWithY(GlobalTransform, GroundCheckRaycast.GetCollisionNormal().Normalized());
+			GlobalTransform = t;//GlobalTransform.InterpolateWith(t, (float)delta * 10f) ;
 		}
-		else
-		{
-			// apply extra downforce to stop floatiness
-			_rb.ApplyForce(Transform.Basis * new Vector3(0, -Downforce * M, 0));
-		}
+	}
+
+	private Transform3D AlignWithY(Transform3D t, Vector3 v)
+	{
+		t.Basis.Y = v;
+		t.Basis.X = t.Basis.Z.Cross(v);
+		t.Basis = t.Basis.Orthonormalized();
+		return t;
 	}
 }
