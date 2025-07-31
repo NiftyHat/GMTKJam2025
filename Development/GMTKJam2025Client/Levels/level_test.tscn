@@ -51,6 +51,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0576829, -0.0104561, -6.375
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_oenlu")
 
+[node name="Checkpoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0957947, 0, 0.900164)
+
+[node name="Area3D" type="Area3D" parent="Checkpoint"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00169814, 0.00257543, -0.0157655)
+
 [node name="TheSunTheSunTheSunTheSun" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.217323, 0.932338, 1.65666)
 omni_range = 19.52
@@ -124,7 +132,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0571, -0.00780934, -5.7579
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0571, -0.00780934, -7.8418)
 
 [node name="roadRampLongWall3" parent="Track" instance=ExtResource("11_tchvq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, -1, 13.056, -0.0104559, -13.1056)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 13.0559, -0.010456, -13.1049)
 
 [node name="roadRampLongWall2" parent="Track" instance=ExtResource("11_tchvq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0571, -0.00780931, -4.62741)
