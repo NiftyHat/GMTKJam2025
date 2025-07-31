@@ -1,0 +1,12 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1753993112
+checker.LICENSE.md::TextFile/TextFile::-1::1753993040::0::1::::<><><>0<>0<><>::
+checker.png::CompressedTexture2D/CompressedTexture2D::5283728678749956529::1753993040::1753993100::1::::<><><>0<>0<>f88f0b5b10eebfb4ae8be66f69d60322<>res://.godot/imported/checker.png-6bb199bedbd039461e4248c1d0b9691d.s3tc.ctex::
+default_env.tres::Environment/Environment::-1::1753993040::0::1::::<><><>0<>0<><>::
+icon.webp::CompressedTexture2D/CompressedTexture2D::3626017087650301524::1753993040::1753993099::1::::<><><>0<>0<>c6c2d2a409d3db208320ab54c2d08e4f<>res://.godot/imported/icon.webp-e94f9a68b0f625a567a797079e4d325f.ctex::
+README.md::TextFile/TextFile::-1::1753993040::0::1::::<><><>0<>0<><>::
+test.GPUParticlesCollisionSDF3D_data.exr::CompressedTexture3D/CompressedTexture3D::7607346043423018320::1753993040::1753993099::1::::<><><>0<>0<>7ac7ab149d670603103f724f2f1cdba8<>res://.godot/imported/test.GPUParticlesCollisionSDF3D_data.exr-29a2410593f1eebabf1e1d8c3f3a6320.ctex3d::
+test.tscn::PackedScene::3432127765517463568::1753993112::0::1::::<><><>0<>0<><>::uid://ddp8ek6rswwmc::::res://kenney/smoke_05.png<>uid://dgnb433rl8hr1::::res://test.GPUParticlesCollisionSDF3D_data.exr<>uid://chjqieyps5n5r::::res://checker.png<>uid://b158kfnqmtt7f::::res://tester.gd
+tester.gd::GDScript/GDScript::4275283753047059369::1753993040::0::1::::<>WorldEnvironment<><>0<>0<><>::
+::res://kenney/::1753993100
+smoke_05.png::CompressedTexture2D/CompressedTexture2D::7402805626160994978::1753993040::1753993100::1::::<><><>0<>0<>fab04e9b5f11b037637fe42a961596fd<>res://.godot/imported/smoke_05.png-7e246e30a4b7ed8644556ad9ae88f0d2.s3tc.ctex::
