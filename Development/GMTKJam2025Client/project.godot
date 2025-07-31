@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="GMTK Game Jam 2025"
+run/main_scene="uid://bewbicgsy3ro"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="uid://cl03mvoip1fwh"
 
 [dotnet]
 
 project/assembly_name="New Game Project"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/snappy/plugin.cfg")
