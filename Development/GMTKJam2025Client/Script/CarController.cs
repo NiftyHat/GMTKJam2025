@@ -65,7 +65,6 @@ public partial class CarController : Node3D
 		
 		
 		// Acceleration, Braking, and Reversing vroom
-		GD.Print($"Speed : {Speed}");
 
 		speedInput = 0;
 		float vInput = Input.GetAxis("Brake", "Accelerate");

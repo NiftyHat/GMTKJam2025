@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://ld0p8kcn1vxo"]
+[gd_scene load_steps=15 format=3 uid="uid://ld0p8kcn1vxo"]
 
 [ext_resource type="PackedScene" uid="uid://bewbicgsy3ro" path="res://Levels/level_test.tscn" id="1_nes3m"]
 [ext_resource type="Texture2D" uid="uid://2h3qmpnq0584" path="res://Texture/7a3584298ef470fe0aafc146c23d34523b045606.png" id="1_r2sr7"]
 [ext_resource type="Script" uid="uid://dnlgcp0rpf2mg" path="res://Script/CarController.cs" id="2_wni78"]
 [ext_resource type="Script" uid="uid://3klfn8jegsue" path="res://Script/GameCamera.cs" id="3_0pdfm"]
 [ext_resource type="PackedScene" uid="uid://bpmfitw8wc80d" path="res://3D/Cars/car_player.tscn" id="4_vy56e"]
+[ext_resource type="Script" uid="uid://cc86lg7fm3e7b" path="res://Script/GhostRecorder.cs" id="6_ggkdx"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_wni78"]
 size = Vector2(256, 256)
@@ -24,6 +25,9 @@ bounce = 0.1
 albedo_texture = ExtResource("1_r2sr7")
 
 [sub_resource type="SphereMesh" id="SphereMesh_ggkdx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ggkdx"]
+size = Vector3(0.622498, 0.429688, 1.58002)
 
 [node name="Node3D" type="Node3D"]
 
@@ -105,3 +109,20 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.
 target_position = Vector3(0, -0.75, 0)
 
 [node name="CameraTarget" type="Node3D" parent="."]
+
+[node name="GhostRecorder" type="Node3D" parent="." node_paths=PackedStringArray("CarRigidbody", "GhostCarPrototype")]
+script = ExtResource("6_ggkdx")
+CarRigidbody = NodePath("../Car")
+GhostCarPrototype = NodePath("../Ghost Car")
+
+[node name="Ghost Car" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.92633, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ghost Car"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.322774, -0.131317)
+shape = SubResource("BoxShape3D_ggkdx")
+
+[node name="GhostCar" type="Node3D" parent="Ghost Car"]
+
+[node name="player_car" parent="Ghost Car/GhostCar" instance=ExtResource("4_vy56e")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.540508, 0)
