@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpmfitw8wc80d"]
+
+[ext_resource type="PackedScene" uid="uid://clqvxf73xwkm7" path="res://3D/Cars/player_car.blend" id="1_oxh5f"]
+[ext_resource type="Texture2D" uid="uid://b11d2d74ys4jg" path="res://3D/Cars/colormap.png" id="2_bhic8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6iqwf"]
+albedo_texture = ExtResource("2_bhic8")
+
+[node name="player_car" instance=ExtResource("1_oxh5f")]
+
+[node name="FrontRightWheel" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_6iqwf")
+
+[node name="Steering" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_6iqwf")
+
+[node name="CarFrame" parent="." index="2"]
+material_override = SubResource("StandardMaterial3D_6iqwf")
+
+[node name="LeftDoor" parent="." index="3"]
+material_override = SubResource("StandardMaterial3D_6iqwf")
+
+[node name="RightDoor" parent="." index="4"]
+material_override = SubResource("StandardMaterial3D_6iqwf")
+
+[node name="FrontLeftWheel" parent="." index="5"]
+material_override = SubResource("StandardMaterial3D_6iqwf")
+
+[node name="BackRightWheel" parent="." index="6"]
+material_override = SubResource("StandardMaterial3D_6iqwf")
+
+[node name="BackLeftWheel" parent="." index="7"]
+material_override = SubResource("StandardMaterial3D_6iqwf")

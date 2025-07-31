@@ -1,7 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://bewbicgsy3ro"]
+[gd_scene load_steps=20 format=3 uid="uid://bewbicgsy3ro"]
 
 [ext_resource type="PackedScene" uid="uid://1d6uchasscyj" path="res://3D/Prototype/Kenney_Racing/roadStart.glb" id="1_3o0bi"]
-[ext_resource type="PackedScene" uid="uid://cbte477bwceo0" path="res://3D/Prototype/Cars/car-suv.tscn" id="1_p5spi"]
 [ext_resource type="PackedScene" uid="uid://dw8nh0a0yh6u3" path="res://3D/Prototype/Kenney_Racing/roadStartPositions.glb" id="2_oenlu"]
 [ext_resource type="Texture2D" uid="uid://cl03mvoip1fwh" path="res://icon.png" id="3_w54qd"]
 [ext_resource type="PackedScene" uid="uid://bsv8iwtg1wf80" path="res://3D/Prototype/Kenney_Racing/roadPitStraight.glb" id="5_6ieip"]
@@ -46,9 +45,6 @@ data = PackedVector3Array(20, 0, 20, 18.0952, 0, 20, 20, 0, 18.0952, 18.0952, 0,
 
 [node name="LevelTest" type="Node3D"]
 
-[node name="suv" parent="." instance=ExtResource("1_p5spi")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
-
 [node name="roadStart" parent="." instance=ExtResource("1_3o0bi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0576829, -0.0104561, -6.37574)
 
@@ -56,7 +52,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0576829, -0.0104561, -6.375
 environment = SubResource("Environment_oenlu")
 
 [node name="TheSunTheSunTheSunTheSun" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.217323, 1.17746, 1.65666)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.217323, 0.932338, 1.65666)
 omni_range = 19.52
 omni_attenuation = 3.06
 

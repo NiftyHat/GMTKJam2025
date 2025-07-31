@@ -19,6 +19,10 @@ config/icon="uid://cl03mvoip1fwh"
 
 project/assembly_name="New Game Project"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/snappy/plugin.cfg")
+
 [input]
 
 Accelerate={
