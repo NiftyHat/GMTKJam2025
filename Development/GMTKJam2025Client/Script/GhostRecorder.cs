@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using Godot.NativeInterop;
 
@@ -8,11 +9,13 @@ public partial class GhostRecorder : Node
 {
 	[Export] private Node3D CarRigidbody;
 	[Export] private Node3D GhostCarPrototype;
+	[Export] private Node3D GhostCarContainerPrototype;
 	
 	private List<Transform3D> CurrentRecording;
 	private List<List<Transform3D>> AllRecordings;
 
 	private List<Node3D> GhostCars;
+	private List<Node3D> GhostCarsContainers;
 
 	public bool Recording = false;
 	public int currentFrame = 0;
@@ -25,6 +28,7 @@ public partial class GhostRecorder : Node
 		CurrentRecording = new List<Transform3D>();
 		AllRecordings = new List<List<Transform3D>>();
 		GhostCars = new List<Node3D>();
+		GhostCarsContainers = new List<Node3D>();
 	}
 
 	public void Lap()
@@ -62,8 +66,32 @@ public partial class GhostRecorder : Node
 		CurrentRecording.Add(CarRigidbody.Transform);
 
 		currentFrame++;
+
 		int ghost = 0;
-		for(; ghost < AllRecordings.Count; ghost++)
+		if (currentFrame == 100)
+		{
+			GD.Print("Removing Crates");
+			foreach (var container in GhostCarsContainers)
+			{
+				container.GetParent().RemoveChild(container);
+			}
+		}
+		else if (currentFrame == 200)
+		{
+			GD.Print("Adding Crates");
+			for (ghost = 0; ghost < AllRecordings.Count; ghost++)
+			{
+				AddChild(GhostCarsContainers[ghost]);
+				GhostCarsContainers[ghost].Transform = AllRecordings[ghost][0];
+			}
+			
+			var newCrate = (Node3D)GhostCarContainerPrototype.Duplicate();
+			GhostCarsContainers.Add(newCrate);
+			AddChild(newCrate);
+			newCrate.Transform = CurrentRecording[0];
+		}
+		
+		for(ghost = 0; ghost < AllRecordings.Count; ghost++)
 		{
 			var currentRecording = AllRecordings[ghost];
 			var car = GhostCars[ghost];
