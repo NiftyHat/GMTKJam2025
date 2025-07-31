@@ -17,7 +17,7 @@ config/icon="uid://cl03mvoip1fwh"
 
 [dotnet]
 
-project/assembly_name="New Game Project"
+project/assembly_name="GMTK Jam 2025"
 
 [editor_plugins]
 
