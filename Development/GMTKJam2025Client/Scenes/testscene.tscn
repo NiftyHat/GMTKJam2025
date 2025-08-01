@@ -135,7 +135,7 @@ _hud = NodePath("../CanvasLayer")
 metadata/_custom_type_script = "uid://v2v2l1vx325s"
 
 [node name="CarController" type="Node3D" parent="CarEntity" node_paths=PackedStringArray("_rb")]
-transform = Transform3D(0.999995, -0.000179475, -0.00305023, 0.000170427, 0.999996, -0.00296666, 0.00305075, 0.00296613, 0.999991, -0.514817, 0.803603, -7.93579)
+transform = Transform3D(0.999995, -0.000179475, -0.00305023, 0.000170427, 0.999996, -0.00296666, 0.00305075, 0.00296613, 0.999991, 0, 0, 0)
 script = ExtResource("2_wni78")
 _rb = NodePath("../Physics")
 Acceleration = 0.2
