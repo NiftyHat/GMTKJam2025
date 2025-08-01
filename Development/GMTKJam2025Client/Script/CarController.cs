@@ -10,12 +10,10 @@ public partial class CarController : Node3D
 		BRAKE,
 		REVERSE
 	}
-
 	
 	public float Speed => _rb.LinearVelocity.Dot(Transform.Basis.Z);
 	public float Velocity => _rb.LinearVelocity.Length();
 	public BrakeState _brakeState { get; private set; } = BrakeState.NOT;
-	
 	
 	public float speedInput { get; private set; } = 0;
 	public float turnInput { get; private set; } = 0;

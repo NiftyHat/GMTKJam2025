@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dq2iihj5d4qdq"]
+
+[ext_resource type="PackedScene" uid="uid://cpot42ooubj8x" path="res://3D/Prototype/gate.glb" id="1_tlm64"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wglce"]
+albedo_color = Color(0.0729, 0.81, 0.134325, 1)
+
+[node name="gate2" instance=ExtResource("1_tlm64")]
+
+[node name="gate" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_wglce")

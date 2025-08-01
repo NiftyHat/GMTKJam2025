@@ -1,0 +1,159 @@
+[gd_scene load_steps=10 format=3 uid="uid://bna0stgm2f762"]
+
+[ext_resource type="Script" uid="uid://d3054nla06550" path="res://UI/UIHUD.cs" id="1_dmi88"]
+[ext_resource type="AudioStream" uid="uid://0stjcmm8fks3" path="res://Audio/Music/lsl gogogo.ogg" id="2_fac72"]
+[ext_resource type="FontFile" uid="uid://c434xdyo2rbtv" path="res://Fonts/abduction2002.ttf" id="3_fac72"]
+[ext_resource type="AudioStream" uid="uid://dvud2f6pw67ua" path="res://Audio/Music/lsl nyoom.ogg" id="4_h3oo2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_008jt"]
+font = ExtResource("3_fac72")
+font_size = 56
+
+[sub_resource type="Animation" id="Animation_008jt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CountdownLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["3"]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CountdownLabel:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(202, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CountdownLabel:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_h3oo2"]
+resource_name = "countdown"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CountdownLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.433333, 1.14, 1.85, 2.23333, 2.53, 2.66667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["", "3", "2", "1", "GO", "GO!
+", "GO!!
+"]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CountdownLabel:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(202, -0.25, 0, 0.25, 0, 202, -0.25, 0, 0.25, 0, 400, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.83333, 3.32333)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CountdownLabel:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.86667, 3.34667)
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer321Go")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 3.02,
+"start_offset": 0.0,
+"stream": ExtResource("2_fac72")
+}],
+"times": PackedFloat32Array(0.366667)
+}
+tracks/3/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_008jt"]
+_data = {
+&"RESET": SubResource("Animation_008jt"),
+&"countdown": SubResource("Animation_h3oo2")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_a2sha"]
+font = ExtResource("3_fac72")
+font_size = 256
+
+[node name="CanvasLayer" type="Control" node_paths=PackedStringArray("_lapCountLabel", "_countdownAnimation", "_streamMusic")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_dmi88")
+_lapCountLabel = NodePath("CanvasLayer/LabelLapCount")
+_countdownAnimation = NodePath("CanvasLayer/Countdown321Go/CountdownAnimation")
+_streamMusic = NodePath("CanvasLayer/AudioStreamPlayerRacing")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LabelLapCount" type="Label" parent="CanvasLayer"]
+offset_left = 6.0
+offset_top = 594.0
+offset_right = 1158.0
+offset_bottom = 646.0
+text = "Lap 1"
+label_settings = SubResource("LabelSettings_008jt")
+
+[node name="Countdown321Go" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CountdownAnimation" type="AnimationPlayer" parent="CanvasLayer/Countdown321Go"]
+libraries = {
+&"": SubResource("AnimationLibrary_008jt")
+}
+
+[node name="CountdownLabel" type="Label" parent="CanvasLayer/Countdown321Go"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 202.0
+offset_right = 1153.0
+offset_bottom = 677.0
+text = "3"
+label_settings = SubResource("LabelSettings_a2sha")
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer321Go" type="AudioStreamPlayer" parent="CanvasLayer/Countdown321Go"]
+bus = &"Music"
+
+[node name="AudioStreamPlayerRacing" type="AudioStreamPlayer" parent="CanvasLayer"]
+stream = ExtResource("4_h3oo2")
+bus = &"Music"
+parameters/looping = true

@@ -1,0 +1,1 @@
+ffmpeg -i output.avi -n -fs 7950000 -fpsmax 30 -s 676x380 -b:a 120000 -b:v 400000 output.mp4

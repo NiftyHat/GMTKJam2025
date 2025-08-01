@@ -1,0 +1,264 @@
+[gd_scene load_steps=19 format=3 uid="uid://cvlcpfuwq1lv4"]
+
+[ext_resource type="Script" uid="uid://bqml0tdjvbq60" path="res://3D/Entities/EntityCheckpoint.cs" id="1_tlnpo"]
+[ext_resource type="Script" uid="uid://deox86lrk7u8l" path="res://3D/Entities/EntityDetectionZone.cs" id="2_qambs"]
+[ext_resource type="PackedScene" uid="uid://dq2iihj5d4qdq" path="res://3D/Checkpoints/checkpoint_gate_next.tscn" id="3_4tpxj"]
+[ext_resource type="PackedScene" uid="uid://b8enseb8qbc0b" path="res://3D/Checkpoints/checkpoint_gate_active.tscn" id="4_01yyt"]
+[ext_resource type="PackedScene" uid="uid://d7umiwnfavej" path="res://3D/Checkpoints/checkpoint_gate_normal.tscn" id="5_xgeex"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ru4ou"]
+size = Vector3(1, 0.987762, 0.655518)
+
+[sub_resource type="Animation" id="Animation_4tpxj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GPUParticles3D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("state_checkpoint_active:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("state_checkpoint_normal:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("state_checkpoint_next:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_qambs"]
+resource_name = "triggered"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GPUParticles3D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("state_checkpoint_active:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("state_checkpoint_normal:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_tlnpo"]
+resource_name = "idle"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("state_checkpoint_normal:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("state_checkpoint_active:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GPUParticles3D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_01yyt"]
+resource_name = "next"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("state_checkpoint_next:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("state_checkpoint_normal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("state_checkpoint_active:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_01yyt"]
+_data = {
+&"RESET": SubResource("Animation_4tpxj"),
+&"active": SubResource("Animation_qambs"),
+&"idle": SubResource("Animation_tlnpo"),
+&"next": SubResource("Animation_01yyt")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xgeex"]
+
+[sub_resource type="Curve" id="Curve_xs3ek"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_dwftu"]
+curve = SubResource("Curve_xs3ek")
+
+[sub_resource type="Curve" id="Curve_2o3vs"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0, 3), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_l1qyb"]
+curve = SubResource("Curve_2o3vs")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qjn1y"]
+emission_shape = 1
+emission_sphere_radius = 0.1
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+inherit_velocity_ratio = 1.0
+direction = Vector3(0, 0, 10)
+spread = 180.0
+initial_velocity_min = 0.5
+initial_velocity_max = 1.0
+orbit_velocity_min = 9.49949e-08
+orbit_velocity_max = 9.49949e-08
+gravity = Vector3(0, 1, 0)
+attractor_interaction_enabled = false
+scale_curve = SubResource("CurveTexture_dwftu")
+scale_over_velocity_max = 1.0
+scale_over_velocity_curve = SubResource("CurveTexture_l1qyb")
+
+[sub_resource type="BoxMesh" id="BoxMesh_7gfg6"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="EntityCheckpoint" type="Node3D" node_paths=PackedStringArray("_detectionZone", "_animationPlayer")]
+script = ExtResource("1_tlnpo")
+_detectionZone = NodePath("EntityDetectionZone")
+_animationPlayer = NodePath("AnimationPlayer")
+metadata/_custom_type_script = "uid://bqml0tdjvbq60"
+
+[node name="EntityDetectionZone" type="Area3D" parent="."]
+script = ExtResource("2_qambs")
+metadata/_custom_type_script = "uid://deox86lrk7u8l"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EntityDetectionZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.480209, 0.0406495)
+shape = SubResource("BoxShape3D_ru4ou")
+debug_color = Color(0, 0.595, 0.7, 0.772549)
+
+[node name="state_checkpoint_next" parent="." instance=ExtResource("3_4tpxj")]
+visible = false
+
+[node name="state_checkpoint_active" parent="." instance=ExtResource("4_01yyt")]
+visible = false
+
+[node name="state_checkpoint_normal" parent="." instance=ExtResource("5_xgeex")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_01yyt")
+}
+autoplay = "idle"
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.528282, -0.494861)
+material_override = SubResource("StandardMaterial3D_xgeex")
+emitting = false
+amount = 30
+one_shot = true
+explosiveness = 0.92
+process_material = SubResource("ParticleProcessMaterial_qjn1y")
+draw_pass_1 = SubResource("BoxMesh_7gfg6")

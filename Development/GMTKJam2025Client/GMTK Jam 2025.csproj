@@ -2,6 +2,9 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <EnableDynamicLoading>true</EnableDynamicLoading>
-    <RootNamespace>NewGameProject</RootNamespace>
+    <RootNamespace>GMTKJam2025</RootNamespace>
   </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Audio\" />
+  </ItemGroup>
 </Project>

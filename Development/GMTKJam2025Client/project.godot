@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="GMTK Game Jam 2025"
-run/main_scene="uid://ld0p8kcn1vxo"
+run/main_scene="uid://f4s4hn0pgcmt"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 config/icon="uid://cl03mvoip1fwh"
 
 [dotnet]
 
 project/assembly_name="GMTK Jam 2025"
+
+[editor]
+
+movie_writer/movie_file="C:/Projects/2025/GMTK2025_-_Jam/Design/Recordings/output.avi"
 
 [editor_plugins]
 
