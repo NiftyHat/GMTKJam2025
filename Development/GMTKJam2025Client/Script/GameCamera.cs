@@ -15,6 +15,18 @@ public partial class GameCamera : Camera3D
 
 	[Export] public CarController CarController;
 
+	public override void _Ready()
+	{
+		base._Ready();
+		Fov = FOVNormal;
+		if (CameraPositionTarget != null) GlobalPosition = CameraPositionTarget.GlobalPosition;
+		if (LookAtTarget != null)
+		{
+			LookAtTarget.GlobalPosition = CameraFocusTarget.GlobalPosition;
+			LookAt(LookAtTarget.GlobalPosition);
+		}
+	}
+
 	public override void _Process(double delta)
 	{
 		base._Process(delta);
@@ -28,8 +40,15 @@ public partial class GameCamera : Camera3D
 		{
 			LookAtTarget.Position = LookAtTarget.Position.Lerp(CameraFocusTarget.GlobalPosition, SnapFocusSpeed);
 		}
-		
-		Fov = FOVNormal + (FOVAtMaxSpeed - FOVNormal) * CarController.Speed / CarController.MaxSpeed;
+
+		if (CarController != null)
+		{
+			Fov = FOVNormal + (FOVAtMaxSpeed - FOVNormal) * CarController.Speed / CarController.MaxSpeed;
+		}
+		else
+		{
+			Fov = FOVNormal;
+		}
 
 		LookAt(LookAtTarget.GlobalPosition);
 	}

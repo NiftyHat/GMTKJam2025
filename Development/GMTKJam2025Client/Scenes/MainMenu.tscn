@@ -1,0 +1,184 @@
+[gd_scene load_steps=13 format=3 uid="uid://djpruf2ij658q"]
+
+[ext_resource type="PackedScene" uid="uid://de6n0n215fpr5" path="res://Scenes/Camera/GameCamera.tscn" id="1_853f1"]
+[ext_resource type="Texture2D" uid="uid://dhojn25qmrh3b" path="res://Texture/Grid Floor.png" id="2_8um5k"]
+[ext_resource type="PackedScene" uid="uid://bpmfitw8wc80d" path="res://3D/Cars/car_player.tscn" id="3_8saeu"]
+[ext_resource type="Script" uid="uid://cujwqas1amatl" path="res://Script/MainMenu/GentleWobble.cs" id="4_ghw46"]
+[ext_resource type="Texture2D" uid="uid://bajwttt51timw" path="res://Texture/LightspeedLoop_Logo.PNG" id="5_df05h"]
+[ext_resource type="Script" uid="uid://bsbrxllseulmg" path="res://UI/MainMenu/MainMenuController.cs" id="5_koqhg"]
+[ext_resource type="Script" uid="uid://b5eenasigq4ia" path="res://UI/MainMenu/MainMenuTitleDisplay.cs" id="5_xim88"]
+[ext_resource type="FontFile" uid="uid://c434xdyo2rbtv" path="res://Fonts/abduction2002.ttf" id="6_8um5k"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ghw46"]
+size = Vector2(256, 256)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_df05h"]
+albedo_texture = ExtResource("2_8um5k")
+uv1_scale = Vector3(32, 32, 32)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xim88"]
+bg_color = Color(0.254902, 0, 0.572549, 0.784314)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xim88"]
+font = ExtResource("6_8um5k")
+font_size = 56
+font_color = Color(1, 0.407843, 1, 1)
+
+[node name="MainMenu" type="Node3D"]
+
+[node name="Camera3D" parent="." node_paths=PackedStringArray("LookAtTarget", "CameraPositionTarget", "CameraFocusTarget") instance=ExtResource("1_853f1")]
+transform = Transform3D(0.999722, -0.00434148, -0.0231937, 0, 0.982928, -0.183988, 0.0235965, 0.183937, 0.982655, 0.0139495, 0.250505, 0.345816)
+LookAtTarget = NodePath("../Positioners/Camera Lookat Target")
+CameraPositionTarget = NodePath("../Positioners/Title Cam Position")
+CameraFocusTarget = NodePath("../Positioners/Title Cam Focus/Title Cam Focus - Wobble")
+FOVNormal = 40.0
+
+[node name="Scene Composition" type="Node" parent="."]
+
+[node name="Floor" type="MeshInstance3D" parent="Scene Composition"]
+mesh = SubResource("PlaneMesh_ghw46")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_df05h")
+
+[node name="player_car" parent="Scene Composition" instance=ExtResource("3_8saeu")]
+transform = Transform3D(0.883324, 0, -0.468763, 0, 1, 0, 0.468763, 0, 0.883324, -0.433324, 0, -1.33947)
+
+[node name="player_car2" parent="Scene Composition" instance=ExtResource("3_8saeu")]
+transform = Transform3D(0.663012, 0, -0.748609, 0, 1, 0, 0.748609, 0, 0.663012, -1.45921, 0, -2.09662)
+
+[node name="player_car3" parent="Scene Composition" instance=ExtResource("3_8saeu")]
+transform = Transform3D(0.431598, 0, -0.902066, 0, 1, 0, 0.902066, 0, 0.431598, -2.01171, 0, -2.8782)
+
+[node name="player_car4" parent="Scene Composition" instance=ExtResource("3_8saeu")]
+transform = Transform3D(0.180811, 0, -0.983518, 0, 1, 0, 0.983518, 0, 0.180811, -2.32076, 0, -3.81581)
+
+[node name="player_car5" parent="Scene Composition" instance=ExtResource("3_8saeu")]
+transform = Transform3D(-0.0966102, 0, -0.995322, 0, 1, 0, 0.995322, 0, -0.0966102, -2.38991, 0, -4.77045)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.899923, 0.18185, -0.39632, 0, 0.908888, 0.41704, 0.43605, -0.375304, 0.817929, -1.11444, 1.63989, 1.18973)
+
+[node name="Positioners" type="Node3D" parent="."]
+
+[node name="Camera Lookat Target" type="Node3D" parent="Positioners"]
+transform = Transform3D(0.755877, -0.206637, 0.621249, 0, 0.948888, 0.315614, -0.654713, -0.238565, 0.717243, -0.517186, 0.414904, -1.25588)
+
+[node name="Title Cam Position" type="Node3D" parent="Positioners"]
+transform = Transform3D(0.982781, -0.0575514, 0.175582, 0, 0.950256, 0.31147, -0.184773, -0.306107, 0.933894, -0.8, 0.2, 0.4)
+
+[node name="Title Cam Focus" type="Node3D" parent="Positioners"]
+transform = Transform3D(-0.520375, 0.0111907, -0.853864, 0.00444148, 0.999936, 0.0103983, 0.853926, 0.00161861, -0.520392, 0.24, 0.4, -2.2)
+
+[node name="Title Cam Focus - Wobble" type="Node3D" parent="Positioners/Title Cam Focus"]
+transform = Transform3D(1, 6.98492e-10, -2.98023e-08, 5.82077e-10, 1, 6.40284e-10, 2.98023e-08, 5.82077e-11, 1, 0.00542438, -0.00762185, -0.0184967)
+script = ExtResource("4_ghw46")
+Range = Vector3(0, 0.25, 0.125)
+Duration = 1.0
+
+[node name="Main Cam Position" type="Node3D" parent="Positioners"]
+transform = Transform3D(0.284017, -0.668508, 0.687337, 0, 0.716857, 0.69722, -0.958819, -0.198022, 0.203599, 1.03537, 1.94868, -2.35622)
+
+[node name="Main Cam Focus" type="Node3D" parent="Positioners"]
+transform = Transform3D(0.895751, 0, 0.444557, 0, 1, 0, -0.444557, 0, 0.895751, -1.71528, 0.521452, -3.21988)
+
+[node name="Main Cam Focus - Wobble" type="Node3D" parent="Positioners/Main Cam Focus"]
+transform = Transform3D(1, 6.98492e-10, -2.98023e-08, 5.82077e-10, 1, 6.40284e-10, 2.98023e-08, 5.82077e-11, 1, 0, 0, 0)
+script = ExtResource("4_ghw46")
+Range = Vector3(0, 0.25, 0)
+Duration = 1.0
+
+[node name="MainMenu" type="Control" parent="." node_paths=PackedStringArray("GameCamera", "CameraPositionsByState", "CameraFocusesByState")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_koqhg")
+GameCamera = NodePath("../Camera3D")
+CameraPositionsByState = {
+0: NodePath("../Positioners/Title Cam Position"),
+1: NodePath("../Positioners/Main Cam Position")
+}
+CameraFocusesByState = {
+0: NodePath("../Positioners/Title Cam Focus/Title Cam Focus - Wobble"),
+1: NodePath("../Positioners/Main Cam Focus/Main Cam Focus - Wobble")
+}
+
+[node name="TitleScreen" type="Control" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_xim88")
+ColorPulseA = Color(0.694118, 0.137255, 0.435294, 1)
+ColorPulseB = Color(0.862745, 0.32549, 0.294118, 1)
+ColorFlashA = Color(0.984314, 0.721569, 0.12549, 1)
+ColorFlashB = Color(1, 1, 1, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/TitleScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="MainMenu/TitleScreen/VBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+
+[node name="TitleBox" type="HBoxContainer" parent="MainMenu/TitleScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="MainMenu/TitleScreen/VBoxContainer/TitleBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu/TitleScreen/VBoxContainer/TitleBox"]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_df05h")
+expand_mode = 3
+
+[node name="Control2" type="Control" parent="MainMenu/TitleScreen/VBoxContainer/TitleBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control2" type="Control" parent="MainMenu/TitleScreen/VBoxContainer"]
+custom_minimum_size = Vector2(0, 21.475)
+layout_mode = 2
+
+[node name="LabelBox" type="PanelContainer" parent="MainMenu/TitleScreen/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xim88")
+
+[node name="Padder" type="VBoxContainer" parent="MainMenu/TitleScreen/VBoxContainer/LabelBox"]
+layout_mode = 2
+
+[node name="Control4" type="Control" parent="MainMenu/TitleScreen/VBoxContainer/LabelBox/Padder"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainMenu/TitleScreen/VBoxContainer/LabelBox/Padder"]
+layout_mode = 2
+text = "[ PRESS SPACE ]"
+label_settings = SubResource("LabelSettings_xim88")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control5" type="Control" parent="MainMenu/TitleScreen/VBoxContainer/LabelBox/Padder"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="Control3" type="Control" parent="MainMenu/TitleScreen/VBoxContainer"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+
+[connection signal="FadeInAnimationStarted" from="MainMenu/TitleScreen" to="MainMenu" method="ChangeCameraToTitle"]
+[connection signal="FadeOutAnimationFading" from="MainMenu/TitleScreen" to="MainMenu" method="ChangeCameraToMenu"]
