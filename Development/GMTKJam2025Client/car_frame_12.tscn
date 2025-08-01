@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyphroekr0l7o"]
+
+[ext_resource type="PackedScene" uid="uid://pmklrr8m83es" path="res://3D/Models/CarFrame1.gltf" id="1_mi28g"]
+
+[node name="CarFrame12" instance=ExtResource("1_mi28g")]
+
+[node name="CollisionShape3D" parent="CarFrame1/StaticBody3D" index="0"]
+shape = null
+disabled = true

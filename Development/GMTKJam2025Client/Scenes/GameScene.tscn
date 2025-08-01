@@ -1,15 +1,17 @@
-[gd_scene load_steps=33 format=3 uid="uid://bs7t7tjyw4eo1"]
+[gd_scene load_steps=35 format=3 uid="uid://bs7t7tjyw4eo1"]
 
 [ext_resource type="Script" uid="uid://2jqy0i2iaig4" path="res://Script/GameController.cs" id="1_6vvcf"]
-[ext_resource type="PackedScene" uid="uid://bewbicgsy3ro" path="res://Scenes/Levels/level_test.tscn" id="1_xhjei"]
 [ext_resource type="Texture2D" uid="uid://2h3qmpnq0584" path="res://3D/Textures/7a3584298ef470fe0aafc146c23d34523b045606.png" id="2_6vvcf"]
+[ext_resource type="PackedScene" uid="uid://dn7u8iitv4j0a" path="res://Scenes/Levels/level_short.tscn" id="2_7rq2r"]
 [ext_resource type="Texture2D" uid="uid://bdpkysot812ts" path="res://3D/Textures/Sky_T.webp" id="3_cr6v8"]
 [ext_resource type="Script" uid="uid://3klfn8jegsue" path="res://Script/GameCamera.cs" id="4_f43ej"]
 [ext_resource type="Script" uid="uid://cc86lg7fm3e7b" path="res://Script/GhostRecorder.cs" id="5_7rq2r"]
 [ext_resource type="PackedScene" uid="uid://bpmfitw8wc80d" path="res://3D/Cars/car_player.tscn" id="6_124qp"]
 [ext_resource type="Script" uid="uid://cv0yn3y5gd06l" path="res://3D/Entities/EntityCar.cs" id="7_qolck"]
+[ext_resource type="PackedScene" uid="uid://b74jk67lcw66c" path="res://3D/Models/CarCoffin1.gltf" id="8_qolck"]
 [ext_resource type="Script" uid="uid://dnlgcp0rpf2mg" path="res://Script/CarController.cs" id="8_ry528"]
 [ext_resource type="Script" uid="uid://ck54vpeavsd5i" path="res://3D/Entities/EntityRigidbody3D.cs" id="9_yhlfj"]
+[ext_resource type="PackedScene" uid="uid://dyphroekr0l7o" path="res://car_frame_12.tscn" id="10_124qp"]
 [ext_resource type="PackedScene" uid="uid://bna0stgm2f762" path="res://UI/scene_hud.tscn" id="10_gipt1"]
 [ext_resource type="Script" uid="uid://cx8fluhgs0oo3" path="res://UI/PauseScreen.cs" id="12_7rq2r"]
 [ext_resource type="Texture2D" uid="uid://dwkcdhdwgfnss" path="res://UI/Textures/Menu_Base.PNG" id="13_124qp"]
@@ -45,7 +47,7 @@ albedo_texture = ExtResource("2_6vvcf")
 [sub_resource type="SphereMesh" id="SphereMesh_ggkdx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ggkdx"]
-size = Vector3(0.622498, 0.429688, 1.58002)
+size = Vector3(2.82107, 0.824341, 5.79112)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ggkdx"]
 
@@ -53,11 +55,13 @@ size = Vector3(0.622498, 0.429688, 1.58002)
 bounce = 0.1
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7ms41"]
+radius = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3syrs"]
 albedo_texture = ExtResource("2_6vvcf")
 
 [sub_resource type="SphereMesh" id="SphereMesh_yr35r"]
+radius = 1.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ry528"]
 bg_color = Color(0.219608, 0.105882, 0.607843, 1)
@@ -76,14 +80,15 @@ script = ExtResource("1_6vvcf")
 hud = NodePath("../HUD")
 pauseScreen = NodePath("../Pause")
 
-[node name="LevelTest" parent="." instance=ExtResource("1_xhjei")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.0413204, 0.14372, 0.0478761)
+[node name="LevelTest" parent="." instance=ExtResource("2_7rq2r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000880241, 0.00671792, -0.000197411)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 collision_layer = 5
 collision_mask = 5
 
 [node name="Floor" type="MeshInstance3D" parent="StaticBody3D"]
+visible = false
 mesh = SubResource("PlaneMesh_wni78")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_nes3m")
@@ -120,6 +125,7 @@ shape = SubResource("SphereShape3D_r2sr7")
 debug_color = Color(0.0823529, 0.462745, 0, 1)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Physics"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8842, -4.09361, -9.02685)
 visible = false
 material_override = SubResource("StandardMaterial3D_0pdfm")
 mesh = SubResource("SphereMesh_ggkdx")
@@ -136,20 +142,17 @@ GhostCarContainerPrototype = NodePath("../Crate")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ghost Car"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.322774, -0.131317)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.197327, -0.47895)
 shape = SubResource("BoxShape3D_ggkdx")
 
 [node name="GhostCar" type="Node3D" parent="Ghost Car"]
 
-[node name="player_car" parent="Ghost Car/GhostCar" instance=ExtResource("6_124qp")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.540508, 0)
+[node name="CarFrame12" parent="Ghost Car/GhostCar" instance=ExtResource("10_124qp")]
 
 [node name="Crate" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.322774, -0.131317)
-shape = SubResource("BoxShape3D_ggkdx")
+[node name="CarCoffin12" parent="Crate" instance=ExtResource("8_qolck")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Crate"]
 transform = Transform3D(0.622, 0, 0, 0, 0.43, 0, 0, 0, 1.58, 0, -0.323, -0.131)
@@ -183,16 +186,19 @@ GroundDistance = 0.5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.440059, 0)
 
 [node name="IdealCameraLocation" type="Node3D" parent="CarEntity/CarController"]
-transform = Transform3D(-0.999889, -0.000312992, 0.0148878, 0, 0.999779, 0.0210188, -0.0148911, 0.0210164, -0.999668, -0.000763688, 1.09773, -3.21964)
+transform = Transform3D(-0.999889, -0.000312992, 0.0148878, -2.36469e-11, 0.999779, 0.0210188, -0.0148911, 0.0210164, -0.999668, 0.0055477, 1.73565, -6.6779)
 
 [node name="Lookat" type="Node3D" parent="CarEntity/CarController"]
 transform = Transform3D(-0.999326, 0.00258939, 0.0366111, 0, 0.997508, -0.0705508, -0.0367025, -0.0705033, -0.996836, 0, 0.0906405, 33.927)
 
 [node name="player_car" parent="CarEntity/CarController" instance=ExtResource("6_124qp")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.540508, 0)
+visible = false
 
 [node name="GroundCheckRaycast" type="RayCast3D" parent="CarEntity/CarController"]
-target_position = Vector3(0, -0.75, 0)
+target_position = Vector3(0, -2, 0)
+
+[node name="CarFrame12" parent="CarEntity/CarController" instance=ExtResource("10_124qp")]
 
 [node name="Physics" type="RigidBody3D" parent="CarEntity" node_paths=PackedStringArray("Entity")]
 transform = Transform3D(-0.999982, -0.00600197, -0.000308617, -0.00600484, 0.999928, 0.0103598, 0.000246421, 0.0103614, -0.999946, -0.514376, 0.652387, -7.93658)
