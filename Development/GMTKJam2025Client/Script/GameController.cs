@@ -1,11 +1,12 @@
 using Godot;
 using System;
+using System.Linq;
 using GMTKJam2025.UI;
 
 public partial class GameController : Node
 {
 	[Export] private UIHUD hud;
-	[Export] private GhostRecorder GhostRecorder;
+	
 	public bool isPaused { get; private set; }
 	public override void _Process(double delta)
 	{
@@ -25,17 +26,17 @@ public partial class GameController : Node
 
 	private void Pause()
 	{
+		GD.Print("PAUSE");
 		isPaused = true;
 		hud.Pause();
-
-		GhostRecorder.Pause();
+		GetTree().Paused = true;
 	}
 
 	private void Unpause()
 	{
+		GD.Print("UNPAUSE");
 		isPaused = false;
 		hud.Unpause();
-		
-		GhostRecorder.Unpause();
+		GetTree().Paused = false;
 	}
 }

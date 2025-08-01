@@ -315,6 +315,7 @@ libraries = {
 autoplay = "normal"
 
 [node name="Pause" type="CanvasLayer" parent="."]
+process_mode = 2
 script = ExtResource("7_cfbkl")
 
 [node name="TextureRect" type="TextureRect" parent="Pause"]
