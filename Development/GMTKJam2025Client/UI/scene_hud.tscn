@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bna0stgm2f762"]
+[gd_scene load_steps=19 format=3 uid="uid://bna0stgm2f762"]
 
 [ext_resource type="Script" uid="uid://d3054nla06550" path="res://UI/UIHUD.cs" id="1_dmi88"]
 [ext_resource type="AudioStream" uid="uid://0stjcmm8fks3" path="res://Audio/Music/lsl gogogo.ogg" id="2_fac72"]
@@ -6,6 +6,10 @@
 [ext_resource type="AudioStream" uid="uid://dvud2f6pw67ua" path="res://Audio/Music/lsl nyoom.ogg" id="4_h3oo2"]
 [ext_resource type="Script" uid="uid://e0gy41f0sl3c" path="res://UI/HUDCountdownTimer.cs" id="5_008jt"]
 [ext_resource type="FontFile" uid="uid://4tcf8t2hi7n6" path="res://Fonts/Hauser Bold Italic.otf" id="6_cfbkl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dk54w"]
+font = ExtResource("6_cfbkl")
+font_size = 51
 
 [sub_resource type="Animation" id="Animation_008jt"]
 length = 0.001
@@ -129,7 +133,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 0.449535, 1)]
+"values": [Color(0.912593, 0.979823, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -141,7 +145,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 0.376471, 1)]
+"values": [Color(0.907214, 0.978316, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_21b46"]
@@ -229,12 +233,12 @@ _timeRemainingView = NodePath("CanvasLayer/TimeRemaining")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="LabelLapCount" type="Label" parent="CanvasLayer"]
-visible = false
 offset_left = 6.0
 offset_top = 594.0
 offset_right = 1158.0
 offset_bottom = 646.0
-text = "Lap 1"
+text = "Lap 1/7"
+label_settings = SubResource("LabelSettings_dk54w")
 
 [node name="Countdown321Go" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -276,7 +280,7 @@ _labelMilliSeconds = NodePath("LabelTimeMiliseconds")
 _animationPlayer = NodePath("AnimationPlayerTimer")
 
 [node name="LabelTimeSeconds" type="Label" parent="CanvasLayer/TimeRemaining"]
-modulate = Color(1, 1, 0.376471, 1)
+modulate = Color(0.907214, 0.978316, 1, 1)
 layout_mode = 0
 offset_left = 7.0
 offset_top = 4.0
@@ -287,7 +291,7 @@ label_settings = SubResource("LabelSettings_wwh5m")
 horizontal_alignment = 1
 
 [node name="LabelTimeMiliseconds" type="Label" parent="CanvasLayer/TimeRemaining"]
-modulate = Color(1, 1, 0.449535, 1)
+modulate = Color(0.912593, 0.979823, 1, 1)
 layout_mode = 0
 offset_left = 84.0
 offset_top = 40.0
