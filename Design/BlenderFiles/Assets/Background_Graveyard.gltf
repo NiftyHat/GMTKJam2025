@@ -15,12 +15,7 @@
 	"nodes":[
 		{
 			"mesh":0,
-			"name":"Background_Graveyard",
-			"scale":[
-				0.18206018209457397,
-				0.18206018209457397,
-				0.18206018209457397
-			]
+			"name":"Background_Graveyard"
 		}
 	],
 	"materials":[
@@ -40,7 +35,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Cube.022",
+			"name":"Background_Graveyard-col",
 			"primitives":[
 				{
 					"attributes":{
@@ -58,29 +53,29 @@
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":21260,
+			"count":21266,
 			"max":[
-				47.531898498535156,
-				5.796757698059082,
-				56.78683853149414
+				8.653666496276855,
+				1.0553587675094604,
+				10.338622093200684
 			],
 			"min":[
-				-48.222747802734375,
-				-0.16756749153137207,
-				-68.46255493164062
+				-8.779441833496094,
+				-0.030507367104291916,
+				-12.46430492401123
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":21260,
+			"count":21266,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":21260,
+			"count":21266,
 			"type":"VEC2"
 		},
 		{
@@ -93,32 +88,32 @@
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":255120,
+			"byteLength":255192,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":255120,
-			"byteOffset":255120,
+			"byteLength":255192,
+			"byteOffset":255192,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":170080,
-			"byteOffset":510240,
+			"byteLength":170128,
+			"byteOffset":510384,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":70428,
-			"byteOffset":680320,
+			"byteOffset":680512,
 			"target":34963
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":750748,
+			"byteLength":750940,
 			"uri":"Background_Graveyard.bin"
 		}
 	]
