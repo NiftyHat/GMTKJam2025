@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://de6n0n215fpr5"]
+
+[ext_resource type="Script" uid="uid://3klfn8jegsue" path="res://Script/GameCamera.cs" id="1_vk83l"]
+
+[node name="Camera3D" type="Camera3D"]
+transform = Transform3D(-0.999889, -0.000312992, 0.0148878, 0, 0.999779, 0.0210188, -0.0148911, 0.0210164, -0.999668, 0, 0, 0)
+script = ExtResource("1_vk83l")
+SnapPositionSpeed = 0.3
+FOVAtMaxSpeed = 90.0
