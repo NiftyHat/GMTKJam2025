@@ -18,17 +18,12 @@
 	"nodes":[
 		{
 			"mesh":0,
-			"name":"roadStraightBridgeMid.001",
+			"name":"roadStraightBridgeStart",
 			"rotation":[
 				0.7071068286895752,
 				0,
 				0,
 				0.7071068286895752
-			],
-			"scale":[
-				1.5,
-				1.5,
-				1
 			]
 		}
 	],
@@ -104,7 +99,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Mesh.061",
+			"name":"roadStraightBridgeStart-col",
 			"primitives":[
 				{
 					"attributes":{
@@ -140,14 +135,14 @@
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":48,
+			"count":68,
 			"max":[
 				0,
-				10,
-				-3.933790922164917
+				15,
+				-6.767919774108356e-16
 			],
 			"min":[
-				-10,
+				-15,
 				0,
 				-5.199999809265137
 			],
@@ -156,19 +151,19 @@
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":48,
+			"count":68,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":48,
+			"count":68,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":3,
 			"componentType":5123,
-			"count":102,
+			"count":138,
 			"type":"SCALAR"
 		},
 		{
@@ -176,12 +171,12 @@
 			"componentType":5126,
 			"count":24,
 			"max":[
-				-0.8165261745452881,
-				10,
+				-1.2247892618179321,
+				15,
 				-5
 			],
 			"min":[
-				-9.183472633361816,
+				-13.775209426879883,
 				0,
 				-5.199999809265137
 			],
@@ -210,12 +205,12 @@
 			"componentType":5126,
 			"count":4,
 			"max":[
-				-1.5486489534378052,
-				10,
+				-2.3229734897613525,
+				15,
 				-5.099999904632568
 			],
 			"min":[
-				-8.451351165771484,
+				-12.677026748657227,
 				0,
 				-5.099999904632568
 			],
@@ -243,81 +238,81 @@
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":576,
+			"byteLength":816,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":576,
-			"byteOffset":576,
+			"byteLength":816,
+			"byteOffset":816,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":384,
-			"byteOffset":1152,
+			"byteLength":544,
+			"byteOffset":1632,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":204,
-			"byteOffset":1536,
+			"byteLength":276,
+			"byteOffset":2176,
 			"target":34963
 		},
 		{
 			"buffer":0,
 			"byteLength":288,
-			"byteOffset":1740,
+			"byteOffset":2452,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":288,
-			"byteOffset":2028,
+			"byteOffset":2740,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":192,
-			"byteOffset":2316,
+			"byteOffset":3028,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":72,
-			"byteOffset":2508,
+			"byteOffset":3220,
 			"target":34963
 		},
 		{
 			"buffer":0,
 			"byteLength":48,
-			"byteOffset":2580,
+			"byteOffset":3292,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":48,
-			"byteOffset":2628,
+			"byteOffset":3340,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":32,
-			"byteOffset":2676,
+			"byteOffset":3388,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":12,
-			"byteOffset":2708,
+			"byteOffset":3420,
 			"target":34963
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":2720,
-			"uri":"roadStraightBridgeMid_001.bin"
+			"byteLength":3432,
+			"uri":"roadStraightBridgeStart.bin"
 		}
 	]
 }

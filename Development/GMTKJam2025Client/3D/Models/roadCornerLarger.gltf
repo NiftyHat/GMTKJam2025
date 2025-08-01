@@ -24,11 +24,6 @@
 				0,
 				0,
 				0.7071068286895752
-			],
-			"scale":[
-				14.999844551086426,
-				14.699844360351562,
-				10
 			]
 		}
 	],
@@ -104,7 +99,7 @@
 	],
 	"meshes":[
 		{
-			"name":"roadCornerLarger",
+			"name":"roadCornerLarger-col",
 			"primitives":[
 				{
 					"attributes":{
@@ -140,29 +135,29 @@
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":104,
+			"count":156,
 			"max":[
-				-0.08165261149406433,
-				2.918346881866455,
+				-1.2249327898025513,
+				42.77520751953125,
 				0
 			],
 			"min":[
-				-3,
-				0,
-				-0.019999999552965164
+				-45,
+				2.5136438611995937e-13,
+				-0.20000332593917847
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":104,
+			"count":156,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":104,
+			"count":156,
 			"type":"VEC2"
 		},
 		{
@@ -176,14 +171,14 @@
 			"componentType":5126,
 			"count":52,
 			"max":[
-				0,
-				3,
+				-0.00015640257333870977,
+				44,
 				0
 			],
 			"min":[
-				-3,
-				0,
-				0
+				-45,
+				2.5136438611995937e-13,
+				-3.3369365155522246e-06
 			],
 			"type":"VEC3"
 		},
@@ -210,14 +205,14 @@
 			"componentType":5126,
 			"count":26,
 			"max":[
-				-0.15486490726470947,
-				2.845134973526001,
-				-0.009999999776482582
+				-2.323106050491333,
+				41.67702102661133,
+				-0.09999999403953552
 			],
 			"min":[
-				-3,
-				0,
-				-0.009999999776482582
+				-45,
+				2.5136438611995937e-13,
+				-0.10000332444906235
 			],
 			"type":"VEC3"
 		},
@@ -243,80 +238,80 @@
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":1248,
+			"byteLength":1872,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":1248,
-			"byteOffset":1248,
+			"byteLength":1872,
+			"byteOffset":1872,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":832,
-			"byteOffset":2496,
+			"byteLength":1248,
+			"byteOffset":3744,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":864,
-			"byteOffset":3328,
+			"byteOffset":4992,
 			"target":34963
 		},
 		{
 			"buffer":0,
 			"byteLength":624,
-			"byteOffset":4192,
+			"byteOffset":5856,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":624,
-			"byteOffset":4816,
+			"byteOffset":6480,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":416,
-			"byteOffset":5440,
+			"byteOffset":7104,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":288,
-			"byteOffset":5856,
+			"byteOffset":7520,
 			"target":34963
 		},
 		{
 			"buffer":0,
 			"byteLength":312,
-			"byteOffset":6144,
+			"byteOffset":7808,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":312,
-			"byteOffset":6456,
+			"byteOffset":8120,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":208,
-			"byteOffset":6768,
+			"byteOffset":8432,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":144,
-			"byteOffset":6976,
+			"byteOffset":8640,
 			"target":34963
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":7120,
+			"byteLength":8784,
 			"uri":"roadCornerLarger.bin"
 		}
 	]

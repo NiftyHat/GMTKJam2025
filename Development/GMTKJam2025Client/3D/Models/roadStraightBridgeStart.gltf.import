@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cbqp08vfm6n0w"
-path="res://.godot/imported/roadCornerLarger.gltf-a0ef4c59247ecb32005ac523fd88f9a8.scn"
+uid="uid://bmd7ts2vjvkqx"
+path="res://.godot/imported/roadStraightBridgeStart.gltf-c5ff6a69dbca0e9118d3f1a957513eaa.scn"
 
 [deps]
 
-source_file="res://3D/Models/roadCornerLarger.gltf"
-dest_files=["res://.godot/imported/roadCornerLarger.gltf-a0ef4c59247ecb32005ac523fd88f9a8.scn"]
+source_file="res://3D/Models/roadStraightBridgeStart.gltf"
+dest_files=["res://.godot/imported/roadStraightBridgeStart.gltf-c5ff6a69dbca0e9118d3f1a957513eaa.scn"]
 
 [params]
 
