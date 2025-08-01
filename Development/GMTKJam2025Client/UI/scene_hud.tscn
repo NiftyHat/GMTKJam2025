@@ -1,13 +1,13 @@
 [gd_scene load_steps=22 format=3 uid="uid://bna0stgm2f762"]
 
 [ext_resource type="Script" uid="uid://d3054nla06550" path="res://UI/UIHUD.cs" id="1_dmi88"]
-[ext_resource type="LabelSettings" uid="uid://btg7ihpkduvpc" path="res://UI/LabelSettings.tres" id="2_a2sha"]
+[ext_resource type="LabelSettings" path="res://UI/Textures/LabelSettings.tres" id="2_a2sha"]
 [ext_resource type="AudioStream" uid="uid://0stjcmm8fks3" path="res://Audio/Music/lsl gogogo.ogg" id="2_fac72"]
 [ext_resource type="FontFile" uid="uid://c434xdyo2rbtv" path="res://Fonts/abduction2002.ttf" id="3_fac72"]
 [ext_resource type="AudioStream" uid="uid://dvud2f6pw67ua" path="res://Audio/Music/lsl nyoom.ogg" id="4_h3oo2"]
 [ext_resource type="Script" uid="uid://e0gy41f0sl3c" path="res://UI/HUDCountdownTimer.cs" id="5_008jt"]
-[ext_resource type="Script" uid="uid://cx8fluhgs0oo3" path="res://UI/PauseScreen.cs" id="7_cfbkl"]
-[ext_resource type="Texture2D" uid="uid://dwkcdhdwgfnss" path="res://UI/Menu_Base.PNG" id="7_dk54w"]
+[ext_resource type="Script" path="res://UI/PauseScreen.cs" id="7_cfbkl"]
+[ext_resource type="Texture2D" uid="uid://dwkcdhdwgfnss" path="res://UI/Textures/Menu_Base.PNG" id="7_dk54w"]
 [ext_resource type="FontFile" uid="uid://djnxc24f5yy5" path="res://Fonts/Hauser Bold.otf" id="8_21b46"]
 
 [sub_resource type="Animation" id="Animation_008jt"]

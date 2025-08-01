@@ -1,8 +1,8 @@
 [gd_scene load_steps=24 format=3 uid="uid://ld0p8kcn1vxo"]
 
 [ext_resource type="Environment" uid="uid://b7nskufe3ugno" path="res://Scenes/LevelEnviroment.tres" id="1_7ms41"]
-[ext_resource type="PackedScene" uid="uid://bewbicgsy3ro" path="res://Levels/level_test.tscn" id="1_nes3m"]
-[ext_resource type="Texture2D" uid="uid://2h3qmpnq0584" path="res://Texture/7a3584298ef470fe0aafc146c23d34523b045606.png" id="1_r2sr7"]
+[ext_resource type="PackedScene" uid="uid://bewbicgsy3ro" path="res://Scenes/Levels/level_test.tscn" id="1_nes3m"]
+[ext_resource type="Texture2D" uid="uid://2h3qmpnq0584" path="res://3D/Textures/7a3584298ef470fe0aafc146c23d34523b045606.png" id="1_r2sr7"]
 [ext_resource type="Script" uid="uid://dnlgcp0rpf2mg" path="res://Script/CarController.cs" id="2_wni78"]
 [ext_resource type="Script" uid="uid://3klfn8jegsue" path="res://Script/GameCamera.cs" id="3_0pdfm"]
 [ext_resource type="PackedScene" uid="uid://bpmfitw8wc80d" path="res://3D/Cars/car_player.tscn" id="4_vy56e"]

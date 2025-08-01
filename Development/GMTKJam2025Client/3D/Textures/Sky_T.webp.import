@@ -2,26 +2,27 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwkcdhdwgfnss"
-path="res://.godot/imported/Menu_Base.PNG-ddd2e0da96cfa091a92fded8a7a543e6.ctex"
+uid="uid://bdpkysot812ts"
+path.s3tc="res://.godot/imported/Sky_T.webp-5ecaa796d2490e075153dca76a79ed75.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://UI/Menu_Base.PNG"
-dest_files=["res://.godot/imported/Menu_Base.PNG-ddd2e0da96cfa091a92fded8a7a543e6.ctex"]
+source_file="res://3D/Textures/Sky_T.webp"
+dest_files=["res://.godot/imported/Sky_T.webp-5ecaa796d2490e075153dca76a79ed75.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -31,4 +32,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

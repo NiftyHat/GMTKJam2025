@@ -1,9 +1,9 @@
 [gd_scene load_steps=28 format=3 uid="uid://bs7t7tjyw4eo1"]
 
-[ext_resource type="Script" uid="uid://2jqy0i2iaig4" path="res://Script/GameController.cs" id="1_6vvcf"]
-[ext_resource type="PackedScene" uid="uid://bewbicgsy3ro" path="res://Levels/level_test.tscn" id="1_xhjei"]
-[ext_resource type="Texture2D" uid="uid://2h3qmpnq0584" path="res://Texture/7a3584298ef470fe0aafc146c23d34523b045606.png" id="2_6vvcf"]
-[ext_resource type="Texture2D" uid="uid://bdpkysot812ts" path="res://Texture/Sky_T.webp" id="3_cr6v8"]
+[ext_resource type="Script" path="res://Script/GameController.cs" id="1_6vvcf"]
+[ext_resource type="PackedScene" uid="uid://bewbicgsy3ro" path="res://Scenes/Levels/level_test.tscn" id="1_xhjei"]
+[ext_resource type="Texture2D" uid="uid://2h3qmpnq0584" path="res://3D/Textures/7a3584298ef470fe0aafc146c23d34523b045606.png" id="2_6vvcf"]
+[ext_resource type="Texture2D" uid="uid://bdpkysot812ts" path="res://3D/Textures/Sky_T.webp" id="3_cr6v8"]
 [ext_resource type="Script" uid="uid://3klfn8jegsue" path="res://Script/GameCamera.cs" id="4_f43ej"]
 [ext_resource type="Script" uid="uid://cc86lg7fm3e7b" path="res://Script/GhostRecorder.cs" id="5_7rq2r"]
 [ext_resource type="PackedScene" uid="uid://bpmfitw8wc80d" path="res://3D/Cars/car_player.tscn" id="6_124qp"]

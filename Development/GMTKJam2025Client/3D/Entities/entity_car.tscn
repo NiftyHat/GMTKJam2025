@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dnlgcp0rpf2mg" path="res://Script/CarController.cs" id="2_n86jx"]
 [ext_resource type="PackedScene" uid="uid://bpmfitw8wc80d" path="res://3D/Cars/car_player.tscn" id="3_1tss7"]
 [ext_resource type="Script" uid="uid://ck54vpeavsd5i" path="res://3D/Entities/EntityRigidbody3D.cs" id="4_kc0nu"]
-[ext_resource type="Texture2D" uid="uid://2h3qmpnq0584" path="res://Texture/7a3584298ef470fe0aafc146c23d34523b045606.png" id="5_ca4vo"]
+[ext_resource type="Texture2D" uid="uid://2h3qmpnq0584" path="res://3D/Textures/7a3584298ef470fe0aafc146c23d34523b045606.png" id="5_ca4vo"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0pdfm"]
 bounce = 0.1
