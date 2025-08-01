@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://cl2mrxu0w4sr8"]
 
-[ext_resource type="Environment" uid="uid://b7nskufe3ugno" path="res://Scenes/LevelEnviroment.tres" id="1_hyuv4"]
+[ext_resource type="Environment" uid="uid://b7nskufe3ugno" path="res://Scenes/Environments/LevelEnviroment.tres" id="1_hyuv4"]
 [ext_resource type="PackedScene" uid="uid://bpmfitw8wc80d" path="res://3D/Cars/car_player.tscn" id="1_nofjx"]
 [ext_resource type="PackedScene" uid="uid://1bhvbl0nhyga" path="res://3D/Prototype/Kenney_Racing/grass.glb" id="2_4aog5"]
 [ext_resource type="PackedScene" uid="uid://dtsq4dsirk27e" path="res://3D/Prototype/Kenney_Racing/pitsGarageCorner.glb" id="3_5n2p5"]

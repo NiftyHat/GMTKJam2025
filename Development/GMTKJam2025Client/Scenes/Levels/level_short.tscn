@@ -1,0 +1,72 @@
+[gd_scene load_steps=10 format=3 uid="uid://dn7u8iitv4j0a"]
+
+[ext_resource type="Environment" uid="uid://b7nskufe3ugno" path="res://Scenes/Environments/LevelEnviroment.tres" id="1_eshfu"]
+[ext_resource type="Script" uid="uid://geqjn5xl7l6l" path="res://3D/Entities/EntityTrack.cs" id="3_yjare"]
+[ext_resource type="PackedScene" uid="uid://cvlcpfuwq1lv4" path="res://3D/Entities/entity_checkpoint.tscn" id="4_2547q"]
+[ext_resource type="PackedScene" uid="uid://bse4r2iru7345" path="res://3D/Models/roadCornerLarger.gltf" id="4_kt8ye"]
+[ext_resource type="Texture2D" uid="uid://dhojn25qmrh3b" path="res://Texture/Grid Floor.png" id="5_4gb3p"]
+[ext_resource type="PackedScene" uid="uid://sqnf5jr36lky" path="res://3D/Models/Background_BeachHouse.gltf" id="5_443p8"]
+[ext_resource type="PackedScene" uid="uid://40svyq6u2xkh" path="res://3D/Models/roadRampLongWall.gltf" id="6_4gb3p"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_17gdx"]
+size = Vector2(512, 512)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vi1si"]
+albedo_texture = ExtResource("5_4gb3p")
+uv1_scale = Vector3(32, 32, 32)
+
+[node name="LevelTest" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_eshfu")
+
+[node name="TheSunTheSunTheSunTheSun" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.217323, 0.932338, 1.65666)
+omni_range = 19.52
+omni_attenuation = 3.06
+
+[node name="Ground" type="Node3D" parent="."]
+
+[node name="Track" type="Node3D" parent="." node_paths=PackedStringArray("_checkpoints")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00151777, 0.00411141, 0.000809431)
+script = ExtResource("3_yjare")
+_checkpoints = [NodePath("Checkpoints/EntityCheckpoint1"), NodePath("Checkpoints/EntityCheckpoint2"), NodePath("Checkpoints/EntityCheckpoint3"), NodePath("Checkpoints/EntityCheckpoint4"), null, null]
+
+[node name="Checkpoints" type="Node3D" parent="Track"]
+
+[node name="EntityCheckpoint1" parent="Track/Checkpoints" instance=ExtResource("4_2547q")]
+transform = Transform3D(1.41421, 0, -1.41421, 0, 2, 0, 1.41421, 0, 1.41421, 1.91268, -0.00410998, -3.80253)
+
+[node name="EntityCheckpoint2" parent="Track/Checkpoints" instance=ExtResource("4_2547q")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.2724, -0.00411141, -9.86638)
+
+[node name="EntityCheckpoint3" parent="Track/Checkpoints" instance=ExtResource("4_2547q")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16.0216, -0.00411141, -9.86638)
+
+[node name="EntityCheckpoint4" parent="Track/Checkpoints" instance=ExtResource("4_2547q")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 17.6284, -0.00411141, -16.865)
+
+[node name="Road" type="Node3D" parent="Track"]
+
+[node name="roadCornerLarger3" parent="Track/Road" instance=ExtResource("4_kt8ye")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 10.967, -0.034785, 0.0426228)
+
+[node name="roadCornerLarger5" parent="Track/Road" instance=ExtResource("4_kt8ye")]
+transform = Transform3D(3.89414e-07, 0, -2, 0, 2, 0, 2, 0, 3.89414e-07, 4.967, -0.034785, 6.04262)
+
+[node name="roadCornerLarger6" parent="Track/Road" instance=ExtResource("4_kt8ye")]
+transform = Transform3D(-2, 0, -3.01992e-07, 0, 2, 0, 3.01992e-07, 0, -2, -1.033, -0.034785, 0.0426247)
+
+[node name="roadCornerLarger4" parent="Track/Road" instance=ExtResource("4_kt8ye")]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 88.966, -0.0347849, -88.2055)
+
+[node name="Floor" type="MeshInstance3D" parent="Track/Road/roadCornerLarger4"]
+mesh = SubResource("PlaneMesh_17gdx")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_vi1si")
+
+[node name="Background_BeachHouse2" parent="." instance=ExtResource("5_443p8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.149, 0, 35.6937)
+
+[node name="roadRampLongWall2" parent="." instance=ExtResource("6_4gb3p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.11148, -0.0306845, -25.1718)
