@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bs7t7tjyw4eo1"]
+[gd_scene load_steps=31 format=3 uid="uid://bs7t7tjyw4eo1"]
 
 [ext_resource type="Script" uid="uid://2jqy0i2iaig4" path="res://Script/GameController.cs" id="1_6vvcf"]
 [ext_resource type="Texture2D" uid="uid://2h3qmpnq0584" path="res://3D/Textures/7a3584298ef470fe0aafc146c23d34523b045606.png" id="2_6vvcf"]
@@ -36,18 +36,8 @@ sky_material = SubResource("PanoramaSkyMaterial_g0og0")
 background_mode = 2
 sky = SubResource("Sky_km00y")
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0pdfm"]
-bounce = 0.1
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_r2sr7"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0pdfm"]
-albedo_texture = ExtResource("2_6vvcf")
-
-[sub_resource type="SphereMesh" id="SphereMesh_ggkdx"]
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_ggkdx"]
-size = Vector3(2.82107, 0.824341, 5.79112)
+size = Vector3(1.1731, 0.824341, 3.52304)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ggkdx"]
 
@@ -55,7 +45,7 @@ size = Vector3(2.82107, 0.824341, 5.79112)
 bounce = 0.1
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7ms41"]
-radius = 1.0
+radius = 0.8
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3syrs"]
 albedo_texture = ExtResource("2_6vvcf")
@@ -110,26 +100,6 @@ SnapPositionSpeed = 0.3
 FOVAtMaxSpeed = 90.0
 CarController = NodePath("../CarEntity/CarController")
 
-[node name="Physics" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.539886, 0.651827, -7.84318)
-collision_mask = 3
-mass = 5.0
-physics_material_override = SubResource("PhysicsMaterial_0pdfm")
-gravity_scale = 2.0
-continuous_cd = true
-linear_damp = 0.5
-angular_damp = 3.0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Physics"]
-shape = SubResource("SphereShape3D_r2sr7")
-debug_color = Color(0.0823529, 0.462745, 0, 1)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Physics"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8842, -4.09361, -9.02685)
-visible = false
-material_override = SubResource("StandardMaterial3D_0pdfm")
-mesh = SubResource("SphereMesh_ggkdx")
-
 [node name="CameraTarget" type="Node3D" parent="."]
 
 [node name="GhostRecorder" type="Node3D" parent="." node_paths=PackedStringArray("CarRigidbody", "GhostCarPrototype", "GhostCarContainerPrototype")]
@@ -139,27 +109,30 @@ GhostCarPrototype = NodePath("../Ghost Car")
 GhostCarContainerPrototype = NodePath("../Crate")
 
 [node name="Ghost Car" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -10, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ghost Car"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.197327, -0.47895)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.238767, 0.197327, -0.321401)
 shape = SubResource("BoxShape3D_ggkdx")
 
 [node name="GhostCar" type="Node3D" parent="Ghost Car"]
 
 [node name="CarFrame12" parent="Ghost Car/GhostCar" instance=ExtResource("10_124qp")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="Crate" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -10, 0)
 
 [node name="CarCoffin12" parent="Crate" instance=ExtResource("8_qolck")]
+transform = Transform3D(0.5, 0, 0, 0, 0.433013, 0.25, 0, -0.25, 0.433013, 0, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Crate"]
 transform = Transform3D(0.622, 0, 0, 0, 0.43, 0, 0, 0, 1.58, 0, -0.323, -0.131)
+visible = false
 mesh = SubResource("BoxMesh_ggkdx")
 
 [node name="CarEntity" type="Node3D" parent="." node_paths=PackedStringArray("_carController", "_hud", "_ghostRecorder", "LevelResetTimer")]
-transform = Transform3D(0.999983, 0.002832, 0.00515023, -0.00285934, 0.999982, 0.00530685, -0.0051351, -0.00532149, 0.999973, 0, 0, 0)
+transform = Transform3D(0.999983, 0.00283201, 0.00515022, -0.00285934, 0.999982, 0.00530685, -0.0051351, -0.00532149, 0.999973, 0, 0, 0)
 script = ExtResource("7_qolck")
 _carController = NodePath("CarController")
 _hud = NodePath("../HUD")
@@ -168,14 +141,14 @@ LevelResetTimer = NodePath("TimerLevelReset")
 metadata/_custom_type_script = "uid://v2v2l1vx325s"
 
 [node name="CarController" type="Node3D" parent="CarEntity" node_paths=PackedStringArray("_rb", "_camera3D")]
-transform = Transform3D(-0.999979, -0.00582339, 0.00275937, -0.00580279, 0.999956, 0.00741154, -0.0028024, 0.00739538, -0.999969, -0.540327, 0.803042, -7.84239)
+transform = Transform3D(-0.999979, -0.00582338, 0.00275929, -0.00580279, 0.999956, 0.00741155, -0.00280233, 0.00739538, -0.999969, -0.540327, 0.803042, -7.84239)
 script = ExtResource("8_ry528")
 _rb = NodePath("../Physics")
 _camera3D = NodePath("../../Camera3D")
-Acceleration = 0.2
+Acceleration = 0.3
 BrakeStrength = 0.08
 reverseAcceleration = 0.1
-MaxSpeed = 20.0
+MaxSpeed = 30.0
 maxReverseSpeed = -5.0
 steering = 11.0
 turnSpeed = 10.0
@@ -199,6 +172,7 @@ visible = false
 target_position = Vector3(0, -2, 0)
 
 [node name="CarFrame12" parent="CarEntity/CarController" instance=ExtResource("10_124qp")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="Physics" type="RigidBody3D" parent="CarEntity" node_paths=PackedStringArray("Entity")]
 transform = Transform3D(-0.999982, -0.00600197, -0.000308617, -0.00600484, 0.999928, 0.0103598, 0.000246421, 0.0103614, -0.999946, -0.514376, 0.652387, -7.93658)
@@ -217,7 +191,6 @@ shape = SubResource("SphereShape3D_7ms41")
 debug_color = Color(0.0823529, 0.462745, 0, 1)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CarEntity/Physics"]
-visible = false
 material_override = SubResource("StandardMaterial3D_3syrs")
 mesh = SubResource("SphereMesh_yr35r")
 
