@@ -251,7 +251,7 @@
 			]
 		},
 		{
-			"name":"CarFrame1-col",
+			"name":"CarFrame1",
 			"primitives":[
 				{
 					"attributes":{
