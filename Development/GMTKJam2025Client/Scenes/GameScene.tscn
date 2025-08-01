@@ -123,7 +123,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -10, 0)
 transform = Transform3D(1, 0, 0, 0, 0.866026, 0.5, 0, -0.5, 0.866026, 0, 0, 0)
 
 [node name="CarEntity" type="Node3D" parent="." node_paths=PackedStringArray("_carController", "_hud", "_ghostRecorder", "LevelResetTimer")]
-transform = Transform3D(0.999983, 0.00283201, 0.00515022, -0.00285934, 0.999982, 0.00530685, -0.0051351, -0.00532149, 0.999973, 0, 0, 0)
+transform = Transform3D(0.999983, 0.00283201, 0.00515022, -0.00285934, 0.999982, 0.00530685, -0.0051351, -0.00532149, 0.999973, -6.34226, 0, 10.769)
 script = ExtResource("7_qolck")
 _carController = NodePath("CarController")
 _hud = NodePath("../HUD")
