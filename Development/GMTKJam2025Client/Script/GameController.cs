@@ -6,6 +6,7 @@ using GMTKJam2025.UI;
 public partial class GameController : Node
 {
 	[Export] private UIHUD hud;
+	[Export] private PauseScreen pauseScreen;
 	
 	public bool isPaused { get; private set; }
 	public override void _Process(double delta)
@@ -28,7 +29,7 @@ public partial class GameController : Node
 	{
 		GD.Print("PAUSE");
 		isPaused = true;
-		hud.Pause();
+		pauseScreen.Activate();
 		GetTree().Paused = true;
 	}
 
@@ -36,7 +37,7 @@ public partial class GameController : Node
 	{
 		GD.Print("UNPAUSE");
 		isPaused = false;
-		hud.Unpause();
+		pauseScreen.Dismiss();
 		GetTree().Paused = false;
 	}
 }
