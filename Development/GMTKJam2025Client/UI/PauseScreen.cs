@@ -43,7 +43,9 @@ public partial class PauseScreen : CanvasLayer
 		Visible = false;
 		buttons.ForEach(x => x.Disabled = true);
 		EmitSignalPauseScreenDismissed();
-		
 	}
+
+	public void OnContinue() => EmitSignalButtonContinue();
+	public void OnReset() => EmitSignalButtonRestart();
 
 }

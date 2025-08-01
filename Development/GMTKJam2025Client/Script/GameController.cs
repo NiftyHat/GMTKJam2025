@@ -25,7 +25,13 @@ public partial class GameController : Node
 		}
 	}
 
-	private void Pause()
+	public void Reset()
+	{
+		GetTree().Paused = false;
+		GetTree().ReloadCurrentScene();
+	}
+
+	public void Pause()
 	{
 		GD.Print("PAUSE");
 		isPaused = true;
@@ -33,7 +39,7 @@ public partial class GameController : Node
 		GetTree().Paused = true;
 	}
 
-	private void Unpause()
+	public void Unpause()
 	{
 		GD.Print("UNPAUSE");
 		isPaused = false;
