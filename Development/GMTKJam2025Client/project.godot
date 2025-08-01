@@ -15,7 +15,7 @@ config/description="A Time Attack Racing Game where your ghosts ARE real and CAN
 A Game for GMTK Game Jam 2025
 By Evyanon, TommyNom, NiftyHat, kaynSD, and c1k"
 config/version="0.1.0"
-run/main_scene="uid://djpruf2ij658q"
+run/main_scene="uid://bs7t7tjyw4eo1"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 config/icon="uid://q3ob2tdxwp2h"
 config/macos_native_icon="res://icon.icns"
