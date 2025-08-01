@@ -33,7 +33,6 @@ public partial class GameController : Node
 
 	public void Pause()
 	{
-		GD.Print("PAUSE");
 		isPaused = true;
 		pauseScreen.Activate();
 		GetTree().Paused = true;
@@ -41,9 +40,14 @@ public partial class GameController : Node
 
 	public void Unpause()
 	{
-		GD.Print("UNPAUSE");
 		isPaused = false;
 		pauseScreen.Dismiss();
 		GetTree().Paused = false;
+	}
+
+	public void QuitToTitle()
+	{
+		GetTree().Paused = false;
+		SceneSwitcher.Instance.GoToScene(SceneSwitcher.Instance.Library.Title);
 	}
 }

@@ -47,5 +47,6 @@ public partial class PauseScreen : CanvasLayer
 
 	public void OnContinue() => EmitSignalButtonContinue();
 	public void OnReset() => EmitSignalButtonRestart();
+	public void OnMainMenu() => EmitSignalButtonMainMenu();
 
 }

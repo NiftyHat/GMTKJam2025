@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Linq;
+using GMTKJam2025.UI;
 using GMTKJam2025.UI.MainMenu;
 
 public partial class MainMenuControl : Node
@@ -85,6 +86,7 @@ public partial class MainMenuControl : Node
 	public void ShowTrackSelect()
 	{
 		GD.Print("Track Select");
+		SceneSwitcher.Instance.GoToScene(SceneSwitcher.Instance.Library.Game);
 	}
 	public void ShowOptions()
 	{
