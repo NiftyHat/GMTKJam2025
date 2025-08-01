@@ -129,9 +129,9 @@ public partial class MainMenuTitleDisplay : Control, IMenuDisplay
 		AnimationTween = CreateTween();
 		AnimationTween.TweenCallback(Callable.From(EmitSignalFadeOutAnimationStarted));
 		AnimationTween.TweenSubtween(flash);
-		AnimationTween.TweenProperty(TitleContainer, "modulate", Colors.Transparent, .5f);
+		AnimationTween.TweenProperty(TitleContainer, "modulate", Colors.Transparent, 0.1f);
 		AnimationTween.TweenCallback(Callable.From(EmitSignalFadeOutAnimationFading));
-		AnimationTween.TweenProperty(this, "modulate", Colors.Transparent, 2f);
+		AnimationTween.TweenProperty(this, "modulate", Colors.Transparent, 0.2f);
 		AnimationTween.TweenCallback(Callable.From(EmitSignalFadeOutAnimationComplete));
 	}
 }
