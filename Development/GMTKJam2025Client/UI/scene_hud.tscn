@@ -111,7 +111,7 @@ _data = {
 font = ExtResource("3_fac72")
 font_size = 256
 
-[node name="CanvasLayer" type="Control" node_paths=PackedStringArray("_lapCountLabel", "_countdownAnimation", "_streamMusic")]
+[node name="UIHUD" type="Control" node_paths=PackedStringArray("_lapCountLabel", "_countdownAnimation", "_streamMusic")]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_dmi88")

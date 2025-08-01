@@ -8,6 +8,7 @@ public partial class EntityCar : GameEntity
 {
     [Export] private CarController _carController;
     [Export] private UIHUD _hud;
+    [Export] private GhostRecorder _ghostRecorder;
     
     private EntityCheckpoint _lastTouchedCheckpoint;
     private int _lap;
@@ -56,6 +57,11 @@ public partial class EntityCar : GameEntity
         if (lap == _lap)
         {
             return;
+        }
+
+        if (_ghostRecorder != null)
+        {
+            _ghostRecorder.TriggerRecording();
         }
         _lap = lap;
         OnChangeLap?.Invoke(this, _lap);

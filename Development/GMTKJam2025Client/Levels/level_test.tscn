@@ -1,12 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://bewbicgsy3ro"]
+[gd_scene load_steps=18 format=3 uid="uid://bewbicgsy3ro"]
 
-[ext_resource type="PackedScene" uid="uid://1d6uchasscyj" path="res://3D/Prototype/Kenney_Racing/roadStart.glb" id="1_3o0bi"]
-[ext_resource type="PackedScene" uid="uid://dw8nh0a0yh6u3" path="res://3D/Prototype/Kenney_Racing/roadStartPositions.glb" id="2_oenlu"]
 [ext_resource type="Script" uid="uid://geqjn5xl7l6l" path="res://3D/Entities/EntityTrack.cs" id="3_nxutr"]
 [ext_resource type="Texture2D" uid="uid://cl03mvoip1fwh" path="res://icon.png" id="3_w54qd"]
-[ext_resource type="PackedScene" uid="uid://bsv8iwtg1wf80" path="res://3D/Prototype/Kenney_Racing/roadPitStraight.glb" id="5_6ieip"]
 [ext_resource type="PackedScene" uid="uid://b1t0wg3nsvkjr" path="res://3D/Prototype/Kenney_Racing/roadPitEntry.glb" id="5_ddaal"]
-[ext_resource type="PackedScene" uid="uid://dv6fiwtl33b4b" path="res://3D/Prototype/Kenney_Racing/roadPitGarage.glb" id="6_w54qd"]
 [ext_resource type="PackedScene" uid="uid://cmgusbxagih55" path="res://3D/Prototype/Kenney_Racing/roadCornerLarger.glb" id="7_p5spi"]
 [ext_resource type="PackedScene" uid="uid://d3lpu5efn2gm3" path="res://3D/Prototype/Kenney_Racing/roadStraightLong.glb" id="8_w0slw"]
 [ext_resource type="PackedScene" uid="uid://dr0ihdj6hy8mm" path="res://3D/Prototype/Kenney_Racing/roadStraightBridgeMid.glb" id="9_nxutr"]
@@ -47,9 +43,6 @@ data = PackedVector3Array(20, 0, 20, 18.0952, 0, 20, 20, 0, 18.0952, 18.0952, 0,
 
 [node name="LevelTest" type="Node3D"]
 
-[node name="roadStart" parent="." instance=ExtResource("1_3o0bi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0576829, -0.0104561, -6.37574)
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_oenlu")
 
@@ -73,12 +66,12 @@ shape = SubResource("ConcavePolygonShape3D_w54qd")
 [node name="Track" type="Node3D" parent="." node_paths=PackedStringArray("_checkpoints")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00151777, 0.00411141, 0.000809431)
 script = ExtResource("3_nxutr")
-_checkpoints = [NodePath("Checkpoints/EntityCheckpoint"), NodePath("Checkpoints/EntityCheckpoint2"), NodePath("Checkpoints/EntityCheckpoint3"), NodePath("Checkpoints/EntityCheckpoint4"), NodePath("Checkpoints/EntityCheckpoint5"), NodePath("Checkpoints/EntityCheckpoint6")]
+_checkpoints = [NodePath("Checkpoints/EntityCheckpoint1"), NodePath("Checkpoints/EntityCheckpoint2"), NodePath("Checkpoints/EntityCheckpoint3"), NodePath("Checkpoints/EntityCheckpoint4"), NodePath("Checkpoints/EntityCheckpoint5"), NodePath("Checkpoints/EntityCheckpoint6")]
 
 [node name="Checkpoints" type="Node3D" parent="Track"]
 
-[node name="EntityCheckpoint" parent="Track/Checkpoints" instance=ExtResource("16_nxutr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0512886, -0.00411141, -5.86086)
+[node name="EntityCheckpoint1" parent="Track/Checkpoints" instance=ExtResource("16_nxutr")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.437447, -0.00411141, -5.02221)
 
 [node name="EntityCheckpoint2" parent="Track/Checkpoints" instance=ExtResource("16_nxutr")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.2724, -0.00411141, -9.86638)
@@ -100,25 +93,28 @@ transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 6.42317,
 [node name="The Pit" type="Node3D" parent="Track/Road"]
 
 [node name="roadPitExit" parent="Track/Road/The Pit" instance=ExtResource("5_ddaal")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.279517, -0.0104561, -4.01764)
-
-[node name="roadStartPositions" parent="Track/Road/The Pit" instance=ExtResource("2_oenlu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0576831, -0.0104561, -2.36054)
-
-[node name="roadPitStraight2" parent="Track/Road/The Pit" instance=ExtResource("5_6ieip")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.984317, -0.0104561, -2.86644)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.279517, -0.0104561, -6.01764)
 
 [node name="roadPitEntry" parent="Track/Road/The Pit" instance=ExtResource("5_ddaal")]
 transform = Transform3D(-1, 0, 2.38419e-07, 0, 1, 0, 2.38419e-07, 0, 1, -0.279517, -0.0104561, -0.715238)
-
-[node name="roadPitGarage" parent="Track/Road/The Pit" instance=ExtResource("6_w54qd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.666717, -0.0104561, -1.86254)
 
 [node name="roadCornerLarger" parent="Track/Road" instance=ExtResource("7_p5spi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.994483, -0.0104561, -8.92964)
 
 [node name="roadStraightLong" parent="Track/Road" instance=ExtResource("8_w0slw")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.55811, -0.00969148, 3.13315)
+
+[node name="roadStraightLong2" parent="Track/Road" instance=ExtResource("8_w0slw")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.0576829, -0.0104561, -2.36644)
+
+[node name="roadStraightLong6" parent="Track/Road" instance=ExtResource("8_w0slw")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.0576831, -0.0104561, -4.36644)
+
+[node name="roadStraightLong18" parent="Track/Road" instance=ExtResource("8_w0slw")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.942217, -0.0104561, -2.36644)
+
+[node name="roadStraightLong19" parent="Track/Road" instance=ExtResource("8_w0slw")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.949804, -0.0104561, -4.36342)
 
 [node name="roadCornerLarger2" parent="Track/Road" instance=ExtResource("7_p5spi")]
 transform = Transform3D(-0.000198654, -0.000326093, 1, -3.98112e-05, 1, 0.000326086, -1, -3.97588e-05, -0.000198664, 0.994797, -0.0102248, 2.19666)

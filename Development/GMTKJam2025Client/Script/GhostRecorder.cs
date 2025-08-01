@@ -110,23 +110,19 @@ public partial class GhostRecorder : Node
 		}
 	}
 
-	public override void _Process(double delta)
+	public void TriggerRecording()
 	{
-		base._Process(delta);
-		if (Input.IsActionJustPressed("TEMP_Record"))
+		if (!Recording)
 		{
-			if (!Recording)
-			{
-				GD.Print("Recording Start");
-				Recording = true;
-				currentFrame = 0;
-			}
-			else
-			{
+			GD.Print("Recording Start");
+			Recording = true;
+			currentFrame = 0;
+		}
+		else
+		{
 				
-				Lap();
+			Lap();
 				
-			}
 		}
 	}
 }

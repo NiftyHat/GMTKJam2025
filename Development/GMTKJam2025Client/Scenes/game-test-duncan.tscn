@@ -107,8 +107,9 @@ mesh = SubResource("SphereMesh_ggkdx")
 
 [node name="CameraTarget" type="Node3D" parent="."]
 
-[node name="GhostRecorder" type="Node3D" parent="." node_paths=PackedStringArray("GhostCarPrototype", "GhostCarContainerPrototype")]
+[node name="GhostRecorder" type="Node3D" parent="." node_paths=PackedStringArray("CarRigidbody", "GhostCarPrototype", "GhostCarContainerPrototype")]
 script = ExtResource("5_6r2nf")
+CarRigidbody = NodePath("../CarEntity/Physics")
 GhostCarPrototype = NodePath("../Ghost Car")
 GhostCarContainerPrototype = NodePath("../Crate")
 
@@ -135,17 +136,19 @@ shape = SubResource("BoxShape3D_ggkdx")
 transform = Transform3D(0.622, 0, 0, 0, 0.43, 0, 0, 0, 1.58, 0, -0.323, -0.131)
 mesh = SubResource("BoxMesh_ggkdx")
 
-[node name="CarEntity" type="Node3D" parent="." node_paths=PackedStringArray("_carController", "_hud")]
+[node name="CarEntity" type="Node3D" parent="." node_paths=PackedStringArray("_carController", "_hud", "_ghostRecorder")]
 transform = Transform3D(0.999983, 0.002832, 0.00515023, -0.00285934, 0.999982, 0.00530685, -0.0051351, -0.00532149, 0.999973, 0, 0, 0)
 script = ExtResource("7_mhj1q")
 _carController = NodePath("CarController")
 _hud = NodePath("../HUD")
+_ghostRecorder = NodePath("../GhostRecorder")
 metadata/_custom_type_script = "uid://v2v2l1vx325s"
 
-[node name="CarController" type="Node3D" parent="CarEntity" node_paths=PackedStringArray("_rb")]
+[node name="CarController" type="Node3D" parent="CarEntity" node_paths=PackedStringArray("_rb", "_camera3D")]
 transform = Transform3D(-0.999979, -0.00582339, 0.00275937, -0.00580279, 0.999956, 0.00741154, -0.0028024, 0.00739538, -0.999969, -0.540327, 0.803042, -7.84239)
 script = ExtResource("8_m7thw")
 _rb = NodePath("../Physics")
+_camera3D = NodePath("../../Camera3D")
 Acceleration = 0.2
 BrakeStrength = 0.08
 reverseAcceleration = 0.1
