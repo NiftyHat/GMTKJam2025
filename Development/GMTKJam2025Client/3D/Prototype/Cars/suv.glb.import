@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cnksuwrx3dlot"
-path="res://.godot/imported/delivery-flat.glb-59bd29d380cf46ec116fca80189d1e39.scn"
+uid="uid://dcmftf4geucxk"
+path="res://.godot/imported/suv.glb-58d57ce6176c8aab52d9911af5c62631.scn"
 
 [deps]
 
-source_file="res://3D/Prototype/Kenny_Car/delivery-flat.glb"
-dest_files=["res://.godot/imported/delivery-flat.glb-59bd29d380cf46ec116fca80189d1e39.scn"]
+source_file="res://3D/Prototype/Cars/suv.glb"
+dest_files=["res://.godot/imported/suv.glb-58d57ce6176c8aab52d9911af5c62631.scn"]
 
 [params]
 

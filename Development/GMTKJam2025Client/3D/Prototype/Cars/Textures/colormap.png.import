@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://danmmbukm64vn"
-path.s3tc="res://.godot/imported/colormap.png-a3e758cbd3ce3fc9ac9a653503756d86.s3tc.ctex"
+path.s3tc="res://.godot/imported/colormap.png-ab12621c22250236f01500ad0791f46c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://3D/Prototype/Kenny_Car/Textures/colormap.png"
-dest_files=["res://.godot/imported/colormap.png-a3e758cbd3ce3fc9ac9a653503756d86.s3tc.ctex"]
+source_file="res://3D/Prototype/Cars/Textures/colormap.png"
+dest_files=["res://.godot/imported/colormap.png-ab12621c22250236f01500ad0791f46c.s3tc.ctex"]
 
 [params]
 
