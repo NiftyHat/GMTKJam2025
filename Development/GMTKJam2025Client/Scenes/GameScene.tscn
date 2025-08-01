@@ -58,9 +58,10 @@ albedo_texture = ExtResource("2_6vvcf")
 
 [node name="Node3D" type="Node3D"]
 
-[node name="GameControl" type="Node" parent="." node_paths=PackedStringArray("hud")]
+[node name="GameControl" type="Node" parent="." node_paths=PackedStringArray("hud", "GhostRecorder")]
 script = ExtResource("1_6vvcf")
 hud = NodePath("../HUD")
+GhostRecorder = NodePath("../GhostRecorder")
 
 [node name="LevelTest" parent="." instance=ExtResource("1_xhjei")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.0413204, 0.14372, 0.0478761)
@@ -114,12 +115,12 @@ mesh = SubResource("SphereMesh_ggkdx")
 
 [node name="GhostRecorder" type="Node3D" parent="." node_paths=PackedStringArray("CarRigidbody", "GhostCarPrototype", "GhostCarContainerPrototype")]
 script = ExtResource("5_7rq2r")
-CarRigidbody = NodePath("../CarEntity/Physics")
+CarRigidbody = NodePath("../CarEntity/CarController")
 GhostCarPrototype = NodePath("../Ghost Car")
 GhostCarContainerPrototype = NodePath("../Crate")
 
 [node name="Ghost Car" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.92633, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ghost Car"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.322774, -0.131317)
@@ -131,7 +132,7 @@ shape = SubResource("BoxShape3D_ggkdx")
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.540508, 0)
 
 [node name="Crate" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.887246, 1.92633, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Crate"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.322774, -0.131317)
