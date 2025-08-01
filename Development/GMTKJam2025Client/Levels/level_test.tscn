@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://bewbicgsy3ro"]
+[gd_scene load_steps=16 format=3 uid="uid://bewbicgsy3ro"]
 
+[ext_resource type="Environment" uid="uid://b7nskufe3ugno" path="res://Scenes/LevelEnviroment.tres" id="1_xlufh"]
 [ext_resource type="Script" uid="uid://geqjn5xl7l6l" path="res://3D/Entities/EntityTrack.cs" id="3_nxutr"]
 [ext_resource type="Texture2D" uid="uid://cl03mvoip1fwh" path="res://icon.png" id="3_w54qd"]
 [ext_resource type="PackedScene" uid="uid://b1t0wg3nsvkjr" path="res://3D/Prototype/Kenney_Racing/roadPitEntry.glb" id="5_ddaal"]
@@ -10,19 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://bucgvgj8uv1mr" path="res://3D/Prototype/Kenney_Racing/roadRampLongWall.glb" id="11_tchvq"]
 [ext_resource type="PackedScene" uid="uid://uctfka66tb0e" path="res://3D/Prototype/Kenney_Racing/roadStraight.glb" id="12_sdrm6"]
 [ext_resource type="PackedScene" uid="uid://cvlcpfuwq1lv4" path="res://3D/Entities/entity_checkpoint.tscn" id="16_nxutr"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oenlu"]
-
-[sub_resource type="Sky" id="Sky_q8e8m"]
-sky_material = SubResource("ProceduralSkyMaterial_oenlu")
-
-[sub_resource type="Environment" id="Environment_oenlu"]
-background_mode = 2
-sky = SubResource("Sky_q8e8m")
-sky_custom_fov = 130.5
-ambient_light_source = 3
-ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 16.0
 
 [sub_resource type="PlaceholderMaterial" id="PlaceholderMaterial_p5spi"]
 
@@ -44,7 +32,7 @@ data = PackedVector3Array(20, 0, 20, 18.0952, 0, 20, 20, 0, 18.0952, 18.0952, 0,
 [node name="LevelTest" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_oenlu")
+environment = ExtResource("1_xlufh")
 
 [node name="TheSunTheSunTheSunTheSun" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.217323, 0.932338, 1.65666)

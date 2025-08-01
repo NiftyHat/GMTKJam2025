@@ -136,12 +136,13 @@ shape = SubResource("BoxShape3D_ggkdx")
 transform = Transform3D(0.622, 0, 0, 0, 0.43, 0, 0, 0, 1.58, 0, -0.323, -0.131)
 mesh = SubResource("BoxMesh_ggkdx")
 
-[node name="CarEntity" type="Node3D" parent="." node_paths=PackedStringArray("_carController", "_hud", "_ghostRecorder")]
+[node name="CarEntity" type="Node3D" parent="." node_paths=PackedStringArray("_carController", "_hud", "_ghostRecorder", "LevelResetTimer")]
 transform = Transform3D(0.999983, 0.002832, 0.00515023, -0.00285934, 0.999982, 0.00530685, -0.0051351, -0.00532149, 0.999973, 0, 0, 0)
 script = ExtResource("7_mhj1q")
 _carController = NodePath("CarController")
 _hud = NodePath("../HUD")
 _ghostRecorder = NodePath("../GhostRecorder")
+LevelResetTimer = NodePath("TimerLevelReset")
 metadata/_custom_type_script = "uid://v2v2l1vx325s"
 
 [node name="CarController" type="Node3D" parent="CarEntity" node_paths=PackedStringArray("_rb", "_camera3D")]
@@ -194,5 +195,8 @@ debug_color = Color(0.0823529, 0.462745, 0, 1)
 visible = false
 material_override = SubResource("StandardMaterial3D_3syrs")
 mesh = SubResource("SphereMesh_yr35r")
+
+[node name="TimerLevelReset" type="Timer" parent="CarEntity"]
+wait_time = 15.0
 
 [node name="HUD" parent="." instance=ExtResource("10_baenr")]

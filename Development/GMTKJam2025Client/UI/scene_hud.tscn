@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bna0stgm2f762"]
+[gd_scene load_steps=17 format=3 uid="uid://bna0stgm2f762"]
 
 [ext_resource type="Script" uid="uid://d3054nla06550" path="res://UI/UIHUD.cs" id="1_dmi88"]
 [ext_resource type="AudioStream" uid="uid://0stjcmm8fks3" path="res://Audio/Music/lsl gogogo.ogg" id="2_fac72"]
 [ext_resource type="FontFile" uid="uid://c434xdyo2rbtv" path="res://Fonts/abduction2002.ttf" id="3_fac72"]
 [ext_resource type="AudioStream" uid="uid://dvud2f6pw67ua" path="res://Audio/Music/lsl nyoom.ogg" id="4_h3oo2"]
+[ext_resource type="Script" uid="uid://e0gy41f0sl3c" path="res://UI/HUDCountdownTimer.cs" id="5_008jt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_008jt"]
 font = ExtResource("3_fac72")
@@ -111,17 +112,119 @@ _data = {
 font = ExtResource("3_fac72")
 font_size = 256
 
-[node name="UIHUD" type="Control" node_paths=PackedStringArray("_lapCountLabel", "_countdownAnimation", "_streamMusic")]
+[sub_resource type="LabelSettings" id="LabelSettings_h3oo2"]
+font = ExtResource("3_fac72")
+font_size = 26
+
+[sub_resource type="Animation" id="Animation_a2sha"]
+resource_name = "normal"
+
+[sub_resource type="Animation" id="Animation_dk54w"]
+resource_name = "low"
+length = 0.25
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LabelTimeMiliseconds:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0355945, 0.126949, 0.166667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 0.662745, 1), Color(1, 1, 0.449535, 1), Color(1, 1, 0.662745, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LabelTimeSeconds:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.108645, 0.2, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 0.662745, 1), Color(1, 1, 0.449535, 1), Color(1, 1, 0.662745, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cfbkl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LabelTimeMiliseconds:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 0.449535, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LabelTimeSeconds:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 0.376471, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_21b46"]
+resource_name = "critical"
+length = 0.25
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LabelTimeMiliseconds:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0355945, 0.126949, 0.166667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 0, 0.756863, 1), Color(1, 0, 0.45098, 1), Color(1, 0, 0.756863, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LabelTimeSeconds:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.108645, 0.2, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 0, 0.756863, 1), Color(1, 0, 0.45098, 1), Color(1, 0, 0.756863, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wwh5m"]
+_data = {
+&"RESET": SubResource("Animation_cfbkl"),
+&"critical": SubResource("Animation_21b46"),
+&"low": SubResource("Animation_dk54w"),
+&"normal": SubResource("Animation_a2sha")
+}
+
+[node name="UIHUD" type="Control" node_paths=PackedStringArray("_lapCountLabel", "_countdownAnimation", "_streamMusic", "_timeRemainingView")]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_dmi88")
 _lapCountLabel = NodePath("CanvasLayer/LabelLapCount")
 _countdownAnimation = NodePath("CanvasLayer/Countdown321Go/CountdownAnimation")
 _streamMusic = NodePath("CanvasLayer/AudioStreamPlayerRacing")
+_timeRemainingView = NodePath("CanvasLayer/TimeRemaining")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="LabelLapCount" type="Label" parent="CanvasLayer"]
+visible = false
 offset_left = 6.0
 offset_top = 594.0
 offset_right = 1158.0
@@ -145,7 +248,7 @@ layout_mode = 0
 offset_left = 2.0
 offset_top = 202.0
 offset_right = 1153.0
-offset_bottom = 677.0
+offset_bottom = 438.0
 text = "3"
 label_settings = SubResource("LabelSettings_a2sha")
 horizontal_alignment = 1
@@ -157,3 +260,35 @@ bus = &"Music"
 stream = ExtResource("4_h3oo2")
 bus = &"Music"
 parameters/looping = true
+
+[node name="TimeRemaining" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("_labelSeconds", "_labelMilliSeconds", "_animationPlayer")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 120.0
+offset_bottom = 63.0
+script = ExtResource("5_008jt")
+_labelSeconds = NodePath("LabelTimeSeconds")
+_labelMilliSeconds = NodePath("LabelTimeMiliseconds")
+_animationPlayer = NodePath("AnimationPlayerTimer")
+
+[node name="LabelTimeSeconds" type="Label" parent="CanvasLayer/TimeRemaining"]
+modulate = Color(1, 1, 0.376471, 1)
+offset_top = 11.0
+offset_right = 71.0
+offset_bottom = 63.0
+label_settings = SubResource("LabelSettings_008jt")
+horizontal_alignment = 1
+
+[node name="LabelTimeMiliseconds" type="Label" parent="CanvasLayer/TimeRemaining"]
+modulate = Color(1, 1, 0.449535, 1)
+offset_left = 72.0
+offset_top = 32.0
+offset_right = 107.0
+offset_bottom = 57.0
+label_settings = SubResource("LabelSettings_h3oo2")
+
+[node name="AnimationPlayerTimer" type="AnimationPlayer" parent="CanvasLayer/TimeRemaining"]
+libraries = {
+&"": SubResource("AnimationLibrary_wwh5m")
+}
+autoplay = "normal"

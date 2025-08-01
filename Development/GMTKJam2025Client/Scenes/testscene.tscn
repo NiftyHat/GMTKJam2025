@@ -1,10 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://ld0p8kcn1vxo"]
+[gd_scene load_steps=24 format=3 uid="uid://ld0p8kcn1vxo"]
 
+[ext_resource type="Environment" uid="uid://b7nskufe3ugno" path="res://Scenes/LevelEnviroment.tres" id="1_7ms41"]
 [ext_resource type="PackedScene" uid="uid://bewbicgsy3ro" path="res://Levels/level_test.tscn" id="1_nes3m"]
 [ext_resource type="Texture2D" uid="uid://2h3qmpnq0584" path="res://Texture/7a3584298ef470fe0aafc146c23d34523b045606.png" id="1_r2sr7"]
 [ext_resource type="Script" uid="uid://dnlgcp0rpf2mg" path="res://Script/CarController.cs" id="2_wni78"]
 [ext_resource type="Script" uid="uid://3klfn8jegsue" path="res://Script/GameCamera.cs" id="3_0pdfm"]
-[ext_resource type="Texture2D" uid="uid://bdpkysot812ts" path="res://Texture/Sky_T.webp" id="3_3hk28"]
 [ext_resource type="PackedScene" uid="uid://bpmfitw8wc80d" path="res://3D/Cars/car_player.tscn" id="4_vy56e"]
 [ext_resource type="Script" uid="uid://cc86lg7fm3e7b" path="res://Script/GhostRecorder.cs" id="6_ggkdx"]
 [ext_resource type="Script" uid="uid://cv0yn3y5gd06l" path="res://3D/Entities/EntityCar.cs" id="7_ni8gw"]
@@ -19,16 +19,6 @@ albedo_texture = ExtResource("1_r2sr7")
 uv1_scale = Vector3(32, 32, 32)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vy56e"]
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_g0og0"]
-panorama = ExtResource("3_3hk28")
-
-[sub_resource type="Sky" id="Sky_km00y"]
-sky_material = SubResource("PanoramaSkyMaterial_g0og0")
-
-[sub_resource type="Environment" id="Environment_7ms41"]
-background_mode = 2
-sky = SubResource("Sky_km00y")
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0pdfm"]
 bounce = 0.1
@@ -57,6 +47,9 @@ albedo_texture = ExtResource("1_r2sr7")
 
 [node name="Node3D" type="Node3D"]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_7ms41")
+
 [node name="LevelTest" parent="." instance=ExtResource("1_nes3m")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.0413204, 0.14372, 0.0478761)
 
@@ -77,7 +70,6 @@ transform = Transform3D(0.16329, 0.734871, -0.658256, 0, 0.667211, 0.744869, 0.9
 
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("LookAtTarget", "CameraPositionTarget", "CameraFocusTarget", "CarController")]
 transform = Transform3D(-0.999889, -0.000312992, 0.0148878, 0, 0.999779, 0.0210188, -0.0148911, 0.0210164, -0.999668, -0.000763688, 1.59773, -3.21964)
-environment = SubResource("Environment_7ms41")
 script = ExtResource("3_0pdfm")
 LookAtTarget = NodePath("../CameraTarget")
 CameraPositionTarget = NodePath("../CarEntity/CarController/IdealCameraLocation")

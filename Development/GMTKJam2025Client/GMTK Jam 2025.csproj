@@ -4,7 +4,4 @@
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <RootNamespace>GMTKJam2025</RootNamespace>
   </PropertyGroup>
-  <ItemGroup>
-    <Folder Include="Audio\" />
-  </ItemGroup>
 </Project>

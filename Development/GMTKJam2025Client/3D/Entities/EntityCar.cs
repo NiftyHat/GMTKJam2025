@@ -9,6 +9,10 @@ public partial class EntityCar : GameEntity
     [Export] private CarController _carController;
     [Export] private UIHUD _hud;
     [Export] private GhostRecorder _ghostRecorder;
+    [Export] public double TimePerCheckpoint = 4;
+    [Export] public double InitialTime = 20;
+    [Export] public int LapsToWin = 6;
+    [Export] public Timer LevelResetTimer { get; set; }
     
     private EntityCheckpoint _lastTouchedCheckpoint;
     private int _lap;
@@ -22,12 +26,41 @@ public partial class EntityCar : GameEntity
         base._Ready();
         if (_hud != null)
         {
+            _hud.SetTimer(LevelResetTimer);
             _hud.PlayCountdown();
         }
+
+        LevelResetTimer.Timeout += HandleTimeout;
     }
-    
+
+    public override void _Process(double delta)
+    {
+        base._Process(delta);
+        if (Input.IsActionJustPressed("TEMP_Record"))
+        {
+            _lap = 7;
+            _hud.SetLap(7);
+            LevelResetTimer.Start(1);
+        }
+    }
+
+    private void HandleTimeout()
+    {
+        LevelResetTimer.Stop();
+        if (_lap > LapsToWin)
+        {
+            SceneSwitcher.Instance.GoToScene(SceneSwitcher.Instance.Library.GameOver);
+        }
+        else
+        {
+            GetTree().ReloadCurrentScene();
+        }
+        
+    }
+
     public void EnterCheckpoint(EntityCheckpoint entityCheckpoint)
     {
+        //if there's no checkpoint we JUST started
         if (_lastTouchedCheckpoint == null && entityCheckpoint.IsStartLine())
         {
             entityCheckpoint.Track.SetActiveCheckpoint(entityCheckpoint);
@@ -39,16 +72,30 @@ public partial class EntityCar : GameEntity
         {
             if (entityCheckpoint.Index == _lastTouchedCheckpoint.Index + 1)
             {
-                entityCheckpoint.Track.SetActiveCheckpoint(entityCheckpoint);
-                _lastTouchedCheckpoint = entityCheckpoint;
+                TriggerNewCheckpoint(entityCheckpoint);
             }
             else if (entityCheckpoint.Index == 0 &&
                 _lastTouchedCheckpoint.Index == entityCheckpoint.Track.CheckPoints.Count - 1)
             {
-                entityCheckpoint.Track.SetActiveCheckpoint(entityCheckpoint);
-                _lastTouchedCheckpoint = entityCheckpoint;
+                TriggerNewCheckpoint(entityCheckpoint);
                 SetLap(_lap + 1);
             }
+        }
+    }
+
+    private void TriggerNewCheckpoint(EntityCheckpoint entityCheckpoint)
+    {
+        entityCheckpoint.Track.SetActiveCheckpoint(entityCheckpoint);
+        _lastTouchedCheckpoint = entityCheckpoint;
+        AddTime(3);
+    }
+
+    private void AddTime(double seconds)
+    {
+        if (LevelResetTimer != null)
+        {
+            LevelResetTimer.WaitTime = LevelResetTimer.TimeLeft + seconds;
+            LevelResetTimer.Start();
         }
     }
 
@@ -69,6 +116,7 @@ public partial class EntityCar : GameEntity
         if (_lap == 1)
         {
             _hud.PlayRacing();
+            LevelResetTimer.Start(InitialTime);
         }
     }
 }

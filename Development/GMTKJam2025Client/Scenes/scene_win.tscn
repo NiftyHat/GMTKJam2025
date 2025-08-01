@@ -1,0 +1,256 @@
+[gd_scene load_steps=26 format=3 uid="uid://cl2mrxu0w4sr8"]
+
+[ext_resource type="Environment" uid="uid://b7nskufe3ugno" path="res://Scenes/LevelEnviroment.tres" id="1_hyuv4"]
+[ext_resource type="PackedScene" uid="uid://bpmfitw8wc80d" path="res://3D/Cars/car_player.tscn" id="1_nofjx"]
+[ext_resource type="PackedScene" uid="uid://1bhvbl0nhyga" path="res://3D/Prototype/Kenney_Racing/grass.glb" id="2_4aog5"]
+[ext_resource type="PackedScene" uid="uid://dtsq4dsirk27e" path="res://3D/Prototype/Kenney_Racing/pitsGarageCorner.glb" id="3_5n2p5"]
+[ext_resource type="PackedScene" uid="uid://dsao6v3tpan8r" path="res://3D/Prototype/Kenney_Racing/pitsOfficeCorner.glb" id="4_tx6j4"]
+[ext_resource type="PackedScene" uid="uid://cmgusbxagih55" path="res://3D/Prototype/Kenney_Racing/roadCornerLarger.glb" id="5_hyuv4"]
+[ext_resource type="PackedScene" uid="uid://jf2xu8cilhbo" path="res://3D/Prototype/Kenney_Racing/lightPostModern.glb" id="7_5dl25"]
+[ext_resource type="PackedScene" uid="uid://dkiybupor8wmx" path="res://3D/Prototype/Kenney_Racing/pitsOfficeRoof.glb" id="8_phabx"]
+[ext_resource type="PackedScene" uid="uid://uctfka66tb0e" path="res://3D/Prototype/Kenney_Racing/roadStraight.glb" id="9_fa8k4"]
+[ext_resource type="Texture2D" uid="uid://dlci1o1tn1pu" path="res://3D/Effects/smoke_05.png" id="10_5dl25"]
+[ext_resource type="PackedScene" uid="uid://d4krwjvchhcuu" path="res://3D/Prototype/Skeleton/skeleton.tscn" id="11_phabx"]
+[ext_resource type="FontFile" uid="uid://c434xdyo2rbtv" path="res://Fonts/abduction2002.ttf" id="12_fa8k4"]
+[ext_resource type="AudioStream" uid="uid://dw3dmvafx3c2d" path="res://Audio/Music/lsl infvictory.ogg" id="13_owfin"]
+
+[sub_resource type="Animation" id="Animation_fa8k4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player_car/Headlight3D_1:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("player_car/HeadLight3D_2:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_phabx"]
+resource_name = "idle"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player_car/Headlight3D_1:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.433333, 0.466667, 0.5, 0.542124, 0.6, 2.88745, 2.92079, 2.95412, 2.99624, 3.05412),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("player_car/HeadLight3D_2:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.433333, 0.444251, 0.466864, 0.500197, 0.542322, 0.6, 2.88745, 2.89837, 2.92098, 2.95432, 2.99644, 3.05412),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fh5qu"]
+_data = {
+&"RESET": SubResource("Animation_fa8k4"),
+&"idle": SubResource("Animation_phabx")
+}
+
+[sub_resource type="Curve" id="Curve_phabx"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.494737, 0.907852), 0.0, 0.0, 0, 0, Vector2(0.995489, 0.00408947), -1.34678, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_fa8k4"]
+curve = SubResource("Curve_phabx")
+
+[sub_resource type="Curve" id="Curve_5dl25"]
+_data = [Vector2(0, 0.00408947), 0.0, 0.0, 0, 0, Vector2(0.499248, 0.982279), 0.153708, 0.153708, 0, 0, Vector2(1, 0.87241), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_phabx"]
+curve = SubResource("Curve_5dl25")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fh5qu"]
+lifetime_randomness = 0.4
+angle_min = -4.99999
+angle_max = 5.00001
+direction = Vector3(0, 0, 0)
+spread = 10.0
+initial_velocity_min = 0.3
+initial_velocity_max = 0.5
+gravity = Vector3(0, 0.5, 0)
+damping_min = 1.0
+damping_max = 2.0
+scale_min = 0.0
+scale_max = 0.0
+scale_curve = SubResource("CurveTexture_phabx")
+alpha_curve = SubResource("CurveTexture_fa8k4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gk7sd"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("10_5dl25")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_27myn"]
+material = SubResource("StandardMaterial3D_gk7sd")
+size = Vector2(0.25, 0.25)
+
+[sub_resource type="Skin" id="Skin_27myn"]
+bind_count = 1
+bind/0/name = &""
+bind/0/bone = -1
+bind/0/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8dngi"]
+font = ExtResource("12_fa8k4")
+font_size = 71
+
+[node name="LevelWin" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, -5.15151, 8.87838, -10.9096)
+light_color = Color(1, 0.533333, 1, 1)
+light_energy = 0.393
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_hyuv4")
+
+[node name="player_car" parent="." instance=ExtResource("1_nofjx")]
+transform = Transform3D(0.800857, 0, -0.598856, 0, 1, 0, 0.598856, 0, 0.800857, -0.0574379, 1.19209e-07, -0.149608)
+
+[node name="Headlight3D_1" type="SpotLight3D" parent="player_car"]
+transform = Transform3D(0.992688, 0, -0.120709, 0, 1, 0, 0.120709, 0, 0.992688, -0.230496, 0.203982, -0.545983)
+spot_range = 3.918
+spot_attenuation = -0.3
+spot_angle = 50.84
+spot_angle_attenuation = 1.10957
+
+[node name="HeadLight3D_2" type="SpotLight3D" parent="player_car"]
+transform = Transform3D(0.992688, 0, -0.120709, 0, 1, 0, 0.120709, 0, 0.992688, 0.172764, 0.278315, -0.326254)
+spot_range = 3.918
+spot_attenuation = -0.3
+spot_angle = 50.84
+spot_angle_attenuation = 1.10957
+
+[node name="AnimationPlayerFlicker2" type="AnimationPlayer" parent="player_car"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_fh5qu")
+}
+autoplay = "idle"
+
+[node name="Scene" type="Node3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="grass" parent="Scene" instance=ExtResource("2_4aog5")]
+transform = Transform3D(10.1099, 0, 0, 0, 1, 0, 0, 0, 14.4412, 0.10368, 0, -0.00197184)
+
+[node name="Buildings" type="Node3D" parent="Scene"]
+
+[node name="pitsGarageCorner" parent="Scene/Buildings" instance=ExtResource("3_5n2p5")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.07404, -0.0141069, 0.18482)
+
+[node name="pitsOfficeCorner" parent="Scene/Buildings" instance=ExtResource("4_tx6j4")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.1664, -0.0141069, 1.203)
+
+[node name="pitsOfficeRoof" parent="Scene/Buildings" instance=ExtResource("8_phabx")]
+transform = Transform3D(1.24213, 0, 0.840893, 0, 1.5, 0, -0.840893, 0, 1.24213, -0.216901, 0.00499995, -1.82639)
+
+[node name="roadCornerLarger" parent="Scene" instance=ExtResource("5_hyuv4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15627, 1.28523e-07, -0.756123)
+
+[node name="Light" parent="Scene" instance=ExtResource("7_5dl25")]
+transform = Transform3D(0.168455, 0, 0.985709, 0, 1, 0, -0.985709, 0, 0.168455, -0.231024, -0.00499993, -0.911921)
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Scene/Light"]
+transform = Transform3D(-0.5, 4.47035e-08, 2.22045e-16, 1.91069e-15, 2.18557e-08, 0.5, 4.47035e-08, 0.5, -2.18557e-08, 0.00683552, 0.734335, 0.0899373)
+light_color = Color(1, 0.188971, 0.997157, 1)
+spot_range = 1.743
+spot_attenuation = -3.56
+spot_angle = 24.17
+
+[node name="roadStraight" parent="Scene" instance=ExtResource("9_fa8k4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.219475, 1.28523e-07, 1.30708)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.270886, 0, 0.962611, 0, 1, 0, -0.962611, 0, 0.270886, 1.26826, 0.41388, -0.371361)
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.746549, 0.25373, 0.470656)
+visible = false
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Node3D"]
+transform = Transform3D(0.820641, 0, -0.571444, 0, 1, 0, 0.571444, 0, 0.820641, -0.0154036, -0.00531009, -0.00220475)
+amount = 10
+interpolate = false
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_fh5qu")
+draw_pass_1 = SubResource("QuadMesh_27myn")
+draw_skin = SubResource("Skin_27myn")
+
+[node name="Node3D2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.439812, 0.253731, 0.702295)
+visible = false
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Node3D2"]
+transform = Transform3D(0.820641, 0, -0.571444, 0, 1, 0, 0.571444, 0, 0.820641, -0.0154036, -0.00531009, -0.00220475)
+amount = 10
+interpolate = false
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_fh5qu")
+draw_pass_1 = SubResource("QuadMesh_27myn")
+draw_skin = SubResource("Skin_27myn")
+
+[node name="skeleton" parent="." instance=ExtResource("11_phabx")]
+transform = Transform3D(0.396241, 0, 0.304948, 0, 0.5, 0, -0.304948, 0, 0.396241, -0.326126, 0, -0.749131)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Control"]
+
+[node name="Label" type="Label" parent="Control/CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.229
+anchor_top = 0.806
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.19199
+offset_top = 7.71198
+offset_right = -1.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You Won the Game!"
+label_settings = SubResource("LabelSettings_8dngi")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_owfin")
+autoplay = true
+parameters/looping = true

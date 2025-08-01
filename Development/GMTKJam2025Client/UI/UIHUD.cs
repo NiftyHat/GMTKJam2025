@@ -8,10 +8,12 @@ public partial class UIHUD : Control
     [Export] private Label _lapCountLabel;
     [Export] private AnimationPlayer _countdownAnimation;
     [Export] private AudioStreamPlayer _streamMusic;
-
+    [Export] private HUDCountdownTimer _timeRemainingView;
     
     [Export(PropertyHint.Range, "0.01,4,or_greater")] private float _pitchIncreasePerLap = 0.05f;
     [Export(PropertyHint.Range, "0.01,4,or_greater")] private float _pitchIncreaseMax = 1.5f;
+
+    protected Timer _timer;
 
     public override void _Ready()
     {
@@ -87,5 +89,19 @@ public partial class UIHUD : Control
         player.Position = Vector2.Zero;
         player.Play();
     }
-    
+
+    public override void _Process(double delta)
+    {
+        base._Process(delta);
+        if (_timeRemainingView != null && _timer != null)
+        {
+            _timeRemainingView.SetSeconds(_timer.TimeLeft);
+        }
+    }
+
+    public void SetTimer(Timer levelResetTimer)
+    {
+        _timer = levelResetTimer;
+        _timeRemainingView.SetSeconds(_timer.TimeLeft);
+    }
 }
