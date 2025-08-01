@@ -63,7 +63,7 @@ public partial class GhostRecorder : Node
 		base._PhysicsProcess(delta);
 		
 		if(!Recording) return;
-		CurrentRecording.Add(CarRigidbody.Transform);
+		CurrentRecording.Add(CarRigidbody.GlobalTransform);
 
 		currentFrame++;
 

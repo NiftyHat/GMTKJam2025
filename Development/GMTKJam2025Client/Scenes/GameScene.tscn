@@ -114,12 +114,12 @@ mesh = SubResource("SphereMesh_ggkdx")
 
 [node name="GhostRecorder" type="Node3D" parent="." node_paths=PackedStringArray("CarRigidbody", "GhostCarPrototype", "GhostCarContainerPrototype")]
 script = ExtResource("5_7rq2r")
-CarRigidbody = NodePath("../CarEntity/Physics")
+CarRigidbody = NodePath("../CarEntity/CarController")
 GhostCarPrototype = NodePath("../Ghost Car")
 GhostCarContainerPrototype = NodePath("../Crate")
 
 [node name="Ghost Car" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.92633, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ghost Car"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.322774, -0.131317)
@@ -131,7 +131,7 @@ shape = SubResource("BoxShape3D_ggkdx")
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.540508, 0)
 
 [node name="Crate" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.887246, 1.92633, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Crate"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.322774, -0.131317)

@@ -45,7 +45,7 @@ albedo_texture = ExtResource("1_r2sr7")
 
 [sub_resource type="SphereMesh" id="SphereMesh_yr35r"]
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D2" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_7ms41")
