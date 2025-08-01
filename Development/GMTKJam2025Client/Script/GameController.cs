@@ -25,19 +25,29 @@ public partial class GameController : Node
 		}
 	}
 
-	private void Pause()
+	public void Reset()
 	{
-		GD.Print("PAUSE");
+		GetTree().Paused = false;
+		GetTree().ReloadCurrentScene();
+	}
+
+	public void Pause()
+	{
 		isPaused = true;
 		pauseScreen.Activate();
 		GetTree().Paused = true;
 	}
 
-	private void Unpause()
+	public void Unpause()
 	{
-		GD.Print("UNPAUSE");
 		isPaused = false;
 		pauseScreen.Dismiss();
 		GetTree().Paused = false;
+	}
+
+	public void QuitToTitle()
+	{
+		GetTree().Paused = false;
+		SceneSwitcher.Instance.GoToScene(SceneSwitcher.Instance.Library.Title);
 	}
 }
