@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://djpruf2ij658q"]
+[gd_scene load_steps=22 format=3 uid="uid://djpruf2ij658q"]
 
 [ext_resource type="PackedScene" uid="uid://de6n0n215fpr5" path="res://Scenes/Camera/GameCamera.tscn" id="1_853f1"]
 [ext_resource type="Texture2D" uid="uid://dhojn25qmrh3b" path="res://Texture/Grid Floor.png" id="2_8um5k"]
@@ -11,6 +11,8 @@
 [ext_resource type="Script" uid="uid://jjc2vxsw51q4" path="res://Script/MainMenu/MainMenuControl.cs" id="6_cmrfp"]
 [ext_resource type="Script" uid="uid://ck60eum4nuv7n" path="res://Script/MainMenu/Screens/MainMenuMainMenuDisplay.cs" id="10_loo7a"]
 [ext_resource type="Script" uid="uid://bxwjgtymipxoq" path="res://Script/MainMenu/Screens/MainMenuTextScreenPopupDisplay.cs" id="11_if7li"]
+[ext_resource type="FontFile" uid="uid://4tcf8t2hi7n6" path="res://Fonts/Hauser Bold Italic.otf" id="11_rrcx7"]
+[ext_resource type="FontFile" uid="uid://djnxc24f5yy5" path="res://Fonts/Hauser Bold.otf" id="13_fh7cp"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ghw46"]
 size = Vector2(512, 512)
@@ -232,9 +234,9 @@ layout_mode = 2
 focus_neighbor_top = NodePath("../C")
 focus_previous = NodePath("../C")
 theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
-theme_override_colors/font_color = Color(0.576471, 0, 0.52549, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
-theme_override_fonts/font = ExtResource("6_8um5k")
+theme_override_fonts/font = ExtResource("13_fh7cp")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/focus = SubResource("StyleBoxEmpty_loo7a")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_if7li")
@@ -245,9 +247,9 @@ alignment = 2
 [node name="TS" type="Button" parent="Main Menu Control/MainMenuDisplay/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
-theme_override_colors/font_color = Color(0.576471, 0, 0.52549, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
-theme_override_fonts/font = ExtResource("6_8um5k")
+theme_override_fonts/font = ExtResource("13_fh7cp")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/focus = SubResource("StyleBoxEmpty_loo7a")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_if7li")
@@ -258,9 +260,9 @@ alignment = 2
 [node name="BT" type="Button" parent="Main Menu Control/MainMenuDisplay/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
-theme_override_colors/font_color = Color(0.576471, 0, 0.52549, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
-theme_override_fonts/font = ExtResource("6_8um5k")
+theme_override_fonts/font = ExtResource("13_fh7cp")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/focus = SubResource("StyleBoxEmpty_loo7a")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_if7li")
@@ -271,9 +273,9 @@ alignment = 2
 [node name="O" type="Button" parent="Main Menu Control/MainMenuDisplay/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
-theme_override_colors/font_color = Color(0.576471, 0, 0.52549, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
-theme_override_fonts/font = ExtResource("6_8um5k")
+theme_override_fonts/font = ExtResource("13_fh7cp")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/focus = SubResource("StyleBoxEmpty_loo7a")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_if7li")
@@ -286,9 +288,9 @@ layout_mode = 2
 focus_neighbor_bottom = NodePath("../HTP")
 focus_next = NodePath("../HTP")
 theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
-theme_override_colors/font_color = Color(0.576471, 0, 0.52549, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
-theme_override_fonts/font = ExtResource("6_8um5k")
+theme_override_fonts/font = ExtResource("13_fh7cp")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/focus = SubResource("StyleBoxEmpty_loo7a")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_if7li")
@@ -373,6 +375,8 @@ expand_mode = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Main Menu Control/CreditsDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("13_fh7cp")
+theme_override_fonts/bold_font = ExtResource("11_rrcx7")
 theme_override_font_sizes/normal_font_size = 20
 theme_override_font_sizes/bold_font_size = 28
 bbcode_enabled = true
@@ -392,6 +396,7 @@ size_flags_stretch_ratio = 5.0
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Main Menu Control/CreditsDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("13_fh7cp")
 theme_override_font_sizes/normal_font_size = 20
 theme_override_font_sizes/bold_font_size = 28
 bbcode_enabled = true

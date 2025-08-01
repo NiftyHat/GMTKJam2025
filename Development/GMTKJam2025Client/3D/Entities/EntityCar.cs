@@ -30,7 +30,10 @@ public partial class EntityCar : GameEntity
             _hud.PlayCountdown();
         }
 
-        LevelResetTimer.Timeout += HandleTimeout;
+        if (LevelResetTimer != null)
+        {
+            LevelResetTimer.Timeout += HandleTimeout;
+        }
     }
 
     public override void _Process(double delta)
@@ -40,13 +43,19 @@ public partial class EntityCar : GameEntity
         {
             _lap = 7;
             _hud.SetLap(7);
-            LevelResetTimer.Start(1);
+            if (LevelResetTimer != null)
+            {
+                LevelResetTimer.Start(1);
+            }
         }
     }
 
     private void HandleTimeout()
     {
-        LevelResetTimer.Stop();
+        if (LevelResetTimer != null)
+        {
+            LevelResetTimer.Stop();
+        }
         if (_lap > LapsToWin)
         {
             SceneSwitcher.Instance.GoToScene(SceneSwitcher.Instance.Library.GameOver);
@@ -55,7 +64,6 @@ public partial class EntityCar : GameEntity
         {
             GetTree().ReloadCurrentScene();
         }
-        
     }
 
     public void EnterCheckpoint(EntityCheckpoint entityCheckpoint)
@@ -116,7 +124,10 @@ public partial class EntityCar : GameEntity
         if (_lap == 1)
         {
             _hud.PlayRacing();
-            LevelResetTimer.Start(InitialTime);
+            if (LevelResetTimer != null)
+            {
+                LevelResetTimer.Start(InitialTime);
+            }
         }
     }
 }

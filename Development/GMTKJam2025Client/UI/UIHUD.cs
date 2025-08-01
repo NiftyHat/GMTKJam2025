@@ -17,7 +17,6 @@ public partial class UIHUD : Control
 
     public override void _Ready()
     {
-       
         
         base._Ready();
         PlayCountdown();

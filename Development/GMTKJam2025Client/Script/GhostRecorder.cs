@@ -20,8 +20,6 @@ public partial class GhostRecorder : Node
 	public bool Recording = false;
 	public int currentFrame = 0;
 	
-	
-
 	public override void _Ready()
 	{
 		base._Ready();
@@ -63,7 +61,8 @@ public partial class GhostRecorder : Node
 		base._PhysicsProcess(delta);
 		
 		if(!Recording) return;
-		CurrentRecording.Add(CarRigidbody.Transform);
+		
+		CurrentRecording.Add(CarRigidbody.GlobalTransform);
 
 		currentFrame++;
 

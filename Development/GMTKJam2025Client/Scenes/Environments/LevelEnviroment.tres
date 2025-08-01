@@ -1,0 +1,15 @@
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://b7nskufe3ugno"]
+
+[ext_resource type="Texture2D" uid="uid://bdpkysot812ts" path="res://3D/Textures/Sky_T.webp" id="1_u3m7m"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_g0og0"]
+panorama = ExtResource("1_u3m7m")
+
+[sub_resource type="Sky" id="Sky_km00y"]
+sky_material = SubResource("PanoramaSkyMaterial_g0og0")
+
+[resource]
+background_mode = 2
+background_energy_multiplier = 0.54
+sky = SubResource("Sky_km00y")
+reflected_light_source = 2
