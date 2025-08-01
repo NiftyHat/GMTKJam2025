@@ -1,7 +1,8 @@
 using Godot;
 using System;
+using GMTKJam2025.UI.MainMenu;
 
-public partial class MainMenuTitleDisplay : Control
+public partial class MainMenuTitleDisplay : Control, IMenuDisplay
 { 
 	
 	[Signal] public delegate void FadeInAnimationStartedEventHandler();
@@ -42,11 +43,20 @@ public partial class MainMenuTitleDisplay : Control
 		TitleText = (Label)GetNode("VBoxContainer/LabelBox/Padder/Label");
 		
 		TextFade = CreateTween();
+		TitleText.Modulate = ColorPulseA;
 		TextFade.TweenProperty(TitleText, "modulate", ColorPulseB, .75f);
 		TextFade.TweenProperty(TitleText, "modulate", ColorPulseA, .75f);
 		TextFade.SetLoops();
+	}
 
-		FadeInAnimation();
+	public void Lock()
+	{
+		SetProcess(false);
+	}
+
+	public void Unlock()
+	{
+		SetProcess(true);
 	}
 
 	public override void _Process(double delta)
@@ -70,13 +80,21 @@ public partial class MainMenuTitleDisplay : Control
 		}
 	}
 
+	public void HideScreen()
+	{
+		TitleContainer.Modulate = Colors.Transparent;
+		Modulate = Colors.Transparent;
+	}
+
+	public void Start()
+	{
+		SetProcess(true);
+		FadeInAnimation();
+	}
+
 	private void FadeInAnimation()
 	{
 		state = State.FADE_IN;
-		TitleText.Modulate = ColorPulseA;
-		
-		TitleContainer.Modulate = Colors.Transparent;
-		Modulate = Colors.Transparent;
 		
 		AnimationTween = CreateTween();
 		AnimationTween.TweenCallback(Callable.From(EmitSignalFadeInAnimationStarted));
@@ -104,8 +122,8 @@ public partial class MainMenuTitleDisplay : Control
 		TextFade.Stop();
 
 		Tween flash = CreateTween();
-		flash.TweenProperty(TitleText, "modulate", ColorFlashA, .1f);
-		flash.TweenProperty(TitleText, "modulate", ColorFlashB, .1f);
+		flash.TweenProperty(TitleText, "modulate", ColorFlashA, .05f);
+		flash.TweenProperty(TitleText, "modulate", ColorFlashB, .05f);
 		flash.SetLoops(10);
 
 		AnimationTween = CreateTween();

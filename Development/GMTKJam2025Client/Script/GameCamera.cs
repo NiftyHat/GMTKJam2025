@@ -12,6 +12,7 @@ public partial class GameCamera : Camera3D
 
 	[Export] public float FOVAtMaxSpeed = 110f;
 	[Export] public float FOVNormal = 75f;
+	[Export] public float FOVTarget = 75f;
 
 	[Export] public CarController CarController;
 
@@ -19,6 +20,7 @@ public partial class GameCamera : Camera3D
 	{
 		base._Ready();
 		Fov = FOVNormal;
+		FOVTarget = FOVNormal;
 		if (CameraPositionTarget != null) GlobalPosition = CameraPositionTarget.GlobalPosition;
 		if (LookAtTarget != null)
 		{
@@ -43,12 +45,10 @@ public partial class GameCamera : Camera3D
 
 		if (CarController != null)
 		{
-			Fov = FOVNormal + (FOVAtMaxSpeed - FOVNormal) * CarController.Speed / CarController.MaxSpeed;
+			FOVTarget = FOVNormal + (FOVAtMaxSpeed - FOVNormal) * CarController.Speed / CarController.MaxSpeed;
 		}
-		else
-		{
-			Fov = FOVNormal;
-		}
+
+		Fov = float.Lerp(Fov, FOVTarget, (float)delta);
 
 		LookAt(LookAtTarget.GlobalPosition);
 	}
