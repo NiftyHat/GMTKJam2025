@@ -221,7 +221,7 @@ wait_time = 15.0
 [node name="HUD" parent="." instance=ExtResource("10_gipt1")]
 
 [node name="Pause" type="CanvasLayer" parent="."]
-process_mode = 2
+process_mode = 3
 script = ExtResource("12_7rq2r")
 
 [node name="TextureRect" type="TextureRect" parent="Pause"]
@@ -323,5 +323,9 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_yhlfj")
 text = "MAIN MENU"
 flat = true
 
-[connection signal="pressed" from="Pause/MarginContainer/VBoxContainer/Continue" to="Pause" method="EmitSignalButtonContinue"]
-[connection signal="pressed" from="Pause/MarginContainer/VBoxContainer/Restart" to="Pause" method="EmitSignalButtonRestart"]
+[connection signal="ButtonContinue" from="Pause" to="GameControl" method="Unpause"]
+[connection signal="ButtonMainMenu" from="Pause" to="GameControl" method="QuitToTitle"]
+[connection signal="ButtonRestart" from="Pause" to="GameControl" method="Reset"]
+[connection signal="pressed" from="Pause/MarginContainer/VBoxContainer/Continue" to="Pause" method="OnContinue"]
+[connection signal="pressed" from="Pause/MarginContainer/VBoxContainer/Restart" to="Pause" method="OnReset"]
+[connection signal="pressed" from="Pause/MarginContainer/VBoxContainer/Main Menu" to="Pause" method="OnMainMenu"]

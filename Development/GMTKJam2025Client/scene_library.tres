@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="SceneLibraryData" load_steps=4 format=3 uid="uid://4ok63xd11343"]
+[gd_resource type="Resource" script_class="SceneLibraryData" load_steps=5 format=3 uid="uid://4ok63xd11343"]
 
-[ext_resource type="PackedScene" uid="uid://f4s4hn0pgcmt" path="res://Scenes/game-test-duncan.tscn" id="1_ibcgr"]
 [ext_resource type="Script" uid="uid://cpjc1y0l8j8kt" path="res://Core/SceneLibraryData.cs" id="1_n46w3"]
+[ext_resource type="PackedScene" uid="uid://bs7t7tjyw4eo1" path="res://Scenes/GameScene.tscn" id="1_urhb6"]
 [ext_resource type="PackedScene" uid="uid://cl2mrxu0w4sr8" path="res://Scenes/scene_win.tscn" id="2_urhb6"]
+[ext_resource type="PackedScene" uid="uid://djpruf2ij658q" path="res://Scenes/MainMenu.tscn" id="3_urhb6"]
 
 [resource]
 script = ExtResource("1_n46w3")
+Title = ExtResource("3_urhb6")
 GameOver = ExtResource("2_urhb6")
-Game = ExtResource("1_ibcgr")
+Game = ExtResource("1_urhb6")
 metadata/_custom_type_script = "uid://cpjc1y0l8j8kt"
