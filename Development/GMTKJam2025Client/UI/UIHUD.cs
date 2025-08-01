@@ -38,18 +38,6 @@ public partial class UIHUD : Control
         {
             PlayRacing();
         }
-        else if (_streamMusic.PitchScale < _pitchIncreaseMax)
-        {
-            SlideMusicPitch(_streamMusic.PitchScale + _pitchIncreasePerLap, 1.0f);
-        }
-    }
-
-    public void SlideMusicPitch(float newValue, float duration)
-    {
-        var pitchChangeTween = CreateTween();
-        pitchChangeTween.TweenMethod(Callable.From<float>(SetMusicPitch), _streamMusic.PitchScale, newValue, duration )
-            .SetEase(Tween.EaseType.In)
-            .SetTrans(Tween.TransitionType.Sine);
     }
 
     public void SetMusicPitch(float newValue)

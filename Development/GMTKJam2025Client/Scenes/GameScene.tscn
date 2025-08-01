@@ -118,13 +118,12 @@ shape = SubResource("BoxShape3D_ggkdx")
 [node name="GhostCar" type="Node3D" parent="Ghost Car"]
 
 [node name="CarFrame12" parent="Ghost Car/GhostCar" instance=ExtResource("10_124qp")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="Crate" type="StaticBody3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -10, 0)
 
 [node name="CarCoffin12" parent="Crate" instance=ExtResource("8_qolck")]
-transform = Transform3D(0.5, 0, 0, 0, 0.433013, 0.25, 0, -0.25, 0.433013, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.866026, 0.5, 0, -0.5, 0.866026, 0, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Crate"]
 transform = Transform3D(0.622, 0, 0, 0, 0.43, 0, 0, 0, 1.58, 0, -0.323, -0.131)
@@ -172,10 +171,9 @@ visible = false
 target_position = Vector3(0, -2, 0)
 
 [node name="CarFrame12" parent="CarEntity/CarController" instance=ExtResource("10_124qp")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="Physics" type="RigidBody3D" parent="CarEntity" node_paths=PackedStringArray("Entity")]
-transform = Transform3D(-0.999982, -0.00600197, -0.000308617, -0.00600484, 0.999928, 0.0103598, 0.000246421, 0.0103614, -0.999946, -0.514376, 0.652387, -7.93658)
+transform = Transform3D(0.999987, 0.00515013, 9.61963e-05, -0.00515085, 0.99993, 0.0105894, -4.16427e-05, -0.0105898, 0.999944, -0.514376, 0.652387, -7.93658)
 collision_mask = 3
 mass = 5.0
 physics_material_override = SubResource("PhysicsMaterial_ni8gw")
