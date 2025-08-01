@@ -1,12 +1,12 @@
-[gd_scene load_steps=22 format=3 uid="uid://bna0stgm2f762"]
+[gd_scene load_steps=23 format=3 uid="uid://bna0stgm2f762"]
 
 [ext_resource type="Script" uid="uid://d3054nla06550" path="res://UI/UIHUD.cs" id="1_dmi88"]
-[ext_resource type="LabelSettings" path="res://UI/Textures/LabelSettings.tres" id="2_a2sha"]
 [ext_resource type="AudioStream" uid="uid://0stjcmm8fks3" path="res://Audio/Music/lsl gogogo.ogg" id="2_fac72"]
 [ext_resource type="FontFile" uid="uid://c434xdyo2rbtv" path="res://Fonts/abduction2002.ttf" id="3_fac72"]
 [ext_resource type="AudioStream" uid="uid://dvud2f6pw67ua" path="res://Audio/Music/lsl nyoom.ogg" id="4_h3oo2"]
 [ext_resource type="Script" uid="uid://e0gy41f0sl3c" path="res://UI/HUDCountdownTimer.cs" id="5_008jt"]
-[ext_resource type="Script" path="res://UI/PauseScreen.cs" id="7_cfbkl"]
+[ext_resource type="FontFile" uid="uid://4tcf8t2hi7n6" path="res://Fonts/Hauser Bold Italic.otf" id="6_cfbkl"]
+[ext_resource type="Script" uid="uid://cx8fluhgs0oo3" path="res://UI/PauseScreen.cs" id="7_cfbkl"]
 [ext_resource type="Texture2D" uid="uid://dwkcdhdwgfnss" path="res://UI/Textures/Menu_Base.PNG" id="7_dk54w"]
 [ext_resource type="FontFile" uid="uid://djnxc24f5yy5" path="res://Fonts/Hauser Bold.otf" id="8_21b46"]
 
@@ -112,8 +112,12 @@ _data = {
 font = ExtResource("3_fac72")
 font_size = 256
 
+[sub_resource type="LabelSettings" id="LabelSettings_wwh5m"]
+font = ExtResource("6_cfbkl")
+font_size = 61
+
 [sub_resource type="LabelSettings" id="LabelSettings_h3oo2"]
-font = ExtResource("3_fac72")
+font = ExtResource("6_cfbkl")
 font_size = 26
 
 [sub_resource type="Animation" id="Animation_cfbkl"]
@@ -243,7 +247,6 @@ offset_top = 594.0
 offset_right = 1158.0
 offset_bottom = 646.0
 text = "Lap 1"
-label_settings = ExtResource("2_a2sha")
 
 [node name="Countdown321Go" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -287,19 +290,22 @@ _animationPlayer = NodePath("AnimationPlayerTimer")
 [node name="LabelTimeSeconds" type="Label" parent="CanvasLayer/TimeRemaining"]
 modulate = Color(1, 1, 0.376471, 1)
 layout_mode = 0
-offset_top = 11.0
-offset_right = 71.0
-offset_bottom = 63.0
-label_settings = ExtResource("2_a2sha")
+offset_left = 7.0
+offset_top = 4.0
+offset_right = 78.0
+offset_bottom = 78.0
+text = "20"
+label_settings = SubResource("LabelSettings_wwh5m")
 horizontal_alignment = 1
 
 [node name="LabelTimeMiliseconds" type="Label" parent="CanvasLayer/TimeRemaining"]
 modulate = Color(1, 1, 0.449535, 1)
 layout_mode = 0
-offset_left = 72.0
-offset_top = 32.0
-offset_right = 107.0
-offset_bottom = 57.0
+offset_left = 84.0
+offset_top = 40.0
+offset_right = 119.0
+offset_bottom = 73.0
+text = "99"
 label_settings = SubResource("LabelSettings_h3oo2")
 
 [node name="AnimationPlayerTimer" type="AnimationPlayer" parent="CanvasLayer/TimeRemaining"]
