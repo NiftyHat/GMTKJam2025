@@ -2,7 +2,7 @@
 
 [ext_resource type="Environment" uid="uid://b7nskufe3ugno" path="res://Scenes/LevelEnviroment.tres" id="1_xlufh"]
 [ext_resource type="Script" uid="uid://geqjn5xl7l6l" path="res://3D/Entities/EntityTrack.cs" id="3_nxutr"]
-[ext_resource type="Texture2D" uid="uid://cl03mvoip1fwh" path="res://icon.png" id="3_w54qd"]
+[ext_resource type="Texture2D" uid="uid://q3ob2tdxwp2h" path="res://icon.png" id="3_w54qd"]
 [ext_resource type="PackedScene" uid="uid://b1t0wg3nsvkjr" path="res://3D/Prototype/Kenney_Racing/roadPitEntry.glb" id="5_ddaal"]
 [ext_resource type="PackedScene" uid="uid://cmgusbxagih55" path="res://3D/Prototype/Kenney_Racing/roadCornerLarger.glb" id="7_p5spi"]
 [ext_resource type="PackedScene" uid="uid://d3lpu5efn2gm3" path="res://3D/Prototype/Kenney_Racing/roadStraightLong.glb" id="8_w0slw"]
