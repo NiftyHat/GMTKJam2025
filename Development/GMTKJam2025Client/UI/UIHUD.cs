@@ -14,11 +14,9 @@ public partial class UIHUD : Control
     [Export(PropertyHint.Range, "0.01,4,or_greater")] private float _pitchIncreaseMax = 1.5f;
 
     protected Timer _timer;
-    private PauseScreen _pauseScreen;
 
     public override void _Ready()
     {
-        _pauseScreen = (PauseScreen)GetNode("Pause");
         
         base._Ready();
         PlayCountdown();
@@ -27,16 +25,6 @@ public partial class UIHUD : Control
         {
             _lapCountLabel.Visible = false;
         }
-    }
-
-    public void Pause()
-    {
-        _pauseScreen.Activate();
-    }
-
-    public void Unpause()
-    {
-        _pauseScreen.Dismiss();
     }
 
     public void SetLap(int lap)

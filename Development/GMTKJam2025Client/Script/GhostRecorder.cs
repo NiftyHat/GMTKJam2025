@@ -19,10 +19,7 @@ public partial class GhostRecorder : Node
 
 	public bool Recording = false;
 	public int currentFrame = 0;
-
-	private bool Paused;
 	
-
 	public override void _Ready()
 	{
 		base._Ready();
@@ -64,7 +61,6 @@ public partial class GhostRecorder : Node
 		base._PhysicsProcess(delta);
 		
 		if(!Recording) return;
-		if(Paused) return;
 		
 		CurrentRecording.Add(CarRigidbody.GlobalTransform);
 
@@ -128,8 +124,4 @@ public partial class GhostRecorder : Node
 				
 		}
 	}
-
-	public void Pause() => Paused = true;
-
-	public void Unpause() => Paused = false;
 }

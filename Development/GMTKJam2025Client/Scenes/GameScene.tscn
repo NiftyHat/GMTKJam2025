@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bs7t7tjyw4eo1"]
+[gd_scene load_steps=33 format=3 uid="uid://bs7t7tjyw4eo1"]
 
 [ext_resource type="Script" uid="uid://2jqy0i2iaig4" path="res://Script/GameController.cs" id="1_6vvcf"]
 [ext_resource type="PackedScene" uid="uid://bewbicgsy3ro" path="res://Scenes/Levels/level_test.tscn" id="1_xhjei"]
@@ -11,6 +11,9 @@
 [ext_resource type="Script" uid="uid://dnlgcp0rpf2mg" path="res://Script/CarController.cs" id="8_ry528"]
 [ext_resource type="Script" uid="uid://ck54vpeavsd5i" path="res://3D/Entities/EntityRigidbody3D.cs" id="9_yhlfj"]
 [ext_resource type="PackedScene" uid="uid://bna0stgm2f762" path="res://UI/scene_hud.tscn" id="10_gipt1"]
+[ext_resource type="Script" uid="uid://cx8fluhgs0oo3" path="res://UI/PauseScreen.cs" id="12_7rq2r"]
+[ext_resource type="Texture2D" uid="uid://dwkcdhdwgfnss" path="res://UI/Textures/Menu_Base.PNG" id="13_124qp"]
+[ext_resource type="FontFile" uid="uid://djnxc24f5yy5" path="res://Fonts/Hauser Bold.otf" id="14_qolck"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_wni78"]
 size = Vector2(256, 256)
@@ -56,12 +59,22 @@ albedo_texture = ExtResource("2_6vvcf")
 
 [sub_resource type="SphereMesh" id="SphereMesh_yr35r"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ry528"]
+bg_color = Color(0.219608, 0.105882, 0.607843, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yhlfj"]
+
 [node name="Node3D" type="Node3D"]
 
-[node name="GameControl" type="Node" parent="." node_paths=PackedStringArray("hud", "GhostRecorder")]
+[node name="GameControl" type="Node" parent="." node_paths=PackedStringArray("hud", "pauseScreen")]
+process_mode = 3
 script = ExtResource("1_6vvcf")
 hud = NodePath("../HUD")
-GhostRecorder = NodePath("../GhostRecorder")
+pauseScreen = NodePath("../Pause")
 
 [node name="LevelTest" parent="." instance=ExtResource("1_xhjei")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.0413204, 0.14372, 0.0478761)
@@ -206,3 +219,109 @@ mesh = SubResource("SphereMesh_yr35r")
 wait_time = 15.0
 
 [node name="HUD" parent="." instance=ExtResource("10_gipt1")]
+
+[node name="Pause" type="CanvasLayer" parent="."]
+process_mode = 2
+script = ExtResource("12_7rq2r")
+
+[node name="TextureRect" type="TextureRect" parent="Pause"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_124qp")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="Pause"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 400
+theme_override_constants/margin_top = 160
+theme_override_constants/margin_right = 400
+theme_override_constants/margin_bottom = 70
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Continue" type="Button" parent="Pause/MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Main Menu")
+theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_fonts/font = ExtResource("14_qolck")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxFlat_ry528")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_yhlfj")
+text = "CONTINUE"
+flat = true
+
+[node name="Restart" type="Button" parent="Pause/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_fonts/font = ExtResource("14_qolck")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxFlat_ry528")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_yhlfj")
+text = "RESTART"
+flat = true
+
+[node name="Audio" type="Button" parent="Pause/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_fonts/font = ExtResource("14_qolck")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxFlat_ry528")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_yhlfj")
+text = "AUDIO"
+flat = true
+
+[node name="Controls" type="Button" parent="Pause/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_fonts/font = ExtResource("14_qolck")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxFlat_ry528")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_yhlfj")
+text = "CONTROLS"
+flat = true
+
+[node name="Fullscreen" type="Button" parent="Pause/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_fonts/font = ExtResource("14_qolck")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxFlat_ry528")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_yhlfj")
+text = "FULLSCREEN"
+flat = true
+
+[node name="Main Menu" type="Button" parent="Pause/MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../Continue")
+theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_fonts/font = ExtResource("14_qolck")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxFlat_ry528")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_yhlfj")
+text = "MAIN MENU"
+flat = true
+
+[connection signal="pressed" from="Pause/MarginContainer/VBoxContainer/Continue" to="Pause" method="EmitSignalButtonContinue"]
+[connection signal="pressed" from="Pause/MarginContainer/VBoxContainer/Restart" to="Pause" method="EmitSignalButtonRestart"]

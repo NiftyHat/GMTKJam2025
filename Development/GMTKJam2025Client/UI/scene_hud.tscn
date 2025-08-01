@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bna0stgm2f762"]
+[gd_scene load_steps=18 format=3 uid="uid://bna0stgm2f762"]
 
 [ext_resource type="Script" uid="uid://d3054nla06550" path="res://UI/UIHUD.cs" id="1_dmi88"]
 [ext_resource type="AudioStream" uid="uid://0stjcmm8fks3" path="res://Audio/Music/lsl gogogo.ogg" id="2_fac72"]
@@ -6,9 +6,6 @@
 [ext_resource type="AudioStream" uid="uid://dvud2f6pw67ua" path="res://Audio/Music/lsl nyoom.ogg" id="4_h3oo2"]
 [ext_resource type="Script" uid="uid://e0gy41f0sl3c" path="res://UI/HUDCountdownTimer.cs" id="5_008jt"]
 [ext_resource type="FontFile" uid="uid://4tcf8t2hi7n6" path="res://Fonts/Hauser Bold Italic.otf" id="6_cfbkl"]
-[ext_resource type="Script" uid="uid://cx8fluhgs0oo3" path="res://UI/PauseScreen.cs" id="7_cfbkl"]
-[ext_resource type="Texture2D" uid="uid://dwkcdhdwgfnss" path="res://UI/Textures/Menu_Base.PNG" id="7_dk54w"]
-[ext_resource type="FontFile" uid="uid://djnxc24f5yy5" path="res://Fonts/Hauser Bold.otf" id="8_21b46"]
 
 [sub_resource type="Animation" id="Animation_008jt"]
 length = 0.001
@@ -216,15 +213,6 @@ _data = {
 &"normal": SubResource("Animation_a2sha")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cfbkl"]
-bg_color = Color(0.219608, 0.105882, 0.607843, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wwh5m"]
-
 [node name="UIHUD" type="Control" node_paths=PackedStringArray("_lapCountLabel", "_countdownAnimation", "_streamMusic", "_timeRemainingView")]
 layout_mode = 3
 anchors_preset = 15
@@ -313,112 +301,3 @@ libraries = {
 &"": SubResource("AnimationLibrary_wwh5m")
 }
 autoplay = "normal"
-
-[node name="Pause" type="CanvasLayer" parent="."]
-script = ExtResource("7_cfbkl")
-
-[node name="TextureRect" type="TextureRect" parent="Pause"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("7_dk54w")
-expand_mode = 3
-stretch_mode = 5
-
-[node name="MarginContainer" type="MarginContainer" parent="Pause"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 400
-theme_override_constants/margin_top = 160
-theme_override_constants/margin_right = 400
-theme_override_constants/margin_bottom = 70
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Pause/MarginContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="Continue" type="Button" parent="Pause/MarginContainer/VBoxContainer"]
-layout_mode = 2
-focus_neighbor_top = NodePath("../Main Menu")
-theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
-theme_override_fonts/font = ExtResource("8_21b46")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxFlat_cfbkl")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_wwh5m")
-text = "CONTINUE"
-flat = true
-
-[node name="Restart" type="Button" parent="Pause/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
-theme_override_fonts/font = ExtResource("8_21b46")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxFlat_cfbkl")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_wwh5m")
-text = "RESTART"
-flat = true
-
-[node name="Audio" type="Button" parent="Pause/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
-theme_override_fonts/font = ExtResource("8_21b46")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxFlat_cfbkl")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_wwh5m")
-text = "AUDIO"
-flat = true
-
-[node name="Controls" type="Button" parent="Pause/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
-theme_override_fonts/font = ExtResource("8_21b46")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxFlat_cfbkl")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_wwh5m")
-text = "CONTROLS"
-flat = true
-
-[node name="Fullscreen" type="Button" parent="Pause/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
-theme_override_fonts/font = ExtResource("8_21b46")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxFlat_cfbkl")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_wwh5m")
-text = "FULLSCREEN"
-flat = true
-
-[node name="Main Menu" type="Button" parent="Pause/MarginContainer/VBoxContainer"]
-layout_mode = 2
-focus_neighbor_bottom = NodePath("../Continue")
-theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
-theme_override_fonts/font = ExtResource("8_21b46")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxFlat_cfbkl")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_wwh5m")
-text = "MAIN MENU"
-flat = true
-
-[connection signal="pressed" from="Pause/MarginContainer/VBoxContainer/Continue" to="Pause" method="EmitSignalButtonContinue"]
-[connection signal="pressed" from="Pause/MarginContainer/VBoxContainer/Restart" to="Pause" method="EmitSignalButtonRestart"]
-[connection signal="pressed" from="Pause/MarginContainer/VBoxContainer/Audio" to="." method="EmitSignalButtonAudio"]
-[connection signal="pressed" from="Pause/MarginContainer/VBoxContainer/Controls" to="." method="EmitSignalButtonControls"]
-[connection signal="pressed" from="Pause/MarginContainer/VBoxContainer/Fullscreen" to="." method="EmitSignalButtonFullscreen"]
-[connection signal="pressed" from="Pause/MarginContainer/VBoxContainer/Main Menu" to="." method="EmitSignalButtonMainMenu"]
