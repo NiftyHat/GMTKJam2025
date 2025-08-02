@@ -9,7 +9,6 @@ public partial class GhostRecorder : Node
 {
 	[Export] private Node3D CarRigidbody;
 	[Export] private Node3D GhostCarPrototype;
-	[Export] private Node3D GhostCarContainerPrototype;
 	[Export] private CarVisualLibrary CarVisualLibrary;
 	
 	private List<Transform3D> CurrentRecording;
