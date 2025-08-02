@@ -21,10 +21,13 @@ public partial class CarController : Node3D
 	
 	[Export] private RigidBody3D _rb;
 	[Export] private Camera3D _camera3D;
+	[Export] private CarVisualLibrary _carVisualLibrary;
 	
 	private Node3D CameraLookTarget;
 	private Node3D CameraPositionTarget;
 	private RayCast3D GroundCheckRaycast;
+
+	private CarVisual CarVisualNode { get; set; }
 
 	[Export] private float Acceleration;
 	[Export] private float BrakeStrength;
@@ -47,6 +50,8 @@ public partial class CarController : Node3D
 
 		Transform = _rb.Transform;
 		base._Ready();
+
+		ChangeVisuals(1);
 	}
 
 	public override void _Process(double delta)
@@ -140,5 +145,16 @@ public partial class CarController : Node3D
 		t.Basis.X = t.Basis.Z.Cross(v);
 		t.Basis = t.Basis.Orthonormalized();
 		return t;
+	}
+
+	public void ChangeVisuals(int lap)
+	{
+		if (CarVisualNode != null)
+		{
+			RemoveChild(CarVisualNode);
+			CarVisualNode.Free();
+		}
+		CarVisualNode = _carVisualLibrary.GetNewCar(lap-1);
+		AddChild(CarVisualNode);
 	}
 }

@@ -10,6 +10,7 @@ public partial class GhostRecorder : Node
 	[Export] private Node3D CarRigidbody;
 	[Export] private Node3D GhostCarPrototype;
 	[Export] private Node3D GhostCarContainerPrototype;
+	[Export] private CarVisualLibrary CarVisualLibrary;
 	
 	private List<Transform3D> CurrentRecording;
 	private List<List<Transform3D>> AllRecordings;
@@ -36,6 +37,7 @@ public partial class GhostRecorder : Node
 		var newCar = (Node3D)GhostCarPrototype.Duplicate();
 		GhostCars.Add(newCar);
 		AddChild(newCar);
+		newCar.AddChild(CarVisualLibrary.GetNewCar(CurrentRecording.Count));
 		
 		newCar.Transform = CurrentRecording[0];
 		AllRecordings.Add(CurrentRecording.ToList());

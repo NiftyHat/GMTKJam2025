@@ -114,6 +114,8 @@ public partial class EntityCar : GameEntity
             return;
         }
 
+        _carController.ChangeVisuals(lap);
+
         if (_ghostRecorder != null)
         {
             _ghostRecorder.TriggerRecording();

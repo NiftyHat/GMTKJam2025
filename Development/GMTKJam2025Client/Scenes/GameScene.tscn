@@ -1,16 +1,17 @@
-[gd_scene load_steps=40 format=3 uid="uid://bs7t7tjyw4eo1"]
+[gd_scene load_steps=41 format=3 uid="uid://bs7t7tjyw4eo1"]
 
 [ext_resource type="Script" uid="uid://2jqy0i2iaig4" path="res://Script/GameController.cs" id="1_6vvcf"]
 [ext_resource type="Texture2D" uid="uid://2h3qmpnq0584" path="res://3D/Textures/7a3584298ef470fe0aafc146c23d34523b045606.png" id="2_6vvcf"]
 [ext_resource type="PackedScene" uid="uid://dbbp0urujgyt" path="res://Scenes/Levels/level_eight.tscn" id="2_124qp"]
 [ext_resource type="Texture2D" uid="uid://bdpkysot812ts" path="res://3D/Textures/Sky_T.webp" id="3_cr6v8"]
 [ext_resource type="Script" uid="uid://3klfn8jegsue" path="res://Script/GameCamera.cs" id="4_f43ej"]
+[ext_resource type="Script" uid="uid://4q83c3lgjfx4" path="res://Script/CarVisualLibrary.cs" id="4_y0yaw"]
 [ext_resource type="Script" uid="uid://cc86lg7fm3e7b" path="res://Script/GhostRecorder.cs" id="5_7rq2r"]
+[ext_resource type="Script" uid="uid://bys2bi6pmahte" path="res://Script/CarVisual.cs" id="6_yl3ua"]
 [ext_resource type="Script" uid="uid://cv0yn3y5gd06l" path="res://3D/Entities/EntityCar.cs" id="7_qolck"]
 [ext_resource type="PackedScene" uid="uid://b74jk67lcw66c" path="res://3D/Models/CarCoffin1.gltf" id="8_qolck"]
 [ext_resource type="Script" uid="uid://dnlgcp0rpf2mg" path="res://Script/CarController.cs" id="8_ry528"]
 [ext_resource type="Script" uid="uid://ck54vpeavsd5i" path="res://3D/Entities/EntityRigidbody3D.cs" id="9_yhlfj"]
-[ext_resource type="PackedScene" uid="uid://dyphroekr0l7o" path="res://car_frame_12.tscn" id="10_124qp"]
 [ext_resource type="PackedScene" uid="uid://bna0stgm2f762" path="res://UI/scene_hud.tscn" id="10_gipt1"]
 [ext_resource type="PackedScene" uid="uid://pmklrr8m83es" path="res://3D/Models/CarFrame1.gltf" id="11_leul7"]
 [ext_resource type="Script" uid="uid://cx8fluhgs0oo3" path="res://UI/PauseScreen.cs" id="12_7rq2r"]
@@ -99,27 +100,35 @@ hud = NodePath("../HUD")
 pauseScreen = NodePath("../Pause")
 
 [node name="CarVisuals" type="Node" parent="GameControl"]
+script = ExtResource("4_y0yaw")
 
 [node name="CarFrame1" parent="GameControl/CarVisuals" instance=ExtResource("11_leul7")]
 transform = Transform3D(1, 2.05546e-10, 4.65661e-10, -5.11136e-10, 1, 9.31323e-10, -4.65661e-10, 4.65661e-10, 1, 0, 0, 0)
+script = ExtResource("6_yl3ua")
 
 [node name="CarFrame2" parent="GameControl/CarVisuals" instance=ExtResource("12_wp4mh")]
 transform = Transform3D(1, 2.05546e-10, 4.65661e-10, -5.11136e-10, 1, 9.31323e-10, -4.65661e-10, 4.65661e-10, 1, 0, 0, 0)
+script = ExtResource("6_yl3ua")
 
 [node name="CarFrame3" parent="GameControl/CarVisuals" instance=ExtResource("13_y0yaw")]
 transform = Transform3D(1, 2.05546e-10, 4.65661e-10, -5.11136e-10, 1, 9.31323e-10, -4.65661e-10, 4.65661e-10, 1, 0, 0, 0)
+script = ExtResource("6_yl3ua")
 
 [node name="CarFrame4" parent="GameControl/CarVisuals" instance=ExtResource("14_yl3ua")]
 transform = Transform3D(1, 2.05546e-10, 4.65661e-10, -5.11136e-10, 1, 9.31323e-10, -4.65661e-10, 4.65661e-10, 1, 0, 0, 0)
+script = ExtResource("6_yl3ua")
 
 [node name="CarFrame5" parent="GameControl/CarVisuals" instance=ExtResource("15_lko2l")]
 transform = Transform3D(1, 2.05546e-10, 4.65661e-10, -5.11136e-10, 1, 9.31323e-10, -4.65661e-10, 4.65661e-10, 1, 0, 0, 0)
+script = ExtResource("6_yl3ua")
 
 [node name="CarFrame6" parent="GameControl/CarVisuals" instance=ExtResource("16_em6uu")]
 transform = Transform3D(1, 2.05546e-10, 4.65661e-10, -5.11136e-10, 1, 9.31323e-10, -4.65661e-10, 4.65661e-10, 1, 0, 0, 0)
+script = ExtResource("6_yl3ua")
 
 [node name="CarFrame7" parent="GameControl/CarVisuals" instance=ExtResource("17_odb6r")]
 transform = Transform3D(1, 2.05546e-10, 4.65661e-10, -5.11136e-10, 1, 9.31323e-10, -4.65661e-10, 4.65661e-10, 1, 0, 0, 0)
+script = ExtResource("6_yl3ua")
 
 [node name="Camera" type="Node" parent="GameControl"]
 
@@ -139,11 +148,12 @@ FOVNormal = 45.0
 FOVTarget = 45.0
 CarController = NodePath("../../Player Car/Car Controller")
 
-[node name="GhostRecorder" type="Node3D" parent="GameControl" node_paths=PackedStringArray("CarRigidbody", "GhostCarPrototype", "GhostCarContainerPrototype")]
+[node name="GhostRecorder" type="Node3D" parent="GameControl" node_paths=PackedStringArray("CarRigidbody", "GhostCarPrototype", "GhostCarContainerPrototype", "CarVisualLibrary")]
 script = ExtResource("5_7rq2r")
 CarRigidbody = NodePath("../Player Car/Car Controller")
 GhostCarPrototype = NodePath("../Ghost Car")
 GhostCarContainerPrototype = NodePath("../Coffin")
+CarVisualLibrary = NodePath("../CarVisuals")
 
 [node name="Ghost Car" type="StaticBody3D" parent="GameControl"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -10, 0)
@@ -151,10 +161,6 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -10, 0)
 [node name="CollisionShape3DGhost" type="CollisionShape3D" parent="GameControl/Ghost Car"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.238767, 0.197327, -0.321401)
 shape = SubResource("BoxShape3D_ggkdx")
-
-[node name="GhostCar" type="Node3D" parent="GameControl/Ghost Car"]
-
-[node name="CarFrame12" parent="GameControl/Ghost Car/GhostCar" instance=ExtResource("10_124qp")]
 
 [node name="Coffin" parent="GameControl" instance=ExtResource("8_qolck")]
 transform = Transform3D(-0.3, -8.9701e-09, -2.46451e-08, 0, 0.281908, -0.102606, 2.62269e-08, -0.102606, -0.281908, 0, -10.887, -1.19244)
@@ -170,11 +176,12 @@ InitialTime = 15.0
 LevelResetTimer = NodePath("TimerLevelReset")
 metadata/_custom_type_script = "uid://v2v2l1vx325s"
 
-[node name="Car Controller" type="Node3D" parent="GameControl/Player Car" node_paths=PackedStringArray("_rb", "_camera3D")]
+[node name="Car Controller" type="Node3D" parent="GameControl/Player Car" node_paths=PackedStringArray("_rb", "_camera3D", "_carVisualLibrary")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.682709, 0.80267, -7.84895)
 script = ExtResource("8_ry528")
 _rb = NodePath("../RigidBody")
 _camera3D = NodePath("../../Camera/Camera3D")
+_carVisualLibrary = NodePath("../../CarVisuals")
 Acceleration = 0.3
 BrakeStrength = 0.08
 reverseAcceleration = 0.1
@@ -184,9 +191,6 @@ steering = 11.0
 turnSpeed = 12.0
 minimumTurnSpeed = 1.0
 GroundDistance = 0.5
-
-[node name="Visuals" type="Node3D" parent="GameControl/Player Car/Car Controller"]
-transform = Transform3D(1, 2.05546e-10, 4.65661e-10, -5.11136e-10, 1, 9.31323e-10, -4.65661e-10, 4.65661e-10, 1, 0, -2.38419e-07, 0)
 
 [node name="GroundCheck" type="Node3D" parent="GameControl/Player Car/Car Controller"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.440059, 0)
