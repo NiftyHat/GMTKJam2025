@@ -40,8 +40,8 @@ public partial class CarController : Node3D
 
 	public override void _Ready()
 	{
-		CameraPositionTarget = GetNode<Node3D>("IdealCameraLocation");
-		CameraLookTarget = GetNode<Node3D>("Lookat");
+		CameraPositionTarget = GetNode<Node3D>("Ideal Camera Location");
+		CameraLookTarget = GetNode<Node3D>("Camera Look At Target");
 		GroundCheckRaycast = GetNode<RayCast3D>("GroundCheckRaycast");
 		GroundCheckRaycast.AddException(_rb);
 
