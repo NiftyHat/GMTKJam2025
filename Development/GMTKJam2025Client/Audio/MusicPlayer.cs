@@ -60,7 +60,6 @@ public partial class MusicPlayer : Node
     {
         if (soundEffectSample == null)
         {
-            Stop();
             return;
         }
 
@@ -80,7 +79,7 @@ public partial class MusicPlayer : Node
         CurrentStream.Play();
         
         _fadeInTween = CreateTween();
-        _fadeInTween.TweenProperty(CurrentStream, "volume_db", soundEffectSample.VolumeDb, 0.2f)
+        _fadeInTween.TweenProperty(CurrentStream, "volume_db", soundEffectSample.VolumeDb, 0.3f)
             .From(-80)
             .SetEase(Tween.EaseType.In)
             .SetTrans(Tween.TransitionType.Cubic);

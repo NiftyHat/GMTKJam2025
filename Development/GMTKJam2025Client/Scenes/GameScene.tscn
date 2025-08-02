@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://bs7t7tjyw4eo1"]
+[gd_scene load_steps=54 format=3 uid="uid://bs7t7tjyw4eo1"]
 
 [ext_resource type="Script" uid="uid://2jqy0i2iaig4" path="res://Script/GameController.cs" id="1_6vvcf"]
 [ext_resource type="Texture2D" uid="uid://2h3qmpnq0584" path="res://3D/Textures/7a3584298ef470fe0aafc146c23d34523b045606.png" id="2_6vvcf"]
@@ -36,6 +36,10 @@
 [ext_resource type="PackedScene" uid="uid://d4ng0tjg783vj" path="res://3D/Models/CarCoffin7.gltf" id="20_vgicg"]
 [ext_resource type="PackedScene" uid="uid://dobssek2rvaoe" path="res://Scenes/drift_smoke.tscn" id="30_rsfko"]
 [ext_resource type="PackedScene" uid="uid://drncy6tn4jupe" path="res://Scenes/trail.tscn" id="31_82uqo"]
+[ext_resource type="Script" uid="uid://dabjsxlfpdi1c" path="res://Audio/GameAudio.cs" id="37_jmmro"]
+[ext_resource type="Resource" uid="uid://bwg12va4nk01o" path="res://Audio/Music/music_racing.tres" id="38_vgicg"]
+[ext_resource type="Resource" uid="uid://cmo5o4snv80y1" path="res://Audio/Music/music_final_lap.tres" id="39_sjxqr"]
+[ext_resource type="Resource" uid="uid://c4hmt1ppjyfyy" path="res://Audio/Music/music_infinite.tres" id="40_v14ik"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_wni78"]
 size = Vector2(256, 256)
@@ -1140,15 +1144,17 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -8.30537, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.122818, -0.332331)
 shape = SubResource("BoxShape3D_ggkdx")
 
-[node name="Player Car" type="Node3D" parent="GameControl" node_paths=PackedStringArray("_carController", "_hud", "_ghostRecorder", "LevelResetTimer")]
+[node name="Player Car" type="Node3D" parent="GameControl" node_paths=PackedStringArray("_carController", "_hud", "_ghostRecorder", "_gameAudio", "LevelResetTimer")]
 process_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 196.372, 0.464794, -40.5028)
 script = ExtResource("7_qolck")
 _carController = NodePath("Car Controller")
 _hud = NodePath("../../HUD")
 _ghostRecorder = NodePath("../GhostRecorder")
+_gameAudio = NodePath("../../GameAudio")
 TimePerCheckpoint = 5.0
 InitialTime = 15.0
+LapsToWin = 7
 LevelResetTimer = NodePath("TimerLevelReset")
 metadata/_custom_type_script = "uid://v2v2l1vx325s"
 
@@ -1215,7 +1221,6 @@ debug_color = Color(0.0823529, 0.462745, 0, 1)
 wait_time = 15.0
 
 [node name="HUD" parent="." instance=ExtResource("10_gipt1")]
-_musicNormal = null
 
 [node name="Pause" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -1319,6 +1324,12 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_ry528")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_yhlfj")
 text = "MAIN MENU"
 flat = true
+
+[node name="GameAudio" type="Node" parent="."]
+script = ExtResource("37_jmmro")
+_musicNormal = ExtResource("38_vgicg")
+_musicFinal = ExtResource("39_sjxqr")
+_musicInfinite = ExtResource("40_v14ik")
 
 [connection signal="ButtonContinue" from="Pause" to="GameControl" method="Unpause"]
 [connection signal="ButtonMainMenu" from="Pause" to="GameControl" method="QuitToTitle"]

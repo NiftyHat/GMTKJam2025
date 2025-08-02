@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SoundEffectSample" load_steps=3 format=3 uid="uid://cmo5o4snv80y1"]
+
+[ext_resource type="AudioStream" uid="uid://cyu61bmkqepve" path="res://Audio/Music/lsl rush.ogg" id="1_f716m"]
+[ext_resource type="Script" uid="uid://bgq4g1bwf8j3p" path="res://Audio/SoundEffectSample.cs" id="1_l8vq5"]
+
+[resource]
+script = ExtResource("1_l8vq5")
+Stream = ExtResource("1_f716m")
+VolumeDb = 0.0
+PitchScale = 1.0
+metadata/_custom_type_script = "uid://bgq4g1bwf8j3p"

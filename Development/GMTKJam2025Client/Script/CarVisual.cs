@@ -20,7 +20,6 @@ public partial class CarVisual: Node3D
 
 	[Export] private GpuParticles3D driftSmokeA;
 	[Export] private GpuParticles3D driftSmokeB;
-	private GpuParticles3D trail;
 
 	//private readonly Vector3 TrailPosition = new Vector3(0, -0.769f, 2.508f);
 	private readonly Vector3 TrailPosition = new Vector3(0, -0.89f, 2.508f);
@@ -41,11 +40,6 @@ public partial class CarVisual: Node3D
 		// demo...
 		WheelAxialRotation = Vector3.Zero;
 
-	}
-
-	public override void _Process(double delta)
-	{
-		base._Process(delta);
 	}
 
 	public void Steer(float angleInRadians)

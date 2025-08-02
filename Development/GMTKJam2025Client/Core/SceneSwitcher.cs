@@ -56,10 +56,11 @@ public partial class SceneSwitcher : Node
     {
         void DoSwitch()
         {
-            if (CurrentScene != null)
+            if (CurrentScene != null || IsInstanceValid(CurrentScene))
             {
                 CurrentScene.QueueFree();
             }
+            
             // Instance the new scene.
             CurrentScene = packedScene.Instantiate();
 
@@ -70,7 +71,6 @@ public partial class SceneSwitcher : Node
             GetTree().CurrentScene = CurrentScene;
             GetTree().ProcessFrame -= DoSwitch;
         }
-
         GetTree().ProcessFrame += DoSwitch;
     }
 

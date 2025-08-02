@@ -1,7 +1,6 @@
-[gd_scene load_steps=26 format=3 uid="uid://bna0stgm2f762"]
+[gd_scene load_steps=25 format=3 uid="uid://bna0stgm2f762"]
 
 [ext_resource type="Script" uid="uid://d3054nla06550" path="res://UI/UIHUD.cs" id="1_dmi88"]
-[ext_resource type="Resource" uid="uid://drlf65sbj5ynh" path="res://Audio/Music/music_racing_normal.tres" id="2_21b46"]
 [ext_resource type="AudioStream" uid="uid://0stjcmm8fks3" path="res://Audio/Music/lsl gogogo.ogg" id="2_fac72"]
 [ext_resource type="FontFile" uid="uid://c434xdyo2rbtv" path="res://Fonts/abduction2002.ttf" id="3_fac72"]
 [ext_resource type="FontFile" uid="uid://djnxc24f5yy5" path="res://Fonts/Hauser Bold.otf" id="4_dk54w"]
@@ -505,7 +504,6 @@ script = ExtResource("1_dmi88")
 _lapCountLabel = NodePath("CanvasLayer/LabelLapCount")
 _countdownAnimation = NodePath("CanvasLayer/Countdown321Go/DRIVE!!/CountdownAnimation")
 _timeRemainingView = NodePath("CanvasLayer/TimeRemaining")
-_musicNormal = ExtResource("2_21b46")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

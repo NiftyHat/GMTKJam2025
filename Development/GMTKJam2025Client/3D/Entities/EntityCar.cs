@@ -1,4 +1,5 @@
 using System;
+using GMTKJam2025.Audio;
 using GMTKJam2025.UI;
 using Godot;
 
@@ -9,15 +10,16 @@ public partial class EntityCar : GameEntity
     [Export] private CarController _carController;
     [Export] private UIHUD _hud;
     [Export] private GhostRecorder _ghostRecorder;
+    [Export] private GameAudio _gameAudio;
+    
     [Export] public double TimePerCheckpoint = 4;
     [Export] public double InitialTime = 20;
     [Export] public int LapsToWin = 6;
+    
     [Export] public Timer LevelResetTimer { get; set; }
     
     private EntityCheckpoint _lastTouchedCheckpoint;
     private int _lap;
-
-    public event Action<EntityCar, int> OnChangeLap;
     
     public int CheckpointIndex { get; set; }
 
@@ -45,13 +47,14 @@ public partial class EntityCar : GameEntity
             _hud.SetLap(7);
             if (LevelResetTimer != null)
             {
-                LevelResetTimer.Start(1);
+                LevelResetTimer.Start(10);
             }
         }
     }
 
     private void HandleTimeout()
     {
+        LevelResetTimer.Timeout -= HandleTimeout;
         if (LevelResetTimer != null)
         {
             LevelResetTimer.Stop();
@@ -121,15 +124,25 @@ public partial class EntityCar : GameEntity
             _ghostRecorder.TriggerRecording();
         }
         _lap = lap;
-        OnChangeLap?.Invoke(this, _lap);
         _hud.SetLap(_lap);
         if (_lap == 1)
         {
             _hud.PlayRacing();
+            _gameAudio.PlayRacing();
             if (LevelResetTimer != null)
             {
                 LevelResetTimer.Start(InitialTime);
             }
+        }
+
+        if (_lap == LapsToWin - 1)
+        {
+            _gameAudio.PlayFinalLap();
+        }
+
+        if (lap >= LapsToWin)
+        {
+            _gameAudio.PlayInfiniteLaps();
         }
     }
 }
