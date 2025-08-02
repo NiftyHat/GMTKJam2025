@@ -65,6 +65,12 @@ public partial class GhostRecorder : Node
 	public override void _PhysicsProcess(double delta)
 	{
 		base._PhysicsProcess(delta);
+
+		if (!IsInstanceValid(this))
+		{
+			GD.PrintErr("Trying to update GhostRecorder without a valid instance");
+			return;
+		}
 		
 		if(!Recording) return;
 		

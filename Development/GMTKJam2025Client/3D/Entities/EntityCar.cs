@@ -20,8 +20,6 @@ public partial class EntityCar : GameEntity
     
     private EntityCheckpoint _lastTouchedCheckpoint;
     private int _lap;
-
-    public event Action<EntityCar, int> OnChangeLap;
     
     public int CheckpointIndex { get; set; }
 
@@ -125,7 +123,6 @@ public partial class EntityCar : GameEntity
             _ghostRecorder.TriggerRecording();
         }
         _lap = lap;
-        OnChangeLap?.Invoke(this, _lap);
         _hud.SetLap(_lap);
         if (_lap == 1)
         {

@@ -48,6 +48,11 @@ public partial class CarVisual: Node3D
 	public override void _Process(double delta)
 	{
 		base._Process(delta);
+		if (!IsInstanceValid(this))
+		{
+			GD.PrintErr("Trying to update CarVisual without a valid instance");
+			return;
+		}
 		if (trail == null && TrailPrototype != null)
 		{
 			trail = (GpuParticles3D)TrailPrototype.Duplicate();
