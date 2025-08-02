@@ -1,0 +1,60 @@
+[gd_scene load_steps=12 format=3 uid="uid://bpye6os2q1tp4"]
+
+[ext_resource type="Shader" uid="uid://d3wb6xuy1kk8n" path="res://Scenes/trail_shader.tres" id="1_rprrg"]
+[ext_resource type="Texture2D" uid="uid://yfup3x8paplr" path="res://Scenes/SmokeNoise.png" id="2_c0x0w"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_18uxc"]
+render_priority = 0
+shader = ExtResource("1_rprrg")
+shader_parameter/TextureScale = Vector2(1, 1)
+shader_parameter/Texture2DParameter = ExtResource("2_c0x0w")
+
+[sub_resource type="Curve" id="Curve_hiqnp"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.246418, 0), 0.0, 0.0, 0, 0, Vector2(0.891117, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_00un8"]
+curve = SubResource("Curve_hiqnp")
+
+[sub_resource type="Gradient" id="Gradient_ijh3g"]
+offsets = PackedFloat32Array(0.321981, 1)
+colors = PackedColorArray(0.94902, 0.184314, 0.227451, 1, 0.597449, 0.00418083, 0.982984, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_t05gb"]
+gradient = SubResource("Gradient_ijh3g")
+
+[sub_resource type="Curve" id="Curve_3ohp3"]
+_data = [Vector2(0, 0.038939), 0.0, 0.0, 0, 0, Vector2(1, 0.060948), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_fqcjt"]
+curve = SubResource("Curve_3ohp3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fxg7v"]
+particle_flag_rotate_y = true
+angle_min = -180.0
+angle_max = 180.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 3.0
+initial_velocity_max = 4.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 0.999998
+linear_accel_max = 0.999998
+scale_curve = SubResource("CurveTexture_fqcjt")
+color_ramp = SubResource("GradientTexture1D_t05gb")
+alpha_curve = SubResource("CurveTexture_00un8")
+
+[sub_resource type="SphereMesh" id="SphereMesh_yitli"]
+radius = 12.441
+height = 6.473
+
+[node name="Trail" type="GPUParticles3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000423789, 0.00788248, 0.00048089)
+material_override = SubResource("ShaderMaterial_18uxc")
+cast_shadow = 0
+amount = 100
+fixed_fps = 60
+trail_lifetime = 7.37
+process_material = SubResource("ParticleProcessMaterial_fxg7v")
+draw_pass_1 = SubResource("SphereMesh_yitli")

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://pmklrr8m83es" path="res://3D/Models/CarFrame1.gltf" id="1_rh53u"]
 [ext_resource type="Script" uid="uid://bys2bi6pmahte" path="res://Script/CarVisual.cs" id="1_sprdo"]
-[ext_resource type="PackedScene" uid="uid://drncy6tn4jupe" path="res://Scenes/trail.tscn" id="3_k3x08"]
+[ext_resource type="PackedScene" uid="uid://drncy6tn4jupe" path="res://Scenes/trail1.tscn" id="3_k3x08"]
 [ext_resource type="PackedScene" uid="uid://dobssek2rvaoe" path="res://Scenes/drift_smoke.tscn" id="4_l1jsm"]
 
 [node name="CarVisual1" type="Node3D" node_paths=PackedStringArray("driftSmokeA", "driftSmokeB")]
