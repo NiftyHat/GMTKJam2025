@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://bs7t7tjyw4eo1"]
+[gd_scene load_steps=57 format=3 uid="uid://bs7t7tjyw4eo1"]
 
 [ext_resource type="Script" uid="uid://2jqy0i2iaig4" path="res://Script/GameController.cs" id="1_6vvcf"]
 [ext_resource type="Texture2D" uid="uid://2h3qmpnq0584" path="res://3D/Textures/7a3584298ef470fe0aafc146c23d34523b045606.png" id="2_6vvcf"]
@@ -40,6 +40,9 @@
 [ext_resource type="Resource" uid="uid://bwg12va4nk01o" path="res://Audio/Music/music_racing.tres" id="38_vgicg"]
 [ext_resource type="Resource" uid="uid://cmo5o4snv80y1" path="res://Audio/Music/music_final_lap.tres" id="39_sjxqr"]
 [ext_resource type="Resource" uid="uid://c4hmt1ppjyfyy" path="res://Audio/Music/music_infinite.tres" id="40_v14ik"]
+[ext_resource type="Resource" uid="uid://dfak86awvm5xf" path="res://Audio/Music/music_racing_pause.tres" id="41_v14ik"]
+[ext_resource type="Resource" uid="uid://defc6jyt71u5n" path="res://Audio/Music/music_final_lap_pause.tres" id="42_ustms"]
+[ext_resource type="Resource" uid="uid://dvi8i3b8kb162" path="res://Audio/Music/music_infinite_pause.tres" id="43_evxj1"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_wni78"]
 size = Vector2(256, 256)
@@ -1119,7 +1122,6 @@ _ghostRecorder = NodePath("../GhostRecorder")
 _gameAudio = NodePath("../../GameAudio")
 TimePerCheckpoint = 5.0
 InitialTime = 15.0
-LapsToWin = 7
 LevelResetTimer = NodePath("TimerLevelReset")
 metadata/_custom_type_script = "uid://v2v2l1vx325s"
 
@@ -1295,6 +1297,9 @@ script = ExtResource("37_jmmro")
 _musicNormal = ExtResource("38_vgicg")
 _musicFinal = ExtResource("39_sjxqr")
 _musicInfinite = ExtResource("40_v14ik")
+_musicNormalPause = ExtResource("41_v14ik")
+_musicFinalPause = ExtResource("42_ustms")
+_musicInfinitePause = ExtResource("43_evxj1")
 
 [connection signal="ButtonContinue" from="Pause" to="GameControl" method="Unpause"]
 [connection signal="ButtonMainMenu" from="Pause" to="GameControl" method="QuitToTitle"]
