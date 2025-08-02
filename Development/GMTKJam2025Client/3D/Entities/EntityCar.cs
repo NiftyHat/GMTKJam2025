@@ -49,7 +49,7 @@ public partial class EntityCar : GameEntity
             _hud.SetLap(7);
             if (LevelResetTimer != null)
             {
-                LevelResetTimer.Start(1);
+                LevelResetTimer.Start(10);
             }
         }
     }
@@ -142,7 +142,7 @@ public partial class EntityCar : GameEntity
             _gameAudio.PlayFinalLap();
         }
 
-        if (lap == LapsToWin)
+        if (lap >= LapsToWin)
         {
             _gameAudio.PlayInfiniteLaps();
         }
