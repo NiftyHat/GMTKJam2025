@@ -1,20 +1,31 @@
 using Godot;
 using System;
+using GMTKJam2025.Audio;
 using GMTKJam2025.UI;
 
 public partial class EndSceneBehaviour : Node
 {
-	public override void _Process(double delta)
+	[Export] private Button Restart;
+	[Export] private Button MainMenu;
+
+	public override void _Ready()
 	{
-		base._Process(delta);
-		bool input = false;
+		MusicPlayer.Instance.Stop();
+		base._Ready();
+		Restart.GrabFocus();
+	}
 
-		if (Input.IsActionJustPressed("ui_accept")) input = true;
-		if (Input.IsActionJustPressed("ui_cancel")) input = true;
-
-		if (input)
+	public void RestartLevel()
+	{
+		if (GameInformation.CurrentLevel == null)
 		{
-			SceneSwitcher.Instance.GoToScene(SceneSwitcher.Instance.Library.Title);
+			GotoMainMenu();
+			return;
 		}
+		SceneSwitcher.Instance.GoToScene(GameInformation.CurrentLevel);
+	}
+	public void GotoMainMenu()
+	{
+		SceneSwitcher.Instance.GoToScene(SceneSwitcher.Instance.Library.Title);
 	}
 }

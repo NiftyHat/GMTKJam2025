@@ -1,8 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://cl2mrxu0w4sr8"]
+[gd_scene load_steps=29 format=3 uid="uid://cl2mrxu0w4sr8"]
 
 [ext_resource type="Environment" uid="uid://b5onbneexcg77" path="res://Scenes/Environments/GameWinEnvironment.tres" id="1_8dngi"]
 [ext_resource type="Script" uid="uid://ja0nso55s2es" path="res://Script/EndScene/EndSceneBehaviour.cs" id="1_owfin"]
 [ext_resource type="PackedScene" uid="uid://1bhvbl0nhyga" path="res://3D/Prototype/Kenney_Racing/grass.glb" id="2_4aog5"]
+[ext_resource type="FontFile" uid="uid://djnxc24f5yy5" path="res://Fonts/Hauser Bold.otf" id="2_fuf2u"]
 [ext_resource type="PackedScene" uid="uid://bt0nsa736uemb" path="res://3D/Models/CarFrame7.gltf" id="2_owfin"]
 [ext_resource type="PackedScene" uid="uid://dtsq4dsirk27e" path="res://3D/Prototype/Kenney_Racing/pitsGarageCorner.glb" id="3_5n2p5"]
 [ext_resource type="PackedScene" uid="uid://dsao6v3tpan8r" path="res://3D/Prototype/Kenney_Racing/pitsOfficeCorner.glb" id="4_tx6j4"]
@@ -13,6 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://dlci1o1tn1pu" path="res://3D/Effects/smoke_05.png" id="10_5dl25"]
 [ext_resource type="FontFile" uid="uid://c434xdyo2rbtv" path="res://Fonts/abduction2002.ttf" id="12_fa8k4"]
 [ext_resource type="AudioStream" uid="uid://dw3dmvafx3c2d" path="res://Audio/Music/lsl infvictory.ogg" id="13_owfin"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vdm6r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gaiot"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8dngi"]
 font = ExtResource("12_fa8k4")
@@ -132,7 +137,7 @@ bind/0/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.0502792, 0, 0.998735, 0, 1, 0, -0.998735, 0, 0.0502792, 2.13234, 0.41388, -0.67581)
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." node_paths=PackedStringArray("Restart", "MainMenu")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -140,21 +145,66 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_owfin")
+Restart = NodePath("MarginContainer/VBoxContainer/Restart")
+MainMenu = NodePath("MarginContainer/VBoxContainer/Menu")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Control"]
-
-[node name="Label" type="Label" parent="Control/CanvasLayer"]
-anchors_preset = -1
-anchor_left = 0.229
-anchor_top = 0.806
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 2.19199
-offset_top = 7.71198
-offset_right = -1.0
-offset_bottom = 5.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = -280.0
+offset_top = -291.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Restart" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_fonts/font = ExtResource("2_fuf2u")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vdm6r")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_gaiot")
+text = "Restart"
+flat = true
+alignment = 2
+
+[node name="Menu" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_fonts/font = ExtResource("2_fuf2u")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vdm6r")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_gaiot")
+text = "Main Menu"
+flat = true
+alignment = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -67.0
+offset_right = 781.0
+grow_vertical = 0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Label" type="Label" parent="Control/MarginContainer2"]
+layout_mode = 2
 text = "You Won the Game!"
 label_settings = SubResource("LabelSettings_8dngi")
 
@@ -256,3 +306,6 @@ draw_order = 1
 process_material = SubResource("ParticleProcessMaterial_fh5qu")
 draw_pass_1 = SubResource("QuadMesh_27myn")
 draw_skin = SubResource("Skin_27myn")
+
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Restart" to="Control" method="RestartLevel"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Menu" to="Control" method="GotoMainMenu"]
