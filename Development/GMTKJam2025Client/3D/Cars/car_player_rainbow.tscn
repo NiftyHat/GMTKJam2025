@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://cbd4k1k162rob"]
+
+[ext_resource type="PackedScene" uid="uid://pmklrr8m83es" path="res://3D/Models/CarFrame1.gltf" id="1_mv8fp"]
+[ext_resource type="PackedScene" uid="uid://ctbhh7ga8tyfp" path="res://3D/Models/CarFrame2.gltf" id="2_mm584"]
+[ext_resource type="PackedScene" uid="uid://ccee5u0vrhm32" path="res://3D/Models/CarFrame3.gltf" id="3_rx2i2"]
+[ext_resource type="PackedScene" uid="uid://dkuiqab77qwkj" path="res://3D/Models/CarFrame4.gltf" id="4_808e8"]
+[ext_resource type="PackedScene" uid="uid://d1wxxqtmw3dvn" path="res://3D/Models/CarFrame5.gltf" id="5_brnnv"]
+[ext_resource type="PackedScene" uid="uid://crmce6sl4nsyh" path="res://3D/Models/CarFrame6.gltf" id="6_edgn4"]
+[ext_resource type="PackedScene" uid="uid://bt0nsa736uemb" path="res://3D/Models/CarFrame7.gltf" id="7_iepuk"]
+
+[node name="CarPlayerRainbow" type="Node3D"]
+
+[node name="CarFrame12" parent="." instance=ExtResource("1_mv8fp")]
+
+[node name="CarFrame22" parent="." instance=ExtResource("2_mm584")]
+visible = false
+
+[node name="CarFrame32" parent="." instance=ExtResource("3_rx2i2")]
+visible = false
+
+[node name="CarFrame42" parent="." instance=ExtResource("4_808e8")]
+visible = false
+
+[node name="CarFrame52" parent="." instance=ExtResource("5_brnnv")]
+visible = false
+
+[node name="CarFrame62" parent="." instance=ExtResource("6_edgn4")]
+visible = false
+
+[node name="CarFrame72" parent="." instance=ExtResource("7_iepuk")]
+visible = false

@@ -1,8 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://cl2mrxu0w4sr8"]
+[gd_scene load_steps=25 format=3 uid="uid://cl2mrxu0w4sr8"]
 
-[ext_resource type="Environment" uid="uid://b7nskufe3ugno" path="res://Scenes/Environments/LevelEnviroment.tres" id="1_hyuv4"]
-[ext_resource type="PackedScene" uid="uid://bpmfitw8wc80d" path="res://3D/Cars/car_player.tscn" id="1_nofjx"]
+[ext_resource type="Environment" uid="uid://b5onbneexcg77" path="res://Scenes/Environments/GameWinEnvironment.tres" id="1_8dngi"]
 [ext_resource type="PackedScene" uid="uid://1bhvbl0nhyga" path="res://3D/Prototype/Kenney_Racing/grass.glb" id="2_4aog5"]
+[ext_resource type="PackedScene" uid="uid://bt0nsa736uemb" path="res://3D/Models/CarFrame7.gltf" id="2_owfin"]
 [ext_resource type="PackedScene" uid="uid://dtsq4dsirk27e" path="res://3D/Prototype/Kenney_Racing/pitsGarageCorner.glb" id="3_5n2p5"]
 [ext_resource type="PackedScene" uid="uid://dsao6v3tpan8r" path="res://3D/Prototype/Kenney_Racing/pitsOfficeCorner.glb" id="4_tx6j4"]
 [ext_resource type="PackedScene" uid="uid://cmgusbxagih55" path="res://3D/Prototype/Kenney_Racing/roadCornerLarger.glb" id="5_hyuv4"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://dkiybupor8wmx" path="res://3D/Prototype/Kenney_Racing/pitsOfficeRoof.glb" id="8_phabx"]
 [ext_resource type="PackedScene" uid="uid://uctfka66tb0e" path="res://3D/Prototype/Kenney_Racing/roadStraight.glb" id="9_fa8k4"]
 [ext_resource type="Texture2D" uid="uid://dlci1o1tn1pu" path="res://3D/Effects/smoke_05.png" id="10_5dl25"]
-[ext_resource type="PackedScene" uid="uid://d4krwjvchhcuu" path="res://3D/Prototype/Skeleton/skeleton.tscn" id="11_phabx"]
 [ext_resource type="FontFile" uid="uid://c434xdyo2rbtv" path="res://Fonts/abduction2002.ttf" id="12_fa8k4"]
 [ext_resource type="AudioStream" uid="uid://dw3dmvafx3c2d" path="res://Audio/Music/lsl infvictory.ogg" id="13_owfin"]
 
@@ -19,7 +18,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("player_car/Headlight3D_1:light_energy")
+tracks/0/path = NodePath("CarFrame72/Headlight3D_1:light_energy")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -31,7 +30,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("player_car/HeadLight3D_2:light_energy")
+tracks/1/path = NodePath("CarFrame72/HeadLight3D_2:light_energy")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -48,7 +47,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("player_car/Headlight3D_1:light_energy")
+tracks/0/path = NodePath("CarFrame72/Headlight3D_1:light_energy")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -60,7 +59,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("player_car/HeadLight3D_2:light_energy")
+tracks/1/path = NodePath("CarFrame72/HeadLight3D_2:light_energy")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -136,31 +135,31 @@ light_energy = 0.393
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("1_hyuv4")
+environment = ExtResource("1_8dngi")
 
-[node name="player_car" parent="." instance=ExtResource("1_nofjx")]
-transform = Transform3D(0.800857, 0, -0.598856, 0, 1, 0, 0.598856, 0, 0.800857, -0.0574379, 1.19209e-07, -0.149608)
+[node name="CarFrame72" parent="." instance=ExtResource("2_owfin")]
+transform = Transform3D(-0.922525, 0, 0.385938, 0, 1, 0, -0.385938, 0, -0.922525, 0.342911, 0.367467, -0.112685)
 
-[node name="Headlight3D_1" type="SpotLight3D" parent="player_car"]
-transform = Transform3D(0.992688, 0, -0.120709, 0, 1, 0, 0.120709, 0, 0.992688, -0.230496, 0.203982, -0.545983)
-spot_range = 3.918
-spot_attenuation = -0.3
-spot_angle = 50.84
-spot_angle_attenuation = 1.10957
-
-[node name="HeadLight3D_2" type="SpotLight3D" parent="player_car"]
-transform = Transform3D(0.992688, 0, -0.120709, 0, 1, 0, 0.120709, 0, 0.992688, 0.172764, 0.278315, -0.326254)
-spot_range = 3.918
-spot_attenuation = -0.3
-spot_angle = 50.84
-spot_angle_attenuation = 1.10957
-
-[node name="AnimationPlayerFlicker2" type="AnimationPlayer" parent="player_car"]
+[node name="AnimationPlayerFlicker2" type="AnimationPlayer" parent="CarFrame72"]
 root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_fh5qu")
 }
 autoplay = "idle"
+
+[node name="Headlight3D_1" type="SpotLight3D" parent="CarFrame72"]
+transform = Transform3D(-0.995115, -0.0981752, -0.0104139, -0.0987133, 0.991131, 0.0889658, 0.0015873, 0.0895591, -0.99598, -0.487525, 0.0169272, 0.628269)
+spot_range = 3.918
+spot_attenuation = -0.3
+spot_angle = 30.0
+spot_angle_attenuation = 1.10957
+
+[node name="HeadLight3D_2" type="SpotLight3D" parent="CarFrame72"]
+transform = Transform3D(-0.933461, 0, 0.358678, 0, 1, 0, -0.358678, 0, -0.933461, 0.37487, -0.0891515, 1.23386)
+spot_range = 3.918
+spot_attenuation = -0.3
+spot_angle = 30.0
+spot_angle_attenuation = 1.10957
 
 [node name="Scene" type="Node3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -183,7 +182,7 @@ transform = Transform3D(1.24213, 0, 0.840893, 0, 1.5, 0, -0.840893, 0, 1.24213, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15627, 1.28523e-07, -0.756123)
 
 [node name="Light" parent="Scene" instance=ExtResource("7_5dl25")]
-transform = Transform3D(0.168455, 0, 0.985709, 0, 1, 0, -0.985709, 0, 0.168455, -0.231024, -0.00499993, -0.911921)
+transform = Transform3D(0.168455, 0, 0.985709, 0, 1, 0, -0.985709, 0, 0.168455, 0.171063, -0.00499993, -1.1494)
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Scene/Light"]
 transform = Transform3D(-0.5, 4.47035e-08, 2.22045e-16, 1.91069e-15, 2.18557e-08, 0.5, 4.47035e-08, 0.5, -2.18557e-08, 0.00683552, 0.734335, 0.0899373)
@@ -196,7 +195,7 @@ spot_angle = 24.17
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.219475, 1.28523e-07, 1.30708)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.270886, 0, 0.962611, 0, 1, 0, -0.962611, 0, 0.270886, 1.26826, 0.41388, -0.371361)
+transform = Transform3D(0.0502792, 0, 0.998735, 0, 1, 0, -0.998735, 0, 0.0502792, 2.13234, 0.41388, -0.67581)
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.746549, 0.25373, 0.470656)
@@ -223,9 +222,6 @@ draw_order = 1
 process_material = SubResource("ParticleProcessMaterial_fh5qu")
 draw_pass_1 = SubResource("QuadMesh_27myn")
 draw_skin = SubResource("Skin_27myn")
-
-[node name="skeleton" parent="." instance=ExtResource("11_phabx")]
-transform = Transform3D(0.396241, 0, 0.304948, 0, 0.5, 0, -0.304948, 0, 0.396241, -0.326126, 0, -0.749131)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

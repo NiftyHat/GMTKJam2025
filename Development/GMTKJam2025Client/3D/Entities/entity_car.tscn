@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cv0yn3y5gd06l" path="res://3D/Entities/EntityCar.cs" id="1_blb48"]
 [ext_resource type="Script" uid="uid://dnlgcp0rpf2mg" path="res://Script/CarController.cs" id="2_n86jx"]
-[ext_resource type="PackedScene" uid="uid://bpmfitw8wc80d" path="res://3D/Cars/car_player.tscn" id="3_1tss7"]
+[ext_resource type="PackedScene" uid="uid://cbd4k1k162rob" path="res://3D/Cars/car_player_rainbow.tscn" id="3_blb48"]
 [ext_resource type="Script" uid="uid://ck54vpeavsd5i" path="res://3D/Entities/EntityRigidbody3D.cs" id="4_kc0nu"]
 [ext_resource type="Texture2D" uid="uid://2h3qmpnq0584" path="res://3D/Textures/7a3584298ef470fe0aafc146c23d34523b045606.png" id="5_ca4vo"]
 
@@ -22,11 +22,10 @@ script = ExtResource("1_blb48")
 _carController = NodePath("CarController")
 metadata/_custom_type_script = "uid://v2v2l1vx325s"
 
-[node name="CarController" type="Node3D" parent="." node_paths=PackedStringArray("_rb", "_camera3D")]
+[node name="CarController" type="Node3D" parent="." node_paths=PackedStringArray("_rb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.514817, 0.803603, -7.93579)
 script = ExtResource("2_n86jx")
 _rb = NodePath("../Physics")
-_camera3D = NodePath("")
 Acceleration = 0.2
 BrakeStrength = 0.08
 reverseAcceleration = 0.1
@@ -46,8 +45,8 @@ transform = Transform3D(-0.999889, -0.000312992, 0.0148878, 0, 0.999779, 0.02101
 [node name="Lookat" type="Node3D" parent="CarController"]
 transform = Transform3D(-0.999326, 0.00258939, 0.0366111, 0, 0.997508, -0.0705508, -0.0367025, -0.0705033, -0.996836, 0, 0.0906405, 33.927)
 
-[node name="player_car" parent="CarController" instance=ExtResource("3_1tss7")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.540508, 0)
+[node name="CarPlayerRainbow" parent="CarController" instance=ExtResource("3_blb48")]
+transform = Transform3D(1, -6.94854e-10, 1.39698e-09, -5.31145e-10, 1, 2.79397e-09, 0, 0, 1, 0.000613213, -0.214427, -0.00113916)
 
 [node name="GroundCheckRaycast" type="RayCast3D" parent="CarController"]
 target_position = Vector3(0, -0.75, 0)

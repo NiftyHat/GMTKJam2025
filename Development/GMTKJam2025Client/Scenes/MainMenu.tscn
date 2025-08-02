@@ -1,14 +1,18 @@
-[gd_scene load_steps=22 format=3 uid="uid://djpruf2ij658q"]
+[gd_scene load_steps=26 format=3 uid="uid://djpruf2ij658q"]
 
 [ext_resource type="PackedScene" uid="uid://de6n0n215fpr5" path="res://Scenes/Camera/GameCamera.tscn" id="1_853f1"]
 [ext_resource type="Texture2D" uid="uid://dhojn25qmrh3b" path="res://Texture/Grid Floor.png" id="2_8um5k"]
 [ext_resource type="Script" uid="uid://cmle6ikn6jue1" path="res://Script/MainMenu/MainMenuCameraController.cs" id="2_koqhg"]
-[ext_resource type="PackedScene" uid="uid://bpmfitw8wc80d" path="res://3D/Cars/car_player.tscn" id="3_8saeu"]
+[ext_resource type="PackedScene" uid="uid://pmklrr8m83es" path="res://3D/Models/CarFrame1.gltf" id="3_riqfo"]
 [ext_resource type="Script" uid="uid://cujwqas1amatl" path="res://Script/MainMenu/GentleWobble.cs" id="4_ghw46"]
+[ext_resource type="PackedScene" uid="uid://ctbhh7ga8tyfp" path="res://3D/Models/CarFrame2.gltf" id="4_yxkem"]
+[ext_resource type="PackedScene" uid="uid://ccee5u0vrhm32" path="res://3D/Models/CarFrame3.gltf" id="5_7v4os"]
 [ext_resource type="Texture2D" uid="uid://bajwttt51timw" path="res://Texture/LightspeedLoop_Logo.PNG" id="5_df05h"]
 [ext_resource type="Script" uid="uid://b5eenasigq4ia" path="res://Script/MainMenu/Screens/MainMenuTitleDisplay.cs" id="5_xim88"]
 [ext_resource type="FontFile" uid="uid://c434xdyo2rbtv" path="res://Fonts/abduction2002.ttf" id="6_8um5k"]
 [ext_resource type="Script" uid="uid://jjc2vxsw51q4" path="res://Script/MainMenu/MainMenuControl.cs" id="6_cmrfp"]
+[ext_resource type="PackedScene" uid="uid://dkuiqab77qwkj" path="res://3D/Models/CarFrame4.gltf" id="6_pjscj"]
+[ext_resource type="PackedScene" uid="uid://d1wxxqtmw3dvn" path="res://3D/Models/CarFrame5.gltf" id="7_m7n2d"]
 [ext_resource type="Script" uid="uid://ck60eum4nuv7n" path="res://Script/MainMenu/Screens/MainMenuMainMenuDisplay.cs" id="10_loo7a"]
 [ext_resource type="Script" uid="uid://bxwjgtymipxoq" path="res://Script/MainMenu/Screens/MainMenuTextScreenPopupDisplay.cs" id="11_if7li"]
 [ext_resource type="FontFile" uid="uid://4tcf8t2hi7n6" path="res://Fonts/Hauser Bold Italic.otf" id="11_rrcx7"]
@@ -59,20 +63,20 @@ mesh = SubResource("PlaneMesh_ghw46")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_df05h")
 
-[node name="player_car" parent="Scene Composition" instance=ExtResource("3_8saeu")]
-transform = Transform3D(0.883324, 0, -0.468763, 0, 1, 0, 0.468763, 0, 0.883324, -0.433324, 0, -1.33947)
+[node name="CarFrame12" parent="Scene Composition" instance=ExtResource("3_riqfo")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.702654, 0.246208, 0.514106)
 
-[node name="player_car2" parent="Scene Composition" instance=ExtResource("3_8saeu")]
-transform = Transform3D(0.663012, 0, -0.748609, 0, 1, 0, 0.748609, 0, 0.663012, -1.45921, 0, -2.09662)
+[node name="CarFrame22" parent="Scene Composition" instance=ExtResource("4_yxkem")]
+transform = Transform3D(-0.52351, 0, 0.852019, 0, 1, 0, -0.852019, 0, -0.52351, -4.24749, 0.486035, -1.93865)
 
-[node name="player_car3" parent="Scene Composition" instance=ExtResource("3_8saeu")]
-transform = Transform3D(0.431598, 0, -0.902066, 0, 1, 0, 0.902066, 0, 0.431598, -2.01171, 0, -2.8782)
+[node name="CarFrame32" parent="Scene Composition" instance=ExtResource("5_7v4os")]
+transform = Transform3D(-0.273221, 0, 0.961951, 0, 1, 0, -0.961951, 0, -0.273221, -4.76605, 0.587532, -3.76857)
 
-[node name="player_car4" parent="Scene Composition" instance=ExtResource("3_8saeu")]
-transform = Transform3D(0.180811, 0, -0.983518, 0, 1, 0, 0.983518, 0, 0.180811, -2.32076, 0, -3.81581)
+[node name="CarFrame42" parent="Scene Composition" instance=ExtResource("6_pjscj")]
+transform = Transform3D(-0.845336, 0, 0.534234, 0, 1, 0, -0.534234, 0, -0.845336, -2.88289, 0.383865, -0.357002)
 
-[node name="player_car5" parent="Scene Composition" instance=ExtResource("3_8saeu")]
-transform = Transform3D(-0.0966102, 0, -0.995322, 0, 1, 0, 0.995322, 0, -0.0966102, -2.38991, 0, -4.77045)
+[node name="CarFrame52" parent="Scene Composition" instance=ExtResource("7_m7n2d")]
+transform = Transform3D(-0.956666, 0, 0.291186, 0, 1, 0, -0.291186, 0, -0.956666, -0.897436, 0.378327, 0)
 
 [node name="Positioners" type="Node" parent="."]
 

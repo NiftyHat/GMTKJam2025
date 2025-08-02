@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bs7t7tjyw4eo1"]
+[gd_scene load_steps=44 format=3 uid="uid://bs7t7tjyw4eo1"]
 
 [ext_resource type="Script" uid="uid://2jqy0i2iaig4" path="res://Script/GameController.cs" id="1_6vvcf"]
 [ext_resource type="Texture2D" uid="uid://2h3qmpnq0584" path="res://3D/Textures/7a3584298ef470fe0aafc146c23d34523b045606.png" id="2_6vvcf"]
@@ -15,6 +15,21 @@
 [ext_resource type="Script" uid="uid://cx8fluhgs0oo3" path="res://UI/PauseScreen.cs" id="12_7rq2r"]
 [ext_resource type="Texture2D" uid="uid://dwkcdhdwgfnss" path="res://UI/Textures/Menu_Base.PNG" id="13_124qp"]
 [ext_resource type="FontFile" uid="uid://djnxc24f5yy5" path="res://Fonts/Hauser Bold.otf" id="14_qolck"]
+[ext_resource type="PackedScene" uid="uid://ckdleadlcqjtu" path="res://3D/Prototype/Kenny_City/building-a.glb" id="16_pgw7i"]
+[ext_resource type="PackedScene" uid="uid://dg68oa1v7eny7" path="res://3D/Prototype/Kenny_City/building-skyscraper-a.glb" id="17_v7xhk"]
+[ext_resource type="PackedScene" uid="uid://bxmqnoo8et0ds" path="res://3D/Prototype/Kenny_City/building-skyscraper-b.glb" id="18_wukv0"]
+[ext_resource type="PackedScene" uid="uid://bbpn4gqci4asi" path="res://3D/Prototype/Kenny_City/building-b.glb" id="19_hgvmy"]
+[ext_resource type="PackedScene" uid="uid://dqmn0jw5atkr8" path="res://3D/Prototype/Kenny_City/building-skyscraper-c.glb" id="20_ebcm8"]
+[ext_resource type="PackedScene" uid="uid://ccwearbguulpd" path="res://3D/Prototype/Kenny_City/building-skyscraper-e.glb" id="21_lko2l"]
+[ext_resource type="PackedScene" uid="uid://lm5a5gik4s3j" path="res://3D/Prototype/Kenny_City/building-skyscraper-d.glb" id="22_em6uu"]
+[ext_resource type="PackedScene" uid="uid://bsqq2vehanjps" path="res://3D/Prototype/Kenny_City/low-detail-building-a.glb" id="23_odb6r"]
+[ext_resource type="PackedScene" uid="uid://crwovaf0ra3ds" path="res://3D/Prototype/Kenny_City/low-detail-building-b.glb" id="24_p4lnl"]
+[ext_resource type="PackedScene" uid="uid://dmkrwjwe1yvyv" path="res://3D/Prototype/Kenny_City/building-c.glb" id="25_6gwdq"]
+[ext_resource type="PackedScene" uid="uid://3ktf5mpg81rg" path="res://3D/Prototype/Kenny_City/building-e.glb" id="26_rsfko"]
+[ext_resource type="PackedScene" uid="uid://vysbugo8c5e4" path="res://3D/Prototype/Kenny_City/building-f.glb" id="27_82uqo"]
+[ext_resource type="PackedScene" uid="uid://cjqsf66xhghl7" path="res://3D/Prototype/Kenny_City/building-k.glb" id="28_bl770"]
+[ext_resource type="PackedScene" uid="uid://dc42t8qvdqgjs" path="res://3D/Prototype/Kenny_City/building-j.glb" id="29_1dmga"]
+[ext_resource type="PackedScene" uid="uid://dc0or27mjibxg" path="res://3D/Prototype/Kenny_City/low-detail-building-c.glb" id="30_cxw7u"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_wni78"]
 size = Vector2(256, 256)
@@ -289,6 +304,84 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_ry528")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_yhlfj")
 text = "MAIN MENU"
 flat = true
+
+[node name="building-a2" parent="." instance=ExtResource("16_pgw7i")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 92.8397, 0, 51.215)
+
+[node name="building-skyscraper-a2" parent="." instance=ExtResource("17_v7xhk")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 127.455, 7.62939e-06, 42.8662)
+
+[node name="building-skyscraper-b2" parent="." instance=ExtResource("18_wukv0")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 28.0231, 0, 46.1265)
+
+[node name="building-b2" parent="." instance=ExtResource("19_hgvmy")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 39.63, 0, 101.144)
+
+[node name="building-skyscraper-c2" parent="." instance=ExtResource("20_ebcm8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 30.327, 1.52588e-05, 162.105)
+
+[node name="building-skyscraper-e2" parent="." instance=ExtResource("21_lko2l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2337, 0, 238.527)
+
+[node name="building-skyscraper-d2" parent="." instance=ExtResource("22_em6uu")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 136, 1.52588e-05, -118.64)
+
+[node name="building-skyscraper-d2" parent="building-skyscraper-d2" instance=ExtResource("22_em6uu")]
+transform = Transform3D(2.92061e-07, 0, -1.5, 0, 1.5, 0, 1.5, 0, 2.92061e-07, 203.606, 1.52588e-05, -99.3648)
+
+[node name="building-skyscraper-d3" parent="building-skyscraper-d2" instance=ExtResource("22_em6uu")]
+transform = Transform3D(2.92061e-07, 0, -1.5, 0, 1.5, 0, 1.5, 0, 2.92061e-07, 22.7155, 1.52588e-05, -291.433)
+
+[node name="building-skyscraper-d3" parent="." instance=ExtResource("22_em6uu")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 92.4811, 1.52588e-05, -37.692)
+
+[node name="building-skyscraper-c3" parent="." instance=ExtResource("20_ebcm8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 31.4571, -7.62939e-06, -36.0412)
+
+[node name="low-detail-building-a2" parent="." instance=ExtResource("23_odb6r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.9046, 0, 96.7208)
+
+[node name="low-detail-building-b2" parent="." instance=ExtResource("24_p4lnl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 157.402, 0, 53.4837)
+
+[node name="building-a3" parent="." instance=ExtResource("16_pgw7i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.537, -12.4437, 103.872)
+
+[node name="building-c2" parent="." instance=ExtResource("25_6gwdq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 182.175, -7.62939e-06, 102.701)
+
+[node name="building-e2" parent="." instance=ExtResource("26_rsfko")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 199.031, 0, -105.537)
+
+[node name="building-f2" parent="." instance=ExtResource("27_82uqo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.1302, 0, -139.207)
+
+[node name="building-f3" parent="." instance=ExtResource("27_82uqo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.9616, 0, -172.125)
+
+[node name="building-f4" parent="." instance=ExtResource("27_82uqo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.0132, 0, -138.833)
+
+[node name="building-f7" parent="." instance=ExtResource("27_82uqo")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -98.8278, -1.52588e-05, 114.345)
+
+[node name="building-f8" parent="." instance=ExtResource("27_82uqo")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -98.8278, -1.52588e-05, 89.0535)
+
+[node name="building-k2" parent="." instance=ExtResource("28_bl770")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -26.0122, -3.05176e-05, 49.484)
+
+[node name="building-j2" parent="." instance=ExtResource("29_1dmga")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -104.103, 0, 161.962)
+
+[node name="building-j3" parent="." instance=ExtResource("29_1dmga")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -39.3125, 0, 150.559)
+
+[node name="low-detail-building-c2" parent="." instance=ExtResource("30_cxw7u")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 37.6781, 0, 188.248)
+
+[node name="low-detail-building-c2" parent="low-detail-building-c2" instance=ExtResource("30_cxw7u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -137.464, 0.0021286, 135.694)
 
 [connection signal="ButtonContinue" from="Pause" to="GameControl" method="Unpause"]
 [connection signal="ButtonMainMenu" from="Pause" to="GameControl" method="QuitToTitle"]
