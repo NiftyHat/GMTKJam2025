@@ -23,6 +23,7 @@ config/icon="uid://q3ob2tdxwp2h"
 
 SceneSwitcher="*res://Core/SceneSwitcher.cs"
 MusicPlayer="*res://Audio/MusicPlayer.cs"
+GameInformation="*res://GameInformation.cs"
 
 [dotnet]
 

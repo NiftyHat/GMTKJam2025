@@ -1,7 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://cl2mrxu0w4sr8"]
+[gd_scene load_steps=29 format=3 uid="uid://cl2mrxu0w4sr8"]
 
 [ext_resource type="Environment" uid="uid://b5onbneexcg77" path="res://Scenes/Environments/GameWinEnvironment.tres" id="1_8dngi"]
+[ext_resource type="Script" uid="uid://ja0nso55s2es" path="res://Script/EndScene/EndSceneBehaviour.cs" id="1_owfin"]
 [ext_resource type="PackedScene" uid="uid://1bhvbl0nhyga" path="res://3D/Prototype/Kenney_Racing/grass.glb" id="2_4aog5"]
+[ext_resource type="FontFile" uid="uid://djnxc24f5yy5" path="res://Fonts/Hauser Bold.otf" id="2_fuf2u"]
 [ext_resource type="PackedScene" uid="uid://bt0nsa736uemb" path="res://3D/Models/CarFrame7.gltf" id="2_owfin"]
 [ext_resource type="PackedScene" uid="uid://dtsq4dsirk27e" path="res://3D/Prototype/Kenney_Racing/pitsGarageCorner.glb" id="3_5n2p5"]
 [ext_resource type="PackedScene" uid="uid://dsao6v3tpan8r" path="res://3D/Prototype/Kenney_Racing/pitsOfficeCorner.glb" id="4_tx6j4"]
@@ -13,12 +15,20 @@
 [ext_resource type="FontFile" uid="uid://c434xdyo2rbtv" path="res://Fonts/abduction2002.ttf" id="12_fa8k4"]
 [ext_resource type="AudioStream" uid="uid://dw3dmvafx3c2d" path="res://Audio/Music/lsl infvictory.ogg" id="13_owfin"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vdm6r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gaiot"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8dngi"]
+font = ExtResource("12_fa8k4")
+font_size = 71
+
 [sub_resource type="Animation" id="Animation_fa8k4"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CarFrame72/Headlight3D_1:light_energy")
+tracks/0/path = NodePath("Scene Composition/CarFrame72/Headlight3D_1:light_energy")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -30,7 +40,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CarFrame72/HeadLight3D_2:light_energy")
+tracks/1/path = NodePath("Scene Composition/CarFrame72/HeadLight3D_2:light_energy")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -47,7 +57,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CarFrame72/Headlight3D_1:light_energy")
+tracks/0/path = NodePath("Scene Composition/CarFrame72/Headlight3D_1:light_energy")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -59,7 +69,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CarFrame72/HeadLight3D_2:light_energy")
+tracks/1/path = NodePath("Scene Composition/CarFrame72/HeadLight3D_2:light_energy")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -122,127 +132,79 @@ bind/0/name = &""
 bind/0/bone = -1
 bind/0/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[sub_resource type="LabelSettings" id="LabelSettings_8dngi"]
-font = ExtResource("12_fa8k4")
-font_size = 71
-
 [node name="LevelWin" type="Node3D"]
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, -5.15151, 8.87838, -10.9096)
-light_color = Color(1, 0.533333, 1, 1)
-light_energy = 0.393
-shadow_enabled = true
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("1_8dngi")
-
-[node name="CarFrame72" parent="." instance=ExtResource("2_owfin")]
-transform = Transform3D(-0.922525, 0, 0.385938, 0, 1, 0, -0.385938, 0, -0.922525, 0.342911, 0.367467, -0.112685)
-
-[node name="AnimationPlayerFlicker2" type="AnimationPlayer" parent="CarFrame72"]
-root_node = NodePath("../..")
-libraries = {
-&"": SubResource("AnimationLibrary_fh5qu")
-}
-autoplay = "idle"
-
-[node name="Headlight3D_1" type="SpotLight3D" parent="CarFrame72"]
-transform = Transform3D(-0.995115, -0.0981752, -0.0104139, -0.0987133, 0.991131, 0.0889658, 0.0015873, 0.0895591, -0.99598, -0.487525, 0.0169272, 0.628269)
-spot_range = 3.918
-spot_attenuation = -0.3
-spot_angle = 30.0
-spot_angle_attenuation = 1.10957
-
-[node name="HeadLight3D_2" type="SpotLight3D" parent="CarFrame72"]
-transform = Transform3D(-0.933461, 0, 0.358678, 0, 1, 0, -0.358678, 0, -0.933461, 0.37487, -0.0891515, 1.23386)
-spot_range = 3.918
-spot_attenuation = -0.3
-spot_angle = 30.0
-spot_angle_attenuation = 1.10957
-
-[node name="Scene" type="Node3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-
-[node name="grass" parent="Scene" instance=ExtResource("2_4aog5")]
-transform = Transform3D(10.1099, 0, 0, 0, 1, 0, 0, 0, 14.4412, 0.10368, 0, -0.00197184)
-
-[node name="Buildings" type="Node3D" parent="Scene"]
-
-[node name="pitsGarageCorner" parent="Scene/Buildings" instance=ExtResource("3_5n2p5")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.07404, -0.0141069, 0.18482)
-
-[node name="pitsOfficeCorner" parent="Scene/Buildings" instance=ExtResource("4_tx6j4")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.1664, -0.0141069, 1.203)
-
-[node name="pitsOfficeRoof" parent="Scene/Buildings" instance=ExtResource("8_phabx")]
-transform = Transform3D(1.24213, 0, 0.840893, 0, 1.5, 0, -0.840893, 0, 1.24213, -0.216901, 0.00499995, -1.82639)
-
-[node name="roadCornerLarger" parent="Scene" instance=ExtResource("5_hyuv4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15627, 1.28523e-07, -0.756123)
-
-[node name="Light" parent="Scene" instance=ExtResource("7_5dl25")]
-transform = Transform3D(0.168455, 0, 0.985709, 0, 1, 0, -0.985709, 0, 0.168455, 0.171063, -0.00499993, -1.1494)
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="Scene/Light"]
-transform = Transform3D(-0.5, 4.47035e-08, 2.22045e-16, 1.91069e-15, 2.18557e-08, 0.5, 4.47035e-08, 0.5, -2.18557e-08, 0.00683552, 0.734335, 0.0899373)
-light_color = Color(1, 0.188971, 0.997157, 1)
-spot_range = 1.743
-spot_attenuation = -3.56
-spot_angle = 24.17
-
-[node name="roadStraight" parent="Scene" instance=ExtResource("9_fa8k4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.219475, 1.28523e-07, 1.30708)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.0502792, 0, 0.998735, 0, 1, 0, -0.998735, 0, 0.0502792, 2.13234, 0.41388, -0.67581)
 
-[node name="Node3D" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.746549, 0.25373, 0.470656)
-visible = false
-
-[node name="GPUParticles3D" type="GPUParticles3D" parent="Node3D"]
-transform = Transform3D(0.820641, 0, -0.571444, 0, 1, 0, 0.571444, 0, 0.820641, -0.0154036, -0.00531009, -0.00220475)
-amount = 10
-interpolate = false
-draw_order = 1
-process_material = SubResource("ParticleProcessMaterial_fh5qu")
-draw_pass_1 = SubResource("QuadMesh_27myn")
-draw_skin = SubResource("Skin_27myn")
-
-[node name="Node3D2" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.439812, 0.253731, 0.702295)
-visible = false
-
-[node name="GPUParticles3D" type="GPUParticles3D" parent="Node3D2"]
-transform = Transform3D(0.820641, 0, -0.571444, 0, 1, 0, 0.571444, 0, 0.820641, -0.0154036, -0.00531009, -0.00220475)
-amount = 10
-interpolate = false
-draw_order = 1
-process_material = SubResource("ParticleProcessMaterial_fh5qu")
-draw_pass_1 = SubResource("QuadMesh_27myn")
-draw_skin = SubResource("Skin_27myn")
-
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." node_paths=PackedStringArray("Restart", "MainMenu")]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="CanvasLayer" type="CanvasLayer" parent="Control"]
-
-[node name="Label" type="Label" parent="Control/CanvasLayer"]
-anchors_preset = -1
-anchor_left = 0.229
-anchor_top = 0.806
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 2.19199
-offset_top = 7.71198
-offset_right = -1.0
-offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_owfin")
+Restart = NodePath("MarginContainer/VBoxContainer/Restart")
+MainMenu = NodePath("MarginContainer/VBoxContainer/Menu")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -280.0
+offset_top = -291.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Restart" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_fonts/font = ExtResource("2_fuf2u")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vdm6r")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_gaiot")
+text = "Restart"
+flat = true
+alignment = 2
+
+[node name="Menu" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_fonts/font = ExtResource("2_fuf2u")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vdm6r")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_gaiot")
+text = "Main Menu"
+flat = true
+alignment = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -67.0
+offset_right = 781.0
+grow_vertical = 0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Label" type="Label" parent="Control/MarginContainer2"]
+layout_mode = 2
 text = "You Won the Game!"
 label_settings = SubResource("LabelSettings_8dngi")
 
@@ -250,3 +212,100 @@ label_settings = SubResource("LabelSettings_8dngi")
 stream = ExtResource("13_owfin")
 autoplay = true
 parameters/looping = true
+
+[node name="Scene Composition" type="Node" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Scene Composition"]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, -5.13916, 8.87838, -10.934)
+light_color = Color(1, 0.533333, 1, 1)
+light_energy = 0.393
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Scene Composition"]
+environment = ExtResource("1_8dngi")
+
+[node name="CarFrame72" parent="Scene Composition" instance=ExtResource("2_owfin")]
+transform = Transform3D(-0.922525, 0, 0.385938, 0, 1, 0, -0.385938, 0, -0.922525, 0.342911, 0.367467, -0.112685)
+
+[node name="AnimationPlayerFlicker2" type="AnimationPlayer" parent="Scene Composition/CarFrame72"]
+root_node = NodePath("../../..")
+libraries = {
+&"": SubResource("AnimationLibrary_fh5qu")
+}
+autoplay = "idle"
+
+[node name="Headlight3D_1" type="SpotLight3D" parent="Scene Composition/CarFrame72"]
+transform = Transform3D(-0.995115, -0.0981752, -0.0104139, -0.0987133, 0.991131, 0.0889658, 0.0015873, 0.0895591, -0.99598, -0.487525, 0.0169272, 0.628269)
+spot_range = 3.918
+spot_attenuation = -0.3
+spot_angle = 30.0
+spot_angle_attenuation = 1.10957
+
+[node name="HeadLight3D_2" type="SpotLight3D" parent="Scene Composition/CarFrame72"]
+transform = Transform3D(-0.933461, 0, 0.358678, 0, 1, 0, -0.358678, 0, -0.933461, 0.37487, -0.0891515, 1.23386)
+spot_range = 3.918
+spot_attenuation = -0.3
+spot_angle = 30.0
+spot_angle_attenuation = 1.10957
+
+[node name="Scene" type="Node3D" parent="Scene Composition"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="grass" parent="Scene Composition/Scene" instance=ExtResource("2_4aog5")]
+transform = Transform3D(10.1099, 0, 0, 0, 1, 0, 0, 0, 14.4412, 0.10368, 0, -0.00197184)
+
+[node name="Buildings" type="Node3D" parent="Scene Composition/Scene"]
+
+[node name="pitsGarageCorner" parent="Scene Composition/Scene/Buildings" instance=ExtResource("3_5n2p5")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.07404, -0.0141069, 0.18482)
+
+[node name="pitsOfficeCorner" parent="Scene Composition/Scene/Buildings" instance=ExtResource("4_tx6j4")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.1664, -0.0141069, 1.203)
+
+[node name="pitsOfficeRoof" parent="Scene Composition/Scene/Buildings" instance=ExtResource("8_phabx")]
+transform = Transform3D(1.24213, 0, 0.840893, 0, 1.5, 0, -0.840893, 0, 1.24213, -0.216901, 0.00499995, -1.82639)
+
+[node name="roadCornerLarger" parent="Scene Composition/Scene" instance=ExtResource("5_hyuv4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15627, 1.28523e-07, -0.756123)
+
+[node name="Light" parent="Scene Composition/Scene" instance=ExtResource("7_5dl25")]
+transform = Transform3D(0.168455, 0, 0.985709, 0, 1, 0, -0.985709, 0, 0.168455, 0.171063, -0.00499993, -1.1494)
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Scene Composition/Scene/Light"]
+transform = Transform3D(-0.5, 4.47035e-08, 2.22045e-16, 1.91069e-15, 2.18557e-08, 0.5, 4.47035e-08, 0.5, -2.18557e-08, 0.00683552, 0.734335, 0.0899373)
+light_color = Color(1, 0.188971, 0.997157, 1)
+spot_range = 1.743
+spot_attenuation = -3.56
+spot_angle = 24.17
+
+[node name="roadStraight" parent="Scene Composition/Scene" instance=ExtResource("9_fa8k4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.219475, 1.28523e-07, 1.30708)
+
+[node name="Node3D" type="Node3D" parent="Scene Composition"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.746549, 0.25373, 0.470656)
+visible = false
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Scene Composition/Node3D"]
+transform = Transform3D(0.820641, 0, -0.571444, 0, 1, 0, 0.571444, 0, 0.820641, -0.0154036, -0.00531009, -0.00220475)
+amount = 10
+interpolate = false
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_fh5qu")
+draw_pass_1 = SubResource("QuadMesh_27myn")
+draw_skin = SubResource("Skin_27myn")
+
+[node name="Node3D2" type="Node3D" parent="Scene Composition"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.439812, 0.253731, 0.702295)
+visible = false
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Scene Composition/Node3D2"]
+transform = Transform3D(0.820641, 0, -0.571444, 0, 1, 0, 0.571444, 0, 0.820641, -0.0154036, -0.00531009, -0.00220475)
+amount = 10
+interpolate = false
+draw_order = 1
+process_material = SubResource("ParticleProcessMaterial_fh5qu")
+draw_pass_1 = SubResource("QuadMesh_27myn")
+draw_skin = SubResource("Skin_27myn")
+
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Restart" to="Control" method="RestartLevel"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Menu" to="Control" method="GotoMainMenu"]
