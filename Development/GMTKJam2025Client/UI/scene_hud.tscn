@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://bna0stgm2f762"]
+[gd_scene load_steps=20 format=3 uid="uid://bna0stgm2f762"]
 
 [ext_resource type="Script" uid="uid://d3054nla06550" path="res://UI/UIHUD.cs" id="1_dmi88"]
+[ext_resource type="Resource" uid="uid://drlf65sbj5ynh" path="res://Audio/Music/music_racing_normal.tres" id="2_dk54w"]
 [ext_resource type="AudioStream" uid="uid://0stjcmm8fks3" path="res://Audio/Music/lsl gogogo.ogg" id="2_fac72"]
 [ext_resource type="FontFile" uid="uid://c434xdyo2rbtv" path="res://Fonts/abduction2002.ttf" id="3_fac72"]
 [ext_resource type="AudioStream" uid="uid://dvud2f6pw67ua" path="res://Audio/Music/lsl nyoom.ogg" id="4_h3oo2"]
@@ -217,7 +218,7 @@ _data = {
 &"normal": SubResource("Animation_a2sha")
 }
 
-[node name="UIHUD" type="Control" node_paths=PackedStringArray("_lapCountLabel", "_countdownAnimation", "_streamMusic", "_timeRemainingView")]
+[node name="UIHUD" type="Control" node_paths=PackedStringArray("_lapCountLabel", "_countdownAnimation", "_timeRemainingView")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -227,8 +228,8 @@ grow_vertical = 2
 script = ExtResource("1_dmi88")
 _lapCountLabel = NodePath("CanvasLayer/LabelLapCount")
 _countdownAnimation = NodePath("CanvasLayer/Countdown321Go/CountdownAnimation")
-_streamMusic = NodePath("CanvasLayer/AudioStreamPlayerRacing")
 _timeRemainingView = NodePath("CanvasLayer/TimeRemaining")
+_musicNormal = ExtResource("2_dk54w")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
