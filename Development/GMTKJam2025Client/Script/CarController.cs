@@ -38,7 +38,6 @@ public partial class CarController : Node3D
 	[Export] private float steering;
 	[Export] private float turnSpeed;
 	[Export] private float minimumTurnSpeed;
-	[Export] private float GroundDistance;
 	
 	private const float M = 1000f;
 
@@ -101,6 +100,8 @@ public partial class CarController : Node3D
 
 		// Turning; capped by velocity
 		turnInput = Mathf.DegToRad(Input.GetAxis("SteerLeft", "SteerRight") * steering);
+		
+		// Visuals
 		CarVisualNode.Steer(turnInput);
 
 		if (isGrounded && Velocity > 10 && (Speed < Velocity * .5f))
