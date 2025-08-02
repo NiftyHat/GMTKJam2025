@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dbpbaadpveu3n"
+path="res://.godot/imported/lsl rushedbuttons.ogg-79d639ce0028e1e31fa5958d48dbfc85.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/Music/lsl rushedbuttons.ogg"
+dest_files=["res://.godot/imported/lsl rushedbuttons.ogg-79d639ce0028e1e31fa5958d48dbfc85.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

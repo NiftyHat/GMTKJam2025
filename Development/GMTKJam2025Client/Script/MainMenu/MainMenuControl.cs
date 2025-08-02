@@ -86,6 +86,7 @@ public partial class MainMenuControl : Node
 	public void ShowTrackSelect()
 	{
 		GD.Print("Track Select");
+		GameInformation.CurrentLevel = SceneSwitcher.Instance.Library.Game;
 		SceneSwitcher.Instance.GoToScene(SceneSwitcher.Instance.Library.Game);
 	}
 	public void ShowOptions()
