@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SoundEffectSample" load_steps=3 format=3 uid="uid://dc5mml11qghcd"]
+
+[ext_resource type="AudioStream" uid="uid://bcpfy5un1sq85" path="res://Audio/Music/lsl hello.ogg" id="1_asp0d"]
+[ext_resource type="Script" uid="uid://bgq4g1bwf8j3p" path="res://Audio/SoundEffectSample.cs" id="1_x6kmr"]
+
+[resource]
+script = ExtResource("1_x6kmr")
+Stream = ExtResource("1_asp0d")
+VolumeDb = 0.0
+PitchScale = 1.0
+metadata/_custom_type_script = "uid://bgq4g1bwf8j3p"
