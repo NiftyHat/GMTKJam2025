@@ -48,7 +48,7 @@ public partial class CarVisual: Node3D
 	public override void _Process(double delta)
 	{
 		base._Process(delta);
-		if (trail == null)
+		if (trail == null && TrailPrototype != null)
 		{
 			trail = (GpuParticles3D)TrailPrototype.Duplicate();
 			AddChild(trail);
