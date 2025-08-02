@@ -100,7 +100,7 @@ public partial class CarController : Node3D
 
 		// Turning; capped by velocity
 		turnInput = Mathf.DegToRad(Input.GetAxis("SteerLeft", "SteerRight") * steering);
-		
+		CarVisualNode.Steer(turnInput);
 		
 	}
 
