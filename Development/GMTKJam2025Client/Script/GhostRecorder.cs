@@ -86,7 +86,7 @@ public partial class GhostRecorder : Node
 				GhostCarsContainers[ghost].Transform = AllRecordings[ghost][0];
 			}
 			
-			var newCrate = (Node3D)GhostCarContainerPrototype.Duplicate();
+			var newCrate = CarVisualLibrary.GetNewCrate(AllRecordings.Count);
 			GhostCarsContainers.Add(newCrate);
 			AddChild(newCrate);
 			newCrate.Transform = CurrentRecording[0];

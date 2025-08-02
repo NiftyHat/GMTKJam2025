@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bs7t7tjyw4eo1"]
+[gd_scene load_steps=49 format=3 uid="uid://bs7t7tjyw4eo1"]
 
 [ext_resource type="Script" uid="uid://2jqy0i2iaig4" path="res://Script/GameController.cs" id="1_6vvcf"]
 [ext_resource type="Texture2D" uid="uid://2h3qmpnq0584" path="res://3D/Textures/7a3584298ef470fe0aafc146c23d34523b045606.png" id="2_6vvcf"]
@@ -19,14 +19,22 @@
 [ext_resource type="Texture2D" uid="uid://dwkcdhdwgfnss" path="res://UI/Textures/Menu_Base.PNG" id="13_124qp"]
 [ext_resource type="PackedScene" uid="uid://ccee5u0vrhm32" path="res://3D/Models/CarFrame3.gltf" id="13_y0yaw"]
 [ext_resource type="FontFile" uid="uid://djnxc24f5yy5" path="res://Fonts/Hauser Bold.otf" id="14_qolck"]
+[ext_resource type="Script" uid="uid://nsxo67e0ht4p" path="res://Script/CrateVisual.cs" id="14_rsfko"]
 [ext_resource type="PackedScene" uid="uid://dkuiqab77qwkj" path="res://3D/Models/CarFrame4.gltf" id="14_yl3ua"]
+[ext_resource type="PackedScene" uid="uid://c7aef2omlqdce" path="res://3D/Models/CarCoffin2.gltf" id="15_82uqo"]
 [ext_resource type="PackedScene" uid="uid://d1wxxqtmw3dvn" path="res://3D/Models/CarFrame5.gltf" id="15_lko2l"]
+[ext_resource type="PackedScene" uid="uid://dea6o1fed6l47" path="res://3D/Models/CarCoffin3.gltf" id="16_bl770"]
 [ext_resource type="PackedScene" uid="uid://crmce6sl4nsyh" path="res://3D/Models/CarFrame6.gltf" id="16_em6uu"]
 [ext_resource type="PackedScene" uid="uid://sqnf5jr36lky" path="res://3D/Models/Background_BeachHouse.gltf" id="16_yhlfj"]
+[ext_resource type="PackedScene" uid="uid://ccd24oqwtn3ss" path="res://3D/Models/CarCoffin4.gltf" id="17_1dmga"]
 [ext_resource type="PackedScene" uid="uid://bvua7x2gcfw2v" path="res://3D/Models/Background_Graveyard.gltf" id="17_gipt1"]
 [ext_resource type="PackedScene" uid="uid://bt0nsa736uemb" path="res://3D/Models/CarFrame7.gltf" id="17_odb6r"]
+[ext_resource type="PackedScene" uid="uid://ch67ij5hjc6a6" path="res://3D/Models/CarCoffin5.gltf" id="18_cxw7u"]
 [ext_resource type="PackedScene" uid="uid://e66qnpu7wvjk" path="res://3D/Models/Background_PalmTree.gltf" id="18_pgw7i"]
+[ext_resource type="Script" uid="uid://dmnrgpcq7ueko" path="res://Script/Autokill.cs" id="18_y0yaw"]
 [ext_resource type="PackedScene" uid="uid://c7ygpr77u4kps" path="res://3D/Prototype/Kenney_Racing/barrierRed.glb" id="19_gipt1"]
+[ext_resource type="PackedScene" uid="uid://d32xh8mm5l2w4" path="res://3D/Models/CarCoffin6.gltf" id="19_jmmro"]
+[ext_resource type="PackedScene" uid="uid://d4ng0tjg783vj" path="res://3D/Models/CarCoffin7.gltf" id="20_vgicg"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_wni78"]
 size = Vector2(256, 256)
@@ -100,7 +108,8 @@ script = ExtResource("1_6vvcf")
 hud = NodePath("../HUD")
 pauseScreen = NodePath("../Pause")
 
-[node name="CarVisuals" type="Node" parent="GameControl"]
+[node name="CarVisuals" type="Node3D" parent="GameControl"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
 script = ExtResource("4_y0yaw")
 
 [node name="CarFrame1" parent="GameControl/CarVisuals" instance=ExtResource("11_leul7")]
@@ -131,6 +140,27 @@ script = ExtResource("6_yl3ua")
 transform = Transform3D(1, 2.05546e-10, 4.65661e-10, -5.11136e-10, 1, 9.31323e-10, -4.65661e-10, 4.65661e-10, 1, 0, 0, 0)
 script = ExtResource("6_yl3ua")
 
+[node name="CarCoffin1" parent="GameControl/CarVisuals" instance=ExtResource("8_qolck")]
+script = ExtResource("14_rsfko")
+
+[node name="CarCoffin2" parent="GameControl/CarVisuals" instance=ExtResource("15_82uqo")]
+script = ExtResource("14_rsfko")
+
+[node name="CarCoffin3" parent="GameControl/CarVisuals" instance=ExtResource("16_bl770")]
+script = ExtResource("14_rsfko")
+
+[node name="CarCoffin4" parent="GameControl/CarVisuals" instance=ExtResource("17_1dmga")]
+script = ExtResource("14_rsfko")
+
+[node name="CarCoffin5" parent="GameControl/CarVisuals" instance=ExtResource("18_cxw7u")]
+script = ExtResource("14_rsfko")
+
+[node name="CarCoffin6" parent="GameControl/CarVisuals" instance=ExtResource("19_jmmro")]
+script = ExtResource("14_rsfko")
+
+[node name="CarCoffin7" parent="GameControl/CarVisuals" instance=ExtResource("20_vgicg")]
+script = ExtResource("14_rsfko")
+
 [node name="Camera" type="Node" parent="GameControl"]
 
 [node name="CameraTarget" type="Node3D" parent="GameControl/Camera"]
@@ -142,7 +172,7 @@ script = ExtResource("4_f43ej")
 LookAtTarget = NodePath("../CameraTarget")
 CameraPositionTarget = NodePath("../../Player Car/Car Controller/Ideal Camera Location")
 CameraFocusTarget = NodePath("../../Player Car/Car Controller/Camera Look At Target")
-SnapPositionSpeed = 0.85
+SnapPositionSpeed = 0.6
 SnapFocusSpeed = 0.1
 FOVAtMaxSpeed = 75.0
 FOVNormal = 45.0
@@ -152,14 +182,14 @@ CarController = NodePath("../../Player Car/Car Controller")
 [node name="GhostRecorder" type="Node3D" parent="GameControl" node_paths=PackedStringArray("CarRigidbody", "GhostCarPrototype", "GhostCarContainerPrototype", "CarVisualLibrary")]
 script = ExtResource("5_7rq2r")
 CarRigidbody = NodePath("../Player Car/Car Controller")
-GhostCarPrototype = NodePath("../Ghost Car")
+GhostCarPrototype = NodePath("../Ghost Car Collider")
 GhostCarContainerPrototype = NodePath("../Coffin")
 CarVisualLibrary = NodePath("../CarVisuals")
 
-[node name="Ghost Car" type="StaticBody3D" parent="GameControl"]
+[node name="Ghost Car Collider" type="StaticBody3D" parent="GameControl"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -10, 0)
 
-[node name="CollisionShape3DGhost" type="CollisionShape3D" parent="GameControl/Ghost Car"]
+[node name="CollisionShape3DGhost" type="CollisionShape3D" parent="GameControl/Ghost Car Collider"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.238767, 0.197327, -0.321401)
 shape = SubResource("BoxShape3D_ggkdx")
 
@@ -167,7 +197,7 @@ shape = SubResource("BoxShape3D_ggkdx")
 transform = Transform3D(-0.3, -8.9701e-09, -2.46451e-08, 0, 0.281908, -0.102606, 2.62269e-08, -0.102606, -0.281908, 0, -10.887, -1.19244)
 
 [node name="Player Car" type="Node3D" parent="GameControl" node_paths=PackedStringArray("_carController", "_hud", "_ghostRecorder", "LevelResetTimer")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 196.372, 0.464794, -5.56289)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 196.372, 0.464794, -40.5028)
 script = ExtResource("7_qolck")
 _carController = NodePath("Car Controller")
 _hud = NodePath("../../HUD")
@@ -179,7 +209,7 @@ metadata/_custom_type_script = "uid://v2v2l1vx325s"
 
 [node name="Engine Only Helper" type="Node3D" parent="GameControl/Player Car"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.682709, 0.80267, -7.84895)
-visible = false
+script = ExtResource("18_y0yaw")
 metadata/_edit_lock_ = true
 
 [node name="MeshInstance3DCarDebug" type="MeshInstance3D" parent="GameControl/Player Car/Engine Only Helper"]
@@ -216,7 +246,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.440059, 0)
 transform = Transform3D(-0.999889, -0.00031299, 0.0148877, -2.36469e-11, 0.999779, 0.0210187, -0.014891, 0.0210164, -0.999668, 0.0055477, 1.73565, -6.6779)
 
 [node name="Camera Look At Target" type="Node3D" parent="GameControl/Player Car/Car Controller"]
-transform = Transform3D(1, 0, 0, 0, 0.997564, -0.0697565, 0, 0.0697565, 0.997564, 0, 0.0906405, 33.927)
+transform = Transform3D(1, 0, 0, 0, 0.997564, -0.0697565, 0, 0.0697565, 0.997564, 0, 0.0906405, 9.68335)
 
 [node name="GroundCheckRaycast" type="RayCast3D" parent="GameControl/Player Car/Car Controller"]
 target_position = Vector3(0, -2, 0)
