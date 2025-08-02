@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2jqy0i2iaig4" path="res://Script/GameController.cs" id="1_6vvcf"]
 [ext_resource type="Texture2D" uid="uid://2h3qmpnq0584" path="res://3D/Textures/7a3584298ef470fe0aafc146c23d34523b045606.png" id="2_6vvcf"]
-[ext_resource type="PackedScene" uid="uid://dn7u8iitv4j0a" path="res://Scenes/Levels/level_short.tscn" id="2_7rq2r"]
+[ext_resource type="PackedScene" uid="uid://dbbp0urujgyt" path="res://Scenes/Levels/level_eight.tscn" id="2_124qp"]
 [ext_resource type="Texture2D" uid="uid://bdpkysot812ts" path="res://3D/Textures/Sky_T.webp" id="3_cr6v8"]
 [ext_resource type="Script" uid="uid://3klfn8jegsue" path="res://Script/GameCamera.cs" id="4_f43ej"]
 [ext_resource type="Script" uid="uid://cc86lg7fm3e7b" path="res://Script/GhostRecorder.cs" id="5_7rq2r"]
@@ -67,8 +67,7 @@ script = ExtResource("1_6vvcf")
 hud = NodePath("../HUD")
 pauseScreen = NodePath("../Pause")
 
-[node name="LevelTest" parent="." instance=ExtResource("2_7rq2r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000880241, 0.00671792, -0.000197411)
+[node name="LevelEight" parent="." instance=ExtResource("2_124qp")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 collision_layer = 5
@@ -120,29 +119,31 @@ shape = SubResource("BoxShape3D_ggkdx")
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -10, 0)
 
 [node name="CarCoffin12" parent="Crate" instance=ExtResource("8_qolck")]
-transform = Transform3D(1, 0, 0, 0, 0.866026, 0.5, 0, -0.5, 0.866026, 0, 0, 0)
+transform = Transform3D(-0.6, -1.79402e-08, -4.92903e-08, 0, 0.563816, -0.205212, 5.24537e-08, -0.205212, -0.563816, 0, -1.77407, -2.38487)
 
 [node name="CarEntity" type="Node3D" parent="." node_paths=PackedStringArray("_carController", "_hud", "_ghostRecorder", "LevelResetTimer")]
-transform = Transform3D(0.999983, 0.00283201, 0.00515022, -0.00285934, 0.999982, 0.00530685, -0.0051351, -0.00532149, 0.999973, -6.34226, 0, 10.769)
+transform = Transform3D(0.999983, 0.00283201, 0.00515022, -0.00285934, 0.999982, 0.00530685, -0.0051351, -0.00532149, 0.999973, 196.372, -0.0668488, -47.4537)
 script = ExtResource("7_qolck")
 _carController = NodePath("CarController")
 _hud = NodePath("../HUD")
 _ghostRecorder = NodePath("../GhostRecorder")
+TimePerCheckpoint = 5.0
+InitialTime = 15.0
 LevelResetTimer = NodePath("TimerLevelReset")
 metadata/_custom_type_script = "uid://v2v2l1vx325s"
 
 [node name="CarController" type="Node3D" parent="CarEntity" node_paths=PackedStringArray("_rb", "_camera3D")]
-transform = Transform3D(-0.999979, -0.00582338, 0.00275929, -0.00580279, 0.999956, 0.00741155, -0.00280233, 0.00739538, -0.999969, -0.540327, 0.803042, -7.84239)
+transform = Transform3D(-0.999979, -0.00582338, 0.00275929, -0.00580279, 0.999956, 0.00741155, -0.00280233, 0.00739538, -0.999969, -0.682709, 0.80267, -7.84895)
 script = ExtResource("8_ry528")
 _rb = NodePath("../Physics")
 _camera3D = NodePath("../../Camera3D")
 Acceleration = 0.3
 BrakeStrength = 0.08
 reverseAcceleration = 0.1
-MaxSpeed = 30.0
+MaxSpeed = 50.0
 maxReverseSpeed = -5.0
 steering = 11.0
-turnSpeed = 10.0
+turnSpeed = 12.0
 minimumTurnSpeed = 1.0
 GroundDistance = 0.5
 
