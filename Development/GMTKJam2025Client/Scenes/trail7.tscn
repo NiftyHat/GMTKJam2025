@@ -1,13 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://drncy6tn4jupe"]
+[gd_scene load_steps=12 format=3 uid="uid://bk00v1aslagrd"]
 
-[ext_resource type="Shader" uid="uid://d3wb6xuy1kk8n" path="res://Scenes/trail_shader.tres" id="1_7aotc"]
-[ext_resource type="Texture2D" uid="uid://yfup3x8paplr" path="res://Scenes/SmokeNoise.png" id="2_0bshk"]
+[ext_resource type="Shader" uid="uid://d3wb6xuy1kk8n" path="res://Scenes/trail_shader.tres" id="1_5awpc"]
+[ext_resource type="Texture2D" uid="uid://yfup3x8paplr" path="res://Scenes/SmokeNoise.png" id="2_qoy53"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_18uxc"]
 render_priority = 0
-shader = ExtResource("1_7aotc")
+shader = ExtResource("1_5awpc")
 shader_parameter/TextureScale = Vector2(1, 1)
-shader_parameter/Texture2DParameter = ExtResource("2_0bshk")
+shader_parameter/Texture2DParameter = ExtResource("2_qoy53")
 
 [sub_resource type="Curve" id="Curve_hiqnp"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.246418, 0), 0.0, 0.0, 0, 0, Vector2(0.891117, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -17,8 +17,8 @@ point_count = 4
 curve = SubResource("Curve_hiqnp")
 
 [sub_resource type="Gradient" id="Gradient_ijh3g"]
-offsets = PackedFloat32Array(0, 0.00619195, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.803428, 0.360891, 0, 1, 0.597449, 0.00418083, 0.982984, 1)
+offsets = PackedFloat32Array(0, 0.470588)
+colors = PackedColorArray(0.597449, 0.00418083, 0.982984, 1, 0.819728, 0.437644, 0.2982, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_t05gb"]
 gradient = SubResource("Gradient_ijh3g")
