@@ -227,12 +227,6 @@ transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107
 [node name="building-f2" parent="Track/Buildings" instance=ExtResource("25_r04jv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.1302, 0, -139.207)
 
-[node name="building-f3" parent="Track/Buildings" instance=ExtResource("25_r04jv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.9616, 0, -172.125)
-
-[node name="building-f4" parent="Track/Buildings" instance=ExtResource("25_r04jv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.0132, 0, -138.833)
-
 [node name="building-f7" parent="Track/Buildings" instance=ExtResource("25_r04jv")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -98.8278, -1.52588e-05, 114.345)
 
@@ -250,9 +244,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -39.31
 
 [node name="low-detail-building-c2" parent="Track/Buildings" instance=ExtResource("28_ijxjh")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 37.6781, 0, 188.248)
-
-[node name="low-detail-building-c2" parent="Track/Buildings/low-detail-building-c2" instance=ExtResource("28_ijxjh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -137.464, 0.0021286, 135.694)
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, -0.05, -19.739)
