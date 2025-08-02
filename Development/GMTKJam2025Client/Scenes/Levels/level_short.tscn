@@ -1,10 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://dn7u8iitv4j0a"]
+[gd_scene load_steps=14 format=3 uid="uid://dn7u8iitv4j0a"]
 
 [ext_resource type="Environment" uid="uid://b7nskufe3ugno" path="res://Scenes/Environments/LevelEnviroment.tres" id="1_eshfu"]
 [ext_resource type="Script" uid="uid://geqjn5xl7l6l" path="res://3D/Entities/EntityTrack.cs" id="3_yjare"]
 [ext_resource type="PackedScene" uid="uid://cvlcpfuwq1lv4" path="res://3D/Entities/entity_checkpoint.tscn" id="4_2547q"]
 [ext_resource type="PackedScene" uid="uid://cbqp08vfm6n0w" path="res://3D/Models/roadCornerLarger.gltf" id="4_d5jqp"]
+[ext_resource type="PackedScene" uid="uid://dvg027t0e671b" path="res://3D/Models/roadStraightwidelong.gltf" id="5_eshfu"]
 [ext_resource type="Texture2D" uid="uid://dhojn25qmrh3b" path="res://Texture/Grid Floor.png" id="5_r1h4q"]
+[ext_resource type="PackedScene" uid="uid://cogvjvwoonthm" path="res://3D/Models/roadStraightwideenterlong.gltf" id="6_5w338"]
+[ext_resource type="PackedScene" uid="uid://dlbbya130wqhh" path="res://3D/Models/roadStraightlong.gltf" id="7_yjare"]
+[ext_resource type="PackedScene" uid="uid://dg68oa1v7eny7" path="res://3D/Prototype/Kenny_City/building-skyscraper-a.glb" id="9_2547q"]
+[ext_resource type="PackedScene" uid="uid://bxmqnoo8et0ds" path="res://3D/Prototype/Kenny_City/building-skyscraper-b.glb" id="10_nxedt"]
+[ext_resource type="PackedScene" uid="uid://cjqsf66xhghl7" path="res://3D/Prototype/Kenny_City/building-k.glb" id="12_5w338"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_kt8ye"]
 size = Vector2(512, 512)
@@ -28,37 +34,65 @@ omni_attenuation = 3.06
 [node name="Track" type="Node3D" parent="." node_paths=PackedStringArray("_checkpoints")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00151777, 0.00411141, 0.000809431)
 script = ExtResource("3_yjare")
-_checkpoints = [NodePath("Checkpoints/EntityCheckpoint1"), NodePath("Checkpoints/EntityCheckpoint2"), NodePath("Checkpoints/EntityCheckpoint3"), NodePath("Checkpoints/EntityCheckpoint4")]
+_checkpoints = [NodePath("Checkpoints/EntityCheckpoint1"), NodePath("Checkpoints/EntityCheckpoint2")]
 
 [node name="Checkpoints" type="Node3D" parent="Track"]
 
 [node name="EntityCheckpoint1" parent="Track/Checkpoints" instance=ExtResource("4_2547q")]
-transform = Transform3D(-10.6066, 0, 10.6066, 0, 15, 0, -10.6066, 0, -10.6066, -18.1639, 0.209447, 25.1864)
+transform = Transform3D(-30, 0, -4.52987e-06, 0, 30, 0, 4.52987e-06, 0, -30, 30.5342, 0, -2.71677)
 
 [node name="EntityCheckpoint2" parent="Track/Checkpoints" instance=ExtResource("4_2547q")]
-transform = Transform3D(10.6066, 0, 10.6066, 0, 15, 0, -10.6066, 0, 10.6066, -68.9323, 0.209449, 27.4417)
-
-[node name="EntityCheckpoint3" parent="Track/Checkpoints" instance=ExtResource("4_2547q")]
-transform = Transform3D(12.9904, 0, -7.5, 0, 15, 0, 7.5, 0, 12.9904, -75.5158, 0.209449, -19.9811)
-
-[node name="EntityCheckpoint4" parent="Track/Checkpoints" instance=ExtResource("4_2547q")]
-transform = Transform3D(-12.971, -0.0202039, -7.53343, 0.0135698, 14.9999, -0.0635931, 7.53345, -0.0618064, -12.9709, -13.4189, 0.209449, -20.5696)
+transform = Transform3D(15, 0, -7.15256e-07, 0, 15, 0, 7.15256e-07, 0, 15, -43.3052, 0.209445, -30.7049)
 
 [node name="Road" type="Node3D" parent="Track"]
 
 [node name="roadCornerLarger2" parent="Track/Road" instance=ExtResource("4_d5jqp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.9053, 0, 40.0382)
 
 [node name="roadCornerLarger3" parent="Track/Road" instance=ExtResource("4_d5jqp")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -45, -9.31323e-10, 44.0001)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.09471, 0, 84.0382)
 
 [node name="roadCornerLarger4" parent="Track/Road" instance=ExtResource("4_d5jqp")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -89.0001, -9.31323e-10, -0.999902)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -51.095, -9.31323e-10, -80.9617)
 
 [node name="roadCornerLarger5" parent="Track/Road" instance=ExtResource("4_d5jqp")]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -44.0001, -9.31323e-10, -45)
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -6.09454, -9.31323e-10, -124.962)
+
+[node name="roadStraightwidelong2" parent="Track/Road" instance=ExtResource("5_eshfu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.9052, 0, -19.9618)
+
+[node name="roadStraightwideenterlong2" parent="Track/Road" instance=ExtResource("6_5w338")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.9052, 0, -49.9618)
+
+[node name="roadStraightwideenterlong3" parent="Track/Road" instance=ExtResource("6_5w338")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 22.9052, 0, 40.0382)
+
+[node name="roadStraightlong2" parent="Track/Road" instance=ExtResource("7_yjare")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.0947, 0, -50.9618)
+
+[node name="roadStraightlong5" parent="Track/Road" instance=ExtResource("7_yjare")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.0947, -9.31323e-10, -80.9618)
+
+[node name="roadStraightlong7" parent="Track/Road" instance=ExtResource("7_yjare")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.9052, -9.31323e-10, -79.9618)
+
+[node name="roadStraightlong3" parent="Track/Road" instance=ExtResource("7_yjare")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.0947, 0, -20.9618)
+
+[node name="roadStraightlong4" parent="Track/Road" instance=ExtResource("7_yjare")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.0947, 0, 9.0382)
 
 [node name="Floor" type="MeshInstance3D" parent="."]
-transform = Transform3D(-12.971, -0.0202039, -7.53343, 0.0135698, 14.9999, -0.0635931, 7.53345, -0.0618064, -12.9709, -13.7276, -0.691225, -19.7388)
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -13.728, 0, -19.739)
 mesh = SubResource("PlaneMesh_kt8ye")
 skeleton = NodePath("../Track")
 surface_material_override/0 = SubResource("StandardMaterial3D_443p8")
+
+[node name="building-skyscraper-a" parent="." instance=ExtResource("9_2547q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.95904, -7.62939e-06, -72.0054)
+
+[node name="building-skyscraper-b" parent="." instance=ExtResource("10_nxedt")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -7.90406, 0.104118, 41.6421)
+
+[node name="building-k" parent="." instance=ExtResource("12_5w338")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10.0845, 0.00411192, -12.0494)
