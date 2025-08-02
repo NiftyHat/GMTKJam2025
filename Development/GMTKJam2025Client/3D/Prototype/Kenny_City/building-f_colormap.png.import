@@ -2,13 +2,10 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://die08st12eh2m"
+uid="uid://bm6s1n373kqdf"
 path="res://.godot/imported/building-f_colormap.png-17fcee9cb17863770540680146ab8716.ctex"
 metadata={
 "vram_texture": false
-}
-generator_parameters={
-"md5": "ef6c8f021506cbf338b3ccb15ca9a3ac"
 }
 
 [deps]
@@ -24,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

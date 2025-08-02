@@ -2,13 +2,10 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dp6w7okck2di8"
+uid="uid://cdh6fidffmn6i"
 path="res://.godot/imported/detail-parasol-b_colormap.png-a1530795ddd12165cdd89b1ee364fd1c.ctex"
 metadata={
 "vram_texture": false
-}
-generator_parameters={
-"md5": "ef6c8f021506cbf338b3ccb15ca9a3ac"
 }
 
 [deps]
@@ -24,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

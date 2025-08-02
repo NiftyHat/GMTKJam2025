@@ -2,13 +2,10 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxupbxo0cplq7"
+uid="uid://cflqpfi0r1wup"
 path="res://.godot/imported/low-detail-building-l_colormap.png-1fcb3c873a05861ef41f31b957092141.ctex"
 metadata={
 "vram_texture": false
-}
-generator_parameters={
-"md5": "ef6c8f021506cbf338b3ccb15ca9a3ac"
 }
 
 [deps]
@@ -24,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
