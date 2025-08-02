@@ -18,6 +18,7 @@ public partial class CarController : Node3D
 	public float speedInput { get; private set; } = 0;
 	public float turnInput { get; private set; } = 0;
 	public bool isGrounded { get; private set; } = false;
+	public Vector3 DriftAngle { get; private set; } = Vector3.Zero;
 	
 	[Export] private RigidBody3D _rb;
 	[Export] private Camera3D _camera3D;
@@ -101,6 +102,16 @@ public partial class CarController : Node3D
 		// Turning; capped by velocity
 		turnInput = Mathf.DegToRad(Input.GetAxis("SteerLeft", "SteerRight") * steering);
 		CarVisualNode.Steer(turnInput);
+
+		if (isGrounded && Velocity > 10 && (Speed < Velocity * .5f))
+		{
+			DriftAngle = _rb.LinearVelocity;
+		}
+		else
+		{
+			DriftAngle = Vector3.Zero;
+		}
+		CarVisualNode.Drift(DriftAngle);
 		
 	}
 
