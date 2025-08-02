@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://djpruf2ij658q"]
+[gd_scene load_steps=44 format=3 uid="uid://djpruf2ij658q"]
 
 [ext_resource type="PackedScene" uid="uid://de6n0n215fpr5" path="res://Scenes/Camera/GameCamera.tscn" id="1_853f1"]
 [ext_resource type="Texture2D" uid="uid://dhojn25qmrh3b" path="res://Texture/Grid Floor.png" id="2_8um5k"]
@@ -17,9 +17,14 @@
 [ext_resource type="Script" uid="uid://bxwjgtymipxoq" path="res://Script/MainMenu/Screens/MainMenuTextScreenPopupDisplay.cs" id="11_if7li"]
 [ext_resource type="FontFile" uid="uid://4tcf8t2hi7n6" path="res://Fonts/Hauser Bold Italic.otf" id="11_rrcx7"]
 [ext_resource type="FontFile" uid="uid://djnxc24f5yy5" path="res://Fonts/Hauser Bold.otf" id="13_fh7cp"]
+[ext_resource type="Script" uid="uid://dp4ao08gscj3v" path="res://Script/MainMenu/Screens/TrackSelectScreenDisplay.cs" id="18_ke15f"]
 [ext_resource type="Script" uid="uid://cyky1n1o1l21" path="res://Script/MainMenu/MainMenuMusic.cs" id="18_yxkem"]
+[ext_resource type="Texture2D" uid="uid://c2mbxkr3skosf" path="res://3D/Models/Textures/racetrack.png" id="19_311ux"]
 [ext_resource type="Resource" uid="uid://dc5mml11qghcd" path="res://Audio/Music/music_title_screen.tres" id="19_pjscj"]
+[ext_resource type="PackedScene" uid="uid://dn7u8iitv4j0a" path="res://Scenes/Levels/level_short.tscn" id="19_pnils"]
 [ext_resource type="Resource" uid="uid://cgho0gopdveb" path="res://Audio/Music/music_level_select.tres" id="20_m7n2d"]
+[ext_resource type="PackedScene" uid="uid://bs7t7tjyw4eo1" path="res://Scenes/GameScene.tscn" id="20_o66vf"]
+[ext_resource type="PackedScene" uid="uid://bisqo3qgx8bbs" path="res://Scenes/GameScene-KeithTrack.tscn" id="20_ow4wq"]
 [ext_resource type="Environment" uid="uid://b5onbneexcg77" path="res://Scenes/Environments/GameWinEnvironment.tres" id="21_ux20s"]
 [ext_resource type="PackedScene" uid="uid://bvua7x2gcfw2v" path="res://3D/Models/Background_Graveyard.gltf" id="22_bxv1r"]
 [ext_resource type="PackedScene" uid="uid://1bhvbl0nhyga" path="res://3D/Prototype/Kenney_Racing/grass.glb" id="23_311ux"]
@@ -52,8 +57,11 @@ font_color = Color(1, 0.407843, 1, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fh7cp"]
 bg_color = Color(0.211765, 0, 0.552941, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ke15f"]
+bg_color = Color(0.784314, 0.270588, 0.486275, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rrcx7"]
-bg_color = Color(0.733333, 0.172549, 0.403922, 1)
+bg_color = Color(0.980392, 0.619608, 0.235294, 1)
 
 [node name="MainMenu" type="Node3D"]
 
@@ -470,7 +478,7 @@ theme_override_constants/margin_bottom = 40
 
 [node name="PanelContainer" type="PanelContainer" parent="Main Menu Control/CreditsDisplay/MarginContainer"]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rrcx7")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ke15f")
 
 [node name="MarginContainer" type="MarginContainer" parent="Main Menu Control/CreditsDisplay/MarginContainer/PanelContainer"]
 layout_mode = 2
@@ -519,6 +527,124 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 5.0
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Main Menu Control/CreditsDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("13_fh7cp")
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+text = "[center]Press [ESC] to return to the menu[/center]"
+fit_content = true
+
+[node name="TrackSelectDisplay" type="Control" parent="Main Menu Control" node_paths=PackedStringArray("Buttons")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("18_ke15f")
+Buttons = [NodePath("MarginContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer/Circuit/Training"), NodePath("MarginContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer/Figure Eight/Figure Eight"), NodePath("MarginContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer/Jumper/Jump Track")]
+Levels = Array[PackedScene]([ExtResource("19_pnils"), ExtResource("20_o66vf"), ExtResource("20_ow4wq")])
+
+[node name="MarginContainer" type="MarginContainer" parent="Main Menu Control/TrackSelectDisplay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="PanelContainer" type="PanelContainer" parent="Main Menu Control/TrackSelectDisplay/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rrcx7")
+
+[node name="MarginContainer" type="MarginContainer" parent="Main Menu Control/TrackSelectDisplay/MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main Menu Control/TrackSelectDisplay/MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="Main Menu Control/TrackSelectDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="Main Menu Control/TrackSelectDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="Circuit" type="VBoxContainer" parent="Main Menu Control/TrackSelectDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Main Menu Control/TrackSelectDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer/Circuit"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+texture = ExtResource("19_311ux")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Training" type="Button" parent="Main Menu Control/TrackSelectDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer/Circuit"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("13_fh7cp")
+theme_override_font_sizes/font_size = 26
+text = "TRAINING CIRCUIT"
+
+[node name="Figure Eight" type="VBoxContainer" parent="Main Menu Control/TrackSelectDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Main Menu Control/TrackSelectDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer/Figure Eight"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+texture = ExtResource("19_311ux")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Figure Eight" type="Button" parent="Main Menu Control/TrackSelectDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer/Figure Eight"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("13_fh7cp")
+theme_override_font_sizes/font_size = 26
+text = "FIGURE EIGHT"
+
+[node name="Jumper" type="VBoxContainer" parent="Main Menu Control/TrackSelectDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Main Menu Control/TrackSelectDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer/Jumper"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+texture = ExtResource("19_311ux")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Jump Track" type="Button" parent="Main Menu Control/TrackSelectDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer/Jumper"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("13_fh7cp")
+theme_override_font_sizes/font_size = 26
+text = "JUMP TRACK"
+
+[node name="Control" type="Control" parent="Main Menu Control/TrackSelectDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Main Menu Control/TrackSelectDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("13_fh7cp")
 theme_override_font_sizes/normal_font_size = 20
@@ -603,3 +729,7 @@ transform = Transform3D(-0.0809485, 0, 0.655017, 0, 0.66, 0, -0.655017, 0, -0.08
 [connection signal="pressed" from="Main Menu Control/MainMenuDisplay/MarginContainer/VBoxContainer/C" to="Main Menu Control" method="ShowCredits"]
 [connection signal="Cancel" from="Main Menu Control/HowToPlayDisplay" to="Main Menu Control" method="ReturnToMainMenu"]
 [connection signal="Cancel" from="Main Menu Control/CreditsDisplay" to="Main Menu Control" method="ReturnToMainMenu"]
+[connection signal="Cancel" from="Main Menu Control/TrackSelectDisplay" to="Main Menu Control" method="ReturnToMainMenu"]
+[connection signal="pressed" from="Main Menu Control/TrackSelectDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer/Circuit/Training" to="Main Menu Control/TrackSelectDisplay" method="LoadLevel_0"]
+[connection signal="pressed" from="Main Menu Control/TrackSelectDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer/Figure Eight/Figure Eight" to="Main Menu Control/TrackSelectDisplay" method="LoadLevel_1"]
+[connection signal="pressed" from="Main Menu Control/TrackSelectDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer/Jumper/Jump Track" to="Main Menu Control/TrackSelectDisplay" method="LoadLevel_2"]
