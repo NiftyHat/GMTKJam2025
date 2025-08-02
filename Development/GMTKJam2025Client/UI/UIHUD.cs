@@ -8,8 +8,6 @@ public partial class UIHUD : Control
     [Export] private Label _lapCountLabel;
     [Export] private AnimationPlayer _countdownAnimation;
     [Export] private HUDCountdownTimer _timeRemainingView;
-    [Export] private SoundEffectSample _musicNormal;
-
     protected Timer _timer;
 
     public override void _Ready()
@@ -44,12 +42,6 @@ public partial class UIHUD : Control
 
     public void PlayRacing()
     {
-        
-        if (_musicNormal != null)
-        {
-            MusicPlayer.Instance.Play(_musicNormal);
-        }
-
         if (_lapCountLabel != null)
         {
             _lapCountLabel.Visible = true;

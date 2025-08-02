@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SoundEffectSample" load_steps=3 format=3 uid="uid://c4hmt1ppjyfyy"]
+
+[ext_resource type="AudioStream" uid="uid://bxwuf3dvkstuq" path="res://Audio/Music/lsl looplooploop.ogg" id="1_1f870"]
+[ext_resource type="Script" uid="uid://bgq4g1bwf8j3p" path="res://Audio/SoundEffectSample.cs" id="1_jymt5"]
+
+[resource]
+script = ExtResource("1_jymt5")
+Stream = ExtResource("1_1f870")
+VolumeDb = 0.0
+PitchScale = 1.0
+metadata/_custom_type_script = "uid://bgq4g1bwf8j3p"

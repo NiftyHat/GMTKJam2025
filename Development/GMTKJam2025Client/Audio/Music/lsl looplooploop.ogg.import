@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bxwuf3dvkstuq"
+path="res://.godot/imported/lsl looplooploop.ogg-36daed2fba4a4d02736e4a1f3c2c0727.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/Music/lsl looplooploop.ogg"
+dest_files=["res://.godot/imported/lsl looplooploop.ogg-36daed2fba4a4d02736e4a1f3c2c0727.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
