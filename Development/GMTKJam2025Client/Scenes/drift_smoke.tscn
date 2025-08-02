@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dobssek2rvaoe"]
+
+[sub_resource type="Curve" id="Curve_3ohp3"]
+_data = [Vector2(0, 0.398844), 0.0, 0.0, 0, 0, Vector2(0.982456, 0.699422), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_fqcjt"]
+curve = SubResource("Curve_3ohp3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fxg7v"]
+particle_flag_rotate_y = true
+emission_shape = 1
+emission_sphere_radius = 0.5
+angle_min = -180.0
+angle_max = 180.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 3.0
+initial_velocity_max = 4.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.3
+scale_max = 1.2
+scale_curve = SubResource("CurveTexture_fqcjt")
+
+[sub_resource type="SphereMesh" id="SphereMesh_yitli"]
+
+[node name="DriftSmoke" type="GPUParticles3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.0160351, 0, 0)
+amount = 100
+speed_scale = 1.8
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_fxg7v")
+draw_pass_1 = SubResource("SphereMesh_yitli")
