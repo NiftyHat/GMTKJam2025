@@ -14,7 +14,7 @@ public partial class EntityCar : GameEntity
     
     [Export] public double TimePerCheckpoint = 4;
     [Export] public double InitialTime = 20;
-    [Export] public int LapsToWin = 6;
+    [Export] public int LapsToWin = 7;
     
     [Export] public Timer LevelResetTimer { get; set; }
     
@@ -61,6 +61,7 @@ public partial class EntityCar : GameEntity
         }
         if (_lap > LapsToWin)
         {
+            MusicPlayer.Instance.Stop();
             SceneSwitcher.Instance.GoToScene(SceneSwitcher.Instance.Library.GameOver);
         }
         else
@@ -135,12 +136,12 @@ public partial class EntityCar : GameEntity
             }
         }
 
-        if (_lap == LapsToWin - 1)
+        if (_lap == LapsToWin)
         {
             _gameAudio.PlayFinalLap();
         }
 
-        if (lap >= LapsToWin)
+        if (lap > LapsToWin)
         {
             _gameAudio.PlayInfiniteLaps();
         }
