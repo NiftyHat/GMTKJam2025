@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://psvfax7t2ms" path="res://3D/Coffin/Coffin7.tscn" id="18_viwos"]
 [ext_resource type="Texture2D" uid="uid://bdpkysot812ts" path="res://3D/Textures/Sky_T.webp" id="19_tsal5"]
 [ext_resource type="Script" uid="uid://3klfn8jegsue" path="res://Script/GameCamera.cs" id="20_5akvo"]
-[ext_resource type="PackedScene" uid="uid://drncy6tn4jupe" path="res://Scenes/trail.tscn" id="21_qfnc4"]
+[ext_resource type="PackedScene" uid="uid://drncy6tn4jupe" path="res://Scenes/trail1.tscn" id="21_qfnc4"]
 [ext_resource type="PackedScene" uid="uid://dobssek2rvaoe" path="res://Scenes/drift_smoke.tscn" id="22_2logt"]
 [ext_resource type="Script" uid="uid://cc86lg7fm3e7b" path="res://Script/GhostRecorder.cs" id="23_68e7r"]
 [ext_resource type="Script" uid="uid://cv0yn3y5gd06l" path="res://3D/Entities/EntityCar.cs" id="24_vo46g"]

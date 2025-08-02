@@ -1,52 +1,52 @@
 [gd_scene load_steps=44 format=3 uid="uid://djpruf2ij658q"]
 
-[ext_resource type="PackedScene" uid="uid://de6n0n215fpr5" path="res://Scenes/Camera/GameCamera.tscn" id="1_853f1"]
-[ext_resource type="Texture2D" uid="uid://dhojn25qmrh3b" path="res://Texture/Grid Floor.png" id="2_8um5k"]
-[ext_resource type="Script" uid="uid://cmle6ikn6jue1" path="res://Script/MainMenu/MainMenuCameraController.cs" id="2_koqhg"]
-[ext_resource type="PackedScene" uid="uid://pmklrr8m83es" path="res://3D/Models/CarFrame1.gltf" id="3_riqfo"]
-[ext_resource type="Script" uid="uid://cujwqas1amatl" path="res://Script/MainMenu/GentleWobble.cs" id="4_ghw46"]
-[ext_resource type="PackedScene" uid="uid://ctbhh7ga8tyfp" path="res://3D/Models/CarFrame2.gltf" id="4_yxkem"]
-[ext_resource type="PackedScene" uid="uid://ccee5u0vrhm32" path="res://3D/Models/CarFrame3.gltf" id="5_7v4os"]
-[ext_resource type="Texture2D" uid="uid://bajwttt51timw" path="res://Texture/LightspeedLoop_Logo.PNG" id="5_df05h"]
-[ext_resource type="Script" uid="uid://b5eenasigq4ia" path="res://Script/MainMenu/Screens/MainMenuTitleDisplay.cs" id="5_xim88"]
-[ext_resource type="FontFile" uid="uid://c434xdyo2rbtv" path="res://Fonts/abduction2002.ttf" id="6_8um5k"]
-[ext_resource type="Script" uid="uid://jjc2vxsw51q4" path="res://Script/MainMenu/MainMenuControl.cs" id="6_cmrfp"]
-[ext_resource type="PackedScene" uid="uid://dkuiqab77qwkj" path="res://3D/Models/CarFrame4.gltf" id="6_pjscj"]
-[ext_resource type="PackedScene" uid="uid://d1wxxqtmw3dvn" path="res://3D/Models/CarFrame5.gltf" id="7_m7n2d"]
-[ext_resource type="Script" uid="uid://ck60eum4nuv7n" path="res://Script/MainMenu/Screens/MainMenuMainMenuDisplay.cs" id="10_loo7a"]
-[ext_resource type="Script" uid="uid://bxwjgtymipxoq" path="res://Script/MainMenu/Screens/MainMenuTextScreenPopupDisplay.cs" id="11_if7li"]
-[ext_resource type="FontFile" uid="uid://4tcf8t2hi7n6" path="res://Fonts/Hauser Bold Italic.otf" id="11_rrcx7"]
-[ext_resource type="FontFile" uid="uid://djnxc24f5yy5" path="res://Fonts/Hauser Bold.otf" id="13_fh7cp"]
-[ext_resource type="Script" uid="uid://dp4ao08gscj3v" path="res://Script/MainMenu/Screens/TrackSelectScreenDisplay.cs" id="18_ke15f"]
-[ext_resource type="Script" uid="uid://cyky1n1o1l21" path="res://Script/MainMenu/MainMenuMusic.cs" id="18_yxkem"]
-[ext_resource type="Texture2D" uid="uid://c2mbxkr3skosf" path="res://3D/Models/Textures/racetrack.png" id="19_311ux"]
-[ext_resource type="Resource" uid="uid://dc5mml11qghcd" path="res://Audio/Music/music_title_screen.tres" id="19_pjscj"]
-[ext_resource type="PackedScene" uid="uid://dn7u8iitv4j0a" path="res://Scenes/Levels/level_short.tscn" id="19_pnils"]
-[ext_resource type="Resource" uid="uid://cgho0gopdveb" path="res://Audio/Music/music_level_select.tres" id="20_m7n2d"]
-[ext_resource type="PackedScene" uid="uid://bs7t7tjyw4eo1" path="res://Scenes/GameScene.tscn" id="20_o66vf"]
-[ext_resource type="PackedScene" uid="uid://bisqo3qgx8bbs" path="res://Scenes/GameScene-KeithTrack.tscn" id="20_ow4wq"]
-[ext_resource type="Environment" uid="uid://b5onbneexcg77" path="res://Scenes/Environments/GameWinEnvironment.tres" id="21_ux20s"]
-[ext_resource type="PackedScene" uid="uid://bvua7x2gcfw2v" path="res://3D/Models/Background_Graveyard.gltf" id="22_bxv1r"]
-[ext_resource type="PackedScene" uid="uid://1bhvbl0nhyga" path="res://3D/Prototype/Kenney_Racing/grass.glb" id="23_311ux"]
-[ext_resource type="PackedScene" uid="uid://dtsq4dsirk27e" path="res://3D/Prototype/Kenney_Racing/pitsGarageCorner.glb" id="24_pnils"]
-[ext_resource type="PackedScene" uid="uid://dsao6v3tpan8r" path="res://3D/Prototype/Kenney_Racing/pitsOfficeCorner.glb" id="25_ow4wq"]
-[ext_resource type="PackedScene" uid="uid://dkiybupor8wmx" path="res://3D/Prototype/Kenney_Racing/pitsOfficeRoof.glb" id="26_o66vf"]
-[ext_resource type="PackedScene" uid="uid://cmgusbxagih55" path="res://3D/Prototype/Kenney_Racing/roadCornerLarger.glb" id="27_fipmv"]
-[ext_resource type="PackedScene" uid="uid://uctfka66tb0e" path="res://3D/Prototype/Kenney_Racing/roadStraight.glb" id="29_rplfc"]
-[ext_resource type="PackedScene" uid="uid://e66qnpu7wvjk" path="res://3D/Models/Background_PalmTree.gltf" id="30_ux20s"]
+[ext_resource type="PackedScene" uid="uid://de6n0n215fpr5" path="res://Scenes/Camera/GameCamera.tscn" id="1_3ilbw"]
+[ext_resource type="Texture2D" uid="uid://dhojn25qmrh3b" path="res://Texture/Grid Floor.png" id="2_unkyg"]
+[ext_resource type="PackedScene" uid="uid://pmklrr8m83es" path="res://3D/Models/CarFrame1.gltf" id="3_bjadg"]
+[ext_resource type="PackedScene" uid="uid://ctbhh7ga8tyfp" path="res://3D/Models/CarFrame2.gltf" id="4_7hu3n"]
+[ext_resource type="PackedScene" uid="uid://ccee5u0vrhm32" path="res://3D/Models/CarFrame3.gltf" id="5_ctiay"]
+[ext_resource type="PackedScene" uid="uid://dkuiqab77qwkj" path="res://3D/Models/CarFrame4.gltf" id="6_mujgh"]
+[ext_resource type="PackedScene" uid="uid://d1wxxqtmw3dvn" path="res://3D/Models/CarFrame5.gltf" id="7_jiss0"]
+[ext_resource type="Script" uid="uid://cujwqas1amatl" path="res://Script/MainMenu/GentleWobble.cs" id="8_0jpox"]
+[ext_resource type="Script" uid="uid://cmle6ikn6jue1" path="res://Script/MainMenu/MainMenuCameraController.cs" id="9_cvash"]
+[ext_resource type="Script" uid="uid://jjc2vxsw51q4" path="res://Script/MainMenu/MainMenuControl.cs" id="10_ddqxc"]
+[ext_resource type="Script" uid="uid://b5eenasigq4ia" path="res://Script/MainMenu/Screens/MainMenuTitleDisplay.cs" id="11_2wuuh"]
+[ext_resource type="Texture2D" uid="uid://bajwttt51timw" path="res://Texture/LightspeedLoop_Logo.PNG" id="12_bln8o"]
+[ext_resource type="FontFile" uid="uid://c434xdyo2rbtv" path="res://Fonts/abduction2002.ttf" id="13_2uhh5"]
+[ext_resource type="Script" uid="uid://ck60eum4nuv7n" path="res://Script/MainMenu/Screens/MainMenuMainMenuDisplay.cs" id="14_4oir8"]
+[ext_resource type="FontFile" uid="uid://djnxc24f5yy5" path="res://Fonts/Hauser Bold.otf" id="15_54anl"]
+[ext_resource type="Script" uid="uid://bxwjgtymipxoq" path="res://Script/MainMenu/Screens/MainMenuTextScreenPopupDisplay.cs" id="16_rn4ru"]
+[ext_resource type="FontFile" uid="uid://4tcf8t2hi7n6" path="res://Fonts/Hauser Bold Italic.otf" id="17_qn512"]
+[ext_resource type="Script" uid="uid://dp4ao08gscj3v" path="res://Script/MainMenu/Screens/TrackSelectScreenDisplay.cs" id="18_e02ys"]
+[ext_resource type="PackedScene" uid="uid://deq4ufgl60cje" path="res://Scenes/Scenes/GameScene-Training.tscn" id="19_3ilbw"]
+[ext_resource type="PackedScene" uid="uid://bs7t7tjyw4eo1" path="res://Scenes/Scenes/GameScene-FigureEight.tscn" id="20_ie5s8"]
+[ext_resource type="PackedScene" uid="uid://bisqo3qgx8bbs" path="res://Scenes/Scenes/GameScene-KeithTrack.tscn" id="21_dvcj5"]
+[ext_resource type="Texture2D" uid="uid://c2mbxkr3skosf" path="res://3D/Models/Textures/racetrack.png" id="22_ab2xv"]
+[ext_resource type="Script" uid="uid://cyky1n1o1l21" path="res://Script/MainMenu/MainMenuMusic.cs" id="23_twyny"]
+[ext_resource type="Resource" uid="uid://dc5mml11qghcd" path="res://Audio/Music/music_title_screen.tres" id="24_wyih3"]
+[ext_resource type="Resource" uid="uid://cgho0gopdveb" path="res://Audio/Music/music_level_select.tres" id="25_o85oa"]
+[ext_resource type="Environment" uid="uid://b5onbneexcg77" path="res://Scenes/Environments/GameWinEnvironment.tres" id="26_xqdd7"]
+[ext_resource type="PackedScene" uid="uid://bvua7x2gcfw2v" path="res://3D/Models/Background_Graveyard.gltf" id="27_645u6"]
+[ext_resource type="PackedScene" uid="uid://1bhvbl0nhyga" path="res://3D/Prototype/Kenney_Racing/grass.glb" id="28_xah47"]
+[ext_resource type="PackedScene" uid="uid://dtsq4dsirk27e" path="res://3D/Prototype/Kenney_Racing/pitsGarageCorner.glb" id="29_iwck6"]
+[ext_resource type="PackedScene" uid="uid://dsao6v3tpan8r" path="res://3D/Prototype/Kenney_Racing/pitsOfficeCorner.glb" id="30_22oil"]
+[ext_resource type="PackedScene" uid="uid://dkiybupor8wmx" path="res://3D/Prototype/Kenney_Racing/pitsOfficeRoof.glb" id="31_ws7a8"]
+[ext_resource type="PackedScene" uid="uid://cmgusbxagih55" path="res://3D/Prototype/Kenney_Racing/roadCornerLarger.glb" id="32_s6wl2"]
+[ext_resource type="PackedScene" uid="uid://uctfka66tb0e" path="res://3D/Prototype/Kenney_Racing/roadStraight.glb" id="33_dq8cu"]
+[ext_resource type="PackedScene" uid="uid://e66qnpu7wvjk" path="res://3D/Models/Background_PalmTree.gltf" id="34_l16cw"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ghw46"]
 size = Vector2(512, 512)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_df05h"]
-albedo_texture = ExtResource("2_8um5k")
+albedo_texture = ExtResource("2_unkyg")
 uv1_scale = Vector3(32, 32, 32)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xim88"]
 bg_color = Color(0.254902, 0, 0.572549, 0.784314)
 
 [sub_resource type="LabelSettings" id="LabelSettings_xim88"]
-font = ExtResource("6_8um5k")
+font = ExtResource("13_2uhh5")
 font_size = 56
 font_color = Color(1, 0.407843, 1, 1)
 
@@ -65,7 +65,7 @@ bg_color = Color(0.980392, 0.619608, 0.235294, 1)
 
 [node name="MainMenu" type="Node3D"]
 
-[node name="Camera3D" parent="." node_paths=PackedStringArray("LookAtTarget", "CameraPositionTarget", "CameraFocusTarget") instance=ExtResource("1_853f1")]
+[node name="Camera3D" parent="." node_paths=PackedStringArray("LookAtTarget", "CameraPositionTarget", "CameraFocusTarget") instance=ExtResource("1_3ilbw")]
 transform = Transform3D(0.999722, -0.00434148, -0.0231937, 0, 0.982928, -0.183988, 0.0235965, 0.183937, 0.982655, 0.0139495, 0.250505, 0.345816)
 LookAtTarget = NodePath("../Positioners/Camera Lookat Target")
 CameraPositionTarget = NodePath("../Positioners/Title Cam Position")
@@ -83,19 +83,19 @@ mesh = SubResource("PlaneMesh_ghw46")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_df05h")
 
-[node name="CarFrame12" parent="Scene Composition" instance=ExtResource("3_riqfo")]
+[node name="CarFrame12" parent="Scene Composition" instance=ExtResource("3_bjadg")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.1717, 0.379746, 0.514106)
 
-[node name="CarFrame22" parent="Scene Composition" instance=ExtResource("4_yxkem")]
+[node name="CarFrame22" parent="Scene Composition" instance=ExtResource("4_7hu3n")]
 transform = Transform3D(-0.52351, 0, 0.852019, 0, 1, 0, -0.852019, 0, -0.52351, -4.24749, 0.236205, -1.93865)
 
-[node name="CarFrame32" parent="Scene Composition" instance=ExtResource("5_7v4os")]
+[node name="CarFrame32" parent="Scene Composition" instance=ExtResource("5_ctiay")]
 transform = Transform3D(-0.273221, 0, 0.961951, 0, 1, 0, -0.961951, 0, -0.273221, -5.74084, 0.423683, -3.6717)
 
-[node name="CarFrame42" parent="Scene Composition" instance=ExtResource("6_pjscj")]
+[node name="CarFrame42" parent="Scene Composition" instance=ExtResource("6_mujgh")]
 transform = Transform3D(-0.845336, 0, 0.534234, 0, 1, 0, -0.534234, 0, -0.845336, -2.88289, 0.341503, -0.357002)
 
-[node name="CarFrame52" parent="Scene Composition" instance=ExtResource("7_m7n2d")]
+[node name="CarFrame52" parent="Scene Composition" instance=ExtResource("7_jiss0")]
 transform = Transform3D(-0.956666, 0, 0.291186, 0, 1, 0, -0.291186, 0, -0.956666, -0.897436, 0.378327, 0)
 
 [node name="Positioners" type="Node" parent="."]
@@ -111,7 +111,7 @@ transform = Transform3D(-0.520375, 0.0111907, -0.853864, 0.00444148, 0.999936, 0
 
 [node name="Title Cam Focus - Wobble" type="Node3D" parent="Positioners/Title Cam Focus"]
 transform = Transform3D(1, 6.98492e-10, -2.98023e-08, 5.82077e-10, 1, 6.40284e-10, 2.98023e-08, 5.82077e-11, 1, 0.00542438, -0.00762185, -0.0184967)
-script = ExtResource("4_ghw46")
+script = ExtResource("8_0jpox")
 Range = Vector3(0, 0.25, 0.125)
 Duration = 1.0
 
@@ -123,7 +123,7 @@ transform = Transform3D(0.895751, 0, 0.444557, 0, 1, 0, -0.444557, 0, 0.895751, 
 
 [node name="Main Cam Focus - Wobble" type="Node3D" parent="Positioners/Main Cam Focus"]
 transform = Transform3D(1, 6.98492e-10, -2.98023e-08, 5.82077e-10, 1, 6.40284e-10, 2.98023e-08, 5.82077e-11, 1, 0, 0, 0)
-script = ExtResource("4_ghw46")
+script = ExtResource("8_0jpox")
 Range = Vector3(0, 0.25, 0)
 Duration = 1.0
 
@@ -134,7 +134,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("2_koqhg")
+script = ExtResource("9_cvash")
 GameCamera = NodePath("../Camera3D")
 TitlePosition = NodePath("../Positioners/Title Cam Position")
 TitleFocus = NodePath("../Positioners/Title Cam Focus/Title Cam Focus - Wobble")
@@ -150,7 +150,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("6_cmrfp")
+script = ExtResource("10_ddqxc")
 
 [node name="TitleScreenDisplay" type="Control" parent="Main Menu Control"]
 layout_mode = 1
@@ -159,7 +159,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("5_xim88")
+script = ExtResource("11_2wuuh")
 ColorPulseA = Color(0.694118, 0.137255, 0.435294, 1)
 ColorPulseB = Color(0.862745, 0.32549, 0.294118, 1)
 ColorFlashA = Color(0.984314, 0.721569, 0.12549, 1)
@@ -190,7 +190,7 @@ custom_minimum_size = Vector2(0, 250)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("5_df05h")
+texture = ExtResource("12_bln8o")
 expand_mode = 3
 
 [node name="Control2" type="Control" parent="Main Menu Control/TitleScreenDisplay/VBoxContainer/TitleBox"]
@@ -234,7 +234,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("10_loo7a")
+script = ExtResource("14_4oir8")
 
 [node name="MarginContainer" type="MarginContainer" parent="Main Menu Control/MainMenuDisplay"]
 layout_mode = 1
@@ -260,7 +260,7 @@ focus_previous = NodePath("../C")
 theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
-theme_override_fonts/font = ExtResource("13_fh7cp")
+theme_override_fonts/font = ExtResource("15_54anl")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/focus = SubResource("StyleBoxEmpty_loo7a")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_if7li")
@@ -273,7 +273,7 @@ layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
-theme_override_fonts/font = ExtResource("13_fh7cp")
+theme_override_fonts/font = ExtResource("15_54anl")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/focus = SubResource("StyleBoxEmpty_loo7a")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_if7li")
@@ -286,7 +286,7 @@ layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
-theme_override_fonts/font = ExtResource("13_fh7cp")
+theme_override_fonts/font = ExtResource("15_54anl")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/focus = SubResource("StyleBoxEmpty_loo7a")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_if7li")
@@ -299,7 +299,7 @@ layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
-theme_override_fonts/font = ExtResource("13_fh7cp")
+theme_override_fonts/font = ExtResource("15_54anl")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/focus = SubResource("StyleBoxEmpty_loo7a")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_if7li")
@@ -314,7 +314,7 @@ focus_next = NodePath("../HTP")
 theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
-theme_override_fonts/font = ExtResource("13_fh7cp")
+theme_override_fonts/font = ExtResource("15_54anl")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/focus = SubResource("StyleBoxEmpty_loo7a")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_if7li")
@@ -329,7 +329,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("11_if7li")
+script = ExtResource("16_rn4ru")
 
 [node name="MarginContainer" type="MarginContainer" parent="Main Menu Control/HowToPlayDisplay"]
 layout_mode = 1
@@ -372,13 +372,13 @@ layout_mode = 2
 custom_minimum_size = Vector2(0, 250)
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("5_df05h")
+texture = ExtResource("12_bln8o")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Main Menu Control/HowToPlayDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("13_fh7cp")
+theme_override_fonts/normal_font = ExtResource("15_54anl")
 theme_override_font_sizes/normal_font_size = 20
 theme_override_font_sizes/bold_font_size = 28
 bbcode_enabled = true
@@ -401,13 +401,13 @@ layout_mode = 2
 custom_minimum_size = Vector2(0, 250)
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("5_df05h")
+texture = ExtResource("12_bln8o")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Main Menu Control/HowToPlayDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer2/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("13_fh7cp")
+theme_override_fonts/normal_font = ExtResource("15_54anl")
 theme_override_font_sizes/normal_font_size = 20
 theme_override_font_sizes/bold_font_size = 28
 bbcode_enabled = true
@@ -429,13 +429,13 @@ layout_mode = 2
 custom_minimum_size = Vector2(0, 250)
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("5_df05h")
+texture = ExtResource("12_bln8o")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Main Menu Control/HowToPlayDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer3/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("13_fh7cp")
+theme_override_fonts/normal_font = ExtResource("15_54anl")
 theme_override_font_sizes/normal_font_size = 20
 theme_override_font_sizes/bold_font_size = 28
 bbcode_enabled = true
@@ -448,7 +448,7 @@ horizontal_alignment = 1
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Main Menu Control/HowToPlayDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("13_fh7cp")
+theme_override_fonts/normal_font = ExtResource("15_54anl")
 theme_override_font_sizes/normal_font_size = 20
 theme_override_font_sizes/bold_font_size = 28
 bbcode_enabled = true
@@ -462,7 +462,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("11_if7li")
+script = ExtResource("16_rn4ru")
 
 [node name="MarginContainer" type="MarginContainer" parent="Main Menu Control/CreditsDisplay"]
 layout_mode = 1
@@ -502,13 +502,13 @@ custom_minimum_size = Vector2(0, 250)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("5_df05h")
+texture = ExtResource("12_bln8o")
 expand_mode = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Main Menu Control/CreditsDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("13_fh7cp")
-theme_override_fonts/bold_font = ExtResource("11_rrcx7")
+theme_override_fonts/normal_font = ExtResource("15_54anl")
+theme_override_fonts/bold_font = ExtResource("17_qn512")
 theme_override_font_sizes/normal_font_size = 20
 theme_override_font_sizes/bold_font_size = 28
 bbcode_enabled = true
@@ -528,7 +528,7 @@ size_flags_stretch_ratio = 5.0
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Main Menu Control/CreditsDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("13_fh7cp")
+theme_override_fonts/normal_font = ExtResource("15_54anl")
 theme_override_font_sizes/normal_font_size = 20
 theme_override_font_sizes/bold_font_size = 28
 bbcode_enabled = true
@@ -542,9 +542,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("18_ke15f")
+script = ExtResource("18_e02ys")
 Buttons = [NodePath("MarginContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer/Circuit/Training"), NodePath("MarginContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer/Figure Eight/Figure Eight"), NodePath("MarginContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer/Jumper/Jump Track")]
-Levels = Array[PackedScene]([ExtResource("19_pnils"), ExtResource("20_o66vf"), ExtResource("20_ow4wq")])
+Levels = Array[PackedScene]([ExtResource("19_3ilbw"), ExtResource("20_ie5s8"), ExtResource("21_dvcj5")])
 
 [node name="MarginContainer" type="MarginContainer" parent="Main Menu Control/TrackSelectDisplay"]
 layout_mode = 1
@@ -588,7 +588,7 @@ size_flags_vertical = 3
 [node name="TextureRect" type="TextureRect" parent="Main Menu Control/TrackSelectDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer/Circuit"]
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
-texture = ExtResource("19_311ux")
+texture = ExtResource("22_ab2xv")
 expand_mode = 5
 stretch_mode = 4
 
@@ -596,7 +596,7 @@ stretch_mode = 4
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("13_fh7cp")
+theme_override_fonts/font = ExtResource("15_54anl")
 theme_override_font_sizes/font_size = 26
 text = "TRAINING CIRCUIT"
 
@@ -608,7 +608,7 @@ size_flags_vertical = 3
 [node name="TextureRect" type="TextureRect" parent="Main Menu Control/TrackSelectDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer/Figure Eight"]
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
-texture = ExtResource("19_311ux")
+texture = ExtResource("22_ab2xv")
 expand_mode = 5
 stretch_mode = 4
 
@@ -616,7 +616,7 @@ stretch_mode = 4
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("13_fh7cp")
+theme_override_fonts/font = ExtResource("15_54anl")
 theme_override_font_sizes/font_size = 26
 text = "FIGURE EIGHT"
 
@@ -628,7 +628,7 @@ size_flags_vertical = 3
 [node name="TextureRect" type="TextureRect" parent="Main Menu Control/TrackSelectDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer/Jumper"]
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
-texture = ExtResource("19_311ux")
+texture = ExtResource("22_ab2xv")
 expand_mode = 5
 stretch_mode = 4
 
@@ -636,7 +636,7 @@ stretch_mode = 4
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("13_fh7cp")
+theme_override_fonts/font = ExtResource("15_54anl")
 theme_override_font_sizes/font_size = 26
 text = "JUMP TRACK"
 
@@ -646,7 +646,7 @@ size_flags_vertical = 3
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Main Menu Control/TrackSelectDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("13_fh7cp")
+theme_override_fonts/normal_font = ExtResource("15_54anl")
 theme_override_font_sizes/normal_font_size = 20
 theme_override_font_sizes/bold_font_size = 28
 bbcode_enabled = true
@@ -654,9 +654,9 @@ text = "[center]Press [ESC] to return to the menu[/center]"
 fit_content = true
 
 [node name="Main Menu Music" type="Node" parent="."]
-script = ExtResource("18_yxkem")
-_musicTitle = ExtResource("19_pjscj")
-_musicSelect = ExtResource("20_m7n2d")
+script = ExtResource("23_twyny")
+_musicTitle = ExtResource("24_wyih3")
+_musicSelect = ExtResource("25_o85oa")
 
 [node name="Scene Composition2" type="Node" parent="."]
 
@@ -667,56 +667,56 @@ light_energy = 0.393
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Scene Composition2"]
-environment = ExtResource("21_ux20s")
+environment = ExtResource("26_xqdd7")
 
 [node name="Scene" type="Node3D" parent="Scene Composition2"]
 transform = Transform3D(0.865242, 0, -1.80315, 0, 2, 0, 1.80315, 0, 0.865242, -0.0341666, 0, -6.65328)
 
-[node name="Background_Graveyard2" parent="Scene Composition2/Scene" instance=ExtResource("22_bxv1r")]
+[node name="Background_Graveyard2" parent="Scene Composition2/Scene" instance=ExtResource("27_645u6")]
 transform = Transform3D(-0.998471, 0, -0.0552642, 0, 1, 0, 0.0552642, 0, -0.998471, 13.8967, 0, 8.86761)
 
-[node name="Background_Graveyard3" parent="Scene Composition2/Scene" instance=ExtResource("22_bxv1r")]
+[node name="Background_Graveyard3" parent="Scene Composition2/Scene" instance=ExtResource("27_645u6")]
 transform = Transform3D(-0.998471, 0, -0.0552642, 0, 1, 0, 0.0552642, 0, -0.998471, 12.5668, 0, -15.1611)
 
-[node name="grass" parent="Scene Composition2/Scene" instance=ExtResource("23_311ux")]
+[node name="grass" parent="Scene Composition2/Scene" instance=ExtResource("28_xah47")]
 transform = Transform3D(10.1099, 0, 0, 0, 1, 0, 0, 0, 14.4412, 0.10368, 0, -0.00197184)
 
 [node name="Buildings" type="Node3D" parent="Scene Composition2/Scene"]
 
-[node name="pitsGarageCorner" parent="Scene Composition2/Scene/Buildings" instance=ExtResource("24_pnils")]
+[node name="pitsGarageCorner" parent="Scene Composition2/Scene/Buildings" instance=ExtResource("29_iwck6")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.07404, -0.0141069, 0.18482)
 
-[node name="pitsOfficeCorner" parent="Scene Composition2/Scene/Buildings" instance=ExtResource("25_ow4wq")]
+[node name="pitsOfficeCorner" parent="Scene Composition2/Scene/Buildings" instance=ExtResource("30_22oil")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.1664, -0.0141069, 1.203)
 
-[node name="pitsOfficeRoof" parent="Scene Composition2/Scene/Buildings" instance=ExtResource("26_o66vf")]
+[node name="pitsOfficeRoof" parent="Scene Composition2/Scene/Buildings" instance=ExtResource("31_ws7a8")]
 transform = Transform3D(1.24213, 0, 0.840893, 0, 1.5, 0, -0.840893, 0, 1.24213, -0.216901, 0.00499995, -1.82639)
 
-[node name="roadCornerLarger" parent="Scene Composition2/Scene" instance=ExtResource("27_fipmv")]
+[node name="roadCornerLarger" parent="Scene Composition2/Scene" instance=ExtResource("32_s6wl2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15627, 0.00566781, -0.756123)
 
-[node name="roadStraight" parent="Scene Composition2/Scene" instance=ExtResource("29_rplfc")]
+[node name="roadStraight" parent="Scene Composition2/Scene" instance=ExtResource("33_dq8cu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.219475, 0.00566781, 1.30708)
 
-[node name="roadStraight2" parent="Scene Composition2/Scene" instance=ExtResource("29_rplfc")]
+[node name="roadStraight2" parent="Scene Composition2/Scene" instance=ExtResource("33_dq8cu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.219475, 0.00566781, 2.30708)
 
-[node name="roadStraight3" parent="Scene Composition2/Scene" instance=ExtResource("29_rplfc")]
+[node name="roadStraight3" parent="Scene Composition2/Scene" instance=ExtResource("33_dq8cu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.219476, 0.00566781, 3.30708)
 
-[node name="roadStraight4" parent="Scene Composition2/Scene" instance=ExtResource("29_rplfc")]
+[node name="roadStraight4" parent="Scene Composition2/Scene" instance=ExtResource("33_dq8cu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 5.047, 0.219476, 0.00566781, 6.33058)
 
-[node name="roadStraight5" parent="Scene Composition2/Scene" instance=ExtResource("29_rplfc")]
+[node name="roadStraight5" parent="Scene Composition2/Scene" instance=ExtResource("33_dq8cu")]
 transform = Transform3D(-2.98023e-08, 0, 5.047, 0, 1, 0, -1, 0, -2.38419e-07, 5.24297, 0.0056678, -1.69292)
 
-[node name="Background_PalmTree31" parent="Scene Composition2" instance=ExtResource("30_ux20s")]
+[node name="Background_PalmTree31" parent="Scene Composition2" instance=ExtResource("34_l16cw")]
 transform = Transform3D(0.225716, 0, 0.974193, 0, 1, 0, -0.974193, 0, 0.225716, 1.02391, -1.51314, -4.01419)
 
-[node name="Background_PalmTree32" parent="Scene Composition2" instance=ExtResource("30_ux20s")]
+[node name="Background_PalmTree32" parent="Scene Composition2" instance=ExtResource("34_l16cw")]
 transform = Transform3D(-0.579557, 0, 0.315775, 0, 0.66, 0, -0.315775, 0, -0.579557, 5.58017, -1.32004, -7.47405)
 
-[node name="Background_PalmTree33" parent="Scene Composition2" instance=ExtResource("30_ux20s")]
+[node name="Background_PalmTree33" parent="Scene Composition2" instance=ExtResource("34_l16cw")]
 transform = Transform3D(-0.0809485, 0, 0.655017, 0, 0.66, 0, -0.655017, 0, -0.0809485, 4.77836, -1.32004, -7.03877)
 
 [connection signal="FadeInAnimationStarted" from="Main Menu Control/TitleScreenDisplay" to="MainMenuCameraControl" method="ChangeCameraToTitle"]
