@@ -98,6 +98,29 @@ script = ExtResource("1_6vvcf")
 hud = NodePath("../HUD")
 pauseScreen = NodePath("../Pause")
 
+[node name="CarVisuals" type="Node" parent="GameControl"]
+
+[node name="CarFrame1" parent="GameControl/CarVisuals" instance=ExtResource("11_leul7")]
+transform = Transform3D(1, 2.05546e-10, 4.65661e-10, -5.11136e-10, 1, 9.31323e-10, -4.65661e-10, 4.65661e-10, 1, 0, 0, 0)
+
+[node name="CarFrame2" parent="GameControl/CarVisuals" instance=ExtResource("12_wp4mh")]
+transform = Transform3D(1, 2.05546e-10, 4.65661e-10, -5.11136e-10, 1, 9.31323e-10, -4.65661e-10, 4.65661e-10, 1, 0, 0, 0)
+
+[node name="CarFrame3" parent="GameControl/CarVisuals" instance=ExtResource("13_y0yaw")]
+transform = Transform3D(1, 2.05546e-10, 4.65661e-10, -5.11136e-10, 1, 9.31323e-10, -4.65661e-10, 4.65661e-10, 1, 0, 0, 0)
+
+[node name="CarFrame4" parent="GameControl/CarVisuals" instance=ExtResource("14_yl3ua")]
+transform = Transform3D(1, 2.05546e-10, 4.65661e-10, -5.11136e-10, 1, 9.31323e-10, -4.65661e-10, 4.65661e-10, 1, 0, 0, 0)
+
+[node name="CarFrame5" parent="GameControl/CarVisuals" instance=ExtResource("15_lko2l")]
+transform = Transform3D(1, 2.05546e-10, 4.65661e-10, -5.11136e-10, 1, 9.31323e-10, -4.65661e-10, 4.65661e-10, 1, 0, 0, 0)
+
+[node name="CarFrame6" parent="GameControl/CarVisuals" instance=ExtResource("16_em6uu")]
+transform = Transform3D(1, 2.05546e-10, 4.65661e-10, -5.11136e-10, 1, 9.31323e-10, -4.65661e-10, 4.65661e-10, 1, 0, 0, 0)
+
+[node name="CarFrame7" parent="GameControl/CarVisuals" instance=ExtResource("17_odb6r")]
+transform = Transform3D(1, 2.05546e-10, 4.65661e-10, -5.11136e-10, 1, 9.31323e-10, -4.65661e-10, 4.65661e-10, 1, 0, 0, 0)
+
 [node name="Camera" type="Node" parent="GameControl"]
 
 [node name="CameraTarget" type="Node3D" parent="GameControl/Camera"]
@@ -164,20 +187,6 @@ GroundDistance = 0.5
 
 [node name="Visuals" type="Node3D" parent="GameControl/Player Car/Car Controller"]
 transform = Transform3D(1, 2.05546e-10, 4.65661e-10, -5.11136e-10, 1, 9.31323e-10, -4.65661e-10, 4.65661e-10, 1, 0, -2.38419e-07, 0)
-
-[node name="CarFrame1" parent="GameControl/Player Car/Car Controller/Visuals" instance=ExtResource("11_leul7")]
-
-[node name="CarFrame2" parent="GameControl/Player Car/Car Controller/Visuals" instance=ExtResource("12_wp4mh")]
-
-[node name="CarFrame3" parent="GameControl/Player Car/Car Controller/Visuals" instance=ExtResource("13_y0yaw")]
-
-[node name="CarFrame4" parent="GameControl/Player Car/Car Controller/Visuals" instance=ExtResource("14_yl3ua")]
-
-[node name="CarFrame5" parent="GameControl/Player Car/Car Controller/Visuals" instance=ExtResource("15_lko2l")]
-
-[node name="CarFrame6" parent="GameControl/Player Car/Car Controller/Visuals" instance=ExtResource("16_em6uu")]
-
-[node name="CarFrame7" parent="GameControl/Player Car/Car Controller/Visuals" instance=ExtResource("17_odb6r")]
 
 [node name="GroundCheck" type="Node3D" parent="GameControl/Player Car/Car Controller"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.440059, 0)
