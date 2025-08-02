@@ -1036,40 +1036,47 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
 script = ExtResource("4_y0yaw")
 metadata/_edit_lock_ = true
 
-[node name="CarFrame1" parent="GameControl/CarVisuals" node_paths=PackedStringArray("DriftSmokePrototype") instance=ExtResource("11_leul7")]
+[node name="CarFrame1" parent="GameControl/CarVisuals" node_paths=PackedStringArray("DriftSmokePrototype", "TrailPrototype") instance=ExtResource("11_leul7")]
 transform = Transform3D(1, 2.05546e-10, 4.65661e-10, -5.11136e-10, 1, 9.31323e-10, -4.65661e-10, 4.65661e-10, 1, 0, 0, 0)
 script = ExtResource("6_yl3ua")
-DriftSmokePrototype = NodePath("../../Player Car/Car Controller/DriftSmoke")
+DriftSmokePrototype = NodePath("../../DriftSmoke")
+TrailPrototype = NodePath("../../Trail")
 
-[node name="CarFrame2" parent="GameControl/CarVisuals" node_paths=PackedStringArray("DriftSmokePrototype") instance=ExtResource("12_wp4mh")]
+[node name="CarFrame2" parent="GameControl/CarVisuals" node_paths=PackedStringArray("DriftSmokePrototype", "TrailPrototype") instance=ExtResource("12_wp4mh")]
 transform = Transform3D(1, 2.05546e-10, 4.65661e-10, -5.11136e-10, 1, 9.31323e-10, -4.65661e-10, 4.65661e-10, 1, 0, 0, 0)
 script = ExtResource("6_yl3ua")
-DriftSmokePrototype = NodePath("../../Player Car/Car Controller/DriftSmoke")
+DriftSmokePrototype = NodePath("../../DriftSmoke")
+TrailPrototype = NodePath("../../Trail")
 
-[node name="CarFrame3" parent="GameControl/CarVisuals" node_paths=PackedStringArray("DriftSmokePrototype") instance=ExtResource("13_y0yaw")]
+[node name="CarFrame3" parent="GameControl/CarVisuals" node_paths=PackedStringArray("DriftSmokePrototype", "TrailPrototype") instance=ExtResource("13_y0yaw")]
 transform = Transform3D(1, 2.05546e-10, 4.65661e-10, -5.11136e-10, 1, 9.31323e-10, -4.65661e-10, 4.65661e-10, 1, 0, 0, 0)
 script = ExtResource("6_yl3ua")
-DriftSmokePrototype = NodePath("../../Player Car/Car Controller/DriftSmoke")
+DriftSmokePrototype = NodePath("../../DriftSmoke")
+TrailPrototype = NodePath("../../Trail")
 
-[node name="CarFrame4" parent="GameControl/CarVisuals" node_paths=PackedStringArray("DriftSmokePrototype") instance=ExtResource("14_yl3ua")]
+[node name="CarFrame4" parent="GameControl/CarVisuals" node_paths=PackedStringArray("DriftSmokePrototype", "TrailPrototype") instance=ExtResource("14_yl3ua")]
 transform = Transform3D(1, 2.05546e-10, 4.65661e-10, -5.11136e-10, 1, 9.31323e-10, -4.65661e-10, 4.65661e-10, 1, 0, 0, 0)
 script = ExtResource("6_yl3ua")
-DriftSmokePrototype = NodePath("../../Player Car/Car Controller/DriftSmoke")
+DriftSmokePrototype = NodePath("../../DriftSmoke")
+TrailPrototype = NodePath("../../Trail")
 
-[node name="CarFrame5" parent="GameControl/CarVisuals" node_paths=PackedStringArray("DriftSmokePrototype") instance=ExtResource("15_lko2l")]
+[node name="CarFrame5" parent="GameControl/CarVisuals" node_paths=PackedStringArray("DriftSmokePrototype", "TrailPrototype") instance=ExtResource("15_lko2l")]
 transform = Transform3D(1, 2.05546e-10, 4.65661e-10, -5.11136e-10, 1, 9.31323e-10, -4.65661e-10, 4.65661e-10, 1, 0, 0, 0)
 script = ExtResource("6_yl3ua")
-DriftSmokePrototype = NodePath("../../Player Car/Car Controller/DriftSmoke")
+DriftSmokePrototype = NodePath("../../DriftSmoke")
+TrailPrototype = NodePath("../../Trail")
 
-[node name="CarFrame6" parent="GameControl/CarVisuals" node_paths=PackedStringArray("DriftSmokePrototype") instance=ExtResource("16_em6uu")]
+[node name="CarFrame6" parent="GameControl/CarVisuals" node_paths=PackedStringArray("DriftSmokePrototype", "TrailPrototype") instance=ExtResource("16_em6uu")]
 transform = Transform3D(1, 2.05546e-10, 4.65661e-10, -5.11136e-10, 1, 9.31323e-10, -4.65661e-10, 4.65661e-10, 1, 0, 0, 0)
 script = ExtResource("6_yl3ua")
-DriftSmokePrototype = NodePath("../../Player Car/Car Controller/DriftSmoke")
+DriftSmokePrototype = NodePath("../../DriftSmoke")
+TrailPrototype = NodePath("../../Trail")
 
-[node name="CarFrame7" parent="GameControl/CarVisuals" node_paths=PackedStringArray("DriftSmokePrototype") instance=ExtResource("17_odb6r")]
+[node name="CarFrame7" parent="GameControl/CarVisuals" node_paths=PackedStringArray("DriftSmokePrototype", "TrailPrototype") instance=ExtResource("17_odb6r")]
 transform = Transform3D(1, 2.05546e-10, 4.65661e-10, -5.11136e-10, 1, 9.31323e-10, -4.65661e-10, 4.65661e-10, 1, 0, 0, 0)
 script = ExtResource("6_yl3ua")
-DriftSmokePrototype = NodePath("../../Player Car/Car Controller/DriftSmoke")
+DriftSmokePrototype = NodePath("../../DriftSmoke")
+TrailPrototype = NodePath("../../Trail")
 
 [node name="CarCoffin1" parent="GameControl/CarVisuals" instance=ExtResource("8_qolck")]
 script = ExtResource("14_rsfko")
@@ -1110,6 +1117,13 @@ FOVAtMaxSpeed = 55.0
 FOVNormal = 45.0
 FOVTarget = 45.0
 CarController = NodePath("../../Player Car/Car Controller")
+
+[node name="Trail" parent="GameControl" instance=ExtResource("31_82uqo")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+
+[node name="DriftSmoke" parent="GameControl" instance=ExtResource("30_rsfko")]
+transform = Transform3D(0.0134561, -0.99991, 0, 0.99991, 0.0134561, 0, 0, 0, 1, 0, 0, 0)
+visible = false
 
 [node name="GhostRecorder" type="Node3D" parent="GameControl" node_paths=PackedStringArray("CarRigidbody", "GhostCarPrototype", "CarVisualLibrary")]
 process_mode = 1
@@ -1169,10 +1183,6 @@ turnSpeed = 12.0
 minimumTurnSpeed = 1.0
 metadata/_edit_lock_ = true
 
-[node name="DriftSmoke" parent="GameControl/Player Car/Car Controller" instance=ExtResource("30_rsfko")]
-transform = Transform3D(0.0134561, -0.99991, 0, 0.99991, 0.0134561, 0, 0, 0, 1, -0.00926208, -1.01087, -0.76152)
-visible = false
-
 [node name="GroundCheck" type="Node3D" parent="GameControl/Player Car/Car Controller"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.440059, 0)
 
@@ -1184,9 +1194,6 @@ transform = Transform3D(1, 0, 0, 0, 0.997564, -0.0697565, 0, 0.0697565, 0.997564
 
 [node name="GroundCheckRaycast" type="RayCast3D" parent="GameControl/Player Car/Car Controller"]
 target_position = Vector3(0, -2, 0)
-
-[node name="Trail" parent="GameControl/Player Car/Car Controller" instance=ExtResource("31_82uqo")]
-transform = Transform3D(1, 0, 0, 0, -0.00842983, 0.999964, 0, -0.999964, -0.00842983, 0.000427246, -0.769086, 2.50794)
 
 [node name="RigidBody" type="RigidBody3D" parent="GameControl/Player Car" node_paths=PackedStringArray("Entity")]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, -0.514376, 0.652387, -7.93658)
