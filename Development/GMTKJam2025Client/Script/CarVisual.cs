@@ -18,11 +18,8 @@ public partial class CarVisual: Node3D
 	private Vector3 WheelSteeringRotation;
 	private Vector3 DriverRotation;
 
-	[Export] private GpuParticles3D DriftSmokePrototype;
-	[Export] private GpuParticles3D TrailPrototype;
-	private GpuParticles3D driftSmokeA;
-	private GpuParticles3D driftSmokeB;
-	private GpuParticles3D trail;
+	[Export] private GpuParticles3D driftSmokeA;
+	[Export] private GpuParticles3D driftSmokeB;
 
 	//private readonly Vector3 TrailPosition = new Vector3(0, -0.769f, 2.508f);
 	private readonly Vector3 TrailPosition = new Vector3(0, -0.89f, 2.508f);
@@ -45,21 +42,6 @@ public partial class CarVisual: Node3D
 
 	}
 
-	public override void _Process(double delta)
-	{
-		base._Process(delta);
-		if (!IsInstanceValid(this))
-		{
-			GD.PrintErr("Trying to update CarVisual without a valid instance");
-			return;
-		}
-		if (trail == null && TrailPrototype != null)
-		{
-			trail = (GpuParticles3D)TrailPrototype.Duplicate();
-			AddChild(trail);
-		}
-	}
-
 	public void Steer(float angleInRadians)
 	{
 		const float slerpWeight = 0.1f;
@@ -77,17 +59,8 @@ public partial class CarVisual: Node3D
 
 	public void Drift(Vector3 v = new Vector3())
 	{
-		if (driftSmokeA == null)
-		{
-			driftSmokeA = (GpuParticles3D)DriftSmokePrototype.Duplicate();
-			driftSmokeA.Visible = true;
-			AddChild(driftSmokeA);
-			driftSmokeA.GlobalPosition = SteeringL.GlobalPosition;
-			driftSmokeB = (GpuParticles3D)DriftSmokePrototype.Duplicate();
-			driftSmokeB.Visible = true;
-			AddChild(driftSmokeB);
-			driftSmokeB.GlobalPosition = DriveL.GlobalPosition;
-		}
+		driftSmokeA.GlobalPosition = SteeringL.GlobalPosition;
+		driftSmokeB.GlobalPosition = DriveL.GlobalPosition;
 
 		DriftDirection = v;
 		bool isEmitting = DriftDirection.Length() > 0;
