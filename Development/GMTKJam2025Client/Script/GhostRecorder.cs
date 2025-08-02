@@ -37,7 +37,7 @@ public partial class GhostRecorder : Node
 		var newCar = (Node3D)GhostCarPrototype.Duplicate();
 		GhostCars.Add(newCar);
 		AddChild(newCar);
-		newCar.AddChild(CarVisualLibrary.GetNewCar(CurrentRecording.Count));
+		newCar.AddChild(CarVisualLibrary.GetNewCar(AllRecordings.Count));
 		
 		newCar.Transform = CurrentRecording[0];
 		AllRecordings.Add(CurrentRecording.ToList());
