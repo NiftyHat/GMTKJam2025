@@ -54,6 +54,7 @@ public partial class EntityCar : GameEntity
 
     private void HandleTimeout()
     {
+        LevelResetTimer.Timeout -= HandleTimeout;
         if (LevelResetTimer != null)
         {
             LevelResetTimer.Stop();
