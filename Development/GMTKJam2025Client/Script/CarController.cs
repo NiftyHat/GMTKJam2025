@@ -122,6 +122,8 @@ public partial class CarController : Node3D
 		isGrounded = GroundCheckRaycast.IsColliding();
 		
 		base._PhysicsProcess(delta);
+
+		Transform3D aimTransform;
 		if (isGrounded)
 		{
 			// Allow Drive
@@ -146,9 +148,15 @@ public partial class CarController : Node3D
 			}
 
 
-			var t = AlignWithY(GlobalTransform, GroundCheckRaycast.GetCollisionNormal().Normalized());
-			GlobalTransform = t;//GlobalTransform.InterpolateWith(t, (float)delta * 10f) ;
+			aimTransform = AlignWithY(GlobalTransform, GroundCheckRaycast.GetCollisionNormal().Normalized());
+			
 		}
+		else
+		{
+			aimTransform = AlignWithY(GlobalTransform, Vector3.Up);
+		}
+		
+		GlobalTransform = GlobalTransform.InterpolateWith(aimTransform, (float)delta * 10f) ;
 	}
 
 	private Transform3D AlignWithY(Transform3D t, Vector3 v)
