@@ -161,10 +161,15 @@ public partial class CarController : Node3D
 
 	public void ChangeVisuals(int lap)
 	{
+		if (!IsInstanceValid(this))
+		{
+			GD.PrintErr("CarController.ChangeVisuals called on InvalidInstance");
+			return;
+		}
 		if (CarVisualNode != null)
 		{
 			RemoveChild(CarVisualNode);
-			CarVisualNode.Free();
+			CarVisualNode.QueueFree();
 		}
 		CarVisualNode = _carVisualLibrary.GetNewCar(lap-1);
 		AddChild(CarVisualNode);
