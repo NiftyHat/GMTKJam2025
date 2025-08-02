@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://djpruf2ij658q"]
+[gd_scene load_steps=29 format=3 uid="uid://djpruf2ij658q"]
 
 [ext_resource type="PackedScene" uid="uid://de6n0n215fpr5" path="res://Scenes/Camera/GameCamera.tscn" id="1_853f1"]
 [ext_resource type="Texture2D" uid="uid://dhojn25qmrh3b" path="res://Texture/Grid Floor.png" id="2_8um5k"]
@@ -17,6 +17,9 @@
 [ext_resource type="Script" uid="uid://bxwjgtymipxoq" path="res://Script/MainMenu/Screens/MainMenuTextScreenPopupDisplay.cs" id="11_if7li"]
 [ext_resource type="FontFile" uid="uid://4tcf8t2hi7n6" path="res://Fonts/Hauser Bold Italic.otf" id="11_rrcx7"]
 [ext_resource type="FontFile" uid="uid://djnxc24f5yy5" path="res://Fonts/Hauser Bold.otf" id="13_fh7cp"]
+[ext_resource type="Script" uid="uid://cyky1n1o1l21" path="res://Script/MainMenu/MainMenuMusic.cs" id="18_yxkem"]
+[ext_resource type="Resource" uid="uid://dc5mml11qghcd" path="res://Audio/Music/music_title_screen.tres" id="19_pjscj"]
+[ext_resource type="Resource" uid="uid://cgho0gopdveb" path="res://Audio/Music/music_level_select.tres" id="20_m7n2d"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ghw46"]
 size = Vector2(512, 512)
@@ -407,8 +410,14 @@ bbcode_enabled = true
 text = "[center]Press [ESC] to return to the menu[/center]"
 fit_content = true
 
+[node name="Main Menu Music" type="Node" parent="."]
+script = ExtResource("18_yxkem")
+_musicTitle = ExtResource("19_pjscj")
+_musicSelect = ExtResource("20_m7n2d")
+
 [connection signal="FadeInAnimationStarted" from="Main Menu Control/TitleScreenDisplay" to="MainMenuCameraControl" method="ChangeCameraToTitle"]
 [connection signal="FadeOutAnimationComplete" from="Main Menu Control/TitleScreenDisplay" to="Main Menu Control" method="ShowMenuScreen"]
+[connection signal="FadeOutAnimationComplete" from="Main Menu Control/TitleScreenDisplay" to="Main Menu Music" method="PlaySelectMusic"]
 [connection signal="FadeOutAnimationFading" from="Main Menu Control/TitleScreenDisplay" to="MainMenuCameraControl" method="ChangeCameraToMenu"]
 [connection signal="Cancel" from="Main Menu Control/MainMenuDisplay" to="Main Menu Control" method="ShowTitleScreen"]
 [connection signal="pressed" from="Main Menu Control/MainMenuDisplay/MarginContainer/VBoxContainer/HTP" to="Main Menu Control" method="ShowHowToPlay"]

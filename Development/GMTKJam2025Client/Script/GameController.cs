@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Linq;
+using GMTKJam2025.Audio;
 using GMTKJam2025.UI;
 
 public partial class GameController : Node
@@ -23,6 +24,12 @@ public partial class GameController : Node
 				Pause();
 			}
 		}
+	}
+
+	public override void _Ready()
+	{
+		base._Ready();
+		MusicPlayer.Instance.Stop();
 	}
 
 	public void Reset()
