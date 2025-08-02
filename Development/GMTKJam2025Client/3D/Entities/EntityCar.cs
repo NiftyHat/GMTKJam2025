@@ -95,7 +95,7 @@ public partial class EntityCar : GameEntity
     {
         entityCheckpoint.Track.SetActiveCheckpoint(entityCheckpoint);
         _lastTouchedCheckpoint = entityCheckpoint;
-        AddTime(3);
+        AddTime(TimePerCheckpoint);
     }
 
     private void AddTime(double seconds)
