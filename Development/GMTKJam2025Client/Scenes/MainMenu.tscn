@@ -67,7 +67,7 @@ skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_df05h")
 
 [node name="CarFrame12" parent="Scene Composition" instance=ExtResource("3_riqfo")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.702654, 0.246208, 0.514106)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.1717, 0.379746, 0.514106)
 
 [node name="CarFrame22" parent="Scene Composition" instance=ExtResource("4_yxkem")]
 transform = Transform3D(-0.52351, 0, 0.852019, 0, 1, 0, -0.852019, 0, -0.52351, -4.24749, 0.486035, -1.93865)
@@ -87,10 +87,10 @@ transform = Transform3D(-0.956666, 0, 0.291186, 0, 1, 0, -0.291186, 0, -0.956666
 transform = Transform3D(0.755877, -0.206637, 0.621249, 0, 0.948888, 0.315614, -0.654713, -0.238565, 0.717243, -0.517186, 0.414904, -1.25588)
 
 [node name="Title Cam Position" type="Node3D" parent="Positioners"]
-transform = Transform3D(0.982781, -0.0575514, 0.175582, 0, 0.950256, 0.31147, -0.184773, -0.306107, 0.933894, -0.8, 0.2, 0.4)
+transform = Transform3D(0.982781, -0.0575514, 0.175582, 0, 0.950256, 0.31147, -0.184773, -0.306107, 0.933894, 2.29029, 0.2, 1.04056)
 
 [node name="Title Cam Focus" type="Node3D" parent="Positioners"]
-transform = Transform3D(-0.520375, 0.0111907, -0.853864, 0.00444148, 0.999936, 0.0103983, 0.853926, 0.00161861, -0.520392, 0.24, 0.4, -2.2)
+transform = Transform3D(-0.520375, 0.0111907, -0.853864, 0.00444148, 0.999936, 0.0103983, 0.853926, 0.00161861, -0.520392, 1.40395, 0.4, -1.91284)
 
 [node name="Title Cam Focus - Wobble" type="Node3D" parent="Positioners/Title Cam Focus"]
 transform = Transform3D(1, 6.98492e-10, -2.98023e-08, 5.82077e-10, 1, 6.40284e-10, 2.98023e-08, 5.82077e-11, 1, 0.00542438, -0.00762185, -0.0184967)

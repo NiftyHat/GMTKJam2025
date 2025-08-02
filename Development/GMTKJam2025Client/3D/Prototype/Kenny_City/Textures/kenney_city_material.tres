@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c4tfj52w8un1"]
+
+[ext_resource type="Texture2D" uid="uid://cx3o2csay1r4i" path="res://3D/Prototype/Kenny_City/Textures/kenny_city_colormap.png" id="1_14rdm"]
+
+[resource]
+albedo_texture = ExtResource("1_14rdm")
