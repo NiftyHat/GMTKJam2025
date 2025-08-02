@@ -1,5 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://bs7t7tjyw4eo1"]
-
+[gd_scene load_steps=53 format=3 uid="uid://bs7t7tjyw4eo1"]
 
 [ext_resource type="Script" uid="uid://2jqy0i2iaig4" path="res://Script/GameController.cs" id="1_6vvcf"]
 [ext_resource type="Texture2D" uid="uid://2h3qmpnq0584" path="res://3D/Textures/7a3584298ef470fe0aafc146c23d34523b045606.png" id="2_6vvcf"]
@@ -32,7 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://35hidwm55s31" path="res://3D/Coffin/Coffin6.tscn" id="22_vgicg"]
 [ext_resource type="PackedScene" uid="uid://psvfax7t2ms" path="res://3D/Coffin/Coffin7.tscn" id="23_sjxqr"]
 [ext_resource type="PackedScene" uid="uid://dobssek2rvaoe" path="res://Scenes/drift_smoke.tscn" id="30_rsfko"]
-[ext_resource type="PackedScene" uid="uid://drncy6tn4jupe" path="res://Scenes/trail.tscn" id="31_82uqo"]
+[ext_resource type="PackedScene" uid="uid://drncy6tn4jupe" path="res://Scenes/trail1.tscn" id="31_82uqo"]
 [ext_resource type="Script" uid="uid://dabjsxlfpdi1c" path="res://Audio/GameAudio.cs" id="37_jmmro"]
 [ext_resource type="Resource" uid="uid://bwg12va4nk01o" path="res://Audio/Music/music_racing.tres" id="38_vgicg"]
 [ext_resource type="Resource" uid="uid://cmo5o4snv80y1" path="res://Audio/Music/music_final_lap.tres" id="39_sjxqr"]
