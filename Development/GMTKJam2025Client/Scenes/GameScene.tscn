@@ -50,17 +50,18 @@ sky = SubResource("Sky_km00y")
 [sub_resource type="BoxShape3D" id="BoxShape3D_ggkdx"]
 size = Vector3(1.1731, 0.824341, 3.52304)
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ni8gw"]
-bounce = 0.1
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_7ms41"]
-radius = 0.8
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3syrs"]
 albedo_texture = ExtResource("2_6vvcf")
 
 [sub_resource type="SphereMesh" id="SphereMesh_yr35r"]
 radius = 1.0
+height = 2.0
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ni8gw"]
+bounce = 0.1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7ms41"]
+radius = 0.8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ry528"]
 bg_color = Color(0.219608, 0.105882, 0.607843, 1)
@@ -166,7 +167,7 @@ shape = SubResource("BoxShape3D_ggkdx")
 transform = Transform3D(-0.3, -8.9701e-09, -2.46451e-08, 0, 0.281908, -0.102606, 2.62269e-08, -0.102606, -0.281908, 0, -10.887, -1.19244)
 
 [node name="Player Car" type="Node3D" parent="GameControl" node_paths=PackedStringArray("_carController", "_hud", "_ghostRecorder", "LevelResetTimer")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 196.372, -0.0668488, -47.4537)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 196.372, 0.464794, -5.56289)
 script = ExtResource("7_qolck")
 _carController = NodePath("Car Controller")
 _hud = NodePath("../../HUD")
@@ -175,6 +176,21 @@ TimePerCheckpoint = 5.0
 InitialTime = 15.0
 LevelResetTimer = NodePath("TimerLevelReset")
 metadata/_custom_type_script = "uid://v2v2l1vx325s"
+
+[node name="Engine Only Helper" type="Node3D" parent="GameControl/Player Car"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.682709, 0.80267, -7.84895)
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3DCarDebug" type="MeshInstance3D" parent="GameControl/Player Car/Engine Only Helper"]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_3syrs")
+mesh = SubResource("SphereMesh_yr35r")
+skeleton = NodePath("../../RigidBody")
+
+[node name="CarFrame1" parent="GameControl/Player Car/Engine Only Helper" instance=ExtResource("11_leul7")]
+transform = Transform3D(1, 2.05546e-10, 4.65661e-10, -5.11136e-10, 1, 9.31323e-10, -4.65661e-10, 4.65661e-10, 1, 0, -0.75, 0)
+script = ExtResource("6_yl3ua")
 
 [node name="Car Controller" type="Node3D" parent="GameControl/Player Car" node_paths=PackedStringArray("_rb", "_camera3D", "_carVisualLibrary")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.682709, 0.80267, -7.84895)
@@ -191,6 +207,7 @@ steering = 11.0
 turnSpeed = 12.0
 minimumTurnSpeed = 1.0
 GroundDistance = 0.5
+metadata/_edit_lock_ = true
 
 [node name="GroundCheck" type="Node3D" parent="GameControl/Player Car/Car Controller"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.440059, 0)
@@ -205,7 +222,7 @@ transform = Transform3D(1, 0, 0, 0, 0.997564, -0.0697565, 0, 0.0697565, 0.997564
 target_position = Vector3(0, -2, 0)
 
 [node name="RigidBody" type="RigidBody3D" parent="GameControl/Player Car" node_paths=PackedStringArray("Entity")]
-transform = Transform3D(0.999987, 0.00515013, 9.61963e-05, -0.00515085, 0.99993, 0.0105894, -4.16427e-05, -0.0105898, 0.999944, -0.514376, 0.652387, -7.93658)
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, -0.514376, 0.652387, -7.93658)
 collision_mask = 3
 mass = 5.0
 physics_material_override = SubResource("PhysicsMaterial_ni8gw")
@@ -215,15 +232,11 @@ linear_damp = 0.5
 angular_damp = 3.0
 script = ExtResource("9_yhlfj")
 Entity = NodePath("..")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3DCar" type="CollisionShape3D" parent="GameControl/Player Car/RigidBody"]
 shape = SubResource("SphereShape3D_7ms41")
 debug_color = Color(0.0823529, 0.462745, 0, 1)
-
-[node name="MeshInstance3DCarDebug" type="MeshInstance3D" parent="GameControl/Player Car/RigidBody"]
-visible = false
-material_override = SubResource("StandardMaterial3D_3syrs")
-mesh = SubResource("SphereMesh_yr35r")
 
 [node name="TimerLevelReset" type="Timer" parent="GameControl/Player Car"]
 wait_time = 15.0
