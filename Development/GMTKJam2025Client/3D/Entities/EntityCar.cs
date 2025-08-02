@@ -39,7 +39,7 @@ public partial class EntityCar : GameEntity
     public override void _Process(double delta)
     {
         base._Process(delta);
-        if (Input.IsActionJustPressed("TEMP_Record"))
+        if (OS.HasFeature("debug") && Input.IsKeyPressed(Key.C))
         {
             _lap = 7;
             _hud.SetLap(7);
