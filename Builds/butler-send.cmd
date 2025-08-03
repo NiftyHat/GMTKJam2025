@@ -1,1 +1,1 @@
-butler push Windows niftyhat/light-speed-loop:win
+butler push Windows niftyhat/lightspeed-loop:win
