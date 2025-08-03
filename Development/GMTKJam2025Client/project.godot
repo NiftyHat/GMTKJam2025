@@ -17,7 +17,9 @@ By Evyanon, TommyNom, NiftyHat, kaynSD, and c1k"
 config/version="0.1.0"
 run/main_scene="uid://djpruf2ij658q"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
+boot_splash/image="uid://b0pj2sp0tpyax"
 config/icon="uid://q3ob2tdxwp2h"
+boot_splash/minimum_display_time=1200
 
 [autoload]
 
