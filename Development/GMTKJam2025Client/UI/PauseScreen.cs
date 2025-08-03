@@ -20,7 +20,7 @@ public partial class PauseScreen : CanvasLayer
 	public override void _Ready()
 	{
 		base._Ready();
-		buttons = GetNode("MarginContainer/VBoxContainer").GetChildren()
+		buttons = GetNode("PanelContainer/MarginContainer/VBoxContainer").GetChildren()
 			.Where(x => x is Button)
 			.Select(x => x as Button)
 			.ToList();
