@@ -62,11 +62,11 @@ font_color = Color(1, 0.407843, 1, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fh7cp"]
 bg_color = Color(0.211765, 0, 0.552941, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ke15f"]
-bg_color = Color(0.784314, 0.270588, 0.486275, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rrcx7"]
 bg_color = Color(0.980392, 0.619608, 0.235294, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ke15f"]
+bg_color = Color(0.784314, 0.270588, 0.486275, 1)
 
 [node name="MainMenu" type="Node3D"]
 
@@ -257,6 +257,7 @@ theme_override_constants/margin_bottom = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Main Menu Control/MainMenuDisplay/MarginContainer"]
 layout_mode = 2
+size_flags_vertical = 8
 
 [node name="HTP" type="Button" parent="Main Menu Control/MainMenuDisplay/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -283,32 +284,6 @@ theme_override_font_sizes/font_size = 36
 theme_override_styles/focus = SubResource("StyleBoxEmpty_loo7a")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_if7li")
 text = "Track Select"
-flat = true
-alignment = 2
-
-[node name="BT" type="Button" parent="Main Menu Control/MainMenuDisplay/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
-theme_override_fonts/font = ExtResource("15_54anl")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxEmpty_loo7a")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_if7li")
-text = "Best Times"
-flat = true
-alignment = 2
-
-[node name="O" type="Button" parent="Main Menu Control/MainMenuDisplay/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
-theme_override_fonts/font = ExtResource("15_54anl")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxEmpty_loo7a")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_if7li")
-text = "Options"
 flat = true
 alignment = 2
 
@@ -484,86 +459,6 @@ bbcode_enabled = true
 text = "[center]Press [ESC] to return to the menu[/center]"
 fit_content = true
 
-[node name="CreditsDisplay" type="Control" parent="Main Menu Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("16_rn4ru")
-
-[node name="MarginContainer" type="MarginContainer" parent="Main Menu Control/CreditsDisplay"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 40
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 40
-theme_override_constants/margin_bottom = 40
-
-[node name="PanelContainer" type="PanelContainer" parent="Main Menu Control/CreditsDisplay/MarginContainer"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ke15f")
-
-[node name="MarginContainer" type="MarginContainer" parent="Main Menu Control/CreditsDisplay/MarginContainer/PanelContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Main Menu Control/CreditsDisplay/MarginContainer/PanelContainer/MarginContainer"]
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="Main Menu Control/CreditsDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 100
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 100
-theme_override_constants/margin_bottom = 0
-
-[node name="TextureRect" type="TextureRect" parent="Main Menu Control/CreditsDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
-custom_minimum_size = Vector2(0, 250)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("12_bln8o")
-expand_mode = 3
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Main Menu Control/CreditsDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("15_54anl")
-theme_override_fonts/bold_font = ExtResource("17_qn512")
-theme_override_font_sizes/normal_font_size = 20
-theme_override_font_sizes/bold_font_size = 28
-bbcode_enabled = true
-text = "[center][b]Lightspeed Loop[/b]
-A GMTK Jam 2025 Entry
-
-[b]Developed by[/b]
-Evyanon, NiftyHat, kaynSD, c1k, TommyNom
-[/center]"
-fit_content = true
-scroll_active = false
-
-[node name="Control" type="Control" parent="Main Menu Control/CreditsDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 5.0
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="Main Menu Control/CreditsDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("15_54anl")
-theme_override_font_sizes/normal_font_size = 20
-theme_override_font_sizes/bold_font_size = 28
-bbcode_enabled = true
-text = "[center]Press [ESC] to return to the menu[/center]"
-fit_content = true
-
 [node name="TrackSelectDisplay" type="Control" parent="Main Menu Control" node_paths=PackedStringArray("Buttons")]
 layout_mode = 1
 anchors_preset = 15
@@ -691,6 +586,86 @@ bbcode_enabled = true
 text = "[center]Press [ESC] to return to the menu[/center]"
 fit_content = true
 
+[node name="CreditsDisplay" type="Control" parent="Main Menu Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("16_rn4ru")
+
+[node name="MarginContainer" type="MarginContainer" parent="Main Menu Control/CreditsDisplay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="PanelContainer" type="PanelContainer" parent="Main Menu Control/CreditsDisplay/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ke15f")
+
+[node name="MarginContainer" type="MarginContainer" parent="Main Menu Control/CreditsDisplay/MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main Menu Control/CreditsDisplay/MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Main Menu Control/CreditsDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 0
+
+[node name="TextureRect" type="TextureRect" parent="Main Menu Control/CreditsDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("12_bln8o")
+expand_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Main Menu Control/CreditsDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("15_54anl")
+theme_override_fonts/bold_font = ExtResource("17_qn512")
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+text = "[center][b]Lightspeed Loop[/b]
+A [url=https://itch.io/jam/gmtk-2025]GMTK Jam 2025[/url] Entry
+
+[b]Developed by[/b]
+[url=https://eveanon.itch.io/]Eveanon[/url], [url=https://niftyhat.itch.io/]NiftyHat[/url], [url=https://kaynsd.itch.io/]kaynSD[/url], [url=https://c1ksillyworm.itch.io/]c1k[/url], [url=https://tommynom.itch.io/]TommyNom[/url]
+[/center]"
+fit_content = true
+scroll_active = false
+
+[node name="Control" type="Control" parent="Main Menu Control/CreditsDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Main Menu Control/CreditsDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("15_54anl")
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+text = "[center]Press [ESC] to return to the menu[/center]"
+fit_content = true
+
 [node name="Main Menu Music" type="Node" parent="."]
 script = ExtResource("23_twyny")
 _musicTitle = ExtResource("24_wyih3")
@@ -766,8 +741,9 @@ transform = Transform3D(-0.0809485, 0, 0.655017, 0, 0.66, 0, -0.655017, 0, -0.08
 [connection signal="pressed" from="Main Menu Control/MainMenuDisplay/MarginContainer/VBoxContainer/TS" to="Main Menu Control" method="ShowTrackSelect"]
 [connection signal="pressed" from="Main Menu Control/MainMenuDisplay/MarginContainer/VBoxContainer/C" to="Main Menu Control" method="ShowCredits"]
 [connection signal="Cancel" from="Main Menu Control/HowToPlayDisplay" to="Main Menu Control" method="ReturnToMainMenu"]
-[connection signal="Cancel" from="Main Menu Control/CreditsDisplay" to="Main Menu Control" method="ReturnToMainMenu"]
 [connection signal="Cancel" from="Main Menu Control/TrackSelectDisplay" to="Main Menu Control" method="ReturnToMainMenu"]
 [connection signal="pressed" from="Main Menu Control/TrackSelectDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer/Circuit/Training" to="Main Menu Control/TrackSelectDisplay" method="LoadLevel_0"]
 [connection signal="pressed" from="Main Menu Control/TrackSelectDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer/Figure Eight/Figure Eight" to="Main Menu Control/TrackSelectDisplay" method="LoadLevel_1"]
 [connection signal="pressed" from="Main Menu Control/TrackSelectDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer/Jumper/Jump Track" to="Main Menu Control/TrackSelectDisplay" method="LoadLevel_2"]
+[connection signal="Cancel" from="Main Menu Control/CreditsDisplay" to="Main Menu Control" method="ReturnToMainMenu"]
+[connection signal="meta_clicked" from="Main Menu Control/CreditsDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/RichTextLabel" to="Main Menu Control/CreditsDisplay" method="LoadHyperLink"]

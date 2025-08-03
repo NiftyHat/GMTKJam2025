@@ -1,0 +1,133 @@
+[gd_scene load_steps=6 format=3 uid="uid://dg7xprbydtipx"]
+
+[ext_resource type="Script" uid="uid://cx8fluhgs0oo3" path="res://UI/PauseScreen.cs" id="1_x7v04"]
+[ext_resource type="Texture2D" uid="uid://dwkcdhdwgfnss" path="res://UI/Textures/Menu_Base.PNG" id="2_3teiv"]
+[ext_resource type="FontFile" uid="uid://djnxc24f5yy5" path="res://Fonts/Hauser Bold.otf" id="3_rpyr6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ry528"]
+bg_color = Color(0.219608, 0.105882, 0.607843, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yhlfj"]
+
+[node name="Pause" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_x7v04")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_3teiv")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 400
+theme_override_constants/margin_top = 160
+theme_override_constants/margin_right = 400
+theme_override_constants/margin_bottom = 70
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Control2" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Continue" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Main Menu")
+theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_fonts/font = ExtResource("3_rpyr6")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxFlat_ry528")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_yhlfj")
+text = "CONTINUE"
+flat = true
+
+[node name="Restart" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_fonts/font = ExtResource("3_rpyr6")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxFlat_ry528")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_yhlfj")
+text = "RESTART"
+flat = true
+
+[node name="Audio" type="Button" parent="MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_fonts/font = ExtResource("3_rpyr6")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxFlat_ry528")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_yhlfj")
+text = "AUDIO"
+flat = true
+
+[node name="Controls" type="Button" parent="MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_fonts/font = ExtResource("3_rpyr6")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxFlat_ry528")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_yhlfj")
+text = "CONTROLS"
+flat = true
+
+[node name="Fullscreen" type="Button" parent="MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_fonts/font = ExtResource("3_rpyr6")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxFlat_ry528")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_yhlfj")
+text = "FULLSCREEN"
+flat = true
+
+[node name="Main Menu" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../Continue")
+theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_fonts/font = ExtResource("3_rpyr6")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxFlat_ry528")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_yhlfj")
+text = "MAIN MENU"
+flat = true
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Continue" to="." method="OnContinue"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Restart" to="." method="OnReset"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Main Menu" to="." method="OnMainMenu"]
