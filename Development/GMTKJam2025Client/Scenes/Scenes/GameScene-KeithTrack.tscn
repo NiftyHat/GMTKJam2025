@@ -1,6 +1,6 @@
 [gd_scene load_steps=57 format=3 uid="uid://bisqo3qgx8bbs"]
 
-[ext_resource type="PackedScene" path="res://Scenes/Levels/level_keith.tscn" id="1_fcuc1"]
+[ext_resource type="PackedScene" uid="uid://dm84nqfsh38yp" path="res://Scenes/Levels/level_keith.tscn" id="1_fcuc1"]
 [ext_resource type="Texture2D" uid="uid://2h3qmpnq0584" path="res://3D/Textures/7a3584298ef470fe0aafc146c23d34523b045606.png" id="2_82aa8"]
 [ext_resource type="Script" uid="uid://2jqy0i2iaig4" path="res://Script/GameController.cs" id="3_4gwyv"]
 [ext_resource type="Script" uid="uid://4q83c3lgjfx4" path="res://Script/CarVisualLibrary.cs" id="4_rowqs"]
