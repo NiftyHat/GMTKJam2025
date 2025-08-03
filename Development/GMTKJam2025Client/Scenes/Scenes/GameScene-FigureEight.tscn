@@ -209,7 +209,7 @@ script = ExtResource("8_ry528")
 _rb = NodePath("../RigidBody")
 _camera3D = NodePath("../../Camera/Camera3D")
 _carVisualLibrary = NodePath("../../CarVisuals")
-_audio = NodePath("")
+_audio = NodePath("CarAudio")
 _contactMonitor = NodePath("../RigidBody/Rigidbody3DContactMonitor")
 Acceleration = 0.3
 BrakeStrength = 0.08
@@ -233,7 +233,7 @@ transform = Transform3D(1, 0, 0, 0, 0.997564, -0.0697565, 0, 0.0697565, 0.997564
 [node name="GroundCheckRaycast" type="RayCast3D" parent="GameControl/Player Car/Car Controller"]
 target_position = Vector3(0, -2, 0)
 
-[node name="CarAudio2" parent="GameControl/Player Car/Car Controller" instance=ExtResource("28_tuu5d")]
+[node name="CarAudio" parent="GameControl/Player Car/Car Controller" instance=ExtResource("28_tuu5d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0612316, 0, 0.0334511)
 
 [node name="RigidBody" type="RigidBody3D" parent="GameControl/Player Car" node_paths=PackedStringArray("Entity")]
