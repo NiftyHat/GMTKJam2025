@@ -32,6 +32,13 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"red.083": {
+"use_external/enabled": true,
+"use_external/path": "res://3D/Models/Textures/red.083.tres"
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

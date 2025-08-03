@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SoundEffectSample" load_steps=3 format=3 uid="uid://dvi8i3b8kb162"]
+
+[ext_resource type="AudioStream" uid="uid://c005g4upeyow3" path="res://Audio/Music/lsl INFINITEBUTTONS.ogg" id="1_31ive"]
+[ext_resource type="Script" uid="uid://bgq4g1bwf8j3p" path="res://Audio/SoundEffectSample.cs" id="2_mt04m"]
+
+[resource]
+script = ExtResource("2_mt04m")
+Stream = ExtResource("1_31ive")
+VolumeDb = -10.0
+PitchScale = 1.0
+metadata/_custom_type_script = "uid://bgq4g1bwf8j3p"

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://b017vt50v0jua"]
+
+[ext_resource type="PackedScene" uid="uid://bt0nsa736uemb" path="res://3D/Models/CarFrame7.gltf" id="1_fdqcg"]
+[ext_resource type="Script" uid="uid://bys2bi6pmahte" path="res://Script/CarVisual.cs" id="2_tx0ra"]
+[ext_resource type="PackedScene" uid="uid://dobssek2rvaoe" path="res://Scenes/drift_smoke.tscn" id="4_6qtk6"]
+[ext_resource type="PackedScene" uid="uid://bk00v1aslagrd" path="res://Scenes/trail7.tscn" id="4_db3e3"]
+
+[node name="CarVisual7" type="Node3D" node_paths=PackedStringArray("driftSmokeA", "driftSmokeB")]
+script = ExtResource("2_tx0ra")
+driftSmokeA = NodePath("DriftSmoke")
+driftSmokeB = NodePath("DriftSmoke2")
+
+[node name="CarFrame72" parent="." instance=ExtResource("1_fdqcg")]
+
+[node name="DriftSmoke" parent="." instance=ExtResource("4_6qtk6")]
+transform = Transform3D(0.0134561, -0.99991, 0, 0.99991, 0.0134561, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="DriftSmoke2" parent="." instance=ExtResource("4_6qtk6")]
+transform = Transform3D(0.0134561, -0.99991, 0, 0.99991, 0.0134561, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Trail2" parent="." instance=ExtResource("4_db3e3")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.0694106, -1.69403)

@@ -493,7 +493,7 @@ _data = {
 &"normal": SubResource("Animation_a2sha")
 }
 
-[node name="UIHUD" type="Control" node_paths=PackedStringArray("_lapCountLabel", "_countdownAnimation", "_streamMusic", "_timeRemainingView")]
+[node name="UIHUD" type="Control" node_paths=PackedStringArray("_lapCountLabel", "_countdownAnimation", "_timeRemainingView")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -503,7 +503,6 @@ grow_vertical = 2
 script = ExtResource("1_dmi88")
 _lapCountLabel = NodePath("CanvasLayer/LabelLapCount")
 _countdownAnimation = NodePath("CanvasLayer/Countdown321Go/DRIVE!!/CountdownAnimation")
-_streamMusic = NodePath("CanvasLayer/AudioStreamPlayerRacing")
 _timeRemainingView = NodePath("CanvasLayer/TimeRemaining")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -536,6 +535,7 @@ offset_bottom = 336.0
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(265, 180)
+text = "DRIVE!!"
 label_settings = SubResource("LabelSettings_21b46")
 horizontal_alignment = 1
 vertical_alignment = 1

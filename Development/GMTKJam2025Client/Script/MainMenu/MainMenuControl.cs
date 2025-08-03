@@ -10,6 +10,7 @@ public partial class MainMenuControl : Node
 
 	private MainMenuTitleDisplay TitleScreen;
 	private MainMenuMainMenuDisplay MenuScreen;
+	private TrackSelectScreenDisplay TrackSelectScreen;
 	private MainMenuTextScreenPopupDisplay HowToPlayScreen;
 	private MainMenuTextScreenPopupDisplay CreditsScreen;
 
@@ -22,6 +23,7 @@ public partial class MainMenuControl : Node
 		MenuScreen = (MainMenuMainMenuDisplay)GetNode("MainMenuDisplay");
 		HowToPlayScreen = (MainMenuTextScreenPopupDisplay)GetNode("HowToPlayDisplay");
 		CreditsScreen = (MainMenuTextScreenPopupDisplay)GetNode("CreditsDisplay");
+		TrackSelectScreen = (TrackSelectScreenDisplay)GetNode("TrackSelectDisplay");
 
 		allScreens = GetChildren().Where(x => x is IMenuDisplay).Select(x => x as IMenuDisplay).ToArray();
 		DeprocessAllScreens();
@@ -85,8 +87,16 @@ public partial class MainMenuControl : Node
 	
 	public void ShowTrackSelect()
 	{
-		GD.Print("Track Select");
-		SceneSwitcher.Instance.GoToScene(SceneSwitcher.Instance.Library.Game);
+		MenuScreen.SaveFocus();
+		DeprocessAllScreens();
+		
+		GD.Print("Track");
+		TrackSelectScreen.SetProcess(true);
+		TrackSelectScreen.Start();
+
+		//GD.Print("Track Select");
+		//GameInformation.CurrentLevel = SceneSwitcher.Instance.Library.Game;
+		//SceneSwitcher.Instance.GoToScene(SceneSwitcher.Instance.Library.Game);
 	}
 	public void ShowOptions()
 	{

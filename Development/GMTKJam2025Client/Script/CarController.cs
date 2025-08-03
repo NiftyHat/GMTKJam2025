@@ -18,13 +18,17 @@ public partial class CarController : Node3D
 	public float speedInput { get; private set; } = 0;
 	public float turnInput { get; private set; } = 0;
 	public bool isGrounded { get; private set; } = false;
+	public Vector3 DriftAngle { get; private set; } = Vector3.Zero;
 	
 	[Export] private RigidBody3D _rb;
 	[Export] private Camera3D _camera3D;
+	[Export] private CarVisualLibrary _carVisualLibrary;
 	
 	private Node3D CameraLookTarget;
 	private Node3D CameraPositionTarget;
 	private RayCast3D GroundCheckRaycast;
+
+	private CarVisual CarVisualNode { get; set; }
 
 	[Export] private float Acceleration;
 	[Export] private float BrakeStrength;
@@ -34,19 +38,20 @@ public partial class CarController : Node3D
 	[Export] private float steering;
 	[Export] private float turnSpeed;
 	[Export] private float minimumTurnSpeed;
-	[Export] private float GroundDistance;
 	
 	private const float M = 1000f;
 
 	public override void _Ready()
 	{
-		CameraPositionTarget = GetNode<Node3D>("IdealCameraLocation");
-		CameraLookTarget = GetNode<Node3D>("Lookat");
+		CameraPositionTarget = GetNode<Node3D>("Ideal Camera Location");
+		CameraLookTarget = GetNode<Node3D>("Camera Look At Target");
 		GroundCheckRaycast = GetNode<RayCast3D>("GroundCheckRaycast");
 		GroundCheckRaycast.AddException(_rb);
 
 		Transform = _rb.Transform;
 		base._Ready();
+
+		ChangeVisuals(1);
 	}
 
 	public override void _Process(double delta)
@@ -96,6 +101,18 @@ public partial class CarController : Node3D
 		// Turning; capped by velocity
 		turnInput = Mathf.DegToRad(Input.GetAxis("SteerLeft", "SteerRight") * steering);
 		
+		// Visuals
+		CarVisualNode.Steer(turnInput);
+
+		if (isGrounded && Velocity > 10 && (Speed < Velocity * .5f))
+		{
+			DriftAngle = _rb.LinearVelocity;
+		}
+		else
+		{
+			DriftAngle = Vector3.Zero;
+		}
+		CarVisualNode.Drift(DriftAngle);
 		
 	}
 
@@ -105,6 +122,8 @@ public partial class CarController : Node3D
 		isGrounded = GroundCheckRaycast.IsColliding();
 		
 		base._PhysicsProcess(delta);
+
+		Transform3D aimTransform;
 		if (isGrounded)
 		{
 			// Allow Drive
@@ -129,9 +148,15 @@ public partial class CarController : Node3D
 			}
 
 
-			var t = AlignWithY(GlobalTransform, GroundCheckRaycast.GetCollisionNormal().Normalized());
-			GlobalTransform = t;//GlobalTransform.InterpolateWith(t, (float)delta * 10f) ;
+			aimTransform = AlignWithY(GlobalTransform, GroundCheckRaycast.GetCollisionNormal().Normalized());
+			
 		}
+		else
+		{
+			aimTransform = AlignWithY(GlobalTransform, Vector3.Up);
+		}
+		
+		GlobalTransform = GlobalTransform.InterpolateWith(aimTransform, (float)delta * 10f) ;
 	}
 
 	private Transform3D AlignWithY(Transform3D t, Vector3 v)
@@ -140,5 +165,21 @@ public partial class CarController : Node3D
 		t.Basis.X = t.Basis.Z.Cross(v);
 		t.Basis = t.Basis.Orthonormalized();
 		return t;
+	}
+
+	public void ChangeVisuals(int lap)
+	{
+		if (!IsInstanceValid(this))
+		{
+			GD.PrintErr("CarController.ChangeVisuals called on InvalidInstance");
+			return;
+		}
+		if (CarVisualNode != null)
+		{
+			RemoveChild(CarVisualNode);
+			CarVisualNode.QueueFree();
+		}
+		CarVisualNode = _carVisualLibrary.GetNewCar(lap-1);
+		AddChild(CarVisualNode);
 	}
 }

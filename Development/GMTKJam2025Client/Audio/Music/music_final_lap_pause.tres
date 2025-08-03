@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SoundEffectSample" load_steps=3 format=3 uid="uid://defc6jyt71u5n"]
+
+[ext_resource type="AudioStream" uid="uid://dbpbaadpveu3n" path="res://Audio/Music/lsl rushedbuttons.ogg" id="1_lajpu"]
+[ext_resource type="Script" uid="uid://bgq4g1bwf8j3p" path="res://Audio/SoundEffectSample.cs" id="1_x3d7x"]
+
+[resource]
+script = ExtResource("1_x3d7x")
+Stream = ExtResource("1_lajpu")
+VolumeDb = -10.0
+PitchScale = 1.0
+metadata/_custom_type_script = "uid://bgq4g1bwf8j3p"
