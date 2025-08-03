@@ -65,11 +65,13 @@ _checkpoints = [NodePath("Checkpoints/EntityCheckpoint1"), NodePath("Checkpoints
 
 [node name="Checkpoints" type="Node3D" parent="Track"]
 
-[node name="EntityCheckpoint1" parent="Track/Checkpoints" instance=ExtResource("3_m0mr4")]
+[node name="EntityCheckpoint1" parent="Track/Checkpoints" node_paths=PackedStringArray("_labels") instance=ExtResource("3_m0mr4")]
 transform = Transform3D(-30, 0, -4.52987e-06, 0, 30, 0, 4.52987e-06, 0, -30, 30.5342, 0, -2.71677)
+_labels = []
 
-[node name="EntityCheckpoint2" parent="Track/Checkpoints" instance=ExtResource("3_m0mr4")]
+[node name="EntityCheckpoint2" parent="Track/Checkpoints" node_paths=PackedStringArray("_labels") instance=ExtResource("3_m0mr4")]
 transform = Transform3D(15, 0, -7.15256e-07, 0, 15, 0, 7.15256e-07, 0, 15, -43.3052, 0.209445, -30.7049)
+_labels = []
 
 [node name="Road" type="Node3D" parent="Track"]
 

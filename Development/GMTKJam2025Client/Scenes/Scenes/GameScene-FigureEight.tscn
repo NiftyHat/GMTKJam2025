@@ -276,9 +276,8 @@ metadata/_edit_lock_ = true
 shape = SubResource("SphereShape3D_7ms41")
 debug_color = Color(0.0823529, 0.462745, 0, 1)
 
-[node name="Rigidbody3DContactMonitor" type="Node3D" parent="GameControl/Player Car/RigidBody" node_paths=PackedStringArray("_rb")]
+[node name="Rigidbody3DContactMonitor" type="Node3D" parent="GameControl/Player Car/RigidBody"]
 script = ExtResource("32_n7u05")
-_rb = NodePath("")
 MinimumContactImpulse = 1.0
 metadata/_custom_type_script = "uid://c3pj8d7olqfrn"
 

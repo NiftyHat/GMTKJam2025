@@ -49,12 +49,13 @@ public partial class CarVisual: Node3D
 		float driverWeight = -angleInRadians * 5;
 		
 		
+		/*
 		SteeringL.Rotation = SteeringL.Rotation.Slerp(new Vector3(steerWeight, float.DegreesToRadians(-180), float
             .DegreesToRadians(90)), slerpWeight);
 		SteeringR.Rotation = SteeringR.Rotation.Slerp( new Vector3(steerWeight, float.DegreesToRadians(-180), float.DegreesToRadians(90)), slerpWeight);
 		Driver.Rotation = Driver.Rotation.Slerp(new Vector3(driverWeight, 0, float.DegreesToRadians(90)), slerpWeight);
 		WheelSteeringRotation = -new Vector3(steerWeight, 0, 0);
-		DriverRotation = new Vector3(driverWeight, 0, 0);
+		DriverRotation = new Vector3(driverWeight, 0, 0);*/
 	}
 
 	public void Drift(Vector3 v = new Vector3())

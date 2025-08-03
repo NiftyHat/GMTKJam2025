@@ -1,5 +1,4 @@
 using Godot;
-using System;
 using GMTKJam2025.UI.MainMenu;
 
 public partial class MainMenuTitleDisplay : Control, IMenuDisplay

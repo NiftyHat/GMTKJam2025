@@ -190,7 +190,7 @@ shape = SubResource("BoxShape3D_ggkdx")
 
 [node name="Player Car" type="Node3D" parent="GameControl" node_paths=PackedStringArray("_carController", "_hud", "_ghostRecorder", "_gameAudio", "LevelResetTimer")]
 process_mode = 1
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8569, 0.464794, -13.9557)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.2014, 0.118473, -35.6012)
 script = ExtResource("24_0gjxd")
 _carController = NodePath("Car Controller")
 _hud = NodePath("../../HUD")
