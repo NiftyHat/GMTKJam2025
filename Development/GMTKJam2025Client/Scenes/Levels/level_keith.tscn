@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://fltoulr1gh3s"]
+[gd_scene load_steps=18 format=3 uid="uid://dm84nqfsh38yp"]
 
 [ext_resource type="Environment" uid="uid://b7nskufe3ugno" path="res://Scenes/Environments/LevelEnviroment.tres" id="1_q58yo"]
 [ext_resource type="Script" uid="uid://geqjn5xl7l6l" path="res://3D/Entities/EntityTrack.cs" id="2_axl12"]
@@ -43,28 +43,28 @@ _checkpoints = [NodePath("Checkpoints/EntityCheckpoint1"), NodePath("Checkpoints
 [node name="Checkpoints" type="Node3D" parent="Track"]
 
 [node name="EntityCheckpoint1" parent="Track/Checkpoints" instance=ExtResource("3_v64vm")]
-transform = Transform3D(-30, 0, -4.52987e-06, 0, 30, 0, 4.52987e-06, 0, -30, 192.927, -4.65363, 3.3211)
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 192.927, -4.65363, 3.3211)
 
 [node name="EntityCheckpoint2" parent="Track/Checkpoints" instance=ExtResource("3_v64vm")]
-transform = Transform3D(5.84121e-06, 0, -30, 0, 30, 0, 30, 0, 5.84121e-06, 156.16, -4.65363, -164.199)
+transform = Transform3D(1.36295e-07, 0, -1, 0, 1, 0, 0.7, 0, 1.94707e-07, 156.16, -4.65363, -164.199)
 
 [node name="EntityCheckpoint3" parent="Track/Checkpoints" instance=ExtResource("3_v64vm")]
-transform = Transform3D(-30, 0, -4.52987e-06, 0, 30, 0, 4.52987e-06, 0, -30, 119.344, -4.65363, 41.4506)
+transform = Transform3D(-0.7, 0, -1.50996e-07, 0, 1, 0, 1.05697e-07, 0, -1, 119.344, -4.65363, 41.4506)
 
 [node name="EntityCheckpoint4" parent="Track/Checkpoints" instance=ExtResource("3_v64vm")]
-transform = Transform3D(-3.21853e-06, 0, 30, 0, 30, 0, -30, 0, -3.21853e-06, 205.756, -4.65363, 285.172)
+transform = Transform3D(-1.14044e-07, 0, 1, 0, 1, 0, -0.7, 0, -1.62921e-07, 205.756, -4.65363, 285.172)
 
 [node name="EntityCheckpoint5" parent="Track/Checkpoints" instance=ExtResource("3_v64vm")]
-transform = Transform3D(30, 0, 1.90719e-06, 0, 30, 0, -1.90719e-06, 0, 30, 270.362, -4.65364, 166.798)
+transform = Transform3D(0.7, 0, 6.3573e-08, 0, 1, 0, -4.45011e-08, 0, 1, 270.362, -4.65364, 166.798)
 
 [node name="EntityCheckpoint6" parent="Track/Checkpoints" instance=ExtResource("3_v64vm")]
-transform = Transform3D(-21.2132, 0, -21.2132, 0, 30, 0, 21.2132, 0, -21.2132, 389.075, -4.65364, 80.4168)
+transform = Transform3D(-0.494975, 0, -0.707107, 0, 1, 0, 0.494975, 0, -0.707107, 389.075, -4.65364, 80.4168)
 
 [node name="EntityCheckpoint7" parent="Track/Checkpoints" instance=ExtResource("3_v64vm")]
-transform = Transform3D(5.72205e-06, 0, -30, 0, 30, 0, 30, 0, 5.72205e-06, 359.416, -4.65364, 213.727)
+transform = Transform3D(1.36295e-07, 0, -1, 0, 1, 0, 0.7, 0, 1.94707e-07, 359.416, -4.65364, 213.727)
 
 [node name="EntityCheckpoint8" parent="Track/Checkpoints" instance=ExtResource("3_v64vm")]
-transform = Transform3D(5.72205e-06, 0, -30, 0, 30, 0, 30, 0, 5.72205e-06, 235.79, -4.65364, 213.727)
+transform = Transform3D(1.36295e-07, 0, -1, 0, 1, 0, 0.7, 0, 1.94707e-07, 235.79, -4.65364, 213.727)
 
 [node name="Road" type="Node3D" parent="Track"]
 metadata/_edit_lock_ = true

@@ -46,11 +46,6 @@ public partial class EntityDetectionZone : Area3D
         if (body.IsInGroup("EntityProvider") && body.HasMethod("GetEntity"))
         {
             var gameEntity = body.Call("GetEntity").As<GameEntity>();
-            if (gameEntity != null)
-            {
-                GD.Print(gameEntity.Name, " HandleBodyEntered");
-            }
-
             if (_detector != null && _detector.CanDetect(gameEntity))
             {
                 _detector.Add(gameEntity);

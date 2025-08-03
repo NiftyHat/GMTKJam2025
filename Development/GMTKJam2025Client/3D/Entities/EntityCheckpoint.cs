@@ -7,6 +7,9 @@ public partial class EntityCheckpoint : GameEntity
 {
     [Export] private EntityDetectionZone _detectionZone;
     [Export] private AnimationPlayer _animationPlayer;
+    [Export] private AudioStreamPlayer3D _audioTriggered;
+    [Export] private Label3D[] _labels;
+    
     public EntityTrack Track { get; private set; }
     public int Index { get; private set; }
     public override void _Ready()
@@ -16,6 +19,17 @@ public partial class EntityCheckpoint : GameEntity
         _detectionZone.Set(carDetector);
         _animationPlayer.Play("idle");
         base._Ready();
+    }
+
+    public void SetText(string text)
+    {
+        foreach (var label in _labels)
+        {
+            if (label != null)
+            {
+                label.SetText(text);
+            }
+        }
     }
 
     private void HandleCarEnterCheckpoint(EntityCar entityCar)
@@ -32,6 +46,7 @@ public partial class EntityCheckpoint : GameEntity
     {
         GD.Print($"play active {this.Name}");
         _animationPlayer.Play("active");
+        _audioTriggered.Play();
     }
     
     public void TriggerNormal()

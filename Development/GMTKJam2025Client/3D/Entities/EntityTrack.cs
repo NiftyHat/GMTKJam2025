@@ -18,14 +18,9 @@ public partial class EntityTrack : GameEntity
         }
     }
 
-    public bool IsLapComplete(EntityCheckpoint checkpoint, int checkpointProgress)
+    public void SetLap(int lap)
     {
-        if (checkpoint == _checkpoints[^1] && checkpointProgress == _checkpoints.Length)
-        {
-            return true;
-        }
-
-        return false;
+        _checkpoints[0].SetText(lap.ToString());
     }
 
     public void SetActiveCheckpoint(EntityCheckpoint checkpoint)

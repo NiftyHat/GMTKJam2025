@@ -8,6 +8,9 @@ public partial class UIHUD : Control
     [Export] private Label _lapCountLabel;
     [Export] private AnimationPlayer _countdownAnimation;
     [Export] private HUDCountdownTimer _timeRemainingView;
+    [Export] private AnimationPlayer _ghostSpawnAnimation;
+    [Export] private Control[] _ghostSpawnIcons;
+    
     protected Timer _timer;
 
     public override void _Ready()
@@ -26,12 +29,28 @@ public partial class UIHUD : Control
     {
         if (_lapCountLabel != null)
         {
-            _lapCountLabel.Text = $"Lap {lap}";
+            _lapCountLabel.Text = $"Lap {lap}/8";
         }
        
         if (lap == 1)
         {
             PlayRacing();
+        }
+
+        if (lap > 1)
+        {
+            int ghostSpawnIconIndex = lap - 2;
+            if (ghostSpawnIconIndex < _ghostSpawnIcons.Length)
+            {
+                var ghostSpawnIcon = _ghostSpawnIcons[ghostSpawnIconIndex];
+                ghostSpawnIcon.Visible = true;
+            }
+
+            if (_ghostSpawnAnimation != null)
+            {
+                _ghostSpawnAnimation.Play("idle");
+            }
+           
         }
     }
     

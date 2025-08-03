@@ -73,6 +73,7 @@ public partial class EntityCar : GameEntity
     public void EnterCheckpoint(EntityCheckpoint entityCheckpoint)
     {
         //if there's no checkpoint we JUST started
+        entityCheckpoint.Track.SetLap(_lap);
         if (_lastTouchedCheckpoint == null && entityCheckpoint.IsStartLine())
         {
             entityCheckpoint.Track.SetActiveCheckpoint(entityCheckpoint);
@@ -82,6 +83,7 @@ public partial class EntityCar : GameEntity
         
         if (_lastTouchedCheckpoint != null)
         {
+            
             if (entityCheckpoint.Index == _lastTouchedCheckpoint.Index + 1)
             {
                 TriggerNewCheckpoint(entityCheckpoint);

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://detpkwagwummm"
+path="res://.godot/imported/lsl vrrr.ogg-4048481baf0893abbd4c518bd734875c.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/SFX/lsl vrrr.ogg"
+dest_files=["res://.godot/imported/lsl vrrr.ogg-4048481baf0893abbd4c518bd734875c.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

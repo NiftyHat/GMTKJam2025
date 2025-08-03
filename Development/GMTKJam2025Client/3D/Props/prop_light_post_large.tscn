@@ -1,0 +1,299 @@
+[gd_scene load_steps=10 format=3 uid="uid://6m4kub7d24o3"]
+
+[ext_resource type="PackedScene" uid="uid://chkxjdl750eay" path="res://3D/Prototype/Kenney_Racing/lightPostLarge.glb" id="1_jeflq"]
+[ext_resource type="Script" uid="uid://ou2s1pv8pncv" path="res://3D/Entities/EntityAnimationTrigger.cs" id="1_x7k1h"]
+[ext_resource type="Shader" uid="uid://bojy48off8gby" path="res://3D/Models/Materials/EmissiveWindowShader.tres" id="2_x7k1h"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_01yyt"]
+render_priority = 0
+shader = ExtResource("2_x7k1h")
+
+[sub_resource type="QuadMesh" id="QuadMesh_xgeex"]
+size = Vector2(0.05, 0.05)
+
+[sub_resource type="Animation" id="Animation_x7k1h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("lightPostLarge/SpotLight3D2:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4.499]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("lightPostLarge/SpotLight3D:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4.499]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("lightPostLarge/EmissiveRect4:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("lightPostLarge/EmissiveRect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("lightPostLarge/EmissiveRect2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("lightPostLarge/EmissiveRect3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_jeflq"]
+resource_name = "idle"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("lightPostLarge/SpotLight3D2:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("lightPostLarge/SpotLight3D:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("lightPostLarge/EmissiveRect4:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("lightPostLarge/EmissiveRect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("lightPostLarge/EmissiveRect2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("lightPostLarge/EmissiveRect3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_a4qks"]
+resource_name = "triggered"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("lightPostLarge/SpotLight3D2:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16, 0.26),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 4.923, 4.483]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("lightPostLarge/SpotLight3D:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16, 0.26),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 4.923, 4.483]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("lightPostLarge/EmissiveRect4:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.1, 0.24),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("lightPostLarge/EmissiveRect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.1, 0.24),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("lightPostLarge/EmissiveRect2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.1, 0.24),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("lightPostLarge/EmissiveRect3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.1, 0.24),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8impy"]
+_data = {
+&"RESET": SubResource("Animation_x7k1h"),
+&"idle": SubResource("Animation_jeflq"),
+&"triggered": SubResource("Animation_a4qks")
+}
+
+[node name="LightPostLarge" type="Node3D" node_paths=PackedStringArray("_animationPlayer")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 0, 0, 0)
+script = ExtResource("1_x7k1h")
+_animationPlayer = NodePath("AnimationPlayer")
+
+[node name="lightPostLarge" parent="." instance=ExtResource("1_jeflq")]
+transform = Transform3D(-19.9974, 0, 0.322875, 0, 20, 0, -0.322875, 0, -19.9974, 0, 0, 0)
+
+[node name="EmissiveRect" type="MeshInstance3D" parent="lightPostLarge"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866026, -0.0540475, 0.703763, 0.0466369)
+material_override = SubResource("ShaderMaterial_01yyt")
+mesh = SubResource("QuadMesh_xgeex")
+skeleton = NodePath("../../..")
+
+[node name="EmissiveRect2" type="MeshInstance3D" parent="lightPostLarge"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866026, 0.0548818, 0.703763, 0.0464655)
+material_override = SubResource("ShaderMaterial_01yyt")
+mesh = SubResource("QuadMesh_xgeex")
+skeleton = NodePath("../../..")
+
+[node name="EmissiveRect3" type="MeshInstance3D" parent="lightPostLarge"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866026, 0.138065, 0.703763, 0.04607)
+material_override = SubResource("ShaderMaterial_01yyt")
+mesh = SubResource("QuadMesh_xgeex")
+skeleton = NodePath("../../..")
+
+[node name="EmissiveRect4" type="MeshInstance3D" parent="lightPostLarge"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866026, -0.132913, 0.703763, 0.047177)
+material_override = SubResource("ShaderMaterial_01yyt")
+mesh = SubResource("QuadMesh_xgeex")
+skeleton = NodePath("../../..")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="lightPostLarge"]
+transform = Transform3D(0.0497238, 0.00517535, 0.000870224, 0.00312318, -0.0358448, 0.0347188, 0.0042175, -0.0344727, -0.0359701, -0.0895859, 0.715764, 0.0491574)
+light_color = Color(0.849983, 0.531906, 1.15514e-06, 1)
+light_energy = 4.499
+spot_range = 20.0
+spot_attenuation = 0.24
+spot_angle = 18.89
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="lightPostLarge"]
+transform = Transform3D(0.0498614, 0.00365042, -0.000716552, 0.00312318, -0.0358448, 0.0347188, 0.00202107, -0.0346673, -0.0359735, 0.096868, 0.715764, 0.0573899)
+light_color = Color(0.849983, 0.531906, 1.15514e-06, 1)
+light_energy = 4.499
+spot_range = 20.0
+spot_attenuation = 0.24
+spot_angle = 18.89
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8impy")
+}
+autoplay = "idle"

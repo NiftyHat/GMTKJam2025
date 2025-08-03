@@ -59,19 +59,19 @@ _checkpoints = [NodePath("Checkpoints/EntityCheckpoint1"), NodePath("Checkpoints
 [node name="Checkpoints" type="Node3D" parent="Track"]
 
 [node name="EntityCheckpoint1" parent="Track/Checkpoints" instance=ExtResource("3_jvdsq")]
-transform = Transform3D(-30, 0, -4.52987e-06, 0, 30, 0, 4.52987e-06, 0, -30, 196.295, -0.518576, -2.71677)
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 196.295, -0.518576, -2.71677)
 
 [node name="EntityCheckpoint2" parent="Track/Checkpoints" instance=ExtResource("3_jvdsq")]
-transform = Transform3D(-15, 0, -1.31134e-06, 0, 15, 0, 1.31134e-06, 0, -15, -71.7608, 0.209441, 114.774)
+transform = Transform3D(-0.7, 0, -1.50996e-07, 0, 1, 0, 1.05697e-07, 0, -1, -71.7608, 0.209441, 114.774)
 
 [node name="EntityCheckpoint3" parent="Track/Checkpoints" instance=ExtResource("3_jvdsq")]
-transform = Transform3D(1.96701e-06, 0, -15, 0, 15, 0, 15, 0, 1.96701e-06, -10.7125, -0.108033, 209.408)
+transform = Transform3D(5.28485e-08, 0, -1, 0, 1, 0, 0.7, 0, 7.54979e-08, -10.7125, -0.108033, 209.408)
 
 [node name="EntityCheckpoint4" parent="Track/Checkpoints" instance=ExtResource("3_jvdsq")]
-transform = Transform3D(13, 0, 0, 0, 13, 0, 0, 0, 13, 62.0532, 4.99811, 27.4491)
+transform = Transform3D(0.55, 0, 0, 0, 1, 0, 0, 0, 1, 62.4967, 4.99811, 27.4491)
 
 [node name="EntityCheckpoint5" parent="Track/Checkpoints" instance=ExtResource("3_jvdsq")]
-transform = Transform3D(0.03866, -0.0636279, -14.9998, 0.0135698, 14.9999, -0.0635931, 14.9999, -0.0134061, 0.0386925, 124.036, 0.209449, -85.9264)
+transform = Transform3D(0.00180415, -0.00424185, -0.999988, 0.000633259, 0.999991, -0.00423953, 0.699997, -0.000893718, 0.00258117, 124.036, 0.209449, -85.9264)
 
 [node name="Road" type="Node3D" parent="Track"]
 
