@@ -1,0 +1,90 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqdjcb8sy0vh4"]
+
+[sub_resource type="Curve3D" id="Curve3D_qisd1"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -1.31124, -0.0867538, -2.90884, 0, 0, 0, 0, 0, 0, 0.299129, -0.0557938, 39.8058, 0, 0, 0, 0, 0, 0, -0.678543, 0.033493, 59.1197, 0, 0, 0, 0, 0, 0, -4.53607, 0.350166, 79.6749, 0, 0, 0, 0, 0, 0, -12.992, 1.10546, 98.0045),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="Curve3D" id="Curve3D_56dbl"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 4.0949, 0.0692101, -52.7214, 0, 0, 0, 0, 0, 0, 1.43974, -0.588255, -78.6069, 0, 0, 0, 0, 0, 0, -9.63052, -0.159868, -102.843, 0, 0, 0, 0, 0, 0, -29.5339, -0.660812, -135.155, 0, 0, 0, 0, 0, 0, -50.6349, -0.30405, -139.899, 0, 0, 0, 0, 0, 0, -75.5007, -0.215416, -142.63, 0, 0, 0, 0, 0, 0, -93.9732, -0.390774, -142.701, 0, 0, 0, 0, 0, 0, -110.499, -0.254267, -138.558, 0, 0, 0, 0, 0, 0, -112.935, 0.0549994, -104.195, 0, 0, 0, 0, 0, 0, -140.281, -0.032444, -102.841, 0, 0, 0, 0, 0, 0, -167.766, -0.301124, -83.5968, 0, 0, 0, 0, 0, 0, -168.256, -0.969795, -47.6177),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 12
+
+[sub_resource type="Curve3D" id="Curve3D_8y3rp"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -66.7996, -0.0840034, 19.3176, 0, 0, 0, 0, 0, 0, -68.2388, -0.0447817, 52.1033, 0, 0, 0, 0, 0, 0, -62.9545, 0.0368614, 79.2064, 0, 0, 0, 0, 0, 0, -43.3505, 0.350728, 97.7657, 0, 0, 0, 0, 0, 0, -19.418, 1.10959, 102.415),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[node name="CSG" type="Node3D"]
+
+[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8147e-06, 0, -7.62939e-06)
+use_collision = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="CSGCombiner3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.8147e-06)
+polygon = PackedVector2Array(0, 0, 0, 6, 2, 6, 2, 0)
+mode = 2
+path_node = NodePath("../Path3D")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="Path3D" type="Path3D" parent="CSGCombiner3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.0861, 0, -34.8799)
+curve = SubResource("Curve3D_qisd1")
+
+[node name="CSGCombiner3D3" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, -3.97033, 0, 99.5765)
+use_collision = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="CSGCombiner3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.97033, 0, -99.5765)
+polygon = PackedVector2Array(0, 0, 0, 6, 2, 6, 2, 0)
+mode = 2
+path_node = NodePath("../Path3D")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="Path3D" type="Path3D" parent="CSGCombiner3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.0564, 0, -134.456)
+curve = SubResource("Curve3D_56dbl")
+
+[node name="CSGCombiner3D4" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="CSGCombiner3D4"]
+polygon = PackedVector2Array(0, 0, 0, 6, 2, 6, 2, 0)
+mode = 2
+path_node = NodePath("../Path3D")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="Path3D" type="Path3D" parent="CSGCombiner3D4"]
+curve = SubResource("Curve3D_8y3rp")
