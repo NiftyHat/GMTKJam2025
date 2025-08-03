@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://deq4ufgl60cje"]
+[gd_scene load_steps=58 format=3 uid="uid://deq4ufgl60cje"]
 
 [ext_resource type="PackedScene" uid="uid://dn7u8iitv4j0a" path="res://Scenes/Levels/level_short.tscn" id="1_4pinm"]
 [ext_resource type="Texture2D" uid="uid://2h3qmpnq0584" path="res://3D/Textures/7a3584298ef470fe0aafc146c23d34523b045606.png" id="2_opgjh"]
@@ -72,6 +72,11 @@ albedo_texture = ExtResource("2_opgjh")
 [sub_resource type="SphereMesh" id="SphereMesh_yr35r"]
 radius = 1.0
 height = 2.0
+
+[sub_resource type="Curve" id="Curve_fc73u"]
+_limits = [0.0, 1.0, 0.0, 20.0]
+_data = [Vector2(0, 0.449454), 0.0, 0.0, 0, 0, Vector2(1.11969, 0.862363), 0.128135, 0.128135, 0, 0, Vector2(4.44015, 1), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ni8gw"]
 bounce = 0.05
@@ -222,7 +227,7 @@ script = ExtResource("27_ddf4q")
 _rb = NodePath("../RigidBody")
 _camera3D = NodePath("../../Camera/Camera3D")
 _carVisualLibrary = NodePath("../../CarVisuals")
-_audio = NodePath("CarAudio")
+_audio = NodePath("CarAudio2")
 _contactMonitor = NodePath("../RigidBody/Rigidbody3DContactMonitor")
 Acceleration = 0.3
 BrakeStrength = 0.08
@@ -246,18 +251,19 @@ transform = Transform3D(1, 0, 0, 0, 0.997564, -0.0697565, 0, 0.0697565, 0.997564
 [node name="GroundCheckRaycast" type="RayCast3D" parent="GameControl/Player Car/Car Controller"]
 target_position = Vector3(0, -2, 0)
 
-[node name="CarAudio" type="Node3D" parent="GameControl/Player Car/Car Controller" node_paths=PackedStringArray("StreamPlayerEngine", "StreamPlayerCollider")]
+[node name="CarAudio2" type="Node3D" parent="GameControl/Player Car/Car Controller" node_paths=PackedStringArray("StreamPlayerEngine", "StreamPlayerCollider")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0612316, 0, 0.0334511)
 script = ExtResource("28_0w62r")
 StreamPlayerEngine = NodePath("AudioStreamPlayer3DEngine")
 StreamPlayerCollider = NodePath("AudioStreamPlayer3DCollider")
+VelocityVolumeCurve = SubResource("Curve_fc73u")
 
-[node name="AudioStreamPlayer3DEngine" type="AudioStreamPlayer3D" parent="GameControl/Player Car/Car Controller/CarAudio"]
+[node name="AudioStreamPlayer3DEngine" type="AudioStreamPlayer3D" parent="GameControl/Player Car/Car Controller/CarAudio2"]
 stream = ExtResource("29_0w62r")
 autoplay = true
 bus = &"SFX"
 
-[node name="AudioStreamPlayer3DCollider" type="AudioStreamPlayer3D" parent="GameControl/Player Car/Car Controller/CarAudio"]
+[node name="AudioStreamPlayer3DCollider" type="AudioStreamPlayer3D" parent="GameControl/Player Car/Car Controller/CarAudio2"]
 stream = ExtResource("30_2rb0b")
 bus = &"SFX"
 

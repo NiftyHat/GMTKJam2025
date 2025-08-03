@@ -40,7 +40,7 @@ metadata/_edit_lock_ = true
 [node name="Track" type="Node3D" parent="." node_paths=PackedStringArray("_checkpoints")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00151777, 0.00411141, 0.000809431)
 script = ExtResource("3_yjare")
-_checkpoints = [NodePath("Checkpoints/EntityCheckpoint1"), NodePath("Checkpoints/EntityCheckpoint2")]
+_checkpoints = [NodePath("Checkpoints/EntityCheckpoint1"), NodePath("Checkpoints/EntityCheckpoint2"), NodePath("Checkpoints/EntityCheckpoint3")]
 
 [node name="Checkpoints" type="Node3D" parent="Track"]
 
@@ -48,7 +48,11 @@ _checkpoints = [NodePath("Checkpoints/EntityCheckpoint1"), NodePath("Checkpoints
 transform = Transform3D(-0.999997, -0.00254176, -0.000725897, -0.00254193, 0.999997, 0.000224179, 0.000725325, 0.000226024, -1, 30.5342, 0, -2.71677)
 
 [node name="EntityCheckpoint2" parent="Track/Checkpoints" instance=ExtResource("4_2547q")]
-transform = Transform3D(0.7, 0, -4.76837e-08, 0, 1, 0, 3.33786e-08, 0, 1, -43.3052, 0.209445, -30.7049)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.6631, 0.209446, 46.5252)
+
+[node name="EntityCheckpoint3" parent="Track/Checkpoints" node_paths=PackedStringArray("_labels") instance=ExtResource("4_2547q")]
+transform = Transform3D(0.973646, 0.00252607, -0.228052, -0.00254193, 0.999997, 0.000224179, 0.228052, 0.000361419, 0.973649, -41.516, 0, -89.9178)
+_labels = [NodePath("../EntityCheckpoint1/Checkpoint2/Label3D2"), NodePath("../EntityCheckpoint1/Checkpoint2/Label3D3")]
 
 [node name="Road" type="Node3D" parent="Track"]
 
@@ -120,6 +124,12 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 57.8, 
 
 [node name="building-e" parent="." instance=ExtResource("16_fat7k")]
 transform = Transform3D(0.8428, 0, 0.538227, 0, 1, 0, -0.538227, 0, 0.8428, 39.5419, 0.866364, 82.0705)
+
+[node name="building-e2" parent="." instance=ExtResource("16_fat7k")]
+transform = Transform3D(0.538227, 0, -0.8428, 0, 1, 0, 0.8428, 0, 0.538227, -58.8277, 0.666796, 82.8519)
+
+[node name="building-e3" parent="." instance=ExtResource("16_fat7k")]
+transform = Transform3D(0.538227, 0, -0.8428, 0, 1, 0, 0.8428, 0, 0.538227, -58.8277, 0.666796, 82.8519)
 
 [node name="building-a" parent="." instance=ExtResource("17_nyx8g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.97033, 0, 99.5765)

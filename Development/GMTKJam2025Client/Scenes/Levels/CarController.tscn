@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://cus75q7tdyypj"]
+
+[ext_resource type="Script" uid="uid://dnlgcp0rpf2mg" path="res://Script/CarController.cs" id="1_aimtg"]
+[ext_resource type="Script" uid="uid://c2g515g04evoc" path="res://Script/CarAudio.cs" id="2_to7hd"]
+[ext_resource type="AudioStream" uid="uid://bmrbrxikhv3ft" path="res://Audio/SFX/147242__qubodup__car-engine-loop.ogg" id="3_kinc6"]
+[ext_resource type="AudioStream" uid="uid://8xdf0ruk1x72" path="res://Audio/SFX/lsl donk.ogg" id="4_mxei0"]
+
+[sub_resource type="Curve" id="Curve_wdmew"]
+_limits = [0.0, 1.0, 0.0, 20.0]
+_data = [Vector2(0, 0.449454), 0.0, 0.0, 0, 0, Vector2(1.11969, 0.862363), 0.128135, 0.128135, 0, 0, Vector2(4.44015, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="Car Controller" type="Node3D" node_paths=PackedStringArray("_audio")]
+script = ExtResource("1_aimtg")
+_audio = NodePath("CarAudio")
+Acceleration = 0.3
+BrakeStrength = 0.08
+reverseAcceleration = 0.1
+MaxSpeed = 50.0
+maxReverseSpeed = -5.0
+steering = 11.0
+turnSpeed = 12.0
+minimumTurnSpeed = 1.0
+
+[node name="GroundCheck" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.440059, 0)
+
+[node name="Ideal Camera Location" type="Node3D" parent="."]
+transform = Transform3D(-0.999889, -0.00031299, 0.0148877, -2.36469e-11, 0.999779, 0.0210187, -0.014891, 0.0210164, -0.999668, 0.0055477, 1.73565, -6.6779)
+
+[node name="Camera Look At Target" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.997564, -0.0697565, 0, 0.0697565, 0.997564, 0, 0.0906405, 9.68335)
+
+[node name="GroundCheckRaycast" type="RayCast3D" parent="."]
+target_position = Vector3(0, -2, 0)
+
+[node name="CarAudio" type="Node3D" parent="." node_paths=PackedStringArray("StreamPlayerEngine", "StreamPlayerCollider")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0612316, 0, 0.0334511)
+script = ExtResource("2_to7hd")
+StreamPlayerEngine = NodePath("AudioStreamPlayer3DEngine")
+StreamPlayerCollider = NodePath("AudioStreamPlayer3DCollider")
+VelocityVolumeCurve = SubResource("Curve_wdmew")
+
+[node name="AudioStreamPlayer3DEngine" type="AudioStreamPlayer3D" parent="CarAudio"]
+stream = ExtResource("3_kinc6")
+autoplay = true
+bus = &"SFX"
+
+[node name="AudioStreamPlayer3DCollider" type="AudioStreamPlayer3D" parent="CarAudio"]
+stream = ExtResource("4_mxei0")
+bus = &"SFX"

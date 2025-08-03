@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://bs7t7tjyw4eo1"]
+[gd_scene load_steps=58 format=3 uid="uid://bs7t7tjyw4eo1"]
 
 [ext_resource type="Script" uid="uid://2jqy0i2iaig4" path="res://Script/GameController.cs" id="1_6vvcf"]
 [ext_resource type="Texture2D" uid="uid://2h3qmpnq0584" path="res://3D/Textures/7a3584298ef470fe0aafc146c23d34523b045606.png" id="2_6vvcf"]
@@ -31,7 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://35hidwm55s31" path="res://3D/Coffin/Coffin6.tscn" id="22_vgicg"]
 [ext_resource type="PackedScene" uid="uid://psvfax7t2ms" path="res://3D/Coffin/Coffin7.tscn" id="23_sjxqr"]
 [ext_resource type="Script" uid="uid://c2g515g04evoc" path="res://Script/CarAudio.cs" id="28_jmmro"]
-[ext_resource type="AudioStream" uid="uid://detpkwagwummm" path="res://Audio/SFX/lsl vrrr.ogg" id="29_vgicg"]
+[ext_resource type="AudioStream" uid="uid://bmrbrxikhv3ft" path="res://Audio/SFX/147242__qubodup__car-engine-loop.ogg" id="29_n7u05"]
 [ext_resource type="PackedScene" uid="uid://dobssek2rvaoe" path="res://Scenes/drift_smoke.tscn" id="30_rsfko"]
 [ext_resource type="AudioStream" uid="uid://8xdf0ruk1x72" path="res://Audio/SFX/lsl donk.ogg" id="30_sjxqr"]
 [ext_resource type="PackedScene" uid="uid://drncy6tn4jupe" path="res://Scenes/trail1.tscn" id="31_82uqo"]
@@ -72,6 +72,11 @@ albedo_texture = ExtResource("2_6vvcf")
 [sub_resource type="SphereMesh" id="SphereMesh_yr35r"]
 radius = 1.0
 height = 2.0
+
+[sub_resource type="Curve" id="Curve_kpq66"]
+_limits = [0.0, 1.0, 0.0, 20.0]
+_data = [Vector2(0, 0.449454), 0.0, 0.0, 0, 0, Vector2(1.11969, 0.862363), 0.128135, 0.128135, 0, 0, Vector2(4.44015, 1), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ni8gw"]
 bounce = 0.05
@@ -222,7 +227,7 @@ script = ExtResource("8_ry528")
 _rb = NodePath("../RigidBody")
 _camera3D = NodePath("../../Camera/Camera3D")
 _carVisualLibrary = NodePath("../../CarVisuals")
-_audio = NodePath("CarAudio")
+_audio = NodePath("CarAudio2")
 _contactMonitor = NodePath("../RigidBody/Rigidbody3DContactMonitor")
 Acceleration = 0.3
 BrakeStrength = 0.08
@@ -246,17 +251,19 @@ transform = Transform3D(1, 0, 0, 0, 0.997564, -0.0697565, 0, 0.0697565, 0.997564
 [node name="GroundCheckRaycast" type="RayCast3D" parent="GameControl/Player Car/Car Controller"]
 target_position = Vector3(0, -2, 0)
 
-[node name="CarAudio" type="Node3D" parent="GameControl/Player Car/Car Controller" node_paths=PackedStringArray("StreamPlayerEngine", "StreamPlayerCollider")]
+[node name="CarAudio2" type="Node3D" parent="GameControl/Player Car/Car Controller" node_paths=PackedStringArray("StreamPlayerEngine", "StreamPlayerCollider")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0612316, 0, 0.0334511)
 script = ExtResource("28_jmmro")
 StreamPlayerEngine = NodePath("AudioStreamPlayer3DEngine")
 StreamPlayerCollider = NodePath("AudioStreamPlayer3DCollider")
+VelocityVolumeCurve = SubResource("Curve_kpq66")
 
-[node name="AudioStreamPlayer3DEngine" type="AudioStreamPlayer3D" parent="GameControl/Player Car/Car Controller/CarAudio"]
-stream = ExtResource("29_vgicg")
+[node name="AudioStreamPlayer3DEngine" type="AudioStreamPlayer3D" parent="GameControl/Player Car/Car Controller/CarAudio2"]
+stream = ExtResource("29_n7u05")
 autoplay = true
 bus = &"SFX"
 
-[node name="AudioStreamPlayer3DCollider" type="AudioStreamPlayer3D" parent="GameControl/Player Car/Car Controller/CarAudio"]
+[node name="AudioStreamPlayer3DCollider" type="AudioStreamPlayer3D" parent="GameControl/Player Car/Car Controller/CarAudio2"]
 stream = ExtResource("30_sjxqr")
 bus = &"SFX"
 
