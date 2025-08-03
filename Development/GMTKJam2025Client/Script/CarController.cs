@@ -43,6 +43,8 @@ public partial class CarController : Node3D
 	[Export] private float minimumTurnSpeed;
 	
 	private const float M = 1000f;
+	private Timer _startTimer;
+	private bool _hasControl = false;
 
 	public override void _Ready()
 	{
@@ -52,6 +54,12 @@ public partial class CarController : Node3D
 		GroundCheckRaycast.AddException(_rb);
 
 		Transform = _rb.Transform;
+
+		_startTimer = new Timer();
+		_startTimer.Name = "StartTimer";
+		AddChild(_startTimer);
+		_startTimer.Start(2.1);
+		_startTimer.Timeout += () => _hasControl = true;
 
 
 		_contactMonitor.OnContact += HandleRigidbodyContact;
@@ -81,8 +89,12 @@ public partial class CarController : Node3D
 		Position = p;
 
 
-		// Player Input
 		
+		// Player Input
+		if (!_hasControl)
+		{
+			return;
+		}
 		
 		// Acceleration, Braking, and Reversing vroom
 

@@ -235,6 +235,7 @@ target_position = Vector3(0, -2, 0)
 
 [node name="CarAudio" parent="GameControl/Player Car/Car Controller" instance=ExtResource("28_tuu5d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0612316, 0, 0.0334511)
+VelocityVolumeCurve = null
 
 [node name="RigidBody" type="RigidBody3D" parent="GameControl/Player Car" node_paths=PackedStringArray("Entity")]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, -0.514376, 0.652387, -7.93658)
