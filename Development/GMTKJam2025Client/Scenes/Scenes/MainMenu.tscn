@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://djpruf2ij658q"]
+[gd_scene load_steps=49 format=3 uid="uid://djpruf2ij658q"]
 
 [ext_resource type="PackedScene" uid="uid://de6n0n215fpr5" path="res://Scenes/Camera/GameCamera.tscn" id="1_3ilbw"]
 [ext_resource type="Texture2D" uid="uid://dhojn25qmrh3b" path="res://Texture/Grid Floor.png" id="2_unkyg"]
@@ -16,16 +16,21 @@
 [ext_resource type="Script" uid="uid://ck60eum4nuv7n" path="res://Script/MainMenu/Screens/MainMenuMainMenuDisplay.cs" id="14_4oir8"]
 [ext_resource type="FontFile" uid="uid://djnxc24f5yy5" path="res://Fonts/Hauser Bold.otf" id="15_54anl"]
 [ext_resource type="Script" uid="uid://bxwjgtymipxoq" path="res://Script/MainMenu/Screens/MainMenuTextScreenPopupDisplay.cs" id="16_rn4ru"]
+[ext_resource type="Texture2D" uid="uid://1wxo1j1td8om" path="res://Texture/MainMenu/HTP_1.png" id="17_7hu3n"]
 [ext_resource type="FontFile" uid="uid://4tcf8t2hi7n6" path="res://Fonts/Hauser Bold Italic.otf" id="17_qn512"]
+[ext_resource type="Texture2D" uid="uid://dmeqqawp3kr0a" path="res://Texture/MainMenu/HTP_3.png" id="18_ctiay"]
 [ext_resource type="Script" uid="uid://dp4ao08gscj3v" path="res://Script/MainMenu/Screens/TrackSelectScreenDisplay.cs" id="18_e02ys"]
 [ext_resource type="PackedScene" uid="uid://deq4ufgl60cje" path="res://Scenes/Scenes/GameScene-Training.tscn" id="19_3ilbw"]
+[ext_resource type="Texture2D" uid="uid://bqthuwsvewo2s" path="res://Texture/MainMenu/HTP_2.png" id="19_mujgh"]
 [ext_resource type="PackedScene" uid="uid://bs7t7tjyw4eo1" path="res://Scenes/Scenes/GameScene-FigureEight.tscn" id="20_ie5s8"]
 [ext_resource type="PackedScene" uid="uid://bisqo3qgx8bbs" path="res://Scenes/Scenes/GameScene-KeithTrack.tscn" id="21_dvcj5"]
-[ext_resource type="Texture2D" uid="uid://c2mbxkr3skosf" path="res://3D/Models/Textures/racetrack.png" id="22_ab2xv"]
 [ext_resource type="Script" uid="uid://cyky1n1o1l21" path="res://Script/MainMenu/MainMenuMusic.cs" id="23_twyny"]
 [ext_resource type="Resource" uid="uid://dc5mml11qghcd" path="res://Audio/Music/music_title_screen.tres" id="24_wyih3"]
+[ext_resource type="Texture2D" uid="uid://dxt6rfp6m8ucb" path="res://Texture/MainMenu/TS_Level1.png" id="25_mujgh"]
 [ext_resource type="Resource" uid="uid://cgho0gopdveb" path="res://Audio/Music/music_level_select.tres" id="25_o85oa"]
+[ext_resource type="Texture2D" uid="uid://2eo11ckq3nul" path="res://Texture/MainMenu/TS_Level2.png" id="26_jiss0"]
 [ext_resource type="Environment" uid="uid://b5onbneexcg77" path="res://Scenes/Environments/GameWinEnvironment.tres" id="26_xqdd7"]
+[ext_resource type="Texture2D" uid="uid://7ru5vybq1or5" path="res://Texture/MainMenu/TS_Level3.png" id="27_0jpox"]
 [ext_resource type="PackedScene" uid="uid://bvua7x2gcfw2v" path="res://3D/Models/Background_Graveyard.gltf" id="27_645u6"]
 [ext_resource type="PackedScene" uid="uid://1bhvbl0nhyga" path="res://3D/Prototype/Kenney_Racing/grass.glb" id="28_xah47"]
 [ext_resource type="PackedScene" uid="uid://dtsq4dsirk27e" path="res://3D/Prototype/Kenney_Racing/pitsGarageCorner.glb" id="29_iwck6"]
@@ -368,11 +373,15 @@ size_flags_horizontal = 3
 [node name="VBoxContainer" type="VBoxContainer" parent="Main Menu Control/HowToPlayDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer"]
 layout_mode = 2
 
+[node name="Control2" type="Control" parent="Main Menu Control/HowToPlayDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
 [node name="TextureRect" type="TextureRect" parent="Main Menu Control/HowToPlayDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 250)
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("12_bln8o")
+texture = ExtResource("17_7hu3n")
 expand_mode = 1
 stretch_mode = 5
 
@@ -390,6 +399,10 @@ Steer with  [color=#ff9900][A][/color] and  [color=#ff9900][D][/color]
 fit_content = true
 horizontal_alignment = 1
 
+[node name="Control" type="Control" parent="Main Menu Control/HowToPlayDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
 [node name="PanelContainer2" type="PanelContainer" parent="Main Menu Control/HowToPlayDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -397,11 +410,15 @@ size_flags_horizontal = 3
 [node name="VBoxContainer" type="VBoxContainer" parent="Main Menu Control/HowToPlayDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer2"]
 layout_mode = 2
 
+[node name="Control3" type="Control" parent="Main Menu Control/HowToPlayDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
 [node name="TextureRect" type="TextureRect" parent="Main Menu Control/HowToPlayDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer2/VBoxContainer"]
 custom_minimum_size = Vector2(0, 250)
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("12_bln8o")
+texture = ExtResource("18_ctiay")
 expand_mode = 1
 stretch_mode = 5
 
@@ -418,6 +435,10 @@ a [color=#ff9900]GHOST CAR[/color] will be created, and copy that lap's route
 fit_content = true
 horizontal_alignment = 1
 
+[node name="Control2" type="Control" parent="Main Menu Control/HowToPlayDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
 [node name="PanelContainer3" type="PanelContainer" parent="Main Menu Control/HowToPlayDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -425,11 +446,15 @@ size_flags_horizontal = 3
 [node name="VBoxContainer" type="VBoxContainer" parent="Main Menu Control/HowToPlayDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer3"]
 layout_mode = 2
 
+[node name="Control4" type="Control" parent="Main Menu Control/HowToPlayDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer3/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
 [node name="TextureRect" type="TextureRect" parent="Main Menu Control/HowToPlayDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer3/VBoxContainer"]
 custom_minimum_size = Vector2(0, 250)
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("12_bln8o")
+texture = ExtResource("19_mujgh")
 expand_mode = 1
 stretch_mode = 5
 
@@ -445,6 +470,10 @@ Get through [color=#ff9900]seven laps[/color] to win the race and to enter
 [color=#ff9900]ENDLESS LOOP[/color] mode!!"
 fit_content = true
 horizontal_alignment = 1
+
+[node name="Control2" type="Control" parent="Main Menu Control/HowToPlayDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer3/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Main Menu Control/HowToPlayDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -588,7 +617,7 @@ size_flags_vertical = 3
 [node name="TextureRect" type="TextureRect" parent="Main Menu Control/TrackSelectDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer/Circuit"]
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
-texture = ExtResource("22_ab2xv")
+texture = ExtResource("25_mujgh")
 expand_mode = 5
 stretch_mode = 4
 
@@ -596,6 +625,9 @@ stretch_mode = 4
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
 theme_override_fonts/font = ExtResource("15_54anl")
 theme_override_font_sizes/font_size = 26
 text = "TRAINING CIRCUIT"
@@ -608,7 +640,7 @@ size_flags_vertical = 3
 [node name="TextureRect" type="TextureRect" parent="Main Menu Control/TrackSelectDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer/Figure Eight"]
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
-texture = ExtResource("22_ab2xv")
+texture = ExtResource("26_jiss0")
 expand_mode = 5
 stretch_mode = 4
 
@@ -616,9 +648,12 @@ stretch_mode = 4
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
 theme_override_fonts/font = ExtResource("15_54anl")
 theme_override_font_sizes/font_size = 26
-text = "FIGURE EIGHT"
+text = "EIGHTH STREET OVERPASS"
 
 [node name="Jumper" type="VBoxContainer" parent="Main Menu Control/TrackSelectDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -628,7 +663,7 @@ size_flags_vertical = 3
 [node name="TextureRect" type="TextureRect" parent="Main Menu Control/TrackSelectDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer/Jumper"]
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
-texture = ExtResource("22_ab2xv")
+texture = ExtResource("27_0jpox")
 expand_mode = 5
 stretch_mode = 4
 
@@ -636,9 +671,12 @@ stretch_mode = 4
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0.929412, 0.988235, 0.105882, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.929412, 0.988235, 0.105882, 1)
 theme_override_fonts/font = ExtResource("15_54anl")
 theme_override_font_sizes/font_size = 26
-text = "JUMP TRACK"
+text = "SYNTHSPOOK DRIVE"
 
 [node name="Control" type="Control" parent="Main Menu Control/TrackSelectDisplay/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
