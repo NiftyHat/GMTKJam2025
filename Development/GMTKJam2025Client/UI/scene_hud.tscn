@@ -609,6 +609,7 @@ texture = ExtResource("8_tiise")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/GhostStock/GhostSpawn"]
 position = Vector2(2, 0)
 sprite_frames = SubResource("SpriteFrames_c1xdp")
+autoplay = "default"
 
 [node name="GhostIconTop" type="Sprite2D" parent="CanvasLayer/GhostStock/GhostSpawn"]
 position = Vector2(1, -1)
@@ -629,6 +630,7 @@ texture = ExtResource("8_tiise")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/GhostStock/GhostSpawn2"]
 position = Vector2(2, 0)
 sprite_frames = SubResource("SpriteFrames_c1xdp")
+autoplay = "default"
 
 [node name="GhostIconTop" type="Sprite2D" parent="CanvasLayer/GhostStock/GhostSpawn2"]
 position = Vector2(1, -1)
@@ -649,6 +651,7 @@ texture = ExtResource("8_tiise")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/GhostStock/GhostSpawn3"]
 position = Vector2(2, 0)
 sprite_frames = SubResource("SpriteFrames_c1xdp")
+autoplay = "default"
 
 [node name="GhostIconTop" type="Sprite2D" parent="CanvasLayer/GhostStock/GhostSpawn3"]
 position = Vector2(1, -1)
@@ -669,6 +672,7 @@ texture = ExtResource("8_tiise")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/GhostStock/GhostSpawn4"]
 position = Vector2(2, 0)
 sprite_frames = SubResource("SpriteFrames_c1xdp")
+autoplay = "default"
 
 [node name="GhostIconTop" type="Sprite2D" parent="CanvasLayer/GhostStock/GhostSpawn4"]
 position = Vector2(1, -1)
@@ -689,6 +693,7 @@ texture = ExtResource("8_tiise")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/GhostStock/GhostSpawn5"]
 position = Vector2(2, 0)
 sprite_frames = SubResource("SpriteFrames_c1xdp")
+autoplay = "default"
 
 [node name="GhostIconTop" type="Sprite2D" parent="CanvasLayer/GhostStock/GhostSpawn5"]
 position = Vector2(1, -1)
@@ -709,6 +714,7 @@ texture = ExtResource("8_tiise")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/GhostStock/GhostSpawn6"]
 position = Vector2(2, 0)
 sprite_frames = SubResource("SpriteFrames_c1xdp")
+autoplay = "default"
 
 [node name="GhostIconTop" type="Sprite2D" parent="CanvasLayer/GhostStock/GhostSpawn6"]
 position = Vector2(1, -1)
