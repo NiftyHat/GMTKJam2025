@@ -94,7 +94,7 @@ border_width_bottom = 3
 [node name="Level Geometry" type="Node" parent="."]
 
 [node name="Level Keith" parent="Level Geometry" instance=ExtResource("1_fcuc1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0405884, 0.0144997, 0.0209961)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 389.482, 0.014, -34.811)
 
 [node name="Floor" type="StaticBody3D" parent="Level Geometry"]
 collision_layer = 5
@@ -205,7 +205,6 @@ metadata/_custom_type_script = "uid://v2v2l1vx325s"
 [node name="Engine Only Helper" type="Node3D" parent="GameControl/Player Car"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.682709, 0.80267, -7.84895)
 visible = false
-metadata/_edit_lock_ = true
 
 [node name="MeshInstance3DCarDebug" type="MeshInstance3D" parent="GameControl/Player Car/Engine Only Helper"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0, 0, 0)
@@ -233,7 +232,6 @@ maxReverseSpeed = -5.0
 steering = 11.0
 turnSpeed = 12.0
 minimumTurnSpeed = 1.0
-metadata/_edit_lock_ = true
 
 [node name="GroundCheck" type="Node3D" parent="GameControl/Player Car/Car Controller"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.440059, 0)
@@ -272,7 +270,6 @@ continuous_cd = true
 angular_damp = 2.5
 script = ExtResource("28_4cqhq")
 Entity = NodePath("..")
-metadata/_edit_lock_ = true
 
 [node name="CollisionShape3DCar" type="CollisionShape3D" parent="GameControl/Player Car/RigidBody"]
 shape = SubResource("SphereShape3D_7ms41")

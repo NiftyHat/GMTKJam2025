@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://c60ycfmlh2ig"]
+
+[ext_resource type="PackedScene" uid="uid://e66qnpu7wvjk" path="res://3D/Models/Background_PalmTree.gltf" id="1_kktt6"]
+
+[node name="Palms" type="Node3D"]
+
+[node name="Background_PalmTree217" parent="." instance=ExtResource("1_kktt6")]
+transform = Transform3D(2.73016, 0, 0.156463, 0, 2.73464, 0, -0.156463, 0, 2.73016, 0, 0.261188, -19.2149)
+metadata/_edit_lock_ = true
+
+[node name="Background_PalmTree218" parent="." instance=ExtResource("1_kktt6")]
+transform = Transform3D(2.33301, 0, 0.806145, 0, 2.46837, 0, -0.806145, 0, 2.33301, 0, 0.261188, -11.0769)
+metadata/_edit_lock_ = true
+
+[node name="Background_PalmTree219" parent="." instance=ExtResource("1_kktt6")]
+transform = Transform3D(2.28982, 0, -0.337151, 0, 2.31451, 0, 0.337151, 0, 2.28982, 0, 0.261188, -1.08165)
+metadata/_edit_lock_ = true
+
+[node name="Background_PalmTree220" parent="." instance=ExtResource("1_kktt6")]
+transform = Transform3D(2.45098, 0, -0.292435, 0, 2.46837, 0, 0.292435, 0, 2.45098, 0, 0.233287, 9.52119)
+metadata/_edit_lock_ = true
+
+[node name="Background_PalmTree221" parent="." instance=ExtResource("1_kktt6")]
+transform = Transform3D(2.33188, 0, -0.0234843, 0, 2.332, 0, 0.0234843, 0, 2.33188, 0, 0.233287, 18.4182)
+metadata/_edit_lock_ = true
