@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dm84nqfsh38yp"]
+[gd_scene load_steps=25 format=3 uid="uid://dm84nqfsh38yp"]
 
 [ext_resource type="Environment" uid="uid://b7nskufe3ugno" path="res://Scenes/Environments/LevelEnviroment.tres" id="1_q58yo"]
 [ext_resource type="Script" uid="uid://geqjn5xl7l6l" path="res://3D/Entities/EntityTrack.cs" id="2_axl12"]
@@ -28,6 +28,9 @@ size = Vector2(512, 512)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_443p8"]
 albedo_texture = ExtResource("29_4pnrw")
 uv1_scale = Vector3(32, 32, 32)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2d7q2"]
+size = Vector3(45.3544, 14.1446, 1)
 
 [node name="Level Keith" type="Node3D"]
 
@@ -1209,3 +1212,26 @@ transform = Transform3D(-2.32969, 0, 0.103834, 0, 2.332, 0, -0.103834, 0, -2.329
 
 [node name="Background_PalmTree223" parent="City" instance=ExtResource("32_e7esy")]
 transform = Transform3D(0.273531, 0, -2.3159, 0, 2.332, 0, 2.3159, 0, 0.273531, 298.593, 0.233283, 92.3016)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 121.124, 7.70048, -158.327)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_2d7q2")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 152.095, 7.66627, -169.397)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(0.999997, 0, 0, 0, 1, 0, 0, 0, 0.999997, 0, 0, 0)
+shape = SubResource("BoxShape3D_2d7q2")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="."]
+transform = Transform3D(0.800104, 0, -0.599862, 0, 1, 0, 0.599862, 0, 0.800104, 190.878, 7.66627, -155.101)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3"]
+transform = Transform3D(0.999997, 0, 0, 0, 1, 0, 0, 0, 0.999997, 0, 0, 0)
+shape = SubResource("BoxShape3D_2d7q2")
+metadata/_edit_lock_ = true
