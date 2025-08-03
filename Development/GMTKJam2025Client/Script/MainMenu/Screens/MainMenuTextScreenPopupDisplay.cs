@@ -34,4 +34,9 @@ public partial class MainMenuTextScreenPopupDisplay : Control, IMenuDisplay
 			EmitSignalCancel();
 		}
 	}
+
+	public void LoadHyperLink(Variant meta)
+	{
+		OS.ShellOpen((String)meta);
+	}
 }

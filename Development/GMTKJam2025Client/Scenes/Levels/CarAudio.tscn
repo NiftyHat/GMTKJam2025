@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://vyb1wosv25gt"]
+
+[ext_resource type="Script" uid="uid://c2g515g04evoc" path="res://Script/CarAudio.cs" id="1_6ytlv"]
+[ext_resource type="AudioStream" uid="uid://bmrbrxikhv3ft" path="res://Audio/SFX/147242__qubodup__car-engine-loop.ogg" id="2_nkj2v"]
+[ext_resource type="AudioStream" uid="uid://8xdf0ruk1x72" path="res://Audio/SFX/lsl donk.ogg" id="3_12rpi"]
+
+[sub_resource type="Curve" id="Curve_kpq66"]
+_limits = [0.0, 1.0, 0.0, 20.0]
+_data = [Vector2(0, 0.218579), 0.0, 0.0, 0, 0, Vector2(0.888031, 0.409495), 0.128135, 0.128135, 0, 0, Vector2(3.55212, 0.502732), 0.0, 0.0, 0, 0, Vector2(9.57529, 0.507172), 0.0, 0.0, 0, 0, Vector2(17.3208, 0.767857), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[node name="CarAudio2" type="Node3D" node_paths=PackedStringArray("StreamPlayerEngine", "StreamPlayerCollider")]
+script = ExtResource("1_6ytlv")
+StreamPlayerEngine = NodePath("AudioStreamPlayer3DEngine")
+StreamPlayerCollider = NodePath("AudioStreamPlayer3DCollider")
+VelocityVolumeCurve = SubResource("Curve_kpq66")
+
+[node name="AudioStreamPlayer3DEngine" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_nkj2v")
+autoplay = true
+bus = &"SFX"
+
+[node name="AudioStreamPlayer3DCollider" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_12rpi")
+bus = &"SFX"
