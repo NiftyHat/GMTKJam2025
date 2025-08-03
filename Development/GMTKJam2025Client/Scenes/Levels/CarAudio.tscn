@@ -6,7 +6,7 @@
 
 [sub_resource type="Curve" id="Curve_kpq66"]
 _limits = [0.0, 1.0, 0.0, 20.0]
-_data = [Vector2(0, 0.0578823), 0.0, 0.0, 0, 0, Vector2(1.17955, 0.149647), 0.128135, 0.128135, 0, 0, Vector2(3.6173, 0.247529), 0.0, 0.0, 0, 0, Vector2(6.23853, 0.238353), 0.0, 0.0, 0, 0, Vector2(9.96068, 0.238353), 0.0, 0.0, 0, 0, Vector2(17.3001, 0.376), 0.0, 0.0, 0, 0]
+_data = [Vector2(0.0524246, 0.147791), 0.0, 0.0, 0, 0, Vector2(2.07077, 0.178336), 0.0, 0.0, 0, 0, Vector2(3.72215, 0.230263), 0.0, 0.0, 0, 0, Vector2(6.18611, 0.266917), 0.0, 0.0, 0, 0, Vector2(10.0917, 0.263863), 0.0, 0.0, 0, 0, Vector2(17.4574, 0.337171), 0.0, 0.0, 0, 0]
 point_count = 6
 
 [node name="CarAudio2" type="Node3D" node_paths=PackedStringArray("StreamPlayerEngine", "StreamPlayerCollider")]
