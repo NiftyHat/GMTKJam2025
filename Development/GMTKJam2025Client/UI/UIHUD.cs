@@ -12,6 +12,7 @@ public partial class UIHUD : Control
     [Export] private Control[] _ghostSpawnIcons;
     
     protected Timer _timer;
+    private string infinity = "∞";
 
     public override void _Ready()
     {
@@ -29,7 +30,7 @@ public partial class UIHUD : Control
     {
         if (_lapCountLabel != null)
         {
-            _lapCountLabel.Text = $"Lap {lap}/8";
+            _lapCountLabel.Text = $"Lap {lap}/{(lap > 7 ? infinity : "7")} ";
         }
        
         if (lap == 1)

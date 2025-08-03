@@ -495,7 +495,7 @@ offset_left = -56.5
 offset_top = -58.0
 offset_right = 14.5
 offset_bottom = 16.0
-text = "88"
+text = "  "
 label_settings = SubResource("LabelSettings_1ep41")
 horizontal_alignment = 1
 
@@ -506,7 +506,7 @@ offset_left = 24.5
 offset_top = -43.0
 offset_right = 59.5
 offset_bottom = -10.0
-text = "88"
+text = "  "
 label_settings = SubResource("LabelSettings_ulq7k")
 
 [node name="AnimationPlayerTimer" type="AnimationPlayer" parent="RaceClock/TimeRemainingElement"]
@@ -584,7 +584,7 @@ anchor_bottom = 1.0
 offset_top = -40.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/margin_left = 241
+theme_override_constants/margin_left = 245
 theme_override_constants/margin_bottom = -40
 
 [node name="GhostStock" type="Control" parent="MarginContainer"]

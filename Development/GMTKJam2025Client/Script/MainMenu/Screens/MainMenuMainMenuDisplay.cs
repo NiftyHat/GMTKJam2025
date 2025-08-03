@@ -24,7 +24,6 @@ public partial class MainMenuMainMenuDisplay : Control, IMenuDisplay
 			.Where(x => x is Button)
 			.Select(x => x as Button)
 			.ToList();
-		buttons.Sort((a, b) => a.Position.Y < b.Position.Y ? -1 : 1);
 		ButtonPos = buttons[0].Position.X;
 		
 		OffScreen = GetViewport().GetWindow().Size.X;
@@ -53,6 +52,7 @@ public partial class MainMenuMainMenuDisplay : Control, IMenuDisplay
 		}
 		
 		Modulate = Colors.White;
+		buttons.Sort((a, b) => a.Position.Y < b.Position.Y ? -1 : 1);
 		buttons[0].GrabFocus();
 	}
 
