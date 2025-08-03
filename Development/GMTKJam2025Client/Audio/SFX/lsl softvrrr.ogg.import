@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bmkqgtnkka0a8"
+path="res://.godot/imported/lsl softvrrr.ogg-650dffbf42e3ccee04ac89998d30babb.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/SFX/lsl softvrrr.ogg"
+dest_files=["res://.godot/imported/lsl softvrrr.ogg-650dffbf42e3ccee04ac89998d30babb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

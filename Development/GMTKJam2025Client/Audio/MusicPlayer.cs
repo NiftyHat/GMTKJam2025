@@ -29,6 +29,7 @@ public partial class MusicPlayer : Node
         base._Ready();
         StreamPlayerA = new AudioStreamPlayer();
         AddChild(StreamPlayerA);
+        StreamPlayerA.Bus = "Music";
         CurrentStream = StreamPlayerA;
 
         PauseStream = new AudioStreamPlayer();

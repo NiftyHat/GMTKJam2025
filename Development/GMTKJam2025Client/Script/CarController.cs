@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Linq;
+using GMTKJam2025;
 
 public partial class CarController : Node3D
 {
@@ -23,6 +24,8 @@ public partial class CarController : Node3D
 	[Export] private RigidBody3D _rb;
 	[Export] private Camera3D _camera3D;
 	[Export] private CarVisualLibrary _carVisualLibrary;
+	[Export] private CarAudio _audio;
+	[Export] private Rigidbody3DContactMonitor _contactMonitor;
 	
 	private Node3D CameraLookTarget;
 	private Node3D CameraPositionTarget;
@@ -49,10 +52,24 @@ public partial class CarController : Node3D
 		GroundCheckRaycast.AddException(_rb);
 
 		Transform = _rb.Transform;
+
+
+		_contactMonitor.OnContact += HandleRigidbodyContact;
 		base._Ready();
 
 		ChangeVisuals(1);
 	}
+
+	private void HandleRigidbodyContact(Vector3 impulse, GodotObject godotObject)
+	{
+		var abs = impulse.Abs();
+		GD.Print($"X:{abs.X}, Y:{abs.Y}, Z:{abs.Z}");
+		if (abs.X > 40 || abs.Z > 50)
+		{
+			_audio.PlayCollisionSound(abs);
+		}
+	}
+
 
 	public override void _Process(double delta)
 	{
@@ -113,6 +130,11 @@ public partial class CarController : Node3D
 			DriftAngle = Vector3.Zero;
 		}
 		CarVisualNode.Drift(DriftAngle);
+
+		if (_audio != null)
+		{
+			_audio.UpdateEngineSound(_rb.LinearVelocity, speedInput);
+		}
 		
 	}
 
@@ -120,7 +142,8 @@ public partial class CarController : Node3D
 	{
 		// check groundedness
 		isGrounded = GroundCheckRaycast.IsColliding();
-		
+
+
 		base._PhysicsProcess(delta);
 
 		Transform3D aimTransform;
@@ -137,7 +160,8 @@ public partial class CarController : Node3D
 			if (Speed > MaxSpeed)
 			{
 				_rb.LinearVelocity *= MaxSpeed / Speed;
-			} else if (Speed < maxReverseSpeed)
+			}
+			else if (Speed < maxReverseSpeed)
 			{
 				_rb.LinearVelocity *= maxReverseSpeed / Speed;
 			}
@@ -149,16 +173,16 @@ public partial class CarController : Node3D
 
 
 			aimTransform = AlignWithY(GlobalTransform, GroundCheckRaycast.GetCollisionNormal().Normalized());
-			
+
 		}
 		else
 		{
 			aimTransform = AlignWithY(GlobalTransform, Vector3.Up);
 		}
-		
-		GlobalTransform = GlobalTransform.InterpolateWith(aimTransform, (float)delta * 10f) ;
-	}
+		GlobalTransform = GlobalTransform.InterpolateWith(aimTransform, (float)delta * 10f);
 
+	}
+	
 	private Transform3D AlignWithY(Transform3D t, Vector3 v)
 	{
 		t.Basis.Y = v;

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://8xdf0ruk1x72"
+path="res://.godot/imported/lsl donk.ogg-0d1033fa2540b7b5d8121f29c647464c.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/SFX/lsl donk.ogg"
+dest_files=["res://.godot/imported/lsl donk.ogg-0d1033fa2540b7b5d8121f29c647464c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

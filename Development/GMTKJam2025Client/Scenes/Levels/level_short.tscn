@@ -25,16 +25,16 @@ size = Vector2(512, 512)
 albedo_texture = ExtResource("5_r1h4q")
 uv1_scale = Vector3(32, 32, 32)
 
-[sub_resource type="Curve3D" id="Curve3D_8y3rp"]
+[sub_resource type="Curve3D" id="Curve3D_qisd1"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -66.7996, -0.0840034, 19.3176, 0, 0, 0, 0, 0, 0, -68.2388, -0.0447817, 52.1033, 0, 0, 0, 0, 0, 0, -62.9545, 0.0368614, 79.2064, 0, 0, 0, 0, 0, 0, -43.3505, 0.350728, 97.7657, 0, 0, 0, 0, 0, 0, -19.418, 1.10959, 102.415),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -1.31124, -0.0867538, -2.90884, 0, 0, 0, 0, 0, 0, 0.299129, -0.0557938, 39.8058, 0, 0, 0, 0, 0, 0, -0.678543, 0.033493, 59.1197, 0, 0, 0, 0, 0, 0, -4.53607, 0.350166, 79.6749, 0, 0, 0, 0, 0, 0, -12.992, 1.10546, 98.0045),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
 
-[sub_resource type="Curve3D" id="Curve3D_qisd1"]
+[sub_resource type="Curve3D" id="Curve3D_8y3rp"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -1.31124, -0.0867538, -2.90884, 0, 0, 0, 0, 0, 0, 0.299129, -0.0557938, 39.8058, 0, 0, 0, 0, 0, 0, -0.678543, 0.033493, 59.1197, 0, 0, 0, 0, 0, 0, -4.53607, 0.350166, 79.6749, 0, 0, 0, 0, 0, 0, -12.992, 1.10546, 98.0045),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -66.7996, -0.0840034, 19.3176, 0, 0, 0, 0, 0, 0, -68.2388, -0.0447817, 52.1033, 0, 0, 0, 0, 0, 0, -62.9545, 0.0368614, 79.2064, 0, 0, 0, 0, 0, 0, -43.3505, 0.350728, 97.7657, 0, 0, 0, 0, 0, 0, -19.418, 1.10959, 102.415),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
@@ -142,12 +142,12 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 57.8, 
 [node name="building-e" parent="." instance=ExtResource("16_fat7k")]
 transform = Transform3D(0.8428, 0, 0.538227, 0, 1, 0, -0.538227, 0, 0.8428, 39.5419, 0.866364, 82.0705)
 
-[node name="building-a" parent="." instance=ExtResource("17_nyx8g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.97033, 0, 99.5765)
+[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8147e-06, 0, -7.62939e-06)
+use_collision = true
 
-[node name="Wall" type="Node3D" parent="."]
-
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Wall"]
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="CSGCombiner3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.8147e-06)
 polygon = PackedVector2Array(0, 0, 0, 6, 2, 6, 2, 0)
 mode = 2
 path_node = NodePath("../Path3D")
@@ -161,37 +161,16 @@ path_continuous_u = true
 path_u_distance = 1.0
 path_joined = false
 
-[node name="Path3D" type="Path3D" parent="Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3143, 0, 0)
-curve = SubResource("Curve3D_8y3rp")
-
-[node name="Wall2" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.0861, 0, -32.5385)
-
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Wall2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.0861, 0, 32.5385)
-polygon = PackedVector2Array(0, 0, 0, 6, 2, 6, 2, 0)
-mode = 2
-path_node = NodePath("../Path3D")
-path_interval_type = 0
-path_interval = 1.0
-path_simplify_angle = 0.0
-path_rotation = 2
-path_rotation_accurate = false
-path_local = false
-path_continuous_u = true
-path_u_distance = 1.0
-path_joined = false
-
-[node name="Path3D" type="Path3D" parent="Wall2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.3414)
+[node name="Path3D" type="Path3D" parent="CSGCombiner3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.0861, 0, -34.8799)
 curve = SubResource("Curve3D_qisd1")
 
-[node name="Wall3" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.0861, 0, -32.5385)
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.97033, 0, 99.5765)
+use_collision = true
 
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Wall3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.0861, 0, 32.5385)
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.97033, 0, -99.5765)
 polygon = PackedVector2Array(0, 0, 0, 6, 2, 6, 2, 0)
 mode = 2
 path_node = NodePath("../Path3D")
@@ -205,6 +184,32 @@ path_continuous_u = true
 path_u_distance = 1.0
 path_joined = false
 
-[node name="Path3D" type="Path3D" parent="Wall3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.3414)
+[node name="Path3D" type="Path3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.28463, 0, -99.5765)
+curve = SubResource("Curve3D_8y3rp")
+
+[node name="CSGCombiner3D3" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, -3.97033, 0, 99.5765)
+use_collision = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="CSGCombiner3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.97033, 0, -99.5765)
+polygon = PackedVector2Array(0, 0, 0, 6, 2, 6, 2, 0)
+mode = 2
+path_node = NodePath("../Path3D")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="Path3D" type="Path3D" parent="CSGCombiner3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.0564, 0, -134.456)
 curve = SubResource("Curve3D_56dbl")
+
+[node name="building-a" parent="." instance=ExtResource("17_nyx8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.97033, 0, 99.5765)

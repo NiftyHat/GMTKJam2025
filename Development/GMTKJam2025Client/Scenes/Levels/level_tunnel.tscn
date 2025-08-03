@@ -1,0 +1,210 @@
+[gd_scene load_steps=23 format=3 uid="uid://dryjkkhdunuos"]
+
+[ext_resource type="Environment" uid="uid://b7nskufe3ugno" path="res://Scenes/Environments/LevelEnviroment.tres" id="1_ahry4"]
+[ext_resource type="Script" uid="uid://geqjn5xl7l6l" path="res://3D/Entities/EntityTrack.cs" id="2_ampu5"]
+[ext_resource type="PackedScene" uid="uid://cvlcpfuwq1lv4" path="res://3D/Entities/entity_checkpoint.tscn" id="3_m0mr4"]
+[ext_resource type="PackedScene" uid="uid://cbqp08vfm6n0w" path="res://3D/Models/roadCornerLarger.gltf" id="4_ymg8u"]
+[ext_resource type="PackedScene" uid="uid://dvg027t0e671b" path="res://3D/Models/roadStraightwidelong.gltf" id="5_3u447"]
+[ext_resource type="PackedScene" uid="uid://cogvjvwoonthm" path="res://3D/Models/roadStraightwideenterlong.gltf" id="6_jwmdm"]
+[ext_resource type="PackedScene" uid="uid://dlbbya130wqhh" path="res://3D/Models/roadStraightlong.gltf" id="7_2gxcu"]
+[ext_resource type="Texture2D" uid="uid://dhojn25qmrh3b" path="res://Texture/Grid Floor.png" id="8_hr2m8"]
+[ext_resource type="PackedScene" uid="uid://dg68oa1v7eny7" path="res://3D/Prototype/Kenny_City/building-skyscraper-a.glb" id="9_s43rh"]
+[ext_resource type="PackedScene" uid="uid://bxmqnoo8et0ds" path="res://3D/Prototype/Kenny_City/building-skyscraper-b.glb" id="10_vjxg6"]
+[ext_resource type="PackedScene" uid="uid://cjqsf66xhghl7" path="res://3D/Prototype/Kenny_City/building-k.glb" id="11_2t67m"]
+[ext_resource type="PackedScene" uid="uid://hh2wu8gvl0re" path="res://3D/Prototype/Kenny_City/building-n.glb" id="12_s6rtm"]
+[ext_resource type="PackedScene" uid="uid://j540wm1ehfqs" path="res://3D/Prototype/Kenny_City/building-m.glb" id="13_qw2vc"]
+[ext_resource type="PackedScene" uid="uid://dc42t8qvdqgjs" path="res://3D/Prototype/Kenny_City/building-j.glb" id="14_km6ew"]
+[ext_resource type="PackedScene" uid="uid://bbp52jbroxjcp" path="res://3D/Prototype/Kenny_City/building-h.glb" id="15_cwmce"]
+[ext_resource type="PackedScene" uid="uid://3ktf5mpg81rg" path="res://3D/Prototype/Kenny_City/building-e.glb" id="16_0dcw6"]
+[ext_resource type="PackedScene" uid="uid://ckdleadlcqjtu" path="res://3D/Prototype/Kenny_City/building-a.glb" id="17_427yp"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_kt8ye"]
+size = Vector2(512, 512)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_443p8"]
+albedo_texture = ExtResource("8_hr2m8")
+uv1_scale = Vector3(32, 32, 32)
+
+[sub_resource type="Curve3D" id="Curve3D_8y3rp"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -66.7996, -0.0840034, 19.3176, 0, 0, 0, 0, 0, 0, -68.2388, -0.0447817, 52.1033, 0, 0, 0, 0, 0, 0, -62.9545, 0.0368614, 79.2064, 0, 0, 0, 0, 0, 0, -43.3505, 0.350728, 97.7657, 0, 0, 0, 0, 0, 0, -19.418, 1.10959, 102.415),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="Curve3D" id="Curve3D_qisd1"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -1.31124, -0.0867538, -2.90884, 0, 0, 0, 0, 0, 0, 0.299129, -0.0557938, 39.8058, 0, 0, 0, 0, 0, 0, -0.678543, 0.033493, 59.1197, 0, 0, 0, 0, 0, 0, -4.53607, 0.350166, 79.6749, 0, 0, 0, 0, 0, 0, -12.992, 1.10546, 98.0045),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="Curve3D" id="Curve3D_56dbl"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 4.0949, 0.0692101, -52.7214, 0, 0, 0, 0, 0, 0, 1.43974, -0.588255, -78.6069, 0, 0, 0, 0, 0, 0, -9.63052, -0.159868, -102.843, 0, 0, 0, 0, 0, 0, -29.5339, -0.660812, -135.155, 0, 0, 0, 0, 0, 0, -50.6349, -0.30405, -139.899, 0, 0, 0, 0, 0, 0, -75.5007, -0.215416, -142.63, 0, 0, 0, 0, 0, 0, -93.9732, -0.390774, -142.701, 0, 0, 0, 0, 0, 0, -110.499, -0.254267, -138.558, 0, 0, 0, 0, 0, 0, -112.935, 0.0549994, -104.195, 0, 0, 0, 0, 0, 0, -140.281, -0.032444, -102.841, 0, 0, 0, 0, 0, 0, -167.766, -0.301124, -83.5968, 0, 0, 0, 0, 0, 0, -168.256, -0.969795, -47.6177),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 12
+
+[node name="LevelTest" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_ahry4")
+
+[node name="TheSunTheSunTheSunTheSun" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.217323, 0.932338, 1.65666)
+omni_range = 19.52
+omni_attenuation = 3.06
+
+[node name="Ground" type="Node3D" parent="."]
+
+[node name="Track" type="Node3D" parent="." node_paths=PackedStringArray("_checkpoints")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00151777, 0.00411141, 0.000809431)
+script = ExtResource("2_ampu5")
+_checkpoints = [NodePath("Checkpoints/EntityCheckpoint1"), NodePath("Checkpoints/EntityCheckpoint2")]
+
+[node name="Checkpoints" type="Node3D" parent="Track"]
+
+[node name="EntityCheckpoint1" parent="Track/Checkpoints" instance=ExtResource("3_m0mr4")]
+transform = Transform3D(-30, 0, -4.52987e-06, 0, 30, 0, 4.52987e-06, 0, -30, 30.5342, 0, -2.71677)
+
+[node name="EntityCheckpoint2" parent="Track/Checkpoints" instance=ExtResource("3_m0mr4")]
+transform = Transform3D(15, 0, -7.15256e-07, 0, 15, 0, 7.15256e-07, 0, 15, -43.3052, 0.209445, -30.7049)
+
+[node name="Road" type="Node3D" parent="Track"]
+
+[node name="roadCornerLarger2" parent="Track/Road" instance=ExtResource("4_ymg8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.9053, 0, 40.0382)
+
+[node name="roadCornerLarger3" parent="Track/Road" instance=ExtResource("4_ymg8u")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.09471, 0, 84.0382)
+
+[node name="roadCornerLarger4" parent="Track/Road" instance=ExtResource("4_ymg8u")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -51.095, -9.31323e-10, -80.9617)
+
+[node name="roadCornerLarger5" parent="Track/Road" instance=ExtResource("4_ymg8u")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -6.09454, -9.31323e-10, -124.962)
+
+[node name="roadStraightwidelong2" parent="Track/Road" instance=ExtResource("5_3u447")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.9052, 0, -19.9618)
+
+[node name="roadStraightwideenterlong2" parent="Track/Road" instance=ExtResource("6_jwmdm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.9052, 0, -49.9618)
+
+[node name="roadStraightwideenterlong3" parent="Track/Road" instance=ExtResource("6_jwmdm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 22.9052, 0, 40.0382)
+
+[node name="roadStraightlong2" parent="Track/Road" instance=ExtResource("7_2gxcu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.0947, 0, -50.9618)
+
+[node name="roadStraightlong5" parent="Track/Road" instance=ExtResource("7_2gxcu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.0947, -9.31323e-10, -80.9618)
+
+[node name="roadStraightlong7" parent="Track/Road" instance=ExtResource("7_2gxcu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.9052, -9.31323e-10, -79.9618)
+
+[node name="roadStraightlong3" parent="Track/Road" instance=ExtResource("7_2gxcu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.0947, 0, -20.9618)
+
+[node name="roadStraightlong4" parent="Track/Road" instance=ExtResource("7_2gxcu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.0947, 0, 9.0382)
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -13.728, 0, -19.739)
+mesh = SubResource("PlaneMesh_kt8ye")
+skeleton = NodePath("../Track")
+surface_material_override/0 = SubResource("StandardMaterial3D_443p8")
+
+[node name="building-skyscraper-a" parent="." instance=ExtResource("9_s43rh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.95904, -7.62939e-06, -72.0054)
+
+[node name="building-skyscraper-b" parent="." instance=ExtResource("10_vjxg6")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -7.90406, 0.104118, 41.6421)
+
+[node name="building-k" parent="." instance=ExtResource("11_2t67m")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10.0845, 0.00411192, -12.0494)
+
+[node name="building-n" parent="." instance=ExtResource("12_s6rtm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -84.7856, 7.62939e-06, -62.0812)
+
+[node name="building-m" parent="." instance=ExtResource("13_qw2vc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.4517, -11.5239, 0.499151)
+
+[node name="building-j" parent="." instance=ExtResource("14_km6ew")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.22148, 3.15961, -151.394)
+
+[node name="building-h2" parent="." instance=ExtResource("15_cwmce")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 57.8, 0, -74.3723)
+
+[node name="building-h3" parent="." instance=ExtResource("15_cwmce")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 57.8, 0, -47.2106)
+
+[node name="building-e" parent="." instance=ExtResource("16_0dcw6")]
+transform = Transform3D(0.8428, 0, 0.538227, 0, 1, 0, -0.538227, 0, 0.8428, 39.5419, 0.866364, 82.0705)
+
+[node name="building-a" parent="." instance=ExtResource("17_427yp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.97033, 0, 99.5765)
+
+[node name="Wall" type="Node3D" parent="."]
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Wall"]
+polygon = PackedVector2Array(0, 0, 0, 6, 2, 6, 2, 0)
+mode = 2
+path_node = NodePath("../Path3D")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="Path3D" type="Path3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3143, 0, 0)
+curve = SubResource("Curve3D_8y3rp")
+
+[node name="Wall2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.0861, 0, -32.5385)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Wall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.0861, 0, 32.5385)
+polygon = PackedVector2Array(0, 0, 0, 6, 2, 6, 2, 0)
+mode = 2
+path_node = NodePath("../Path3D")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="Path3D" type="Path3D" parent="Wall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.3414)
+curve = SubResource("Curve3D_qisd1")
+
+[node name="Wall3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.0861, 0, -32.5385)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Wall3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.0861, 0, 32.5385)
+polygon = PackedVector2Array(0, 0, 0, 6, 2, 6, 2, 0)
+mode = 2
+path_node = NodePath("../Path3D")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="Path3D" type="Path3D" parent="Wall3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.3414)
+curve = SubResource("Curve3D_56dbl")
