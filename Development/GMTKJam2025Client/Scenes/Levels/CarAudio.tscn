@@ -6,8 +6,8 @@
 
 [sub_resource type="Curve" id="Curve_kpq66"]
 _limits = [0.0, 1.0, 0.0, 20.0]
-_data = [Vector2(0, 0.218579), 0.0, 0.0, 0, 0, Vector2(0.888031, 0.409495), 0.128135, 0.128135, 0, 0, Vector2(3.55212, 0.502732), 0.0, 0.0, 0, 0, Vector2(9.57529, 0.507172), 0.0, 0.0, 0, 0, Vector2(17.3208, 0.767857), 0.0, 0.0, 0, 0]
-point_count = 5
+_data = [Vector2(0, 0.0578823), 0.0, 0.0, 0, 0, Vector2(1.17955, 0.149647), 0.128135, 0.128135, 0, 0, Vector2(3.6173, 0.247529), 0.0, 0.0, 0, 0, Vector2(6.23853, 0.238353), 0.0, 0.0, 0, 0, Vector2(9.96068, 0.238353), 0.0, 0.0, 0, 0, Vector2(17.3001, 0.376), 0.0, 0.0, 0, 0]
+point_count = 6
 
 [node name="CarAudio2" type="Node3D" node_paths=PackedStringArray("StreamPlayerEngine", "StreamPlayerCollider")]
 script = ExtResource("1_6ytlv")

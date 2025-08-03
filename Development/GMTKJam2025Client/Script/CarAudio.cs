@@ -56,7 +56,10 @@ public partial class CarAudio : Node3D
             }
         }
 
-        if (_audibleVelocity < 0) _audibleVelocity = 0;
+        if (_audibleVelocity < 0)
+        {
+            _audibleVelocity = 0;
+        }
         
         StreamPlayerEngine.SetVolumeLinear(float.Lerp(StreamPlayerEngine.VolumeLinear, VelocityVolumeCurve.Sample(_audibleVelocity), 0.5f));
 
