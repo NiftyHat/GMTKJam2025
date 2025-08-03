@@ -516,6 +516,7 @@ libraries = {
 autoplay = "normal"
 
 [node name="GhostSpawnElement" type="Control" parent="RaceClock"]
+custom_minimum_size = Vector2(310, 124)
 layout_mode = 2
 
 [node name="GhostSpawnAnimation" type="AnimationPlayer" parent="RaceClock/GhostSpawnElement"]
