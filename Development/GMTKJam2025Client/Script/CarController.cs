@@ -134,6 +134,7 @@ public partial class CarController : Node3D
 		if (_audio != null)
 		{
 			_audio.UpdateEngineSound(_rb.LinearVelocity, speedInput);
+			_audio.UpdateInAir(!isGrounded);
 		}
 		
 	}

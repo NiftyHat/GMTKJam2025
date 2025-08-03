@@ -49,8 +49,9 @@ _checkpoints = [NodePath("Checkpoints/EntityCheckpoint1"), NodePath("Checkpoints
 [node name="Checkpoints" type="Node3D" parent="Track"]
 
 [node name="EntityCheckpoint1" parent="Track/Checkpoints" node_paths=PackedStringArray("_labels") instance=ExtResource("3_v64vm")]
-transform = Transform3D(1, 0, 6.35732e-08, 0, 1, 0, -6.35732e-08, 0, 1, 194.344, 0.520416, 3.3211)
-_labels = []
+transform = Transform3D(1, 0, 2.38419e-07, 0, 1, 0, -2.38419e-07, 0, 1, 194.344, 0.520416, 3.3211)
+_labels = [null, null]
+metadata/_edit_lock_ = true
 
 [node name="EntityCheckpoint2" parent="Track/Checkpoints" node_paths=PackedStringArray("_labels") instance=ExtResource("3_v64vm")]
 transform = Transform3D(-7.50991e-08, 0, 1, 0, 1, 0, -0.7, 0, -1.07284e-07, 156.16, -0.945889, -161.851)
@@ -265,8 +266,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_443p8")
 metadata/_edit_lock_ = true
 
 [node name="Background Assets" parent="." instance=ExtResource("30_ccthw")]
-transform = Transform3D(34.2146, 0, 36.4604, 0, 50, 0, -36.4604, 0, 34.2146, -3216.27, 0.155244, 303.423)
-metadata/_edit_lock_ = true
+transform = Transform3D(34.2146, 0, 36.4604, 0, 50, 0, -36.4604, 0, 34.2146, -3216.27, 0, 303.423)
+visible = false
 
 [node name="Background_Graveyard2" parent="Background Assets" instance=ExtResource("31_sg8m2")]
 transform = Transform3D(-0.979508, 0, -0.201403, 0, 1, 0, 0.201403, 0, -0.979508, 41.83, 0, 0.324329)
