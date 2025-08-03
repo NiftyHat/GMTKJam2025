@@ -1,14 +1,39 @@
-[gd_scene load_steps=13 format=3 uid="uid://cvlcpfuwq1lv4"]
+[gd_scene load_steps=14 format=3 uid="uid://cvlcpfuwq1lv4"]
 
 [ext_resource type="Script" uid="uid://bqml0tdjvbq60" path="res://3D/Entities/EntityCheckpoint.cs" id="1_tlnpo"]
 [ext_resource type="Script" uid="uid://deox86lrk7u8l" path="res://3D/Entities/EntityDetectionZone.cs" id="2_qambs"]
+[ext_resource type="PackedScene" uid="uid://cxxc280nvi4l2" path="res://3D/Checkpoints/checkpoint_gate_active.tscn" id="5_4tpxj"]
 [ext_resource type="AudioStream" uid="uid://c2evrmcxedv5k" path="res://Audio/SFX/lsl checkpoint.ogg" id="5_tlnpo"]
 [ext_resource type="PackedScene" uid="uid://6m4kub7d24o3" path="res://3D/Props/prop_light_post_large.tscn" id="6_01yyt"]
-[ext_resource type="PackedScene" uid="uid://lirfgjlbxarh" path="res://3D/Models/Checkpoint.gltf" id="6_4tpxj"]
+[ext_resource type="PackedScene" uid="uid://bv5xwgwiepbvs" path="res://3D/Checkpoints/checkpoint_gate_normal.tscn" id="6_xgeex"]
 [ext_resource type="FontFile" uid="uid://djnxc24f5yy5" path="res://Fonts/Hauser Bold.otf" id="7_01yyt"]
 
 [sub_resource type="Animation" id="Animation_4tpxj"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Checkpoint_Idle:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Checkpoint_Active:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_qambs"]
 resource_name = "triggered"
@@ -39,6 +64,30 @@ tracks/1/keys = {
 "args": ["triggered"],
 "method": &"PlayAnimation"
 }]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Checkpoint_Idle:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Checkpoint_Active:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_tlnpo"]
@@ -72,6 +121,30 @@ tracks/1/keys = {
 "method": &"PlayAnimation"
 }]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Checkpoint_Active:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Checkpoint_Idle:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_01yyt"]
 resource_name = "next"
@@ -85,14 +158,14 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ru4ou"]
-size = Vector3(25.0387, 8.63873, 6.98345)
+size = Vector3(25.0387, 8.63873, 9.73574)
 
 [node name="EntityCheckpoint" type="Node3D" node_paths=PackedStringArray("_detectionZone", "_animationPlayer", "_audioTriggered", "_labels")]
 script = ExtResource("1_tlnpo")
 _detectionZone = NodePath("EntityDetectionZone")
 _animationPlayer = NodePath("AnimationPlayer")
 _audioTriggered = NodePath("AudioStreamPlayer3DActive")
-_labels = [NodePath("Checkpoint2/Label3D2"), NodePath("Checkpoint2/Label3D3")]
+_labels = [NodePath("Lables/Label3D2"), NodePath("Lables/Label3D3")]
 metadata/_custom_type_script = "uid://bqml0tdjvbq60"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -106,24 +179,9 @@ script = ExtResource("2_qambs")
 metadata/_custom_type_script = "uid://deox86lrk7u8l"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EntityDetectionZone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.200867, 4.37411, 0.696263)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.200867, 4.37411, 2.07241)
 shape = SubResource("BoxShape3D_ru4ou")
 debug_color = Color(0, 0.595, 0.7, 0.772549)
-
-[node name="Checkpoint2" parent="." instance=ExtResource("6_4tpxj")]
-transform = Transform3D(-0.8, 0, 1.50996e-07, 0, 1, 0, -1.20797e-07, 0, -1, 0, 0, 0)
-
-[node name="Label3D2" type="Label3D" parent="Checkpoint2"]
-transform = Transform3D(-1, 0, -8.74228e-08, 3.45587e-08, 0.91855, -0.395305, 8.03022e-08, -0.395305, -0.91855, 6.41628, 9.96147, -3.9323)
-text = "GO!"
-font = ExtResource("7_01yyt")
-font_size = 387
-
-[node name="Label3D3" type="Label3D" parent="Checkpoint2"]
-transform = Transform3D(-1, 0, -8.74228e-08, 3.45587e-08, 0.91855, -0.395305, 8.03022e-08, -0.395305, -0.91855, -6.48653, 9.96147, -3.9323)
-text = "GO!"
-font = ExtResource("7_01yyt")
-font_size = 387
 
 [node name="AudioStreamPlayer3DActive" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("5_tlnpo")
@@ -133,3 +191,25 @@ transform = Transform3D(0.351073, 0, -0.936348, 0, 1, 0, 0.936348, 0, 0.351073, 
 
 [node name="LightPostLarge2" parent="." instance=ExtResource("6_01yyt")]
 transform = Transform3D(0.273892, 0, 0.96176, 0, 1, 0, -0.96176, 0, 0.273892, 15.0144, -1.90735e-06, -3.23815)
+
+[node name="Checkpoint_Active" parent="." instance=ExtResource("5_4tpxj")]
+transform = Transform3D(-0.8, 0, -8.74228e-08, 0, 1, 0, 6.99382e-08, 0, -1, 0, 0, 0)
+visible = false
+
+[node name="Checkpoint_Idle" parent="." instance=ExtResource("6_xgeex")]
+transform = Transform3D(-0.8, 0, -8.74228e-08, 0, 1, 0, 6.99382e-08, 0, -1, 0, 0, 0)
+visible = false
+
+[node name="Lables" type="Node3D" parent="."]
+
+[node name="Label3D2" type="Label3D" parent="Lables"]
+transform = Transform3D(0.8, -5.96895e-08, -6.87591e-08, 3.45587e-08, 0.91855, -0.395305, 4.04948e-08, 0.395305, 0.91855, -5.13302, 9.96147, 3.9323)
+text = "GO!"
+font = ExtResource("7_01yyt")
+font_size = 387
+
+[node name="Label3D3" type="Label3D" parent="Lables"]
+transform = Transform3D(0.8, -5.96895e-08, -6.87591e-08, 3.45587e-08, 0.91855, -0.395305, 4.04948e-08, 0.395305, 0.91855, 5.18922, 9.96147, 3.9323)
+text = "GO!"
+font = ExtResource("7_01yyt")
+font_size = 387

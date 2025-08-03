@@ -1,58 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://cxxc280nvi4l2"]
+[gd_scene load_steps=3 format=3 uid="uid://cxxc280nvi4l2"]
 
-[ext_resource type="PackedScene" uid="uid://cpot42ooubj8x" path="res://3D/Prototype/gate.glb" id="1_tlm64"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tlm64"]
-albedo_color = Color(0.84, 0.77784, 0.2184, 1)
+[ext_resource type="PackedScene" uid="uid://lirfgjlbxarh" path="res://3D/Models/Checkpoint.gltf" id="1_tlm64"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p0d72"]
+albedo_color = Color(0.224, 0.64, 0.355733, 1)
 
-[sub_resource type="Curve" id="Curve_7wwci"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 2
+[node name="Checkpoint2" instance=ExtResource("1_tlm64")]
 
-[sub_resource type="CurveTexture" id="CurveTexture_tlm64"]
-curve = SubResource("Curve_7wwci")
-
-[sub_resource type="Curve" id="Curve_25afx"]
-_limits = [0.0, 3.0, 0.0, 1.0]
-_data = [Vector2(0, 3), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_p0d72"]
-curve = SubResource("Curve_25afx")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ymknr"]
-emission_shape = 1
-emission_sphere_radius = 0.1
-angle_min = 1.07288e-05
-angle_max = 1.07288e-05
-inherit_velocity_ratio = 1.0
-direction = Vector3(0, 0, 10)
-spread = 180.0
-initial_velocity_min = 0.5
-initial_velocity_max = 1.0
-orbit_velocity_min = 9.49949e-08
-orbit_velocity_max = 9.49949e-08
-gravity = Vector3(0, 1, 0)
-attractor_interaction_enabled = false
-scale_curve = SubResource("CurveTexture_tlm64")
-scale_over_velocity_max = 1.0
-scale_over_velocity_curve = SubResource("CurveTexture_p0d72")
-
-[sub_resource type="BoxMesh" id="BoxMesh_dh2hq"]
-size = Vector3(0.1, 0.1, 0.1)
-
-[node name="gate2" instance=ExtResource("1_tlm64")]
-
-[node name="gate" parent="." index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_tlm64")
-
-[node name="GPUParticles3D" type="GPUParticles3D" parent="." index="1"]
-material_override = SubResource("StandardMaterial3D_p0d72")
-emitting = false
-amount = 30
-one_shot = true
-explosiveness = 0.92
-process_material = SubResource("ParticleProcessMaterial_ymknr")
-draw_pass_1 = SubResource("BoxMesh_dh2hq")
+[node name="Checkpoint" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_p0d72")
