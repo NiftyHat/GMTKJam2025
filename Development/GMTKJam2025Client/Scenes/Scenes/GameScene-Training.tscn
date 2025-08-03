@@ -91,9 +91,9 @@ border_width_bottom = 3
 
 [node name="Node3D" type="Node3D"]
 
-[node name="Level Geometry" type="Node" parent="."]
+[node name="LevelTest" parent="." instance=ExtResource("1_4pinm")]
 
-[node name="LevelTest" parent="Level Geometry" instance=ExtResource("1_4pinm")]
+[node name="Level Geometry" type="Node3D" parent="."]
 
 [node name="Floor" type="StaticBody3D" parent="Level Geometry"]
 collision_layer = 5
