@@ -14,7 +14,7 @@ config/name="Lightspeed Loop"
 config/description="A Time Attack Racing Game where your ghosts ARE real and CAN hurt you
 A Game for GMTK Game Jam 2025
 By Evyanon, TommyNom, NiftyHat, kaynSD, and c1k"
-config/version="0.1.0"
+config/version="0.1.1"
 run/main_scene="uid://djpruf2ij658q"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 boot_splash/image="uid://b0pj2sp0tpyax"
