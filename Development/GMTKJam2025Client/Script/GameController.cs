@@ -30,6 +30,25 @@ public partial class GameController : Node
 	{
 		base._Ready();
 		MusicPlayer.Instance.Stop();
+		//Engine.PhysicsJitterFix = 0.5f;
+		double fps = Engine.GetFramesPerSecond();
+		if (fps > 60)
+		{
+			if (Engine.PhysicsTicksPerSecond != fps)
+			{
+				Engine.PhysicsTicksPerSecond = (int)fps;
+				Engine.MaxPhysicsStepsPerFrame = (int)(fps / 7.5);
+			}
+		}
+		else
+		{
+			if (Engine.PhysicsTicksPerSecond != 60)
+			{
+				Engine.PhysicsTicksPerSecond = 60;
+				Engine.MaxPhysicsStepsPerFrame = 8;
+			}
+		}
+
 	}
 
 	public void Reset()
