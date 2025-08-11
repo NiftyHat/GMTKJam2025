@@ -32,7 +32,10 @@ uv1_scale = Vector3(32, 32, 32)
 environment = ExtResource("1_eshfu")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.16329, 0.734871, -0.658256, 0, 0.667211, 0.744869, 0.986578, -0.12163, 0.108949, -8.68963, 9.91288, 1.39199)
+transform = Transform3D(0.608761, 0, 0.793354, 0, 1, 0, -0.793353, 0, 0.608762, 100, 200, -200)
+light_energy = 0.084
+light_indirect_energy = 0.537
+light_volumetric_fog_energy = 1.253
 metadata/_edit_lock_ = true
 
 [node name="Ground" type="Node3D" parent="."]
@@ -52,7 +55,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.6631, 0.209446, 46.5252)
 
 [node name="EntityCheckpoint3" parent="Track/Checkpoints" node_paths=PackedStringArray("_labels") instance=ExtResource("4_2547q")]
 transform = Transform3D(0.973646, 0.00252607, -0.228052, -0.00254193, 0.999997, 0.000224179, 0.228052, 0.000361419, 0.973649, -41.516, 0, -89.9178)
-_labels = [NodePath("../EntityCheckpoint1/Checkpoint2/Label3D2"), NodePath("../EntityCheckpoint1/Checkpoint2/Label3D3")]
+_labels = [null, null]
 
 [node name="Road" type="Node3D" parent="Track"]
 
@@ -69,6 +72,9 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -51.09
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -6.09454, -9.31323e-10, -124.962)
 
 [node name="roadStraightwidelong2" parent="Track/Road" instance=ExtResource("5_eshfu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.9052, 0, -19.9618)
+
+[node name="roadStraightwidelong3" parent="Track/Road" instance=ExtResource("5_eshfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.9052, 0, -19.9618)
 
 [node name="roadStraightwideenterlong2" parent="Track/Road" instance=ExtResource("6_5w338")]

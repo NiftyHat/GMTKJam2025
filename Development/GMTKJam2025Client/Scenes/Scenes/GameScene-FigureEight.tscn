@@ -1,9 +1,8 @@
-[gd_scene load_steps=51 format=3 uid="uid://bs7t7tjyw4eo1"]
+[gd_scene load_steps=47 format=3 uid="uid://bs7t7tjyw4eo1"]
 
 [ext_resource type="Script" uid="uid://2jqy0i2iaig4" path="res://Script/GameController.cs" id="1_6vvcf"]
 [ext_resource type="Texture2D" uid="uid://2h3qmpnq0584" path="res://3D/Textures/7a3584298ef470fe0aafc146c23d34523b045606.png" id="2_6vvcf"]
 [ext_resource type="PackedScene" uid="uid://dbbp0urujgyt" path="res://Scenes/Levels/level_eight.tscn" id="2_124qp"]
-[ext_resource type="Texture2D" uid="uid://bdpkysot812ts" path="res://3D/Textures/Sky_T.webp" id="3_cr6v8"]
 [ext_resource type="Script" uid="uid://3klfn8jegsue" path="res://Script/GameCamera.cs" id="4_f43ej"]
 [ext_resource type="Script" uid="uid://4q83c3lgjfx4" path="res://Script/CarVisualLibrary.cs" id="4_y0yaw"]
 [ext_resource type="Script" uid="uid://cc86lg7fm3e7b" path="res://Script/GhostRecorder.cs" id="5_7rq2r"]
@@ -48,16 +47,6 @@ albedo_texture = ExtResource("2_6vvcf")
 uv1_scale = Vector3(32, 32, 32)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vy56e"]
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_g0og0"]
-panorama = ExtResource("3_cr6v8")
-
-[sub_resource type="Sky" id="Sky_km00y"]
-sky_material = SubResource("PanoramaSkyMaterial_g0og0")
-
-[sub_resource type="Environment" id="Environment_7ms41"]
-background_mode = 2
-sky = SubResource("Sky_km00y")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ggkdx"]
 size = Vector3(1.31453, 0.968048, 3.21506)
@@ -141,7 +130,6 @@ process_mode = 1
 
 [node name="Camera3D" type="Camera3D" parent="GameControl/Camera" node_paths=PackedStringArray("LookAtTarget", "CameraPositionTarget", "CameraFocusTarget", "CarController")]
 transform = Transform3D(-0.999889, -0.000312992, 0.0148878, 0, 0.999779, 0.0210187, -0.0148911, 0.0210164, -0.999668, -0.000763688, 1.59773, -3.21964)
-environment = SubResource("Environment_7ms41")
 script = ExtResource("4_f43ej")
 LookAtTarget = NodePath("../CameraTarget")
 CameraPositionTarget = NodePath("../../Player Car/Car Controller/Ideal Camera Location")

@@ -1,12 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://6m4kub7d24o3"]
+[gd_scene load_steps=9 format=3 uid="uid://6m4kub7d24o3"]
 
 [ext_resource type="PackedScene" uid="uid://chkxjdl750eay" path="res://3D/Prototype/Kenney_Racing/lightPostLarge.glb" id="1_jeflq"]
 [ext_resource type="Script" uid="uid://ou2s1pv8pncv" path="res://3D/Entities/EntityAnimationTrigger.cs" id="1_x7k1h"]
-[ext_resource type="Shader" uid="uid://bojy48off8gby" path="res://3D/Models/Materials/EmissiveWindowShader.tres" id="2_x7k1h"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_01yyt"]
-render_priority = 0
-shader = ExtResource("2_x7k1h")
+[ext_resource type="Material" uid="uid://uiw0r4o014e6" path="res://3D/Props/material_light_post_emissive.tres" id="3_x7k1h"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_xgeex"]
 size = Vector2(0.05, 0.05)
@@ -254,25 +250,25 @@ transform = Transform3D(-19.9974, 0, 0.322875, 0, 20, 0, -0.322875, 0, -19.9974,
 
 [node name="EmissiveRect" type="MeshInstance3D" parent="lightPostLarge"]
 transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866026, -0.0540475, 0.703763, 0.0466369)
-material_override = SubResource("ShaderMaterial_01yyt")
+material_override = ExtResource("3_x7k1h")
 mesh = SubResource("QuadMesh_xgeex")
 skeleton = NodePath("../../..")
 
 [node name="EmissiveRect2" type="MeshInstance3D" parent="lightPostLarge"]
 transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866026, 0.0548818, 0.703763, 0.0464655)
-material_override = SubResource("ShaderMaterial_01yyt")
+material_override = ExtResource("3_x7k1h")
 mesh = SubResource("QuadMesh_xgeex")
 skeleton = NodePath("../../..")
 
 [node name="EmissiveRect3" type="MeshInstance3D" parent="lightPostLarge"]
 transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866026, 0.138065, 0.703763, 0.04607)
-material_override = SubResource("ShaderMaterial_01yyt")
+material_override = ExtResource("3_x7k1h")
 mesh = SubResource("QuadMesh_xgeex")
 skeleton = NodePath("../../..")
 
 [node name="EmissiveRect4" type="MeshInstance3D" parent="lightPostLarge"]
 transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866026, -0.132913, 0.703763, 0.047177)
-material_override = SubResource("ShaderMaterial_01yyt")
+material_override = ExtResource("3_x7k1h")
 mesh = SubResource("QuadMesh_xgeex")
 skeleton = NodePath("../../..")
 

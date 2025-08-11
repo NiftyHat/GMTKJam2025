@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://bisqo3qgx8bbs"]
+[gd_scene load_steps=47 format=3 uid="uid://bisqo3qgx8bbs"]
 
 [ext_resource type="PackedScene" uid="uid://dm84nqfsh38yp" path="res://Scenes/Levels/level_keith.tscn" id="1_fcuc1"]
 [ext_resource type="Texture2D" uid="uid://2h3qmpnq0584" path="res://3D/Textures/7a3584298ef470fe0aafc146c23d34523b045606.png" id="2_82aa8"]
@@ -18,7 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://ckgm75mvbxb3" path="res://3D/Coffin/Coffin5.tscn" id="16_07fbx"]
 [ext_resource type="PackedScene" uid="uid://35hidwm55s31" path="res://3D/Coffin/Coffin6.tscn" id="17_t0bf8"]
 [ext_resource type="PackedScene" uid="uid://psvfax7t2ms" path="res://3D/Coffin/Coffin7.tscn" id="18_viwos"]
-[ext_resource type="Texture2D" uid="uid://bdpkysot812ts" path="res://3D/Textures/Sky_T.webp" id="19_tsal5"]
 [ext_resource type="Script" uid="uid://3klfn8jegsue" path="res://Script/GameCamera.cs" id="20_5akvo"]
 [ext_resource type="PackedScene" uid="uid://drncy6tn4jupe" path="res://Scenes/trail1.tscn" id="21_qfnc4"]
 [ext_resource type="PackedScene" uid="uid://dobssek2rvaoe" path="res://Scenes/drift_smoke.tscn" id="22_2logt"]
@@ -48,16 +47,6 @@ albedo_texture = ExtResource("2_82aa8")
 uv1_scale = Vector3(32, 32, 32)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vy56e"]
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_g0og0"]
-panorama = ExtResource("19_tsal5")
-
-[sub_resource type="Sky" id="Sky_km00y"]
-sky_material = SubResource("PanoramaSkyMaterial_g0og0")
-
-[sub_resource type="Environment" id="Environment_7ms41"]
-background_mode = 2
-sky = SubResource("Sky_km00y")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ggkdx"]
 size = Vector3(1.31453, 0.968048, 3.21506)
@@ -142,7 +131,6 @@ process_mode = 1
 
 [node name="Camera3D" type="Camera3D" parent="GameControl/Camera" node_paths=PackedStringArray("LookAtTarget", "CameraPositionTarget", "CameraFocusTarget", "CarController")]
 transform = Transform3D(-0.999889, -0.000312992, 0.0148878, 0, 0.999779, 0.0210187, -0.0148911, 0.0210164, -0.999668, -0.000763688, 1.59773, -3.21964)
-environment = SubResource("Environment_7ms41")
 script = ExtResource("20_5akvo")
 LookAtTarget = NodePath("../CameraTarget")
 CameraPositionTarget = NodePath("../../Player Car/Car Controller/Ideal Camera Location")

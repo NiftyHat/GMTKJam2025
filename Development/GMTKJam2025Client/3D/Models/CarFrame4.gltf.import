@@ -33,11 +33,20 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
-"nodes": {
-"PATH:CarFrame4/StaticBody3D": {
-"import/skip_import": true
+"materials": {
+"colormap": {
+"use_external/enabled": true,
+"use_external/path": "uid://drga2dkr8o7ib"
+},
+"head-light_outer": {
+"use_external/enabled": true,
+"use_external/path": "uid://wv0ff82d3lhp"
+},
+"tail-light": {
+"use_external/enabled": true,
+"use_external/path": "uid://b34hayf825but"
 }
 }
 }
 gltf/naming_version=1
-gltf/embedded_image_handling=1
+gltf/embedded_image_handling=0
